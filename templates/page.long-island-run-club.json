@@ -1,0 +1,646 @@
+{
+  "sections": {
+    "0a859807-3309-42aa-b22b-f2855cfb59b0": {
+      "type": "custom-collection-banner",
+      "blocks": {
+        "a8e43fe3-b3f7-489e-8f53-b9793276758a": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/iStock-629725358.jpg",
+            "title": "HI GREATER LONG ISLAND RUN CLUB",
+            "paragraph": "Your go-to place to shop, save and sell outdoor gear!",
+            "first_button_label": "START SHOPPING",
+            "first_button_link": "shopify:\/\/collections\/all",
+            "second_button_label": "START SELLING",
+            "second_button_link": "https:\/\/sellback.outandbackoutdoor.com\/",
+            "block_title_color": "#26225d",
+            "block_paragraph_color": "#262262"
+          }
+        }
+      },
+      "block_order": [
+        "a8e43fe3-b3f7-489e-8f53-b9793276758a"
+      ],
+      "settings": {
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "button_color": "#ffffff",
+        "button_text_color": "#26225d"
+      }
+    },
+    "0d4908cb-b0d8-42dc-be26-1e3835a942f9": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--17019345994019__0d4908cb-b0d8-42dc-be26-1e3835a942f9-1669232597fa3ee486-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GLIRC_LOGO_New_Transparent.png",
+            "title": "",
+            "caption": "Out&Back Outdoor is Colorado-based marketplace made for outdoor enthusiasts like you, creating an easy way to shop, save and sell outdoor gear.\n<br>\n<br>\nAs a Greater Long Island Run Club member, you will receive exclusive discounts and sellback bonuses using promo code: <strong>LONGISLANDRC<\/strong>\n<br>\n<br>\nLet's get started!"
+          }
+        }
+      },
+      "block_order": [
+        "template--17019345994019__0d4908cb-b0d8-42dc-be26-1e3835a942f9-1669232597fa3ee486-0"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "",
+        "image_size": 20,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 1,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "d09a601c-49dd-4d27-87e2-d38b1deae1a0": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--17019345994019__d09a601c-49dd-4d27-87e2-d38b1deae1a0-16691727195418cd6a-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SALE.png",
+            "title": "Shop Outdoor Gear",
+            "caption": "Enjoy a <b>20% off <\/b> discount each time you buy gear on Out&Back. $50 order minimum."
+          }
+        },
+        "template--17019345994019__d09a601c-49dd-4d27-87e2-d38b1deae1a0-16691727195418cd6a-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/JACKTTOCASH.png",
+            "title": "Sell Unwanted Gear",
+            "caption": "Receive a <b>10% boost<\/b> on every sellback offer. Plus GLI Run Club will also receive a 10% bonus too!"
+          }
+        },
+        "template--17019345994019__d09a601c-49dd-4d27-87e2-d38b1deae1a0-16691727195418cd6a-2": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "GEAR-SSURANCE",
+            "caption": "High-quality gear backed by our free 30-day return policy"
+          }
+        }
+      },
+      "block_order": [
+        "template--17019345994019__d09a601c-49dd-4d27-87e2-d38b1deae1a0-16691727195418cd6a-0",
+        "template--17019345994019__d09a601c-49dd-4d27-87e2-d38b1deae1a0-16691727195418cd6a-1",
+        "template--17019345994019__d09a601c-49dd-4d27-87e2-d38b1deae1a0-16691727195418cd6a-2"
+      ],
+      "settings": {
+        "heading": "Exclusive Benefits For You",
+        "caption": "It's rad being a GLI Run Club Member",
+        "inner_heading": "Gear Up and Gear Down",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "1ad50b68-fe00-4ef3-af5d-8555fa866d10": {
+      "type": "custom-collection-banner",
+      "blocks": {
+        "98b30349-b42a-4eba-af7f-6f0507a9f894": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/CMC_Logo_4.png",
+            "title": "PROMO CODE: LONGISLANDRC",
+            "paragraph": "Promo code must be used during purchase checkout and sellback submission in order to receive discount and bonus.",
+            "first_button_label": "START SHOPPING",
+            "first_button_link": "shopify:\/\/collections\/all",
+            "second_button_label": "START SELLING",
+            "second_button_link": "https:\/\/sellback.outandbackoutdoor.com\/",
+            "block_title_color": "#f00000",
+            "block_paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "98b30349-b42a-4eba-af7f-6f0507a9f894"
+      ],
+      "settings": {
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "button_color": "#ffffff",
+        "button_text_color": "#26225d"
+      }
+    },
+    "88a217f7-8815-4ffc-94f0-715dea01fad6": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--17019345994019__88a217f7-8815-4ffc-94f0-715dea01fad6-16691727195418cd6a-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/TRUCK.png",
+            "title": "GEAR-SSURANCE",
+            "caption": "High-quality gear backed by our free 30-day return policy"
+          }
+        },
+        "template--17019345994019__88a217f7-8815-4ffc-94f0-715dea01fad6-16691727195418cd6a-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SALE.png",
+            "title": "Up to 70% Off",
+            "caption": "New and used gear from the top brands at a huge discount"
+          }
+        },
+        "template--17019345994019__88a217f7-8815-4ffc-94f0-715dea01fad6-16691727195418cd6a-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PANTS.png",
+            "title": "SUSTAINABLE",
+            "caption": "Buying secondhand helps the planet and your wallet"
+          }
+        }
+      },
+      "block_order": [
+        "template--17019345994019__88a217f7-8815-4ffc-94f0-715dea01fad6-16691727195418cd6a-0",
+        "template--17019345994019__88a217f7-8815-4ffc-94f0-715dea01fad6-16691727195418cd6a-1",
+        "template--17019345994019__88a217f7-8815-4ffc-94f0-715dea01fad6-16691727195418cd6a-2"
+      ],
+      "settings": {
+        "heading": "Shop Secondhand and Save",
+        "caption": "The best place to find deals on secondhand outdoor gear",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "START SHOPPING",
+        "button_link": "shopify:\/\/collections\/all",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "d5ae6892-983a-4160-ac94-2b24c01858df": {
+      "type": "custom-brands",
+      "disabled": true,
+      "blocks": {
+        "f97b5b5b-516d-42dd-9005-706a3831f8ac": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/The_North_Face.png",
+            "link": "https:\/\/outandbackoutdoor.com\/collections\/the-north-face"
+          }
+        },
+        "dae58f9a-4b28-477c-9f77-a94f0cbbf6df": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Patagonia.png",
+            "link": "https:\/\/outandbackoutdoor.com\/collections\/patagonia"
+          }
+        },
+        "4dc39e94-b2f9-4a74-bc96-406acec59e92": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Osprey.png",
+            "link": "https:\/\/outandbackoutdoor.com\/collections\/osprey"
+          }
+        }
+      },
+      "block_order": [
+        "f97b5b5b-516d-42dd-9005-706a3831f8ac",
+        "dae58f9a-4b28-477c-9f77-a94f0cbbf6df",
+        "4dc39e94-b2f9-4a74-bc96-406acec59e92"
+      ],
+      "settings": {
+        "heading": "Brands you love!",
+        "caption": "Shop top brands up to 70% off",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000"
+      }
+    },
+    "1663891058b12727b0": {
+      "type": "custom-text-list",
+      "blocks": {
+        "ac97262b-359e-492f-a3ce-ff5988ff3704": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "Free shipping",
+            "text_link": ""
+          }
+        },
+        "6e9137ab-459c-4b82-b76f-8a2dbabdc8b9": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "Get paid fast in cash or gift card",
+            "text_link": ""
+          }
+        },
+        "414d88c4-2e35-418b-98b0-352da96673e5": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "30% bonus on gift card payments",
+            "text_link": ""
+          }
+        },
+        "393ff30d-6563-40c3-bec3-ea7c98aa9339": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MAD_FACE_EMOJI_dedb3b86-fc5d-4e6f-8e34-204ac214d7c8.png",
+            "text_list": "No wasted time creating a listing",
+            "text_link": ""
+          }
+        },
+        "d7a548a1-1da1-4993-a438-fb11ee5ff529": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MAD_FACE_EMOJI.png",
+            "text_list": "No hassling with taking pictures",
+            "text_link": ""
+          }
+        },
+        "de00c338-acdb-47a1-a4c8-554b476df72e": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MAD_FACE_EMOJI_012d3bf2-0f5a-4be7-af42-5dc637a767ce.png",
+            "text_list": "No waiting for a buyer - get paid fast",
+            "text_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "ac97262b-359e-492f-a3ce-ff5988ff3704",
+        "6e9137ab-459c-4b82-b76f-8a2dbabdc8b9",
+        "414d88c4-2e35-418b-98b0-352da96673e5",
+        "393ff30d-6563-40c3-bec3-ea7c98aa9339",
+        "d7a548a1-1da1-4993-a438-fb11ee5ff529",
+        "de00c338-acdb-47a1-a4c8-554b476df72e"
+      ],
+      "settings": {
+        "heading": "Sell Gear the Easy Way",
+        "caption": "Earn more with less effort",
+        "inner_caption": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "1663744053b2eab893": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "16637440533bfaa62a-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/JACKET_WITH_CHECKS_BOXS_ICON_small_a2a1a026-4c81-4603-85ed-7483a612defb.jpg",
+            "title": "1. TELL US ABOUT YOUR GEAR",
+            "caption": "Use our simple sellback tool to answer a few questions about your gear."
+          }
+        },
+        "16637440533bfaa62a-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ACCEPT_OFFER_ICON_small_9aa1e190-0cac-4d9f-b51f-9b70b6d47f1b.jpg",
+            "title": "2. ACCEPT AN INSTANT OFFER",
+            "caption": "Choose cash or get 30% bonus value when you choose a gift card!"
+          }
+        },
+        "16637440533bfaa62a-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ENVELOPE_FOR_CASH_ICON_small_8a8013e1-f4d4-4918-87ff-04c3155b64df.jpg",
+            "title": "3. MAIL IT IN OR DROP IT OFF",
+            "caption": "Send your items in or drop them off at <a href=\"https:\/\/stores.dickssportinggoods.com\/ny\/melville\/1540\/?seo=localpack\">DICK's Sporting Goods (Melville Mall)<\/a> and get paid."
+          }
+        }
+      },
+      "block_order": [
+        "16637440533bfaa62a-0",
+        "16637440533bfaa62a-1",
+        "16637440533bfaa62a-2"
+      ],
+      "settings": {
+        "heading": "How To Sell Your Gear To Us",
+        "caption": "Easy as 1, 2, 3",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "START SELLING",
+        "button_link": "https:\/\/sellback.outandbackoutdoor.com\/",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "df3ba87a-a61c-4c22-a8b5-06e92cd819a4": {
+      "type": "custom-dropdown-brands",
+      "settings": {
+        "heading": "Brands And Gear We Accept",
+        "caption": "We add stuff often",
+        "inner_heading": "",
+        "button_label": "",
+        "button_link": "",
+        "append_asterisk": "Adult Ski Equipment, Adult Snowboard Equipment, Kid's Ski Equipment, Kid's Snowboard Equipment",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "166381651869f39836": {
+      "type": "custom-mini-image-slider",
+      "blocks": {
+        "48795129-2e24-4556-8bc0-010e30bad054": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"Fast, easy and cost effective way to sell used gear.\"",
+            "image": "shopify:\/\/shop_images\/191_064c09d0-e803-41ff-8235-b7c6b6ea2053.png",
+            "lower_paragraph": "Kenneth - Cedaredge, CO",
+            "link": ""
+          }
+        },
+        "303c7f62-ddae-455b-849c-935c729dc61f": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"This whole process was super easy...There isn't the waiting to sell an item...much easier to work with you \"",
+            "image": "shopify:\/\/shop_images\/79_ff1344d6-b6f7-4a96-bf2b-6a945f49bdc1.png",
+            "lower_paragraph": "Robert - Denver, CO",
+            "link": ""
+          }
+        },
+        "31e0400d-d4a4-4a9a-bf2b-46ab2d565f48": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"Quick and easy.\"",
+            "image": "shopify:\/\/shop_images\/108_5a19b989-cf43-44f5-916a-1951e1fbe16f.png",
+            "lower_paragraph": "Edward - Chico, CA",
+            "link": ""
+          }
+        },
+        "5e86c909-a8cf-48d6-b5e2-d81aaef231d2": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"The entire process was easy\"",
+            "image": "shopify:\/\/shop_images\/70_92ad0d31-f1af-448e-9cc9-cc9a61b76390.png",
+            "lower_paragraph": "Maria - Garden City, NJ",
+            "link": ""
+          }
+        },
+        "33192b0b-2ac6-4da2-8eb0-170fb146b3b8": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"You paid me money for my backpack - more than I expected & offered to donate the other items. Total win.\"",
+            "image": "shopify:\/\/shop_images\/60_5518afb2-8ce3-4553-b81c-5b0b519df48a.png",
+            "lower_paragraph": "Colleen - Arvada, CO",
+            "link": ""
+          }
+        },
+        "192d3d7c-fe3c-41e1-8769-da661abb3fa3": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"It was quick and easy, and we didn't have to jump through a ton of hoops!\"",
+            "image": "shopify:\/\/shop_images\/50_f4618df9-0edf-4480-a9d4-fa4526791aac.png",
+            "lower_paragraph": "Lois - Norfolk, VA",
+            "link": ""
+          }
+        },
+        "6a52e3a7-e2b1-4f01-8be1-1300c3709dd1": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "\"It was so quick and easy! ...and this was so much easier than using Mercari or Poshmark.\"",
+            "image": "shopify:\/\/shop_images\/60_5518afb2-8ce3-4553-b81c-5b0b519df48a.png",
+            "lower_paragraph": "Sarah - Portland, OR",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "48795129-2e24-4556-8bc0-010e30bad054",
+        "303c7f62-ddae-455b-849c-935c729dc61f",
+        "31e0400d-d4a4-4a9a-bf2b-46ab2d565f48",
+        "5e86c909-a8cf-48d6-b5e2-d81aaef231d2",
+        "33192b0b-2ac6-4da2-8eb0-170fb146b3b8",
+        "192d3d7c-fe3c-41e1-8769-da661abb3fa3",
+        "6a52e3a7-e2b1-4f01-8be1-1300c3709dd1"
+      ],
+      "settings": {
+        "heading": "HEAR FROM OTHER SELLERS!",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000"
+      }
+    },
+    "38ec2fe8-a52a-47bb-947c-445fe0947d16": {
+      "type": "custom-collection-banner",
+      "disabled": true,
+      "blocks": {
+        "f1716600-afe3-4f72-8a32-ac2b110cadf1": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Man_unfolding_tent_small_186ef6db-0434-4ceb-80ec-624fcc9b22cb.jpg",
+            "title": "WE'RE SETTING UP CAMP IN MORE PLACES!",
+            "paragraph": "Now offering in person trade in at select DICK's Sporting Goods and Public Lands locations.",
+            "first_button_label": "VIEW DROP OFF LOCATIONS",
+            "first_button_link": "",
+            "second_button_label": "",
+            "second_button_link": "\/",
+            "block_title_color": "#26225d",
+            "block_paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "f1716600-afe3-4f72-8a32-ac2b110cadf1"
+      ],
+      "settings": {
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "button_color": "#ffffff",
+        "button_text_color": "#26225d"
+      }
+    },
+    "1663824219c7148a8f": {
+      "type": "custom-collection-slider",
+      "settings": {
+        "heading": "See What Others Have Sold",
+        "caption": "Some inspiration to sell your gear",
+        "collection": "new-arrivals",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "show_vendor": false,
+        "show_price": false
+      }
+    },
+    "cef4507b-83d0-4697-80a3-7a1fcd2e0dae": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--15900933095581__cef4507b-83d0-4697-80a3-7a1fcd2e0dae-16690506970dc45c62-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_image.png",
+            "title": "We're a proud 1% for the Planet Member",
+            "caption": "Every time you sell gear to Out&Back we donate 1% of the value you receive to 1% for the Planet. To learn more about 1% for the Planet, how they distribute donated funds and how to get involved visit their <a href=\"https:\/\/onepercentfortheplanet.org\/\">website<\/a>."
+          }
+        }
+      },
+      "block_order": [
+        "template--15900933095581__cef4507b-83d0-4697-80a3-7a1fcd2e0dae-16690506970dc45c62-0"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "WHEN YOU SELL, <strong>WE DONATE<\/strong>",
+        "image_size": 16,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "1663890714f37ed65c": {
+      "type": "custom-text-list",
+      "blocks": {
+        "374d6824-df7b-47e1-823f-b93d7131533b": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Contacting us",
+            "text_link": "shopify:\/\/pages\/contact-us"
+          }
+        },
+        "67a3e15f-ddb9-4be5-87e6-cd5befd02cb6": {
+          "type": "list",
+          "settings": {
+            "text_list": "- General stuff",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "6ea031b3-9241-478e-8973-6001e290a863": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Getting paid",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "7010f965-b8a4-4c28-8a8b-5c3d1c05519e": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Gift cards from partners",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "7fe98bbb-792b-41ab-807e-7b32961face4": {
+          "type": "list",
+          "settings": {
+            "text_list": "- How offers are calculated",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "71c042ae-61bf-4e58-9df0-0309de18886e": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Issue resolution",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "35ef03f3-4b68-4127-b842-2bc56a9cd8a1": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Items we accept",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "c2829a82-d29a-4a81-ae60-bd263a48e978": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Shipping terms",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "15d0bca1-6d04-4e58-83da-b0e9f335ec88": {
+          "type": "list",
+          "settings": {
+            "text_list": "- What we do the gear you sell",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "fe657eba-0316-48d7-8775-4ae84072ae4c": {
+          "type": "list",
+          "settings": {
+            "text_list": "- 1% for the planet donation",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "0f4a3961-fd75-44a0-acb7-cbb172897684": {
+          "type": "list",
+          "settings": {
+            "text_list": "- Why unicorns have a single horn",
+            "text_link": "shopify:\/\/pages\/faq"
+          }
+        }
+      },
+      "block_order": [
+        "374d6824-df7b-47e1-823f-b93d7131533b",
+        "67a3e15f-ddb9-4be5-87e6-cd5befd02cb6",
+        "6ea031b3-9241-478e-8973-6001e290a863",
+        "7010f965-b8a4-4c28-8a8b-5c3d1c05519e",
+        "7fe98bbb-792b-41ab-807e-7b32961face4",
+        "71c042ae-61bf-4e58-9df0-0309de18886e",
+        "35ef03f3-4b68-4127-b842-2bc56a9cd8a1",
+        "c2829a82-d29a-4a81-ae60-bd263a48e978",
+        "15d0bca1-6d04-4e58-83da-b0e9f335ec88",
+        "fe657eba-0316-48d7-8775-4ae84072ae4c",
+        "0f4a3961-fd75-44a0-acb7-cbb172897684"
+      ],
+      "settings": {
+        "heading": "Still Have Questions?",
+        "caption": "Check out our FAQ's for answers",
+        "inner_caption": "Learn more about...",
+        "button_label": "START SELLING",
+        "button_link": "https:\/\/sellback.outandbackoutdoor.com\/",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "0a859807-3309-42aa-b22b-f2855cfb59b0",
+    "0d4908cb-b0d8-42dc-be26-1e3835a942f9",
+    "d09a601c-49dd-4d27-87e2-d38b1deae1a0",
+    "1ad50b68-fe00-4ef3-af5d-8555fa866d10",
+    "88a217f7-8815-4ffc-94f0-715dea01fad6",
+    "d5ae6892-983a-4160-ac94-2b24c01858df",
+    "1663891058b12727b0",
+    "1663744053b2eab893",
+    "df3ba87a-a61c-4c22-a8b5-06e92cd819a4",
+    "166381651869f39836",
+    "38ec2fe8-a52a-47bb-947c-445fe0947d16",
+    "1663824219c7148a8f",
+    "cef4507b-83d0-4697-80a3-7a1fcd2e0dae",
+    "1663890714f37ed65c"
+  ]
+}

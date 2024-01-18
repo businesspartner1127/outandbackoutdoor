@@ -1,0 +1,542 @@
+[
+    {
+      "Brands": "Alps Mountaineering",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Big Agnes",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Black Diamond",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Eureka",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "NO",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Exped",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Kelty",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Marmot",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Mountain Hardwear",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Mountainsmith",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "MSR",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Nemo",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "REI Co-Op",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Sea to Summit",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Sierra Designs",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "The North Face",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Mountain Equipment",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "RAB",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Therm-A-Rest",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "YES",
+      "Pads": "YES",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Klymit",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "YES",
+      "Bags": "YES",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Arc'teryx",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Burton",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Camelbak",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Chrome",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Cotopaxi",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Dakine",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Deuter",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Eagle Creek",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Fjallraven",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Granite Gear",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Gregory",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Hyperlite Mountain Gear",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "YES",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Jansport",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Mammut",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Mystery Ranch",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Osprey",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Pacsafe",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Patagonia",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Salomon",
+      "Outerwear": "YES",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Thule",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Timbuk2",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Ultimate Direction",
+      "Outerwear": "NO",
+      "Backpacks": "YES",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Columbia",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Helly Hansen",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Icebreaker",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Norrona",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Obermeyer",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Outdoor Research",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Prana",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "Smartwool",
+      "Outerwear": "YES",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "NO"
+    },
+    {
+      "Brands": "ASSOS",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "ATTAQUER",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Black Sheep Cycling",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Capo",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Castelli",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Giro",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "MAAP",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Pearl Izumi",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "POC",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Rapha",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    },
+    {
+      "Brands": "Sigr",
+      "Outerwear": "NO",
+      "Backpacks": "NO",
+      "Tents": "NO",
+      "Bags": "NO",
+      "Pads": "NO",
+      "Cycling": "YES"
+    }
+   ]

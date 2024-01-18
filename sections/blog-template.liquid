@@ -1,0 +1,423 @@
+{% paginate blog.articles by 12 %}
+
+
+<div id="blogHero" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/blogimg.jpg?v=1614109594);">
+  	<div class="section-header text-center">
+  		<h1 style="color:#fff;">{{ page_title }}</h1>
+	</div>
+</div>
+<div id="wave"></div>
+	<div class="page-width">
+    <div class="intro-copy-container">
+      <p>Every good adventure- big or small has a plan behind it. Whether it’s loosely defined or extremely detailed, a plan helps us connect with others, learn along the way and most importantly, prepare for our upcoming adventures.</p>
+      <p>Out&amp;Back Outdoors understands that there’s more to planning than just gear (although it is really important), and that’s why we’ve created The Plan. It’s our version of a blog that provides you with additional tidbits for your upcoming outdoor adventures. So whether you’re looking for activity checklists, educational guides, local communities or destination ideas, we’ve got you covered. Happy Adventuring.</p>
+    </div>
+    {% if blog.tags.size > 0 %}
+      <div class="blog-filter">
+        <label class="blog-filter__label select-label" for="BlogTagFilter">{{ 'collections.filters.title_tags' | t }}</label>
+        <div class="select-group">
+          <select id="BlogTagFilter" aria-describedby="a11y-refresh-page-message a11y-selection-message">
+            <option value="{{ blog.url }}">{{ 'blogs.article.all_topics' | t }}</option>
+            {% if blog.all_tags contains 'checklists' %}
+            <option value="{{ blog.url }}/tagged/checklists" {% if current_tags contains 'checklists' %}selected{% endif %}>Checklists</option>
+            {% endif %}
+            {% if blog.all_tags contains 'educational' %}
+            <option value="{{ blog.url }}/tagged/educational" {% if current_tags contains 'educational' %}selected{% endif %}>Educational</option>
+            {% endif %}
+            {% if blog.all_tags contains 'events' %}
+            <option value="{{ blog.url }}/tagged/events" {% if current_tags contains 'events' %}selected{% endif %}>Events</option>
+            {% endif %}
+            {% if blog.all_tags contains 'gear' %}
+            <option value="{{ blog.url }}/tagged/gear" {% if current_tags contains 'gear' %}selected{% endif %}>Gear</option>
+            {% endif %}
+            {% if blog.all_tags contains 'in-the-press' %}
+            <option value="{{ blog.url }}/tagged/in-the-press" {% if current_tags contains 'in-the-press' %}selected{% endif %}>In the press</option>
+            {% endif %}
+            {% if blog.all_tags contains 'used-gear' %}
+            <option value="{{ blog.url }}/tagged/used-gear" {% if current_tags contains 'used-gear' %}selected{% endif %}>Used gear</option>
+            {% endif %}
+          </select>
+          {% include 'icon-chevron-down' %}
+        </div>
+      </div>
+    {% endif %}
+</div>
+{% if section.settings.layout == 'grid' %}
+  <div class="page-width">
+    <ul class="row blogContainer" style="display:flex;flex-wrap:wrap;align-content:center;">
+      {% for article in blog.articles %}
+        <li class="col-md-4 blogPost">
+          <div class="blogWrapper">
+          
+            <div class="blogHero" style="background-image: url({{ article.image | img_url: '1600x'  }});">
+            	            {% if article.tags.size > 0 %}
+              <div class="article__tags rte">
+                <ul class="list--inline" aria-label="{{ 'blogs.article.tags' | t }}">
+                  {% for tag in article.tags %}
+                    <li class="tag">
+                      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article__grid-tag">{{ tag }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            </div>
+            <div class="wave" style="height:40px;margin-top:-40px;"></div>
+              
+
+            <h2 class="article__title h3{% if article.image %} article__title--has-image{% endif %}">
+              {{ article.title | escape  | strip_html | truncate: 45 }}
+            </h2>
+          
+
+          <div class="article__grid-meta{% if article.image %} article__grid-meta--has-image{% endif %}">
+            {% if section.settings.blog_show_author %}
+              <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+            {% endif %}
+
+            {% if section.settings.blog_show_date %}
+              <span class="article__date">
+                {{ article.published_at | time_tag: format: 'date' }}
+              </span>
+            {% endif %}
+
+            <div class="rte article__grid-excerpt">
+              {% if article.excerpt.size > 0 %}
+              	<p>
+                {{ article.excerpt | strip_html | truncate: 150 }}
+              </p>
+              {% else %}
+              	<p>
+                {{ article.content | strip_html | truncate: 150 }}
+              </p>
+              {% endif %}
+            </div>
+
+            <ul class="list--inline article__meta-buttons">
+              <li>
+                <a href="{{ article.url }}" class="learn-more" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                  {{ 'blogs.article.read_more' | t }}
+                </a>
+              </li>
+
+              {% if blog.comments_enabled? and article.comments_count > 0 %}
+                <li>
+                  <a href="{{ article.url }}#comments" class="learn-more">
+                    {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% else %}
+  <ul class="blog-list-view">
+    {% for article in blog.articles %}
+      <li class="border-top">
+        <div class="page-width">
+          <div class="grid">
+            <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+              <div class="article-listing">
+                <h2 class="article__title h3"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                {% if section.settings.blog_show_author %}
+                  <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+                {% endif %}
+
+                {% if section.settings.blog_show_date %}
+                  <span class="article__date">
+                    {{ article.published_at | time_tag: format: 'date' }}
+                  </span>
+                {% endif %}
+
+                {% if article.image %}
+                  {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+                  {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+                  {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                  {% include 'image-style', image: article.image, height: 600, wrapper_id: img_wrapper_id, img_id: img_id %}
+
+                  <div id="{{ img_wrapper_id }}" class="article__list-image-wrapper js">
+                    <a href="{{ article.url }}" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;" class="article__list-image-container">
+                      <img id="{{ img_id }}"
+                           class="article__list-image lazyload"
+                           src="{{ article.image | img_url: '300x300' }}"
+                           data-src="{{ img_url }}"
+                           data-widths="[180, 360, 540, 720, 905, 1090, 1296, 1512, 1728, 2048]"
+                           data-aspectratio="{{ article.image.aspect_ratio }}"
+                           data-sizes="auto"
+                           alt="">
+                    </a>
+                  </div>
+
+                  <noscript>
+                    <p>
+                      <a href="{{ article.url }}">
+                        {{ article | img_url: '455x300', scale: 2 | img_tag: article.title }}
+                      </a>
+                    </p>
+                  </noscript>
+                {% endif %}
+
+                <div class="rte">
+                  {% if article.excerpt.size > 0 %}
+                    {{ article.excerpt }}
+                  {% else %}
+                    {{ article.content | strip_html | truncate: 150 }}
+                  {% endif %}
+                </div>
+
+                {% if article.tags.size > 0 %}
+                  <div class="article__tags article__tags--list rte">
+                    {{ 'blogs.article.posted_in' | t }}
+                    {% for tag in article.tags %}
+                      <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <ul class="list--inline article__meta-buttons">
+                  <li>
+                    <a href="{{ article.url }}" class="learn-more" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                      {{ 'blogs.article.read_more' | t }}
+                    </a>
+                  </li>
+
+                  {% if blog.comments_enabled? and article.comments_count > 0 %}
+                    <li>
+                      <a href="{{ article.url }}#comments" class="learn-more">
+                        {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{%- if paginate.pages > 1 -%}
+  {% include 'pagination', paginate: paginate %}
+{%- endif -%}
+
+{% endpaginate %}
+
+<div class="page-width">
+  <div class="grid">
+    {% form 'contact', id: 'blog-content', data-form_type: "blog-content" %}
+      {% if form.posted_successfully? == false %}
+          <div class="form-copy">
+              <h5>Not Seeing What You’re Looking For?</h5>
+              <div class="event-intro">We want to make sure the content we provide is actually helpful in pursuing your outdoor adventures. Have a topic in mind that you think is interesting and should be considered for an upcoming post? If so, let us know by completing the form below.</div>
+          </div>
+          <p class="required">Required Fields*</p>
+      {% endif %}
+
+      {% if form.errors contains 'email' %}
+        <span id="{{ formId }}-email-error" class="input-error-message">
+        <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+        {% include 'icon-error' %}
+        <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+        </span>
+      {% endif %}
+
+      <div class="row">
+        <input type="hidden" name="contact[form]" value="Blog Content" />
+        <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[first]" id="{{ formId }}-first" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}" placeholder="First Name*" required aria-label="First Name*" aria-required="true" required autocorrect="off" autocapitalize="off">
+        </div>
+        <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[last]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}" placeholder="Last Name*" required aria-label="Last Name*" aria-required="true" required autocorrect="off" autocapitalize="off">
+        </div>
+
+        <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+            <input type="email" name="contact[email]" id="{{ formId }}-email" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" placeholder="Email*" required aria-label="Email*" aria-required="true" required autocorrect="off" autocapitalize="off">
+        </div>
+
+        <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[topic]" id="{{ formId }}-topic" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.topic %}{{ form.topic }}{% elsif customer %}{{ customer.topic }}{% endif %}" placeholder="Topic*" required aria-label="Topic*" aria-required="true" required autocorrect="off" autocapitalize="off">
+        </div>
+        
+        <div class="event_submit">
+            <input type="submit" class="sell-submit" style="padding 10px !important" value="Submit Topic">
+        </div>
+        </div>
+      </div>
+      {% if form.posted_successfully? %}
+
+      <script>
+        $("document").ready(function() {  
+            $("#sellProduct").trigger('click');
+        });
+      </script>
+
+      <style>
+        form .row{
+            display: none; 
+        }
+      </style>
+
+      <div class="form-success">
+        <h5>Thank you for submitting a topic of interest. One of our team members will start to dig in and may contact you for additional details! Thank you.</h5>
+      </div>
+      {% endif %}
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "da": "Blogsider",
+    "de": "Blogseiten",
+    "en": "Blog pages",
+    "es": "Páginas del blog",
+    "fi": "Blogisivut",
+    "fr": "Pages du blog",
+    "hi": "ब्लॉग पेज",
+    "it": "Pagine del blog",
+    "ja": "ブログページ",
+    "ko": "블로그 페이지",
+    "nb": "Bloggsider",
+    "nl": "Blogpagina's",
+    "pt-BR": "Páginas do blog",
+    "pt-PT": "Páginas do blogue",
+    "sv": "Bloggsidor",
+    "th": "หน้าบล็อก",
+    "zh-CN": "博客页面",
+    "zh-TW": "部落格頁面"
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": {
+        "da": "Layout",
+        "de": "Layout",
+        "en": "Layout",
+        "es": "Diseño",
+        "fi": "Asettelu",
+        "fr": "Mise en page",
+        "hi": "लेआउट",
+        "it": "Layout",
+        "ja": "レイアウト",
+        "ko": "레이아웃",
+        "nb": "Oppsett",
+        "nl": "Opmaak",
+        "pt-BR": "Layout",
+        "pt-PT": "Esquema",
+        "sv": "Layout",
+        "th": "เลย์เอาต์",
+        "zh-CN": "布局",
+        "zh-TW": "版面配置"
+      },
+      "default": "list",
+      "options": [
+        {
+          "value": "grid",
+          "label": {
+            "da": "Gitter",
+            "de": "Raster",
+            "en": "Grid",
+            "es": "Cuadrícula",
+            "fi": "Ruudukko",
+            "fr": "Grille",
+            "hi": "ग्रिड",
+            "it": "Griglia",
+            "ja": "グリッド",
+            "ko": "그리드",
+            "nb": "Rutenett",
+            "nl": "Raster",
+            "pt-BR": "Grade",
+            "pt-PT": "Grelha",
+            "sv": "Rutnät",
+            "th": "กริด",
+            "zh-CN": "网格",
+            "zh-TW": "網格"
+          }
+        },
+        {
+          "value": "list",
+          "label": {
+            "da": "Liste",
+            "de": "Liste",
+            "en": "List",
+            "es": "Lista",
+            "fi": "Luettelo",
+            "fr": "Liste",
+            "hi": "सूची",
+            "it": "Elenco",
+            "ja": "リスト",
+            "ko": "목록",
+            "nb": "Liste",
+            "nl": "Lijst",
+            "pt-BR": "Lista",
+            "pt-PT": "Lista",
+            "sv": "Lista",
+            "th": "รายการ",
+            "zh-CN": "列表",
+            "zh-TW": "清單"
+          }
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": {
+        "da": "Vis forfatter",
+        "de": "Autor anzeigen",
+        "en": "Show author",
+        "es": "Mostrar autor",
+        "fi": "Näytä tekijä",
+        "fr": "Afficher l'auteur",
+        "hi": "लेखक दिखाएं",
+        "it": "Mostra autore",
+        "ja": "執筆者を表示する",
+        "ko": "작성자 표시",
+        "nb": "Vis forfatter",
+        "nl": "Auteur weergeven",
+        "pt-BR": "Exibir autor",
+        "pt-PT": "Mostrar autor",
+        "sv": "Visa författare",
+        "th": "แสดงผู้เขียน",
+        "zh-CN": "显示作者",
+        "zh-TW": "顯示作者"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "da": "Vis dato",
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fi": "Näytä päivämäärä",
+        "fr": "Afficher la date",
+        "hi": "दिनांक दिखाएं",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "ko": "날짜 표시",
+        "nb": "Vis dato",
+        "nl": "Datum weergeven",
+        "pt-BR": "Exibir data",
+        "pt-PT": "Mostrar data",
+        "sv": "Visa datum",
+        "th": "แสดงวันที่",
+        "zh-CN": "显示日期",
+        "zh-TW": "顯示日期"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}

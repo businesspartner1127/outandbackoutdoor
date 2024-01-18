@@ -1,0 +1,275 @@
+{% style %}
+
+  .cs-product-template .cs-container .cs-grid .cs-content .product-single__description ul {
+    margin: 0;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-single__description li {
+    list-style: none;
+    background-image: url('{{ 'green-check.png' | asset_img_url: 'master' }}');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 25px;
+    padding-left: 2em;
+  }
+
+{% endstyle %}
+
+<section class="cs-product-template"
+  id="ProductSection-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+  data-enable-history-state="true"
+  data-ajax-enabled="{{ settings.enable_ajax }}"
+>
+
+{{ 'custom-gift-card-template.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
+{% if collection %}    
+  <div class="cs-container">
+    <a href="{{ collection.url }}">
+      <div class="cs-back">            
+        <span class="material-symbols-outlined">arrow_back</span> Back to {{ collection.title }}
+      </div>
+    </a>
+  </div>
+{% endif %}
+
+<div class="cs-images-mobile">
+  <div class="cs-container">
+    <h1 class="cs-product-title">{{ product.title }}</h1>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {% for image in product.images limit:10 %}
+          <div class="swiper-slide">
+            <div class="cs-image-container"><img src="{{ image.src | product_img_url: 'large' }}"></div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    grabCursor: true,
+    centeredSlides: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+  });
+</script>
+
+  {% comment %}
+    Get first variant, or deep linked one
+  {% endcomment %}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign product_image_zoom_size = '1024x1024' -%}
+  {%- assign product_image_scale = '2' -%}
+  {%- assign enable_image_zoom = section.settings.enable_image_zoom -%}
+  {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = current_variant.price -%}
+
+  {% if product.has_only_default_variant %}
+    {% style %}
+      .cs-product-template .cs-container .cs-grid .cs-content .product__price {
+        display: none;
+      }
+      .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group {
+        display: none;
+      }
+      .cs-product-template .cs-container .cs-grid .cs-content .cs-info {
+        display: none;
+      }
+    {% endstyle %}
+  {% endif %}
+
+  <div class="cs-container">    
+  <div class="cs-grid">
+    <div class="cs-images-container">
+      <div class="cs-images-desktop">
+        {% for image in product.images limit:10 %}              
+          <div class="cs-image"><img class="cs-product-image" src="{{ image.src | product_img_url: 'large' }}"></div>              
+        {% endfor %}                    
+      </div>
+    </div>
+    <div class="cs-content">
+      <div class="product-single__meta">
+        <h1 class="product-single__title">{{ product.title }}</h1>
+        <script>window.performance.mark('debut:product:title_visible');</script>
+          <div class="product__price">
+            {% include 'custom-product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
+          </div>
+          {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+            <div class="product__policies rte" data-product-policies>
+              {%- if shop.taxes_included -%}
+                {{ 'products.product.include_taxes' | t }}
+              {%- endif -%}
+              {%- if shop.shipping_policy.body != blank -%}
+                {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {% capture "form_classes" -%}
+            product-form product-form-{{ section.id }}
+            {%- if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {%- endif -%}
+            {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
+          {%- endcapture %}
+
+          {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+            
+          {% include 'custom-normal-selector' %}
+
+          <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}"{%- if variant == current_variant %} selected="selected"{%- endif -%} data-note="{{ variant.metafields.custom.specific_item_notes.value }}">
+                {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+              </option>
+            {% endfor %}
+          </select>
+
+            {% if section.settings.show_quantity_selector %}
+              <div class="product-form__controls-group">
+                <div class="product-form__item">
+                  <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                  <input type="number" id="Quantity-{{ section.id }}"
+                    name="quantity" value="1" min="1" pattern="[0-9]*"
+                    class="product-form__input product-form__input--quantity" data-quantity-input
+                  >
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+              data-error-message-wrapper
+              role="alert"
+            >
+              <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              {% include 'icon-error' %}
+              <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+            </div>
+
+            <div class="product-form__controls-group product-form__controls-group--submit">
+              <div class="product-form__item product-form__item--submit
+                {%- if section.settings.enable_payment_button %} product-form__item--payment-button {%- endif -%}
+                {%- if product.has_only_default_variant %} product-form__item--no-variants {%- endif -%}"
+              >
+                <button type="submit" name="add"
+                  {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                  aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+                  class="btn product-form__cart-submit"
+                  {% if settings.enable_ajax %}aria-haspopup="dialog"{% endif %}
+                  data-add-to-cart>
+                  <span data-add-to-cart-text>
+                    {% unless current_variant.available %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% else %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% endunless %}
+                  </span>
+                  <span class="hide" data-loader>
+                    {% include 'icon-spinner' %}
+                  </span>
+                </button>
+                {% if section.settings.enable_payment_button %}
+                  {{ form | payment_button }}
+                {% endif %}
+              </div>
+            </div>
+          {% endform %}
+        </div>
+
+        {%- comment -%}
+          Live region for announcing updated price and availability to screen readers
+        {%- endcomment -%}
+        <p class="visually-hidden" data-product-status
+          aria-live="polite"
+          role="status"
+        ></p>
+
+        {%- comment -%}
+          Live region for announcing that the product form has been submitted and the
+          product is in the process being added to the cart
+        {%- endcomment -%}
+        <p class="visually-hidden" data-loader-status
+          aria-live="assertive"
+          role="alert"
+          aria-hidden="true"
+        >{{ 'products.product.loader_label' | t }}</p>
+
+        <div
+          class="product-single__store-availability-container"
+          data-store-availability-container
+          data-product-title="{{ product.title | escape }}"
+          data-has-only-default-variant="{{ product.has_only_default_variant }}"
+          data-base-url="{{ shop.url }}{{ routes.root_url }}"
+        >
+        </div>
+
+        <div class="cs-info">
+          <p><img src="{{ 'green-check.png' | asset_img_url: 'master' }}" /> Free Shipping</p>
+          <p><img src="{{ 'green-check.png' | asset_img_url: 'master' }}" /> Free 30-Day Returns</p>
+        </div>
+
+        <div class="cs-tags">            
+            {% for tag in product.tags %}
+              {% unless tag contains '-auto-' %}                   
+                <a href="/collections/all/{{ tag }}" class="cs-tag">{{ tag }}</a>
+              {% endunless %}
+            {% endfor %}          
+          </div>
+
+        <div class="product-single__description rte">
+          {{ product.description }}
+        </div>        
+        {% include 'custom-social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
+    </div>
+  </div>
+  </div>
+</section>
+
+{% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+  <script type="application/json" id="ModelJson-{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Custom Product Gift Card",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "share_facebook",
+      "label": "Show Facebook Share Button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "share_twitter",
+      "label": "Show Twitter Share Button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "share_email",
+      "label": "Show Email Share Button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "share_sms",
+      "label": "Show SMS Share Button",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+<div class="custom-fields-section">
+  
+    {% if resource_type == "products" %}
+    <div class="custom-fields-section__products">
+      {% for block in blocks %}
+      {% if block.type contains "cf_" %}
+      <div class="custom-fields-section__item custom-fields-section__item--{{ block.type }} custom-fields-section__item--{{ block.type }}--{{ block.settings.key }}" {{ block.shopify_attributes }}>
+        {% case block.settings.key %}
+        
+          {% when "brand_image_source" %}
+            {% render "custom_fields.products.brand_image_source" %}
+        
+          {% when "brand_image_url" %}
+            {% render "custom_fields.products.brand_image_url" %}
+        
+          {% when "brand_sku" %}
+            {% render "custom_fields.products.brand_sku" %}
+        
+          {% when "found_details_colors" %}
+            {% render "custom_fields.products.found_details_colors" %}
+        
+          {% when "found_details_condition" %}
+            {% render "custom_fields.products.found_details_condition" %}
+        
+          {% when "found_details_price" %}
+            {% render "custom_fields.products.found_details_price" %}
+        
+          {% when "found_details_sizes" %}
+            {% render "custom_fields.products.found_details_sizes" %}
+        
+          {% when "found_details_source_url" %}
+            {% render "custom_fields.products.found_details_source_url" %}
+        
+          {% when "price_range_high" %}
+            {% render "custom_fields.products.price_range_high" %}
+        
+          {% when "price_range_low" %}
+            {% render "custom_fields.products.price_range_low" %}
+        
+          {% when "product_links" %}
+            {% render "custom_fields.products.product_links" %}
+        
+        {% endcase %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  
+</div>

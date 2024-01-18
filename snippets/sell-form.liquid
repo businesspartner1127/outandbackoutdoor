@@ -1,0 +1,162 @@
+<div id="sellerForm" class="toggleSection">
+            	<div id="sell" class="form-container">
+                
+                {% form 'contact', id: 'sell', novalidate: 'novalidate', data-form_type: "sell" %}
+                   
+                  	{% if form.errors contains 'email' %}
+                      
+                      <script>
+                        $("document").ready(function() {  
+                        	$("#sellProduct").trigger('click');
+                        });
+                      </script>
+                      
+                      <span id="{{ formId }}-email-error" class="input-error-message">
+                        <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                        {% include 'icon-error' %}
+                        <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                      </span>
+                    
+                    
+                    {% endif %}
+                  	
+  					<div class="row">
+                    <input type="hidden" name="checkout_url" value="{{product.url}}" />
+                    <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="text"
+                        name="contact[first]"
+                        id="{{ formId }}-first"
+                        class="input-group__field {% if form.errors %} input--error{% endif %} required"
+                        value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}"
+                        placeholder="First Name*"
+                        aria-label="First Name*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-first-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+                  <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="text"
+                        name="contact[last]"
+                        id="{{ formId }}-last"
+                        class="input-group__field {% if form.errors %} input--error{% endif %} required"
+                        value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}"
+                        placeholder="Last Name*"
+                        aria-label="Last Name*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-last-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+                      
+                    <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                  	<select class="condition input-group__field required" value="contact[Brand]" aria-required="true" placeholder="Brand Name*" required>
+                      <option value="{{ product.vendor }}">{{ product.vendor }}</option>
+                    </select>
+                  </div>
+                  
+                  <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="text"
+                        readonly
+                        name="contact[product]"
+                        id="{{ formId }}-product"
+                        class="input-group__field {% if form.errors %} input--error{% endif %} required"
+                        value="{{ product.title }}"
+                        placeholder="Product Name*"
+                        aria-label="Product Name*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-product-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+                  
+                  <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="email"
+                        name="contact[email]"
+                        id="{{ formId }}-email"
+                        class="input-group__field {% if form.errors %} input--error{% endif %} required"
+                        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                        placeholder="Email*"
+                        aria-label="Email*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-email-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+                  
+                  <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                  	<select class="condition input-group__field required" name="contact[Condition]" aria-required="true" placeholder="Condition*" required>
+                      <option value="" disabled selected>Condition*</option>
+                      <option value="New – with or without original tags">New – with or without original tags</option>
+                      <option value="Used and Excellent – no real signs of wear">Used and Excellent – no real signs of wear</option>
+                      <option value="Used and Good – some wear, functions perfec">Used and Good – some wear, functions perfect</option>
+                      <option value="Used and Worn – signs of wear are obvious">Used and Worn – signs of wear are obvious</option>
+                      <option value="Used and Busted – broken, torn, etc.">Used and Busted – broken, torn, etc.</option>
+                    </select>
+                  </div>
+                  <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}" style="margin: 20px 0;">
+                      <input type="checkbox" name="contact[agree]" id="agree" class="required input-group__field {% if form.errors %} input--error{% endif %}" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-email-error" data-form-status endif required>
+                    <div class="agreeText">By submitting your information, you agree to Out&amp;Back's <a href="/pages/terms-of-use" target="_blank">terms of use</a> and <a href="/pages/privacy-policy" target="_blank">privacy policy</a>.</div>
+                   </div> 
+                  <div class="col-md-6">
+                  	<input type="submit" class="learn-more"/ >
+                  </div>
+                  
+                    
+                    </div>
+                {% if form.posted_successfully? %}				
+                  <script>
+                        /*$("document").ready(function() {  
+                        	//$("#sellProduct").trigger('click');
+                            if(sessionStorage.getItem('report') != 'success') {
+                                $("#sellProduct").trigger('click');
+                            };
+                            
+                        });*/
+                    	
+                      window.location = "/pages/sell-request-thanks";
+                        
+                      </script>
+                  	
+                  	<!--
+                  	<style>
+                    	form .row{
+                         	display: none; 
+                        }
+                  	</style>
+                  
+                 
+                    <div class="formSuccess">
+                      <h5>Thank you for your submission! We'll get back to you shortly with our latest offer on your used product.</h5>
+                    </div>-->
+                    {% endif %}
+                   
+                  	
+                  {% endform %}
+                    
+
+                  
+
+            	</div>
+          </div>
+		  <div id="sell-close-btn"><i class="fa fa-times"></i></div>

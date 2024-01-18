@@ -1,0 +1,209 @@
+{{ 'custom-cards.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+    .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}em;
+        padding-bottom: {{ section.settings.padding_bottom }}em;
+    }
+    .section-{{ section.id }} .cs-container h2 {
+        color: {{ section.settings.title_color }};
+    }
+{% endstyle %}
+
+<section id="{{ section.id }}" class="section-{{ section.id }} cs-cards">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2>{{ section.settings.heading }}</h2>
+            <div class="cs-grid">            
+                {% for block in section.blocks %}
+                    {% if block.type == 'card' %}
+                        {%- style -%}
+                            .cs-card.active {
+                                background: #f7f7f7 !important;
+                                transition: background-color 200ms linear;                                
+                            }                            
+                            .cs-card.block-{{ block.id }} {
+                                {% if block.settings.card_background_image != blank %}
+                                    background: url({{ block.settings.card_background_image | img_url: '600x' }});
+                                {% else %}
+                                    background: {{ block.settings.card_background_color }};
+                                {% endif %}
+                            }
+                            .cs-card.block-{{ block.id }} h3 {
+                                color: {{ block.settings.title_color }} !important;
+                            }
+                            .cs-card.block-{{ block.id }} h4 {
+                                color: {{ block.settings.sub_title_color }} !important;
+                            }
+                            .cs-card.block-{{ block.id }} .cs-paragraph p {
+                                color: {{ block.settings.paragraph_color }} !important;
+                            }
+                        {%- endstyle -%}
+                        <div class="cs-card block-{{ block.id }}">
+                            {% if block.settings.title != blank %}
+                                <h3>{{ block.settings.title }}</h3>
+                            {% endif %}
+                            {% if block.settings.sub_title != blank %}
+                                <h4>{{ block.settings.sub_title }}</h4>
+                            {% endif %}
+                            {% if block.settings.paragraph != blank %}
+                                <div class="cs-paragraph">{{ block.settings.paragraph }}</div>
+                            {% endif %}
+                            {% if block.settings.full_paragraph != blank %}
+                                <div class="cs-full-paragraph">{{ block.settings.full_paragraph }}</div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>    
+
+    $('.section-{{ section.id }} .cs-card').each(function() {
+        $(this).on('click', function() {
+            $(this).children('.cs-full-paragraph').slideToggle(100, function() {
+                if($(this).is(':hidden')) {                                   
+                    $(this).parent('.cs-card').removeClass('active')
+                } else {                    
+                    $(this).parent('.cs-card').addClass('active')
+                }
+            })
+        })
+    })
+
+</script>
+
+{% schema %}
+{
+"name": "Custom Cards",
+"settings": [
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "OPEN ROLES:"
+    },
+    {
+        "type": "header",
+        "content": "Paddings"
+    },
+    {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "em",
+        "label": "Padding Top",
+        "default": 2
+    },
+    {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "em",
+        "label": "Padding Bottom",
+        "default": 2
+    },
+    {
+        "type": "header",
+        "content": "Colors"
+    },
+    {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#000"
+    }
+],
+"blocks": [
+    {
+        "name": "Cards",
+        "type": "card",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "SENIOR ENGINEER"
+            },
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Subtitle",
+                "default": "Remote"
+            },
+            {
+                "type": "richtext",
+                "id": "paragraph",
+                "label": "Paragraph",
+                "default": "<p>Full Time<br\/>$105k-$120k\/year<br\/>+Benefits (medical, dental, etc.)<br\/>Remote (must be in USA)<\/p>"
+            },
+            {
+                "type": "richtext",
+                "id": "full_paragraph",
+                "label": "Full Paragraph",
+                "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat pretium felis ut egestas. Donec ut consequat arcu.<br\/><br\/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat pretium felis ut egestas. Donec ut consequat arcu.<\/p>"
+            },
+            {
+                "type": "header",
+                "content": "Colors and Backgrounds"
+            },
+            {
+                "type": "image_picker",
+                "id": "card_background_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "color",
+                "id": "card_background_color",
+                "label": "Background Color",
+                "default": "#241d57"
+            },
+            {
+                "type": "color",
+                "id": "title_color",
+                "label": "Title Color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "sub_title_color",
+                "label": "Subtitle Color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "paragraph_color",
+                "label": "Paragraph Color",
+                "default": "#fff"
+            }
+        ]
+    }    
+],
+"presets": [
+    {
+        "name": "Custom Cards",
+        "blocks": [
+            {
+                "type": "card"
+            },
+            {
+                "type": "card"
+            },
+            {
+                "type": "card"
+            },
+            {
+                "type": "card"
+            }
+        ]
+    }
+]
+}
+{% endschema %}

@@ -1,0 +1,39 @@
+{% render "blocks.custom_fields" with resource_type: "products", blocks: section.blocks %}
+{% schema %}
+  {
+    "name": {
+        "en": "Custom Fields"
+    },
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "[View Documentation](https:\/\/custom-fields.docs.bonify.io\/)"
+        },
+        {
+            "type": "paragraph",
+            "content": "[Edit Custom Fields](https:\/\/customfields.bonify.io\/dashboard\/out-and-back-outdoor.myshopify.com\/products\/configure)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "cf_f_json",
+            "name": {
+                "en": "JSON"
+            },
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "key",
+                    "label": "Select a Field",
+                    "options": [
+                        {
+                            "value": "product_links",
+                            "label": "product_links"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

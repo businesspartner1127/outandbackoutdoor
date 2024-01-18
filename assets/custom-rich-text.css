@@ -1,0 +1,63 @@
+/* custom richtext */
+.cs-rich-text {
+  background: #f8f8f8;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-inner-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-inner-title strong {
+  font-weight: 700;
+  filter: brightness(20%);
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-items {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-items p {
+  font-size: 1rem;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-items .cs-title {
+  font-weight: 600;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.cs-rich-text .cs-container .cs-grid .cs-content .cs-links a {
+  width: 20em;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 1200px) {
+  .cs-rich-text {
+    background: #f8f8f8;
+  }
+  .cs-rich-text .cs-container .cs-grid .cs-content .cs-items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cs-rich-text {
+    background: #f8f8f8;
+  }
+  .cs-rich-text .cs-container .cs-grid .cs-content .cs-items {
+    grid-template-columns: 1fr;
+  }
+}
+/* end custom richtext */

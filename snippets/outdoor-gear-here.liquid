@@ -1,0 +1,79 @@
+{% style %}
+    .large-grid-container-gear {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        background: url({{ 'obo-sunrise.jpg' | asset_url }}) no-repeat;
+        background-size: cover;
+        height: 70vh;
+    }
+    .small-grid-container-wrap {
+        display: flex;
+    }
+    .grid-text-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-grow: 2;
+    }
+    .grid-text {
+        align-self: flex-end;
+        text-align: center;
+        font-family: 'Uniform', sans-serif;
+        color: #F00000;
+        line-height: normal;
+        font-size: 2rem;
+        background-color: rgba(255, 255, 255, 0.774);
+        width: 35%;
+        padding: 10px;
+    }
+    .seasonal-grid-button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+    .seasonal-grid-button {
+      display: flex;
+      justify-content: center;
+      width: 200px;
+      margin: 0px 10px 0px 10px;
+      color: #f00000;
+      background-color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: 900;
+    }
+    @media (max-width: 1000px) {
+        .grid-text {
+            font-size: 1.5rem;
+            width: 47%;
+        }
+    }
+    @media (max-width: 768px) {
+        
+    }
+    @media (max-width: 600px) {
+        .grid-text {
+            font-size: 1.3rem;
+        } 
+    }
+{% endstyle %}
+<div id="outdoor-gear-here" class="seasonal-grid-container">
+    <div class="large-grid-container-gear">
+        <div class="grid-text-container">
+            <div class="grid-text">
+                Welcome to the new way to shop and sell outdoor gear. We’re on a mission to create a more sustainable, attainable outdoor experience for everyone.
+            </div>
+        </div>
+        <div class="seasonal-grid-button-container">
+            <a href="/pages/about-us">
+                <div class="seasonal-grid-button">
+                    LEARN MORE
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

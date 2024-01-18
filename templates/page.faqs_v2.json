@@ -1,0 +1,678 @@
+{
+  "sections": {
+    "a525f6b9-072e-456c-bdc1-709a3320e31a": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-0": {
+          "type": "card",
+          "settings": {
+            "title": "What is Out&Back?",
+            "sub_title": "General",
+            "paragraph": "<p><\/p><p><\/p><p><\/p>",
+            "full_paragraph": "<p>We are a marketplace, founded in Colorado focused on making the outdoors and all of the gear that comes with it more accessible and sustainable for all. We deliver a first-class experience to secondhand shopping, creating an easier, faster and more transparent shopping and selling experience. When it comes to outdoor gear, we believe you should spend less time searching and more time adventuring.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "65d1ecba-7c29-4c20-956e-ab5f31d683c5": {
+          "type": "card",
+          "settings": {
+            "title": "Why should I shop used gear?",
+            "sub_title": "General",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>As adventurers and outdoor enthusiasts, protection and maintenance of the land we love to explore is important to us. By buying used, we can do our part in helping to protect Mother Earth by keeping gear in circulation, allowing it to stay on the trail longer versus the alternative. And as a bonus, used gear is just as high quality as new, yet for a much lower price. We think that's a win-win for all! <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "1750a9bf-828b-4f28-9096-bcc6f8b129fc": {
+          "type": "card",
+          "settings": {
+            "title": "Why should I shop used gear on Out&Back?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>At Out&Back, we understand the process of shopping for used gear is not always as straightforward as it seems and can involve hours of tedious Internet searching and frustrating online negotiations. That's why we focus on simplifying and streamlining the secondary shopping experience. Out&Back makes it easy to search, shop and save on used gear based on the brand, price, condition grade or other criteria that fits your needs. You can shop and sell with confidence knowing that Out&Back works extensively to authentically certify products sold on our website. And if you're still not convinced, our no-hassle return policy gives you the freedom to checkout the gear for yourself. If you're not satisfied, let us know and we'll coordinate a seamless return. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "9e077b7e-0705-489d-8ca4-b6ce80c10856": {
+          "type": "card",
+          "settings": {
+            "title": "What brands are featured on Out&Back?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>Our inventory spans across a wide variety of the top outdoor brands including The North Face, Patagonia, Big Agnes, Black Diamond, etc. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "dd39414a-27e6-40cd-8137-56c57c5580aa": {
+          "type": "card",
+          "settings": {
+            "title": "Are used products sold on Out&Back real?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>Yes! Our team thoroughly reviews and validates the authenticity and quality of every product in our inventory. You can easily shop all products featured on Out&Back with confidence.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "bfa7fe00-47b4-4378-b0dd-966e2bbc867e": {
+          "type": "card",
+          "settings": {
+            "title": "How are used products sold on Out&Back cleaned?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>We partner with TERSUS Solutions, a leader in textile circularity to authenticate, grade, clean and repair all items received via our sell-back program. Using their proprietary technology, TERSUS Solutions cleans and disinfects gear using recycled liquid CO2 to deliver industrial strength cleaning processes, while minimizing the environmental impact. In addition to their advanced cleaning capabilities, TERSUS Solutions is also a partner to many top Outdoor brands, building a keen eye for product authenticity and houses skilled experts in product repair. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "986c97e8-bc12-4bad-92a7-1a19b79ed3ae": {
+          "type": "card",
+          "settings": {
+            "title": "What do the used gear condition grades mean?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>Out&Back's condition grades keep it simple and straightforward so you know the exact condition of a product. <br\/>-New: This item has never been worn and will come with its original hang tags. <br\/>- Like-New: This is a new item where the tags have been removed. <br\/>-Used, Excellent: This is used but will have no real visible signs of wear and tear.<br\/>-Used, Good: This item has minor blemishes and aesthetic issues but no functional issues.<br\/>-Used, Worn: This item may have more obvious aesthetic issues, like a tear that needs to be fixed, but still functions as it was designed.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "3f8a2fc1-8bac-454e-abe9-3c54a05e7a26": {
+          "type": "card",
+          "settings": {
+            "title": "What if I can't find my color or size of a particular used gear?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>Our inventory is based on what's available in the market. If you happen to search for an item in a particular size or color and we don't currently have it in stock, we encourage you to keep checking back. You never know when your dream gear will be listed and ready for you to buy!<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "12c6a846-fcc7-4d42-8e64-00733903946a": {
+          "type": "card",
+          "settings": {
+            "title": "Who can I contact for additional questions (general inquiries)?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>For any general inquiries, order-specific questions, or feedback about your Out&Back experience, please contact our  team at info@outandbackoutdoor.com.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "b4544fa8-adea-40ad-926a-4f89c31a74a7": {
+          "type": "card",
+          "settings": {
+            "title": "Are you 1% For the Planet Members?",
+            "sub_title": "General",
+            "paragraph": "",
+            "full_paragraph": "<p>Man do we love Mother Earth. And that’s why we donate 1% of the value of all sellbacks to 1% of The Planet. So selling your unwanted gear not only puts cash in your pocket, but it also gives back to our beautiful planet.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "3892b7f4-ac30-44e8-955f-067236c1963e": {
+          "type": "card",
+          "settings": {
+            "title": "Why Do Unicorns Have a Single Horn?",
+            "sub_title": "Fantasy",
+            "paragraph": "",
+            "full_paragraph": "<p>Unicorns can see in the dark! A single horn is all they need to light up a trail, so they don’t have to worry about bumping into things or running into other unicorns. And because they are so special, they believe nobody should harm them so they stay far away from hotels and airplanes where people might be cruel.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-0",
+        "65d1ecba-7c29-4c20-956e-ab5f31d683c5",
+        "1750a9bf-828b-4f28-9096-bcc6f8b129fc",
+        "9e077b7e-0705-489d-8ca4-b6ce80c10856",
+        "dd39414a-27e6-40cd-8137-56c57c5580aa",
+        "bfa7fe00-47b4-4378-b0dd-966e2bbc867e",
+        "986c97e8-bc12-4bad-92a7-1a19b79ed3ae",
+        "3f8a2fc1-8bac-454e-abe9-3c54a05e7a26",
+        "12c6a846-fcc7-4d42-8e64-00733903946a",
+        "b4544fa8-adea-40ad-926a-4f89c31a74a7",
+        "3892b7f4-ac30-44e8-955f-067236c1963e"
+      ],
+      "settings": {
+        "heading": "GENERAL FAQs",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    },
+    "e30e1b9f-973c-4fc5-b143-639a856b5e58": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-0": {
+          "type": "card",
+          "settings": {
+            "title": "How do I receive payment for selling gear to Out&Back?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>Simple - Venmo, Paypal or giftcard. Upon accepting our offer, you’ll be asked to provide your Venmo (phone number) or Paypal (email address) ID which will allow us to seamlessly transfer payment to you upon final inspection of your item at our warehouse or upon drop off at a partner location. For gift card payment, you'll enter your corresponding email address and your gift card will be sent there. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-1": {
+          "type": "card",
+          "settings": {
+            "title": "How do I start selling through the Sellback program?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>Out&Back's sell-back program is the easiest way to sell your unwanted outdoor gear. Our proprietary sell-back tool will ask you a few simple questions about your gear and within minutes, you'll receive an instant offer! Click <a href=\"\/pages\/gear-sale-drop-off-locations\" target=\"_blank\">here<\/a> to start selling<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-2": {
+          "type": "card",
+          "settings": {
+            "title": "How does the sell-back process work?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>The process is quite simple. Once you’ve accepted our offer to sell your gear, you can expect the following:<br\/><\/p><p>1) Prepare your gear and ship to Out&Back or drop it off at a particpating partner location. For offers being mailed to us, we’ll email you a prepaid shipping label that will need to be affixed to the outside of your final package and dropped off at any USPS location. <br\/><\/p><p>2) O&B receives gear and completes final inspection: upon arriving at our warehouse, our team will inspect, clean and if needed, repair gear. <br\/><\/p><p>3) Get paid: as soon as we’ve confirmed the item’s details match those that you originally submitted, we will submit payment to you through one of our preferred payment providers - Venmo or Paypal.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-3": {
+          "type": "card",
+          "settings": {
+            "title": "How long does it take for my gear for show up on Out&Back?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>We focus on important details like thorough cleaning and repair before any gear is available for sale. Depending on the condition of the gear, such processes can take up to 2 weeks. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "020dd41f-2dce-425e-a7de-c9f1b1930dd5": {
+          "type": "card",
+          "settings": {
+            "title": "What brands of gear are accepted?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>Over time we hope to purchase just about any outdoor gear but at the moment, specific items from the following brands are accepted in our sell-back program. Please note that regardless of brand, we are not accepting safety gear or climbing gear at this time. <br\/><br\/>For a full list of brands that we accept, have a look <a href=\"\/pages\/brands-we-accept-for-sellback\" target=\"_blank\" title=\"Brands We Accept For Sellback\">here<\/a>. <br\/><br\/>For a more detailed list of type of gear accepted, spin through our sell-back tool.<br\/><br\/>if there's a brand missing from the list that you think would be a good addition, feel free to reach out to us at info@outandbackoutdoor.com. <br\/><\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "67219105-8c1d-4296-8b49-d8a6947014f8": {
+          "type": "card",
+          "settings": {
+            "title": "What information do I need to have to sellback my gear?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>You'll need to submit the following details: <br\/>1) brand name; 2) type of gear (pants, jacket, tent etc.); 3) size and color; 4) condition (tears, discoloration, missing parts, etc.); 5) (optional) SKU or item style name. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "90ae1be0-4be6-4d40-acf8-368868bf583b": {
+          "type": "card",
+          "settings": {
+            "title": "What brands or gear are NOT accepted?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>We cannot accept gear from any brand not explicitly listed in our approved brands accepted. Regardless of brand, we also cannot purchase safety gear including helmets and climbing gear of any kind (e.g., harnesses, rope, etc.). We cannot accept outright broken items that no longer work as intended. Finally, we cannot purchase any items that are 10 years or older from the date of manufacture. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "39816214-8d1b-4f07-b9e4-085dee0fb52c": {
+          "type": "card",
+          "settings": {
+            "title": "What condition does my gear need to be in?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>We accept gear in various conditions, but it is important to note that the level of wear and tear may impact the resale value. Gear will not be accepted if it is busted -- that is, if it has any damage that inhibits the function of the item as originally intended. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "a1f8c860-f22d-4bf4-ac72-a480e9d6bea1": {
+          "type": "card",
+          "settings": {
+            "title": "How much money will I receive for my used gear?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>The calculation of your offer takes into consideration a variety of factors, including but not limited to: the brand, style, size, color, age and condition of your gear.  <br\/><br\/>Want to see for yourself? We encourage you to <a href=\"https:\/\/sellback.outandbackoutdoor.com\/\" title=\"https:\/\/sellback.outandbackoutdoor.com\/\">try it out<\/a> today! You're just a few clicks away from earning cash for your unwanted outdoor gear. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "1f81588a-1a85-4982-a809-ad4662e8c45f": {
+          "type": "card",
+          "settings": {
+            "title": "How long does it take to get paid once I've sent my gear?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>As long as there are no discrepancies between the item and the description of its condition provided in your original sellback submission, you should recieve payment within two-three business days of us receiving your item! Note: processing times may be delayed due to general shipping & transit delays and\/or other COVID-19 -related processes. <\/p><p>If you want to be paid faster, use one of our drop off locations and you'll get paid as soon as you drop off your items. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "af20ca11-31a8-4b72-8bc6-f1b5b25792a3": {
+          "type": "card",
+          "settings": {
+            "title": "Do I have to pay to ship my used gear?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>Nope! Upon accepting one of our offers, you will receive an email with a prepaid shipping label.  Note: ownership of shipping may be your responsibility if you choose to receive an item back after it’s already been shipped to Out&Back. For oversized items, shipping ownership may vary between Out&Back and the consumer.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "c2062472-2796-40ff-bb19-882b960d68a6": {
+          "type": "card",
+          "settings": {
+            "title": "Does Out&Back provide packaging to ship my gear?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>No, however we attempt to use USPS priority shipping whenever possible which gives you access to complimentary envelopes and boxes. You can also reuse cardboard boxes from previous packages you've received. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "a6fd2fab-dbfb-4e45-a1b6-35959c9d4107": {
+          "type": "card",
+          "settings": {
+            "title": "What happens if my item gets lost in transit to Out&Back?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>As long as you use the shipping label provided by Out&Back and it's scanned into the USPS tracking system, your item will be covered by us should your package get lost in transit. If your trackable item never makes it to us, we will submit an insurance claim on your behalf and will reimburse you for the amount of the insurance claim minus our shipping costs. FYI - We insure items for the amount we offer you plus shipping costs.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "49f12a4f-b4b9-4990-94ef-30ca84e68246": {
+          "type": "card",
+          "settings": {
+            "title": "How does Out&Back determine my offer?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>Our proprietary set of tools helps us evaluate several details like product condition, color, brand and maturity. We compare such details with multiple retailers to present you with the most accurate and competitive offer in the market. In other words, we believe in fair offers for great gear.  <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "e71bb73f-84da-4c63-bb1e-329f2fb2848d": {
+          "type": "card",
+          "settings": {
+            "title": "Can I bargain with Out&Back on the selling price?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>At this time, our offer is final. We like to keep things simple and avoid the back-and-forth which can take time away from being outdoors.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "100e1d22-2d74-43b1-a563-448acaa3c5fd": {
+          "type": "card",
+          "settings": {
+            "title": "Does my offer expire?",
+            "sub_title": "Sellback",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Yes. Upon receiving your offer, you will have seven (7) days to accept. After seven days, the offer will automatically expire and you will need to re-submit the item through our sell back process for a new offer.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "5e7c6468-c629-410a-a0f8-781c7a956024": {
+          "type": "card",
+          "settings": {
+            "title": "What happens if I send an item and it differs from how I described it?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>This can happen... For example, you might have typed in the wrong item or style name by accident or there is an issue with a component on the item that you didn't notice, etc. When we receive an item that is different from what you originally submitted, one of three things can happen:<br\/><br\/>1) We make you another offer and you can choose to accept or decline: sometimes, we’re still interested in buying the item even though it’s different from your original request. In this case, we’ll present you with a new offer that you can kindly accept or decline. If you accept, great! We pay you, you move on. If you decline and would like your item returned, you will be financially responsible for shipping.<\/p><p><br\/>2) We don't make you another offer and you want the item returned: in some cases, the item is not something we can currently buy from you, thus aren’t able to make you another offer. In this case, you will be financially responsible for shipping.<br\/><\/p><p>3) If we don’t buy your item and you don't want it back, we donate it: if we can't buy the item from you and you aren’t interested in shipping the item back to you, we will gladly donate it on your behalf to one of our local partners who are in need of outdoor gear.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "59875bd7-d98e-418c-87e4-06c03894fd1d": {
+          "type": "card",
+          "settings": {
+            "title": "What happens to gear that is not accepted?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>As long as gear is in working condition with minor visible signs of wear and tear, we are likely to accept it. You will be able to use our sellback wizard to estimate whether your gear will be accepted and how much money you can earn! Gear that is sold back using an accepted offer will not be returned to the original owner unless the item does not match the specifications that were listed in the wizard. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "dd3ddf94-f675-4585-9d76-97ed3ec3a12b": {
+          "type": "card",
+          "settings": {
+            "title": "What happens to the gear that I sell to Out&Back?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>We work with specialized experts to clean, repair and refurbish outdoor gear. Once it's ready for a new adventure, gear is listed on our website for outdoor enthusiasts to purchase for their next adventure. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "5ccae79d-90ad-43f6-8315-c7c4770116df": {
+          "type": "card",
+          "settings": {
+            "title": "How do I receive my gift card from a partner you work with?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>We work with a gift card provider that allows us to issue gift cards from a variety of businesses. If you select the option to be paid via a gift card you will receive an email from our automated system that will guide you through the gift card redemption process. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "e25da707-868c-4ff6-9781-2aa017be2104": {
+          "type": "card",
+          "settings": {
+            "title": "Is there a maximum amount of gear that I can sell?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>The short answer is: sort of<\/p><p>For mail-in sellbacks, there is no limit to the number of items that a seller may sell to us and no limit on the  value of those items. They may not submit more than 10 items per sellback. However, they may submit as many sellbacks as they'd like. <\/p><p>On the other hand, there is a $500  value limit on all retail\/drop off sellbacks that a seller can process without being admitted to Out&Back's Verified Seller program. This $500 limit is the total value of all sellbacks submitted (EX: 1 sellback worth $500 and 10 sellbacks worth $50 each would both meet this limit threshold). If a seller decides to sell items worth greater than $500 in value, the first $500 will be paid to them upon receipt of the items at the<br\/>retail\/drop off location with any remaining value paid upon receipt of those items at our warehouse. <\/p><p>To be addmitted to the Super Seller program a seller must sell more than $500 worth of gear OR more than 3 times in a month OR more than 10 times in a year. Once any one of the above has occured, the last step is to  submit seven (7) consecutive items to our mail-in sellback program devoid of any recalculation errors related to gear type, naming or condition and limits on sellback value for retail will be increased. The amount of increase is at the discretion of Out&Back and is subject to continued accuracy in submissions over time. <\/p><p>Learn more about the Super Seller program <a href=\"https:\/\/outandbackoutdoor.com\/pages\/super-seller-program\" target=\"_blank\" title=\"https:\/\/outandbackoutdoor.com\/pages\/super-seller-program\">here<\/a>. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "defca986-8003-4604-8db9-82cba6b35ae0": {
+          "type": "card",
+          "settings": {
+            "title": "What is the Super Seller program?",
+            "sub_title": "Sellback",
+            "paragraph": "",
+            "full_paragraph": "<p>Whether selling gear is a side-hustle or your day job, if you’ve got lots of gear to sell, Out&Back can be a great partner! As a Super Seller, there are special perks that you should know about when it comes to engaging with Out&Back: <\/p><p>10% MORE CASH!<\/p><p>Use a personal code to get 10% bonus value on cash offers!<\/p><p>UNLIMITED DROP-OFFS<\/p><p>No in-person limits, so you can get paid right away!<\/p><p>DEDICATED SUPPORT<\/p><p>Get a customer service rep to help you whenever you need!<\/p><p>Learn more about the program and how to apply <a href=\"https:\/\/outandbackoutdoor.com\/pages\/super-seller-program\" target=\"_blank\" title=\"https:\/\/outandbackoutdoor.com\/pages\/super-seller-program\">here<\/a>. <\/p><p><\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-0",
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-1",
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-2",
+        "template--15960533631133__e30e1b9f-973c-4fc5-b143-639a856b5e58-1667328583b34cd334-3",
+        "020dd41f-2dce-425e-a7de-c9f1b1930dd5",
+        "67219105-8c1d-4296-8b49-d8a6947014f8",
+        "90ae1be0-4be6-4d40-acf8-368868bf583b",
+        "39816214-8d1b-4f07-b9e4-085dee0fb52c",
+        "a1f8c860-f22d-4bf4-ac72-a480e9d6bea1",
+        "1f81588a-1a85-4982-a809-ad4662e8c45f",
+        "af20ca11-31a8-4b72-8bc6-f1b5b25792a3",
+        "c2062472-2796-40ff-bb19-882b960d68a6",
+        "a6fd2fab-dbfb-4e45-a1b6-35959c9d4107",
+        "49f12a4f-b4b9-4990-94ef-30ca84e68246",
+        "e71bb73f-84da-4c63-bb1e-329f2fb2848d",
+        "100e1d22-2d74-43b1-a563-448acaa3c5fd",
+        "5e7c6468-c629-410a-a0f8-781c7a956024",
+        "59875bd7-d98e-418c-87e4-06c03894fd1d",
+        "dd3ddf94-f675-4585-9d76-97ed3ec3a12b",
+        "5ccae79d-90ad-43f6-8315-c7c4770116df",
+        "e25da707-868c-4ff6-9781-2aa017be2104",
+        "defca986-8003-4604-8db9-82cba6b35ae0"
+      ],
+      "settings": {
+        "heading": "SELLBACK FAQs",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    },
+    "a21a666d-14b4-430e-a7f9-9ee39c73cec5": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-0": {
+          "type": "card",
+          "settings": {
+            "title": "How do I track my order?",
+            "sub_title": "Orders",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Once your order items have shipped, tracking information will be sent to the email used to submit your original order. As an alternative, you can reach out directly to us at info@outandbackoutdoor.com with your name and order number and we can have a look for you. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-1": {
+          "type": "card",
+          "settings": {
+            "title": "How long will it take to receieve my order?",
+            "sub_title": "Orders",
+            "paragraph": "",
+            "full_paragraph": "<p>After your order is placed, there is a short processing window for our team to ensure your item(s) are ready for their next big adventure. All items are then shipped either via USPS, UPS or Fedex. Based on this, it typically takes 7-10 days for items to be recieved after an order is placed. This is not a guarantee and delivery is subject to a number of external factors.<\/p><p>Note: orders placed on Thursdays after 5pm MST will be fulfilled the following Monday.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-2": {
+          "type": "card",
+          "settings": {
+            "title": "What is Out&Back's cancellation policy?",
+            "sub_title": "Orders",
+            "paragraph": "",
+            "full_paragraph": "<p>Due to the quick turnaround of our processing department, orders submitted on Out&Back cannot be cancelled once they have been submitted. If upon receiving your gear you still don't love it, you are welcome to return it. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-3": {
+          "type": "card",
+          "settings": {
+            "title": "Where does Out&Back ship to?",
+            "sub_title": "Orders",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>We currently ship within the United States and Canada. We hope to expand our shipping capabilities in the near future, so we encourage our international customers to join our newsletter for updates!<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "7548501f-cbda-4855-a186-db003391ca86": {
+          "type": "card",
+          "settings": {
+            "title": "What if something is wrong with my order upon arrival?",
+            "sub_title": "Orders",
+            "paragraph": "",
+            "full_paragraph": "<p>We currently only ship within the United States. We hope to expand our shipping capabilities in the near future, so we encourage our international customers to join our newsletter for updates!<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-0",
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-1",
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-2",
+        "template--15960533631133__a21a666d-14b4-430e-a7f9-9ee39c73cec5-1667328026f570da81-3",
+        "7548501f-cbda-4855-a186-db003391ca86"
+      ],
+      "settings": {
+        "heading": "ORDERS FAQs",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    },
+    "b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960533631133__b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae-16673282871361feec-0": {
+          "type": "card",
+          "settings": {
+            "title": "What is your return policy?",
+            "sub_title": "Returns\/Warranty",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>We understand that sometimes you just don't fall in love with every piece of gear you buy. That's why we offer a thirty (30) day return policy on all items except ski and snowboard hard-goods (skis, snowboards, poles, etc.), orders placed from Alaska or Hawaii or orders placed internationally. We want to give you time to get to know your gear. And if you ultimately decide it's not meant to be, rest assured you can return items for any reason (limited exceptions* apply) within thirty (30) days. <br\/>*Gear must be returned in same condition as it was received and may not have sustained significant new damage or wear-and-tear.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae-16673282871361feec-1": {
+          "type": "card",
+          "settings": {
+            "title": "How do I return my order?",
+            "sub_title": "Returns\/Warranty",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Returns can be initiated by contacting our customer support team (returns@outandbackoutdoor.com). Please provide your order number and email address used to place your original order. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960533631133__b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae-16673282871361feec-2": {
+          "type": "card",
+          "settings": {
+            "title": "What is Out&Back's warranty on gear?",
+            "sub_title": "Returns\/Warranty",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Items sold on our site are built for adventure and built to last. If within the first year of ownership, you experience unusual defects or issues with your item, you will be covered by our warranty and eligible either for free repairs or store credit, depending on the specific item. For additional questions, contact info@outandbackoutdoor.com.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "c2c64df7-076d-4327-a03c-f50e8eddfc09": {
+          "type": "card",
+          "settings": {
+            "title": "Can I return clearance items?",
+            "sub_title": "Returns\/Warranty",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Clearance items are final sale and not eligible for returns.<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960533631133__b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae-16673282871361feec-0",
+        "template--15960533631133__b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae-16673282871361feec-1",
+        "template--15960533631133__b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae-16673282871361feec-2",
+        "c2c64df7-076d-4327-a03c-f50e8eddfc09"
+      ],
+      "settings": {
+        "heading": "RETURNS\/WARRANTY FAQs",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    },
+    "4d88f636-6517-4882-977e-c54b92116b3d": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960533631133__4d88f636-6517-4882-977e-c54b92116b3d-1667328499768f372f-0": {
+          "type": "card",
+          "settings": {
+            "title": "What payment options are accepted by Out&Back?",
+            "sub_title": "Payment",
+            "paragraph": "",
+            "full_paragraph": "<p>Currently, we happily accept  all major credit cards and digital payment via Paypal and Google Pay. We are always looking to improve our shopping experience and would love to hear any additions you might suggest at info@outandbackoutdoor.com!<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960533631133__4d88f636-6517-4882-977e-c54b92116b3d-1667328499768f372f-0"
+      ],
+      "settings": {
+        "heading": "PAYMENT FAQs",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "a525f6b9-072e-456c-bdc1-709a3320e31a",
+    "e30e1b9f-973c-4fc5-b143-639a856b5e58",
+    "a21a666d-14b4-430e-a7f9-9ee39c73cec5",
+    "b73f0ea3-cc38-4ff4-b3bd-25a0241e27ae",
+    "4d88f636-6517-4882-977e-c54b92116b3d"
+  ]
+}

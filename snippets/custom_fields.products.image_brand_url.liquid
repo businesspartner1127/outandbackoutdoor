@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/out-and-back-outdoor.myshopify.com/products/configure/249806/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["image_brand_url"] != blank %}
+  <div class="custom-field custom-field__image-brand-url custom-field__type--link">
+    <h3 class="custom-field--title">Image Brand URL</h3>
+    <div class="custom-field--value">
+      {{ product.metafields.custom_fields["image_brand_url"] }}
+    </div>
+  </div>
+{% endif %}

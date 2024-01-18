@@ -1,0 +1,130 @@
+{
+  "sections": {
+    "0d4908cb-b0d8-42dc-be26-1e3835a942f9": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--17019345994019__0d4908cb-b0d8-42dc-be26-1e3835a942f9-1669232597fa3ee486-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-05-15_at_3.30.01_PM.png",
+            "title": "",
+            "caption": "*Spend $150 or more between 5\/10\/23 and 5\/21\/23 and receive a promo code for $50 off a purchase of $100 or more made between 5\/22\/23 and 6\/4\/23."
+          }
+        }
+      },
+      "block_order": [
+        "template--17019345994019__0d4908cb-b0d8-42dc-be26-1e3835a942f9-1669232597fa3ee486-0"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "",
+        "image_size": 20,
+        "button_label": "START SHOPPING",
+        "button_link": "shopify:\/\/collections\/start-shopping",
+        "padding_top": 1,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#fff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#fff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "d5ae6892-983a-4160-ac94-2b24c01858df": {
+      "type": "custom-brands",
+      "disabled": true,
+      "blocks": {
+        "f97b5b5b-516d-42dd-9005-706a3831f8ac": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/The_North_Face.png",
+            "link": "https:\/\/outandbackoutdoor.com\/collections\/the-north-face"
+          }
+        },
+        "dae58f9a-4b28-477c-9f77-a94f0cbbf6df": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Patagonia.png",
+            "link": "https:\/\/outandbackoutdoor.com\/collections\/patagonia"
+          }
+        },
+        "4dc39e94-b2f9-4a74-bc96-406acec59e92": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Osprey.png",
+            "link": "https:\/\/outandbackoutdoor.com\/collections\/osprey"
+          }
+        }
+      },
+      "block_order": [
+        "f97b5b5b-516d-42dd-9005-706a3831f8ac",
+        "dae58f9a-4b28-477c-9f77-a94f0cbbf6df",
+        "4dc39e94-b2f9-4a74-bc96-406acec59e92"
+      ],
+      "settings": {
+        "heading": "Brands you love!",
+        "caption": "Shop top brands up to 70% off",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#fff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#fff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "38ec2fe8-a52a-47bb-947c-445fe0947d16": {
+      "type": "custom-collection-banner",
+      "disabled": true,
+      "blocks": {
+        "f1716600-afe3-4f72-8a32-ac2b110cadf1": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Man_unfolding_tent_small_186ef6db-0434-4ceb-80ec-624fcc9b22cb.jpg",
+            "title": "WE'RE SETTING UP CAMP IN MORE PLACES!",
+            "paragraph": "Now offering in person trade in at select DICK's Sporting Goods and Public Lands locations.",
+            "first_button_label": "VIEW DROP OFF LOCATIONS",
+            "first_button_link": "",
+            "second_button_label": "",
+            "second_button_link": "\/",
+            "block_title_color": "#26225d",
+            "block_paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "f1716600-afe3-4f72-8a32-ac2b110cadf1"
+      ],
+      "settings": {
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "button_color": "#ffffff",
+        "button_text_color": "#26225d"
+      }
+    }
+  },
+  "order": [
+    "0d4908cb-b0d8-42dc-be26-1e3835a942f9",
+    "d5ae6892-983a-4160-ac94-2b24c01858df",
+    "38ec2fe8-a52a-47bb-947c-445fe0947d16"
+  ]
+}

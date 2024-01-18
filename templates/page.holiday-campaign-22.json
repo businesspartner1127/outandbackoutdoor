@@ -1,0 +1,183 @@
+{
+  "sections": {
+    "43eed9f4-28fd-4b85-98a2-9bb4fce579e1": {
+      "type": "custom-collection-banner",
+      "blocks": {
+        "9d255b26-a29c-4048-8054-15575e4ed0b2": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/Holiday_Gifting_Homepage_Tout_1024_x_683_px_4.png",
+            "title": "HAPPY HOLIDAYS!",
+            "paragraph": "We're saying thank you for helping us grow this year by giving a free gift with every purchase all month long!",
+            "first_button_label": "",
+            "first_button_link": "",
+            "second_button_label": "",
+            "second_button_link": "\/",
+            "block_title_color": "#ff0000",
+            "block_paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "9d255b26-a29c-4048-8054-15575e4ed0b2"
+      ],
+      "settings": {
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "button_color": "#ffffff",
+        "button_text_color": "#26225d"
+      }
+    },
+    "4cfe9377-c19c-4162-8fed-c19e649e4733": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MagGlassTent.jpg",
+            "title": "BROWSE OUR GEAR",
+            "caption": "Find the gear you've been looking for and add it to your cart"
+          }
+        },
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ACCEPT_OFFER_ICON_small_9aa1e190-0cac-4d9f-b51f-9b70b6d47f1b.jpg",
+            "title": "MEET OUR PARTNERS",
+            "caption": "Explore our gift options below from some fellow CO-based businesses"
+          }
+        },
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ENVELOPE_FOR_CASH_ICON_small_8a8013e1-f4d4-4918-87ff-04c3155b64df.jpg",
+            "title": "CHECK OUT",
+            "caption": "Check out as you normally would & your gear + gift will be on its way"
+          }
+        }
+      },
+      "block_order": [
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-0",
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-1",
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-2"
+      ],
+      "settings": {
+        "heading": "How Does It Work?",
+        "caption": "Get a gift, some gear, and a little extra holiday cheer",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "START SHOPPING",
+        "button_link": "shopify:\/\/collections\/start-shopping",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "e8add881-1b45-4a62-ac5b-ef465eafee1a": {
+      "type": "custom-multi-column",
+      "disabled": true,
+      "blocks": {
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_cec36c4c-7bce-457e-aa8e-9623ad4559ac.png",
+            "title": "BROWSE OUR GEAR",
+            "caption": "Find the gear you've been looking for and add it to your cart"
+          }
+        },
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_fa547edb-32f4-4054-b305-47fe2e7c5c4c.png",
+            "title": "CHOOSE YOUR GIFT",
+            "caption": "Take a look at our gift options below and choose your favorite"
+          }
+        },
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Asset_6-100.jpg",
+            "title": "CHECK OUT",
+            "caption": "Check out as you normally would and your gear + gift will be on its way"
+          }
+        }
+      },
+      "block_order": [
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-0",
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-1",
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-2"
+      ],
+      "settings": {
+        "heading": "How Does It Work?",
+        "caption": "Get a gift, gear, and some holiday cheer",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "START SHOPPING",
+        "button_link": "shopify:\/\/collections\/start-shopping",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "1663744053b2eab893": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "16637440533bfaa62a-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Holiday_Campaign_Brand_Logos.png",
+            "title": "mountainFLOW All Temp Ski Wax",
+            "caption": "Coming from Carbondale, CO with a straightforward mission to improve the skiing experience without hurting the environment."
+          }
+        },
+        "16637440533bfaa62a-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_12605a7d-5914-4864-b084-4cd48de0fbde.png",
+            "title": "Patterbar Whole Food Energy Bars",
+            "caption": "A female-owned, family-run company based out of Denver, CO whose mission is convenient, clean energy without compromise."
+          }
+        },
+        "16637440533bfaa62a-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_a0246948-924e-46d4-9bec-9cfe6cafb990.png",
+            "title": "Farm to Summit Dehydrated Meals",
+            "caption": "These meals from Durango, CO use locally sourced ingredients, sustainable packaging, and are ready for any adventure."
+          }
+        }
+      },
+      "block_order": [
+        "16637440533bfaa62a-0",
+        "16637440533bfaa62a-1",
+        "16637440533bfaa62a-2"
+      ],
+      "settings": {
+        "heading": "Gift Options",
+        "caption": "Check out our awesome CO-based partners",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "43eed9f4-28fd-4b85-98a2-9bb4fce579e1",
+    "4cfe9377-c19c-4162-8fed-c19e649e4733",
+    "e8add881-1b45-4a62-ac5b-ef465eafee1a",
+    "1663744053b2eab893"
+  ]
+}

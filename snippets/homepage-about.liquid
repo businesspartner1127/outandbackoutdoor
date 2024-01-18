@@ -1,0 +1,210 @@
+<style>
+    .about-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 45px 0;
+    }
+    .about-container .about-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 30% 0 30%;
+    }
+    .about-container .about-header-text {
+      text-align: center;
+      font-family: 'Uniform', sans-serif;
+      color: #262262;
+      line-height: normal;
+      font-size: 2rem;
+    }
+    .about-container .icon-container {
+        width: 100%;
+        display: flex;
+        padding: 10em 50px;
+        justify-content: center;
+    }
+    .about-container .icon-wrapper {
+        width: 33%;
+        display: flex;
+        justify-content: center; 
+        flex-direction: column;
+        padding: 0 70px;
+        height: auto;
+    }
+    .about-container .icon-image-container {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .about-container .icon-image {
+        max-width: 200px;
+        height: auto;
+    }
+    .about-container .icon-text {
+      text-align: center;
+      font-family: 'Uniform', sans-serif;
+      color: #262262;
+      line-height: normal;
+    }
+    
+    .about-container .large {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .about-container .icon-small {
+        font-size: 1.1rem;
+    }
+
+    .about-container .icon-container-button {
+      display: flex;
+      justify-content: center;
+      width: 200px;
+      margin: 0px 10px 0px 10px;
+      color: #fff;
+      background-color: #f00000;
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: 900;
+    }
+    .about-container .icon-button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .about-container .about-icon-slider {
+        display: none;
+    }
+    @media (min-width: 1600px) {
+        .about-container .about-header-text {
+            padding: 0 20%;
+        }
+    }
+    @media (max-width: 1100px) {
+        .about-container {
+            padding: 45px 0 0 0;
+        }
+        .about-container .icon-container {
+            padding: 0;
+        }
+        .about-container .icon-wrapper {
+            padding: 0 15px;
+        }
+        .about-container .about-icon-text-container {
+            height: 45%;
+        }
+        .about-container .large {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .about-container .icon-small {
+            font-size: 1.0rem;
+        }
+        .about-container .icon-button-container {
+            margin: 40px 0 40px 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .about-container .about-text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 20% 0 20%;
+        }
+    }
+    @media (max-width: 600px) {
+        .about-container .icon-container {
+            display: none;
+        }
+        .about-container .icon-wrapper {
+            width: 100%;
+            padding: 0 40px;
+            margin-bottom: 25px;
+        }
+        .about-container .about-text-container {
+            padding: 35px 50px 0px 35px;
+        }
+        .about-container .about-header-text {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .about-container magnifying-glass {
+            margin-top: -40px;
+        }
+        .about-container .icon-button-container {
+            margin: 30px 0;
+        }
+        .about-container .icon-container-button {
+           width: 160px;
+        }
+        .about-container .about-icon-slider {
+            display: block;
+        }
+    }
+</style>
+<div id="homepage-about" class="about-container">
+
+    <div class="about-text-container">
+        <div class="about-header-text">
+            The Best Way to Shop &amp; Sell Outdoor Gear
+        </div>
+    </div>
+
+    <div class="icon-container">
+        <div class="icon-wrapper">
+            <div class="icon-image-container">                
+                <img class="icon-image lazyload" src="{{ 'magnifying-glass.png' | asset_img_url: 'master' }}"  srcset="{{ 'magnifying-glass.png' | asset_img_url: '200x' }} 1500w, {{ 'magnifying-glass.png' | asset_img_url: '200x' }} 600w" width="200" height="220" alt="magnifying search" />
+            </div>
+
+            <div class="about-icon-text-container">
+                <div class="icon-text large magnifying-glass">
+                    Shop Everywhere at Once
+                </div>
+                <div class="icon-text">
+                    <p>We curate gear from across the web, making it easy for you to shop multiple websites at once.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="icon-wrapper">
+            <div class="icon-image-container">
+                <img class="icon-image lazyload" src="{{ 'jacket-with-check.png' | asset_img_url: 'master' }}" srcset="{{ 'jacket-with-check.png' | asset_img_url: '200x' }} 1500w, {{ 'jacket-with-check.png' | asset_img_url: '200x' }} 600w" width="200" height="220" alt="about jacket" />
+            </div>
+            <div class="about-icon-text-container">
+                <div class="icon-text large">
+                    Buy With Confidence
+                </div>
+                <div class="icon-text">
+                    <p>Our quality-guarantee and 30-day returns gives you the freedom to shop risk-free.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="icon-wrapper">
+            <div class="icon-image-container">
+                <img class="icon-image lazyload" src="{{ 'cell-phone.png' | asset_img_url: 'master' }}" srcset="{{ 'cell-phone.png' | asset_img_url: '200x' }} 1500w, {{ 'cell-phone.png' | asset_img_url: '200x' }} 600w" alt="about phone" width="200" height="220" />
+            </div>
+            <div class="about-icon-text-container">
+                <div class="icon-text large magnifying-glass">
+                    Sell & Earn Instantly
+                </div>
+                <div class="icon-text">
+                    <p>Within minutes, our simple sell-back tool gives you instant offers on-the-spot.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-icon-slider">
+        {% include 'about-icon-slider' %}
+    </div>
+    <div class="icon-button-container">
+        <a href="/pages/start-shopping">
+            <div class="icon-container-button">SHOP NOW</div>
+        </a>
+        <a href="/pages/start-selling">
+            <div class="icon-container-button">SELL TODAY</div>
+        </a>
+    </div>
+</div>

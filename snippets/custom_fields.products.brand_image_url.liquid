@@ -1,0 +1,8 @@
+{% if product.metafields.custom_fields["brand_image_url"] != blank %}
+  <div class="custom-field custom-field__brand-image-url custom-field__type--link">
+    <h3 class="custom-field--title">Brand Image URL</h3>
+    <div class="custom-field--value">
+      {{ product.metafields.custom_fields["brand_image_url"] }}
+    </div>
+  </div>
+{% endif %}

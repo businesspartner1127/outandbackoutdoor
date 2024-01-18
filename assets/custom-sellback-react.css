@@ -1,0 +1,61 @@
+/* custom brand react */
+.cs-brand-react {
+  background: #f8f8f8;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react div {
+  font-size: 1rem !important;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react div select {
+  margin-bottom: 4em !important;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react div > div:last-child {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+  margin-bottom: 0 !important;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react div div > div:last-child {
+  display: unset !important;
+  font-family: "Uniform-New", sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content .cs-footer-text {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1em 2em;
+}
+.cs-brand-react .cs-container .cs-grid .cs-content .cs-footer-text p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 920px) {
+  .cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react div select {
+    margin-bottom: 2em !important;
+  }
+  .cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react div > div:last-child {
+    grid-template-columns: 1fr;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    width: 100%;
+  }
+  .cs-brand-react .cs-container .cs-grid .cs-content .cs-footer-text {
+    padding: 1em 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .cs-brand-react .cs-container .cs-grid .cs-content #sell-back-react select {
+    width: 100% !important;
+    border-radius: 5px;
+  }
+}
+/* end custom brand react */

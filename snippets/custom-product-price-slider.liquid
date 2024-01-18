@@ -1,0 +1,99 @@
+{%- liquid
+    if product.title
+      assign compare_at_price = product.compare_at_price
+      assign price = product.price
+      assign available = product.available
+      assign variant = product.variants.first
+      for variant in product.variants
+        if variant.title == "obo_consolidated_catalog"
+          assign msrp = variant.price
+        endif
+      endfor
+    endif
+  
+    assign money_price = price | money
+  -%}
+  
+  <dl style="padding: 0 !important;" class="price price--listing
+    {%- if available == false %} price--sold-out {% endif -%}
+    {%- if compare_at_price > price %} price--on-sale {% endif -%}
+    {%- if product.price_varies == false and product.compare_at_price_varies %} price--compare-price-hidden {% endif -%}
+    {%- if variant.unit_price_measurement %} price--unit-available {% endif -%}"
+  >
+  
+    <div class="price__regular">
+      <dt>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.regular_price' | t }}</span>
+      </dt>
+      <dd>
+        <span class="price-item price-item--regular">
+          {%- if product.price_varies -%}
+            {% if msrp > price %}
+              <div>
+              Retail price
+                <del>
+                    {{ msrp | money }}
+                </del>
+              </div>
+            {% endif %}
+            <div>
+              <span>{{ money_price }}</span>
+            </div>
+          {%- else -%}
+            {{ money_price }}
+          {%- endif -%}
+        </span>
+      </dd>
+    </div>
+    <div class="price__sale">
+      <dt>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.sale_price' | t }}</span>
+      </dt>      
+      <div class="price__compare">
+        <dt>
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.regular_price' | t }}</span>
+        </dt>
+        <dd>
+          <s class="price-item price-item--regular cs-compare-at-price">
+            {{ compare_at_price | money }}
+          </s>
+        </dd>
+      </div>
+      <dd>
+        <span class="price-item price-item--sale">
+          {%- if product.price_varies -%}
+              {{ money_price }}
+            {%- else -%}
+              {{ product.price_min | money }}
+          {%- endif -%}
+        </span>
+      </dd>
+      {%- if compare_at_price > price %}    
+        <div class="price__percentage">      
+            <span>{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}% OFF</span>
+        </div>    
+      {%- endif -%}
+    </div>
+    <div class="price__unit">
+      <dt>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>
+      </dt>
+      <dd class="price-unit-price">
+        {%- capture unit_price_separator -%}
+          <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+        {%- endcapture -%}
+        {%- capture unit_price_base_unit -%}
+          <span>
+            {%- if variant.unit_price_measurement -%}
+              {%- if variant.unit_price_measurement.reference_value != 1 -%}
+                {{- variant.unit_price_measurement.reference_value -}}
+              {%- endif -%}
+              {{ variant.unit_price_measurement.reference_unit }}
+            {%- endif -%}
+          </span>
+        {%- endcapture -%}
+  
+        <span>{{ variant.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+      </dd>
+    </div>    
+  </dl>

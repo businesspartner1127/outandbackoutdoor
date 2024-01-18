@@ -1,0 +1,342 @@
+<div class="header-image">
+  <div class="section-header text-center header-text-wrap">
+    <h1 class="article__title" id="title-0" style="color: #fff;">
+      {{ page.title }}
+    </h1>
+  </div>
+</div>
+<!-- <div id="hero" style="background-image: url(//cdn.shopify.com/s/files/1/0412/7840/6813/files/WalkingWithDog_Afternoon_Male.jpg?v=1629391237)">
+    <h1>{{ page.title }}</h1>
+    </div> -->
+    <div id="wave"></div>
+<div class="grid">
+
+  <div class="rte">
+
+    <div class="start page-container">
+        <div class="carousel-text">Hassle-free selling!</div>
+        <div class="list">
+        <div class="list-item"><i class="fa fa-check"></i><h3>Skip listings and snapping photos!</h3></div>
+        <div class="list-item"><i class="fa fa-check"></i><h3>Receive instant offers!</h3></div>
+        <div class="list-item"><i class="fa fa-check"></i><h3>Get paid fast in cash!</h3></div>
+        <div class="list-item"><i class="fa fa-check"></i><h3>Enjoy free shipping!</h3></div>
+        </div>
+        <a href="https://sellback.outandbackoutdoor.com/" style="border-bottom: none;"> <button class="learn-more cta-button"> START SELLING!</button></a>
+    </div>
+
+    <div class="faq-slider">
+        <div class="carousel-text">How it works</div>
+        <div class="slider-container">
+        {% include 'slider-react' %}
+        </div>
+    </div>
+
+    <div class="review-slider">
+        <div class="carousel-text">Hear from other sellers!</div>
+        <div class="slider-container">
+        {% include 'slider-quote-react' %}
+        </div>
+    </div>
+
+    <div class="brand-check">
+    <div class="brand-check-text">We accept gear from the top brands*</div>
+    <div class="sellback-container">
+        {% include 'sell-back-react' %} 
+        <a href="https://sellback.outandbackoutdoor.com/" style="border-bottom: none;"> <button class="learn-more cta-button"> SELL YOUR GEAR!</button></a>
+    </div>
+    <img
+        class="logo"
+        src="https://cdn.shopify.com/s/files/1/0550/6682/0803/files/logo.png?v=1627590247"
+        alt="Out And Back logo"/> 
+       
+    </div>
+
+    <div class="other-brand">
+        <div class="other-brand-text">Don't see the Brand or item type you’d like to sell?</div>
+        <div class="other-brand-text-small"><a href="/pages/sell-us-your-gear" style="border-bottom: 1px; color: #f00000">CLICK HERE</a>&nbsp;to submit items you’d like to sell manually and we’ll see what we can do</div>
+    </div>
+
+    <div class="other-brand" style="background-color: #fffcf1;">
+      <div class="calculate-text" style="color: #000;">
+        To calculate your instant offer we look at...
+      </div>
+      <img class="calculate-desktop-image" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Pricing_icons_desktop.jpg?v=1636661118"/>
+      <img class="calculate-mobile-image" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/pricing_icons_mobile.jpg?v=1636663096"/>
+      <div class="calculate-text-small" style="color: #000;">
+        All these factors are baked into your instant offer! Typically, this puts our offers at between 10-30% of an item’s retail price.
+      </div>
+    </div>
+
+    <div class="container-fluid" style="padding: 75px 15px;">
+      <div class="modal-text">See what others have sold recently</div>
+          {% section 'collection-slider' %}
+    </div>
+
+    <div style="display: flex; justify-content: center; margin: -75px 0 60px;">
+      <a href="https://sellback.outandbackoutdoor.com/" style="border-bottom: none;"> <button class="learn-more" style="margin:5px;padding:8px 21px;display:inline-block; border-bottom: none;">Join Others. Sell Your Gear!</button></a>
+    </div>
+
+
+      <div class="model-container">
+        <div class="carousel-text">Learn more about...</div>
+        <div class="model-image-wrap">
+          {% include 'modal-react' %}
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<script defer type="module" src="{{ "sell-back.bundle.js" | asset_url }}"></script>
+<style>
+  .header-image {
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(//cdn.shopify.com/s/files/1/0412/7840/6813/files/WalkingWithDog_Afternoon_Male.jpg?v=1629391237) no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    height: 40vh;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header-text-wrap {
+    margin-top: 95px !important;
+  }
+  
+  .header-text {
+    text-align: center;
+    color: #fff;
+  }
+
+  .cta-button {
+    margin:5px;
+    padding:8px 40px;
+    display:inline-block; 
+    border-bottom: none;
+  }
+  .page-container {
+    margin-top: -50px;
+    z-index: 10;
+  }
+  .list {
+    margin-bottom: 10px;
+  }
+  .list-item {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .list-item h3 {
+    font-size: 20px;
+    font-weight: 200;
+    color:#262262;
+    margin: 0;
+  }
+  .list-item .fa {
+    margin-right: 10px;
+    color: #03ff24;
+  }
+  .carousel-text {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 25px 0;
+    font-size: 2rem;
+    color: black;
+  }
+  .start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+  }
+  .faq-slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f1ebda;
+    padding: 25px 0;
+  }
+  .review-slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 0;
+  }
+  .brand-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #b1d6e7;
+    width: 100%;
+    padding: 25px 0;
+    /* z-index: 10; */
+  }
+  .other-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f6f6f6;
+    width: 100%;
+    padding: 45px 0;
+    /* z-index: 10; */
+  }
+  .other-brand-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 0 15px 0;
+    font-size: 2rem;
+    color: '#fff'
+  }
+  .other-brand-text-small {
+    text-align: center;
+    font-size: 16px;
+    color: '#fff'
+  }
+  .calculate-desktop-image {
+    width: 45%;
+    margin: 60px 0 70px 0;
+  }
+  .calculate-mobile-image {
+    display: none;
+  }
+  .calculate-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    color: '#000'
+    padding: 0 20%;
+  }
+  .calculate-text-small {
+    text-align: center;
+    font-size: 17px;
+    color: '#000';
+    padding: 0 30%;
+  }
+  .sellback-container {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .brand-check-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0 25px 0;
+    font-size: 2rem;
+  }
+  .logo {
+    filter: brightness(0) invert(1);
+    z-Index: 1;
+    position: absolute;
+    right: auto;
+    left: auto;
+    opacity: 0.15;
+    width: 500px;
+    height: auto;
+    overflow: hidden;
+  }
+  .slider-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .slider-bought-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .model-container {
+    margin-top: -45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 20px;
+  }
+  .modal-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0 25px 0;
+    font-size: 2rem;
+    color: black;
+  }
+  .model-image-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  @media (min-width: 1440px) {
+    .calculate-desktop-image {
+      width: 650px;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .calculate-desktop-image {
+      width: 55%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .calculate-text {
+      padding: 0 20%;
+    }
+    .calculate-text-small {
+      padding: 0 15%;
+    }
+    .calculate-mobile-image {
+      display: block;
+      width: 55%;
+      margin: 0px 0 20px 0;
+    }
+    .calculate-desktop-image {
+      display: none;
+    }
+    .header-image {
+      height: 35vh;
+    }
+    .header-text {
+      top: 220px;
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 545px) {
+    .calculate-text {
+      padding: 0 5%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .calculate-text-small {
+      padding: 0 7%;
+    }
+    .calculate-mobile-image {
+      display: block;
+      width: 85%;
+    }
+    .header-image {
+      height: 40vh;
+    }
+    .header-text-wrap {
+      margin-top: 80px !important;
+    }
+    .header-text {
+      top: 190px;
+      font-size: 2.0rem;
+    }
+  }
+</style>

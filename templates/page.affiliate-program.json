@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AffiliateIcon.png",
+            "title": "",
+            "caption": "Earning a commission has never been easier!"
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "ACCELERATE YOUR EARNINGS. JOIN OUR AFFILIATE PROGRAM.",
+        "image_size": 18,
+        "button_label": "JOIN TODAY",
+        "button_link": "http:\/\/www.shareasale.com\/join\/131519",
+        "padding_top": 6,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "beb92fc4-9a5d-4660-82f8-3194d3243acd": {
+      "type": "rich-text",
+      "settings": {
+        "full_width": true,
+        "section_title": "Our Affiliate Program",
+        "text": "<p>We welcome all outdoor enthusiasts alike to join our affiliate program, giving you the opportunity to earn commission by promoting our products and services to your network.<\/p><p>By becoming an affiliate, you'll have access to exclusive promotions, an affiliate dashboard and a support team to help you succeed. Plus, you'll earn a commission on every sale made through your unique affiliate link.<\/p><p>Out&Back Outdoor is the best newcomer to the outdoor gear space and is changing the way people shop and sell gear. Kinda like when waterproof technology made its debut. It’s that big! Everyone from the explorer who spends every waking minute in the backcountry to the newbie who is just kicking off their first hike, Out&Back is a great solution for all - including your network! <\/p><p>We’ve partnered with <a href=\"https:\/\/www.shareasale.com\/info\/\" target=\"_blank\" title=\"Share-A-Sale\">Share-A-Sale<\/a>, the fastest growing affiliate platform focused on driving results. Share-A-Sale’s platform makes it easy and rewarding for affiliates like you. <\/p>",
+        "text_size": "medium"
+      }
+    },
+    "1663891058b12727b0": {
+      "type": "custom-text-list",
+      "blocks": {
+        "ac97262b-359e-492f-a3ce-ff5988ff3704": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "Easy and quick setup",
+            "text_link": ""
+          }
+        },
+        "6e9137ab-459c-4b82-b76f-8a2dbabdc8b9": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "High commission rates",
+            "text_link": ""
+          }
+        },
+        "393ff30d-6563-40c3-bec3-ea7c98aa9339": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI_4a86a616-a3e5-4b34-813e-ac01b0107201.png",
+            "text_list": "Real time reporting",
+            "text_link": ""
+          }
+        },
+        "d7a548a1-1da1-4993-a438-fb11ee5ff529": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI_4a86a616-a3e5-4b34-813e-ac01b0107201.png",
+            "text_list": "Dedicated support",
+            "text_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "ac97262b-359e-492f-a3ce-ff5988ff3704",
+        "6e9137ab-459c-4b82-b76f-8a2dbabdc8b9",
+        "393ff30d-6563-40c3-bec3-ea7c98aa9339",
+        "d7a548a1-1da1-4993-a438-fb11ee5ff529"
+      ],
+      "settings": {
+        "heading": "Benefits of Becoming an Affiliate",
+        "caption": "Quick and easy commissions",
+        "inner_caption": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "2142821c-4933-4a54-9af0-bef7e9f84ea7": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--17754268696867__2142821c-4933-4a54-9af0-bef7e9f84ea7-16752202019bbc5afb-0": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17754268696867__2142821c-4933-4a54-9af0-bef7e9f84ea7-16752202019bbc5afb-0"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "Ready to Start Earning Commissions?",
+        "image_size": 6,
+        "button_label": "JOIN TODAY",
+        "button_link": "http:\/\/www.shareasale.com\/join\/131519",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49",
+    "beb92fc4-9a5d-4660-82f8-3194d3243acd",
+    "1663891058b12727b0",
+    "2142821c-4933-4a54-9af0-bef7e9f84ea7"
+  ]
+}

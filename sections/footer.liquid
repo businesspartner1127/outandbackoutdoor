@@ -1,0 +1,992 @@
+{%- assign col_mob_class = "col-6" -%}
+{%- case section.settings.col_count_mob -%}
+  {%- when 1 -%}
+    {%- assign col_mob_class = "col-12" -%}
+  {%- when 3 -%}
+    {%- assign col_mob_class = "col-4" -%}
+{%- endcase -%}
+
+{%- assign col_tablet_class = "col-md-4" -%}
+{%- case section.settings.col_count_tablet -%}
+  {%- when 2 -%}
+    {%- assign col_tablet_class = "col-md-6" -%}
+  {%- when 4 -%}
+    {%- assign col_tablet_class = "col-md-3" -%}
+{%- endcase -%}
+
+{%- assign col_desktop_class = "col-xl-4" -%}
+{%- case section.settings.col_count_desktop -%}
+  {%- when 2 -%}
+    {%- assign col_desktop_class = "col-xl-6" -%}
+  {%- when 4 -%}
+    {%- assign col_desktop_class = "col-xl-3" -%}
+{%- endcase -%}
+
+<style>
+  
+  .new_footer {
+    background: {{ section.settings.back_color }};
+  }
+
+  .footer_header_col h1, .footer-ul-header, .footer_col a, .footer_col li, .social_icons .fa, .copyright_col p, .footer_col a:hover, .footer_col a:focus {
+    color: {{ section.settings.text_color }}
+  }
+  
+</style>
+
+
+<footer class="site-footer new_footer" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
+
+  <div class="container-fluid">
+
+    <div class="container">
+
+      {%- if section.settings.show_header -%}
+        <div class="row">
+          <div class="col-12 footer_header_col">
+            <h1>{{ section.settings.header_text }}</h1>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {% if section.blocks.size > 0 %}
+        <div class="row">
+          {% for block in section.blocks %}
+            <div class="{{ col_mob_class }} {{ col_tablet_class }} {{ col_desktop_class }} footer_col">
+              <div class="footer-ul-header">
+                {%- if block.settings.header_link != blank -%}
+                  <a href="{{ block.settings.header_link }}" title="">
+                {%- endif -%}
+                  {%- case block.settings.header_type -%}
+                    {%- when 'text' -%}
+                      {{ block.settings.header_text }}
+                    {%- when 'img' -%}
+                      <img src="{{ block.settings.header_img | img_url: '300x' }}" alt="{{ block.settings.header_img.alt | t }}" style="max-width: {{ block.settings.header_img_width }}px;">
+                  {%- endcase -%}
+                {%- if block.settings.header_link != blank -%}
+                  </a>
+                {%- endif -%}
+              </div>
+              <ul class="footer_col_inner">
+                {% if block.settings.item1_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item1_link != blank -%}
+                      <a href="{{ block.settings.item1_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item1_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item1_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item1_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item1_img | img_url: '300x' }}" alt="{{ block.settings.item1_img.alt | t }}" style="max-width: {{ block.settings.item1_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item1_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item2_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item2_link != blank -%}
+                      <a href="{{ block.settings.item2_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item2_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item2_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item2_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item2_img | img_url: '300x' }}" alt="{{ block.settings.item2_img.alt | t }}" style="max-width: {{ block.settings.item2_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item2_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item3_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item3_link != blank -%}
+                      <a href="{{ block.settings.item3_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item3_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item3_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item3_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item3_img | img_url: '300x' }}" alt="{{ block.settings.item3_img.alt | t }}" style="max-width: {{ block.settings.item3_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item3_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item4_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item4_link != blank -%}
+                      <a href="{{ block.settings.item4_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item4_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item4_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item4_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item4_img | img_url: '300x' }}" alt="{{ block.settings.item4_img.alt | t }}" style="max-width: {{ block.settings.item4_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item4_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item5_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item5_link != blank -%}
+                      <a href="{{ block.settings.item5_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item5_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item5_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item5_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item5_img | img_url: '300x' }}" alt="{{ block.settings.item5_img.alt | t }}" style="max-width: {{ block.settings.item5_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item5_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item6_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item6_link != blank -%}
+                      <a href="{{ block.settings.item6_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item6_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item6_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item6_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item6_img | img_url: '300x' }}" alt="{{ block.settings.item6_img.alt | t }}" style="max-width: {{ block.settings.item6_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item6_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item7_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item7_link != blank -%}
+                      <a href="{{ block.settings.item7_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item7_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item7_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item7_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item7_img | img_url: '300x' }}" alt="{{ block.settings.item7_img.alt | t }}" style="max-width: {{ block.settings.item7_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item7_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item8_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item8_link != blank -%}
+                      <a href="{{ block.settings.item8_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item8_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item8_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item8_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item8_img | img_url: '300x' }}" alt="{{ block.settings.item8_img.alt | t }}" style="max-width: {{ block.settings.item8_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item8_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item9_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item9_link != blank -%}
+                      <a href="{{ block.settings.item9_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item9_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item9_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item9_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item9_img | img_url: '300x' }}" alt="{{ block.settings.item9_img.alt | t }}" style="max-width: {{ block.settings.item9_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item9_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+                {% if block.settings.item10_type != 'none' %}
+                  <li>
+                    {%- if block.settings.item10_link != blank -%}
+                      <a href="{{ block.settings.item10_link }}" title="">
+                    {%- endif -%}
+                      {%- case block.settings.item10_type -%}
+                        {%- when 'header' -%}
+                          <div class="footer-ul-header">{{ block.settings.item10_text }}</div>
+                        {%- when 'subtext' -%}
+                          {{ block.settings.item10_text }}
+                        {%- when 'img' -%}
+                          <img src="{{ block.settings.item10_img | img_url: '300x' }}" alt="{{ block.settings.item10_img.alt | t }}" style="max-width: {{ block.settings.item10_img_width }}px;">
+                      {%- endcase -%}
+                    {%- if block.settings.item10_link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endfor %}          
+        </div>
+      {% endif %}
+
+      {%- if section.settings.show_social -%}
+        <div class="row">
+          <div class="col-12 social_icons_col">
+            {%- if section.settings.social_text != blank -%}
+              <div class="footer-ul-header">{{ section.settings.social_text }}</div>
+            {%- endif -%}
+            <div class="social_icons">
+              {%- if section.settings.facebook_link != blank -%}
+                <a href="{{ section.settings.facebook_link }}" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              {%- endif -%}
+              {%- if section.settings.twitter_link != blank -%}
+                <a href="{{ section.settings.twitter_link }}" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              {%- endif -%}
+              {%- if section.settings.instagram_link != blank -%}
+                <a href="{{ section.settings.instagram_link }}" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              {%- endif -%}
+              {%- if section.settings.pinterest_link != blank -%}
+                <a href="{{ section.settings.pinterest_link }}" target="_blank">
+                  <i class="fa fa-pinterest"></i>
+                </a>
+              {%- endif -%}
+              {%- if section.settings.linkedin_link != blank -%}
+                <a href="{{ section.settings.linkedin_link }}" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              {%- endif -%}
+              {%- if section.settings.email_link != blank -%}
+                <a href="{{ section.settings.email_link }}">
+                  <i class="fa fa-envelope"></i>
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_copyright -%}
+        <div class="row">
+          <div class="col-12 copyright_col">
+            <p>{{ section.settings.copyright_text }}</p>
+          </div>
+        </div>
+      {%- endif -%}
+      
+    </div>
+    
+  </div>
+  
+</footer>
+
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Setting"
+      },
+      {
+        "id": "back_color",
+        "type": "color",
+        "label": "Background Color", 
+        "default": "#f00000"
+      }, 
+      {
+        "id": "text_color",
+        "type": "color",
+        "label": "Text Color", 
+        "default": "#fff"
+      }, 
+      {
+        "type": "header",
+        "content": "Header Setting"
+      },
+      {
+        "id": "show_header",
+        "type": "checkbox",
+        "label": "Show Header", 
+        "default": true
+      }, 
+      {
+        "id": "header_text",
+        "type": "text",
+        "label": "Header Text", 
+        "default": "LETS GET STARTED"
+      }, 
+      {
+        "type": "header",
+        "content": "Column Setting"
+      },
+      {
+        "type": "range",
+        "id": "col_count_desktop",
+        "min": 2,
+        "max": 4,
+        "step": 1,
+        "label": "Column Count (Desktop)",
+        "default": 3
+      }, 
+      {
+        "type": "range",
+        "id": "col_count_tablet",
+        "min": 2,
+        "max": 4,
+        "step": 1,
+        "label": "Column Count (Tablet)",
+        "default": 3
+      }, 
+      {
+        "type": "range",
+        "id": "col_count_mob",
+        "min": 1,
+        "max": 3,
+        "step": 1,
+        "label": "Column Count (Mobile)",
+        "default": 2
+      }, 
+      {
+        "type": "header",
+        "content": "Social Icons Setting"
+      },
+      {
+        "id": "show_social",
+        "type": "checkbox",
+        "label": "Show Social Icons", 
+        "default": true
+      }, 
+      {
+        "id": "social_text",
+        "type": "text",
+        "label": "Social Text", 
+        "default": "Connect With Us"
+      }, 
+      {
+        "type": "url",
+        "id": "facebook_link",
+        "label": "Facebook Link"
+      }, 
+      {
+        "type": "url",
+        "id": "twitter_link",
+        "label": "Twitter Link"
+      }, 
+      {
+        "type": "url",
+        "id": "instagram_link",
+        "label": "Instagram Link"
+      }, 
+      {
+        "type": "url",
+        "id": "pinterest_link",
+        "label": "Pinterest Link"
+      }, 
+      {
+        "type": "url",
+        "id": "linkedin_link",
+        "label": "Linkedin Link"
+      }, 
+      {
+        "type": "url",
+        "id": "email_link",
+        "label": "Email Link"
+      }, 
+      {
+        "type": "header",
+        "content": "Copyright Setting"
+      },
+      {
+        "id": "show_copyright",
+        "type": "checkbox",
+        "label": "Show Copyright", 
+        "default": true
+      }, 
+      {
+        "id": "copyright_text",
+        "type": "textarea",
+        "label": "Copyright Text", 
+        "default": "® Out&Back Outdoor, All Rights Reserved, 2023<br> 3060 Brighton Blvd. Denver, CO 80216"
+      }
+	], 
+	"blocks":[
+      {
+        "type":"col",
+        "name":"Column",
+        "settings":[
+          {
+            "type": "header",
+            "content": "Header Setting"
+          },
+          {
+            "type": "select",
+            "id": "header_type",
+            "label": "Header Type",
+            "options": [
+              {
+                "value": "text",
+                "label": "Text"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "text"
+          },
+          {
+            "type": "text",
+            "id": "header_text",
+            "label": "Header Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "header_img",
+            "label": "Header Image"
+          }, 
+          {
+            "type": "range",
+            "id": "header_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Header Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "header_link",
+            "label": "Header Link"
+          }, 
+          {
+            "type": "header",
+            "content": "Content Setting"
+          },          
+          {
+            "type": "select",
+            "id": "item1_type",
+            "label": "Item1 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item1_text",
+            "label": "Item1 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item1_img",
+            "label": "Item1 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item1_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item1 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item1_link",
+            "label": "Item1 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item2_type",
+            "label": "Item2 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item2_text",
+            "label": "Item2 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item2_img",
+            "label": "Item2 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item2_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item2 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item2_link",
+            "label": "Item2 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item3_type",
+            "label": "Item3 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item3_text",
+            "label": "Item3 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item3_img",
+            "label": "Item3 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item3_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item3 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item3_link",
+            "label": "Item3 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item4_type",
+            "label": "Item4 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item4_text",
+            "label": "Item4 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item4_img",
+            "label": "Item4 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item4_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item4 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item4_link",
+            "label": "Item4 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item5_type",
+            "label": "Item5 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item5_text",
+            "label": "Item5 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item5_img",
+            "label": "Item5 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item5_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item5 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item5_link",
+            "label": "Item5 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item6_type",
+            "label": "Item6 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item6_text",
+            "label": "Item6 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item6_img",
+            "label": "Item6 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item6_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item6 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item6_link",
+            "label": "Item6 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item7_type",
+            "label": "Item7 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item7_text",
+            "label": "Item7 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item7_img",
+            "label": "Item7 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item7_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item7 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item7_link",
+            "label": "Item7 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item8_type",
+            "label": "Item8 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item8_text",
+            "label": "Item8 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item8_img",
+            "label": "Item8 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item8_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item8 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item8_link",
+            "label": "Item8 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item9_type",
+            "label": "Item9 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item9_text",
+            "label": "Item9 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item9_img",
+            "label": "Item9 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item9_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item9 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item9_link",
+            "label": "Item9 Link"
+          }, 
+          {
+            "type": "select",
+            "id": "item10_type",
+            "label": "Item10 Type",
+            "options": [
+              {
+                "value": "none",
+                "label": "Select an option"
+              },
+              {
+                "value": "header",
+                "label": "Header"
+              },
+              {
+                "value": "subtext",
+                "label": "Subext"
+              },
+              {
+                "value": "img",
+                "label": "Image"
+              }
+            ],
+            "default": "none"
+          },
+          {
+            "type": "text",
+            "id": "item10_text",
+            "label": "Item10 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "item10_img",
+            "label": "Item10 Image"
+          }, 
+          {
+            "type": "range",
+            "id": "item10_img_width",
+            "min": 50,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Item10 Image Width",
+            "default": 120
+          }, 
+          {
+            "type": "url",
+            "id": "item10_link",
+            "label": "Item10 Link"
+          }
+        ]
+      }
+	]
+  }
+{% endschema %}

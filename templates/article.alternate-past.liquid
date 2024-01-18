@@ -1,0 +1,220 @@
+{%- comment -%}
+  Comments may not appear right after they are submitted, either to be checked by Shopify's spam filter
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that includes the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+{%- endcomment -%}
+
+{%- if comment.status == 'pending' -%}
+  {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+{%- else -%}
+  {%- assign number_of_comments = article.comments_count -%}
+{%- endif -%}
+
+<style>
+.flexslider{
+    height: 42vh;
+}
+
+.learn-more{
+    font-size: .8rem;
+    padding: 8px 10px;
+}
+
+.container{
+    padding: 75px 15px;
+}
+.header-image {
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ article.image | img_url: '1600x'  }}) no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    height: 30vh;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header-text-wrap {
+    margin-top: 55px !important;
+  }
+  
+  .header-text {
+    text-align: center;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .header-image {
+      height: 30vh;
+    }
+    .header-text {
+      top: 220px;
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-image {
+      height: 40vh;
+    }
+    .header-text-wrap {
+      margin-top: 35px !important;
+    }
+    .header-text {
+      top: 190px;
+      font-size: 2.0rem;
+    }
+  }
+</style>
+<div class="header-image">
+  <div class="section-header text-center header-text-wrap">
+    <h1 class="article__title" id="title-0" style="color: #fff;">{{ article.title }}</h1>
+    <div class="article__Header_small" style="color: #fff">
+        Turn your old gear into beer (and money...)!
+    </div>
+  </div>
+</div>
+<div id="wave"></div>
+<article aria-labelledby="title-0">
+  <div class="grid">
+    <div class="medium-up--push-one-twelfth">
+      <div class="page__wrap">
+        <div class="event-intro-container">
+          <div class="event-intro">
+                Our first Beer For Gear event has officially come to a close, however if you’re still interested in 
+                selling your unwanted outdoor gear, we have a plan for you! 
+              </div>   
+              <div class="event-intro">
+                That’s right, Out&amp;Back offers a cash for gear program that is simple, 
+                rewarding and can be done from the comfort of your home! While you don’t receive a free beer, you do receive free shipping on any 
+                items we buy from you! <b><a style="text-decoration: underline" href='/pages/start-selling'>Learn more</a></b> about our sell-back program.
+              </div>
+            {% form 'contact', id: 'sell', data-form_type: "sell" %}
+                {% if form.posted_successfully? == false %}
+                    <div class="form-copy">
+                        <h5>Don’t miss out on future events. </h5>
+                        <h5>Provide your name, email address and local zip code and we’ll notify you of new events!</h5>
+                    </div>
+                {% endif %}
+                {% if form.errors contains 'email' %}
+
+                <span id="{{ formId }}-email-error" class="input-error-message">
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                {% include 'icon-error' %}
+                <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                </span>
+
+
+                {% endif %}
+                    <p class="required">Required Fields*</p>
+                    <div class="row">
+                        <input type="hidden" name="contact[form]" value="Future Events" />
+                        <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                            <input type="text" name="contact[first]" id="{{ formId }}-first" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}" placeholder="First Name*" required aria-label="First Name*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-first-error" data-form-status {% endif %}>
+                        </div>
+                        <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                            <input type="text" name="contact[last]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}" placeholder="Last Name*" required aria-label="Last Name*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-last-error" data-form-status {% endif %}>
+                        </div>
+
+                        <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                            <input type="email" name="contact[email]" id="{{ formId }}-email" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" placeholder="Email*" required aria-label="Email*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-email-error" data-form-status {% endif %}>
+                        </div>
+                        <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                            <input type="text" name="contact[zip]" id="{{ formId }}-zip" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.zip %}{{ form.zip }}{% elsif customer %}{{ customer.zip }}{% endif %}" placeholder="Zip Code*" required aria-label="Zip Code*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-zip-error" data-form-status {% endif %}>
+                        </div>
+                        <div class="input-group event_submit_checkbox {% if form.errors %} input-group--error{% endif %}" style="margin: 20px 0;">
+                            <label class="agreeText" style="line-height: 1rem"><input type="checkbox" name="contact[agree]" id="agree" class="input-group__field required {% if form.errors %} input--error{% endif %}" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-email-error" data-form-status {% endif %} required>By submitting your information, you agree to Out&amp;Back's <a href="/pages/terms-of-use" style="text-decoration: underline; color:#f00000" target="_blank">terms of use</a> and <a href="/pages/privacy-policy" style="text-decoration: underline; color:#f00000" target="_blank">privacy policy</a>.</label>
+                        </div>
+                        
+                        <div class="event_submit">
+                            <input type="submit" class="sell-submit" style="padding 10px !important" value="Notify me of events!">
+                        </div>
+                    </div>
+                </div>
+                {% if form.posted_successfully? %}
+
+                <script>
+                $("document").ready(function() {  
+                    $("#sellProduct").trigger('click');
+                });
+                </script>
+
+                <style>
+                form .row{
+                    display: none; 
+                }
+                </style>
+
+                <div class="form-success">
+                    <h5>Thank you for signing up to receive notifications for future events.</h5>
+                </div>
+                {% endif %}
+            {% endform %}
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+    $( "#event__address" ).click(function() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/windows phone/i.test(userAgent)) {
+            window.location.href = "https://www.google.com/maps/place/Call+to+Arms+Brewing+Company/@39.7789062,-105.0457678,17z/data=!3m1!4b1!4m5!3m4!1s0x876b87852945a983:0x87374f83667dba25!8m2!3d39.7789062!4d-105.0435791";
+        }
+        if (/android/i.test(userAgent)) {
+            window.location.href = "https://www.google.com/maps/place/Call+to+Arms+Brewing+Company/@39.7789062,-105.0457678,17z/data=!3m1!4b1!4m5!3m4!1s0x876b87852945a983:0x87374f83667dba25!8m2!3d39.7789062!4d-105.0435791";
+        }
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://maps.apple.com/?address=4526 Tennyson St, Denver, CO 80212, United States&auid=2312542317905772228&ll=39.778872,-105.043630&lsp=9902&q=Call to Arms Brewing Company&_ext=ChkKBQgEEOIBCgQIBRADCgQIBhBoCgQIChAAEiYpFrlM4x7jQ0AxLZijlSpDWsA5lI5yP0XkQ0BBA7nPEmtCWsBQBA==";
+        }
+        if (/Macintosh/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://www.google.com/maps/place/Call+to+Arms+Brewing+Company/@39.7789062,-105.0457678,17z/data=!3m1!4b1!4m5!3m4!1s0x876b87852945a983:0x87374f83667dba25!8m2!3d39.7789062!4d-105.0435791";
+        }
+        if (/Windows/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://www.google.com/maps/place/Call+to+Arms+Brewing+Company/@39.7789062,-105.0457678,17z/data=!3m1!4b1!4m5!3m4!1s0x876b87852945a983:0x87374f83667dba25!8m2!3d39.7789062!4d-105.0435791";
+        }
+    });
+</script>
+
+  
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ settings.share_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>

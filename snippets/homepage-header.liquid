@@ -1,0 +1,114 @@
+<style>
+    .header-container-shop-sell {
+      display: flex;
+      width: 100%;
+      margin-top: 56px;
+      flex-direction: row;
+      justify-content: center;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .header-container-shop {
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      padding: 35px 50px;
+      background-color: rgb(246 246 246);
+    }
+    .header-container-sell {
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      align-items: center;
+      padding: 35px 50px;
+    }
+    .header-container-text {
+      text-align: center;
+      font-family: 'Uniform', sans-serif;
+      color: #262262;
+      line-height: normal;
+      font-size: 2rem;
+      padding: 0 20%;
+    }
+    .header-container-button {
+      display: flex;
+      justify-content: center;
+      width: 200px;
+      margin: 35px 0;
+      color: #fff;
+      background-color: #f00000;
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: 900;
+    }
+    .header-image-container {
+      display: flex;
+      justify-content: center;
+    }
+    .header-container-image-shopping {
+      max-width: 300px;
+      height: auto;
+    }
+    .header-container-image-selling {
+      height: auto;
+    }
+    @media (min-width: 1600px) {
+        .header-container-text {
+          padding: 0 25%;
+        }
+    }
+    @media (max-width: 880px) {
+        .header-container-text {
+          font-size: 1.5rem;
+          padding: 0 5%;
+        }
+    }
+    @media (max-width: 600px) {
+        .header-container-shop-sell {
+            flex-direction: column;
+            height: auto;
+        }
+        .header-container-shop {
+            width: 100%;
+            padding: 35px 50px;
+        }
+        .header-container-sell {
+            width: 100%;
+            padding: 35px 50px;
+        }
+        .header-container-text {
+          font-size: 1.5rem;
+          padding: 0;
+        }
+    }
+</style>
+<div id="homepage-header" class="header-container-shop-sell">
+  <div class="header-container-shop">
+    <div class="header-container-text">
+      Shop and Save on New and Used Outdoor Gear
+    </div>
+
+    <a href="/pages/start-shopping">
+      <div class="header-container-button">START SHOPPING</div>
+    </a>
+
+    <div class="header-image-container">    
+    <img class="header-container-image-shopping" src="{{ 'backpack.png' | asset_img_url: 'master' }}" srcset="{{ 'backpack.png' | asset_img_url: '300x' }} 1500w, {{ 'backpack.png' | asset_img_url: '300x' }} 600w" alt="banner backpack" width="300" height="314" />
+    </div>
+  </div>
+
+  <div class="header-container-sell">
+    <div class="header-container-text">
+      Turn Unwanted Outdoor Gear
+      Into Cash Instantly
+    </div>
+    
+    <a href="/pages/start-selling">
+      <div class="header-container-button">START SELLING</div>
+    </a>
+    
+    <div class="header-image-container">
+      <img class="header-container-image-shopping" src="{{ 'jacket-to-cash.png' | asset_img_url: 'master' }}" srcset="{{ 'jacket-to-cash.png' | asset_img_url: '300x' }} 1500w, {{ 'jacket-to-cash.png' | asset_img_url: '300x' }} 600w" alt="banner jacket to cash" width="300" height="314" />
+    </div>
+  </div>
+</div>

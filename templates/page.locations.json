@@ -1,0 +1,507 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Public_Lands_Logo.jpg",
+            "title": "",
+            "caption": "We’ve partnered with Public Lands to make selling your unwanted outdoor gear super simple."
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "IN PERSON TRADE-IN MAKES SELLING OUTDOOR GEAR EVEN FASTER",
+        "image_size": 18,
+        "button_label": "START SELLING",
+        "button_link": "https:\/\/publiclands.sellback.outandbackoutdoor.com\/",
+        "padding_top": 6,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#ffffff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#ffffff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "1663891058b12727b0": {
+      "type": "custom-text-list",
+      "blocks": {
+        "ac97262b-359e-492f-a3ce-ff5988ff3704": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "Get paid as soon as you drop off",
+            "text_link": ""
+          }
+        },
+        "6e9137ab-459c-4b82-b76f-8a2dbabdc8b9": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CHECK_BOX_EMOJI.png",
+            "text_list": "30% bonus on gift card payments",
+            "text_link": ""
+          }
+        },
+        "393ff30d-6563-40c3-bec3-ea7c98aa9339": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MAD_FACE_EMOJI.png",
+            "text_list": "No waiting in line at the post office",
+            "text_link": ""
+          }
+        },
+        "d7a548a1-1da1-4993-a438-fb11ee5ff529": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MAD_FACE_EMOJI.png",
+            "text_list": "No hassling with packing-up gear",
+            "text_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "ac97262b-359e-492f-a3ce-ff5988ff3704",
+        "6e9137ab-459c-4b82-b76f-8a2dbabdc8b9",
+        "393ff30d-6563-40c3-bec3-ea7c98aa9339",
+        "d7a548a1-1da1-4993-a438-fb11ee5ff529"
+      ],
+      "settings": {
+        "heading": "Benefits of In-Person Trade In",
+        "caption": "Much better than the post office...",
+        "inner_caption": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#ffffff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#ffffff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "16638999551e99f094": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "1663899955687c07c6-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Number_1.png",
+            "title": "GRAB YOUR GEAR",
+            "caption": "Check <a href=\"\/pages\/brands-we-accept-for-sellback\">here<\/a> to make sure we accept what you're selling first"
+          }
+        },
+        "1663899955687c07c6-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Number_2.png",
+            "title": "DROP IT OFF",
+            "caption": "Come by in-person to any participating Public Lands stores"
+          }
+        },
+        "1663899955687c07c6-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Number_3.png",
+            "title": "GET PAID RIGHT AWAY!",
+            "caption": "You'll get paid right away though Venmo, Paypal or gift-card"
+          }
+        }
+      },
+      "block_order": [
+        "1663899955687c07c6-0",
+        "1663899955687c07c6-1",
+        "1663899955687c07c6-2"
+      ],
+      "settings": {
+        "heading": "It's Super Easy!",
+        "caption": "Dropoff in-person at your convenience",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#ffffff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#ffffff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "16646315293a6a7804": {
+      "type": "custom-text-list",
+      "blocks": {
+        "38d1ed77-8468-49c2-b709-88f565ba5cd5": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK.png",
+            "text_list": "Men's, Women's & Kids Outerwear",
+            "text_link": ""
+          }
+        },
+        "b01be307-5d4d-407c-aa66-1da9584f4a86": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_b2b7a985-af55-4834-9d1b-a34c6537e15d.png",
+            "text_list": "Backpacks and Duffel Bags",
+            "text_link": ""
+          }
+        },
+        "634c029f-4dfb-464d-b6b4-8dcedd534c0f": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_2c29a595-8e1f-4de3-ba79-d937542a7844.png",
+            "text_list": "Ski's and Snowboards (in-store only)",
+            "text_link": ""
+          }
+        },
+        "3fcb0ad4-41a2-4edb-9c19-30ff0d6e3ccd": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_e018ec68-a879-455c-a96f-6346179e5839.png",
+            "text_list": "Tents",
+            "text_link": ""
+          }
+        },
+        "203d2d38-f9c7-487b-b64a-0b0055fb2a1c": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_3a1014de-ea31-4f16-8d18-793661f6bb8c.png",
+            "text_list": "Sleeping Bags",
+            "text_link": ""
+          }
+        },
+        "5ce3bca7-c65f-4bf9-99e6-9e1904f01281": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_ccd64235-2ff7-451b-bd01-483713e180ba.png",
+            "text_list": "Sleeping Pads",
+            "text_link": ""
+          }
+        },
+        "5c08e2b4-f66c-4072-81f6-25c0171b9a51": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/X_51f81bbd-f97d-4d50-a9de-1b54ffe01e00.png",
+            "text_list": "Gear Older Than 10 Years",
+            "text_link": ""
+          }
+        },
+        "e38efc7b-93fd-46f9-8927-72a11a64ba4a": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/X_93054e9c-02b0-4c8f-8196-50d4b3de3ffc.png",
+            "text_list": "Climbing Equipment",
+            "text_link": ""
+          }
+        },
+        "bfd07677-8d23-4a7c-b9bb-ca633df661a2": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/X_3f50e413-1670-41ea-92fd-8715c699f0b2.png",
+            "text_list": "Safety Equipment",
+            "text_link": ""
+          }
+        },
+        "c1e5cc67-0ef8-475e-b27d-7558912da2e2": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/X_8dea7a7a-f136-4e47-a522-bcc3dc5194be.png",
+            "text_list": "Broken Gear",
+            "text_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "38d1ed77-8468-49c2-b709-88f565ba5cd5",
+        "b01be307-5d4d-407c-aa66-1da9584f4a86",
+        "634c029f-4dfb-464d-b6b4-8dcedd534c0f",
+        "3fcb0ad4-41a2-4edb-9c19-30ff0d6e3ccd",
+        "203d2d38-f9c7-487b-b64a-0b0055fb2a1c",
+        "5ce3bca7-c65f-4bf9-99e6-9e1904f01281",
+        "5c08e2b4-f66c-4072-81f6-25c0171b9a51",
+        "e38efc7b-93fd-46f9-8927-72a11a64ba4a",
+        "bfd07677-8d23-4a7c-b9bb-ca633df661a2",
+        "c1e5cc67-0ef8-475e-b27d-7558912da2e2"
+      ],
+      "settings": {
+        "heading": "Gear We Can and Can't Accept",
+        "caption": "We'll buy lots of stuff",
+        "inner_caption": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#ffffff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#ffffff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "16639021286fd6be71": {
+      "type": "custom-rich-text",
+      "blocks": {
+        "4e2f044d-c3f0-463f-b4a4-b4d874725252": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "CALIFORNIA",
+            "text": "<p>Santa Rosa, CA - DICK’S Sporting Goods<br\/>1975 Cleveland Ave, Santa Rosa, CA 95401<\/p>"
+          }
+        },
+        "cd2aa04d-f579-465f-bb7b-153051fffdbd": {
+          "type": "content",
+          "settings": {
+            "title": "COLORADO",
+            "text": "<p>Denver, CO - Out&Back Outdoor - 3060 Brighton Blvd. Denver, CO 80216<\/p>"
+          }
+        },
+        "07d76de7-a79d-4cc7-8591-1ed0be1d5bdf": {
+          "type": "content",
+          "settings": {
+            "title": "GEORGIA",
+            "text": "<p>Kennesaw GA - Public Lands - <br\/>667 Ernest W Barrett Pky NW, Ste 400, Kennesaw GA 30144<\/p>"
+          }
+        },
+        "a97e9aad-273e-4269-b1b1-536139d3a3b8": {
+          "type": "content",
+          "settings": {
+            "title": "MASSACHUSETTS",
+            "text": "<p>Framington, MA - Public Lands - <br\/>1 Worcester Road, Units 515 & 516, Framington, MA 01701<\/p>"
+          }
+        },
+        "8f69cef0-b3b0-4b3d-930d-06752434da83": {
+          "type": "content",
+          "settings": {
+            "title": "NEW YORK",
+            "text": "<p>Huntington, NY - Public Lands - <br\/>870 Walt Whitman Road, Melville, NY 11747<\/p>"
+          }
+        },
+        "204734c1-edee-4011-a2e2-20c1725aee38": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "OREGON",
+            "text": "<p>Tigard, OR - DICK’S Sporting Goods<br\/>9402 SW Washington Square Rd, Tigard, OR 97223<\/p><p>Medford, OR - Public Lands - <br\/>293 Rossanley Drive, Medford, OR 97501<\/p>"
+          }
+        },
+        "b3074bd6-bd83-4cdc-b05e-34a0d7878035": {
+          "type": "content",
+          "settings": {
+            "title": "OHIO",
+            "text": "<p>Columbus, OH - Public Lands<br\/>Fashion Place, 1510 Polaris Pkwy, Polaris, OH 43240<\/p>"
+          }
+        },
+        "d5ea2805-8233-455d-a61e-e5c69e7c95c2": {
+          "type": "content",
+          "settings": {
+            "title": "PENNSYLVANIA",
+            "text": "<p>Cranberry Township, PA - Public Lands<br\/>1000 Cranberry Square Dr Ste D, Cranberry Twp, PA 16066<\/p>"
+          }
+        },
+        "98efaceb-fa78-44d2-8de9-1990f877f384": {
+          "type": "content",
+          "settings": {
+            "title": "VIRGINIA",
+            "text": "<p>Charlottesville, VA - Public Lands<br\/>120 Wegmans Way, 5th St Station Pkwy Suite 300, Charlottesville, VA 22902<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4e2f044d-c3f0-463f-b4a4-b4d874725252",
+        "cd2aa04d-f579-465f-bb7b-153051fffdbd",
+        "07d76de7-a79d-4cc7-8591-1ed0be1d5bdf",
+        "a97e9aad-273e-4269-b1b1-536139d3a3b8",
+        "8f69cef0-b3b0-4b3d-930d-06752434da83",
+        "204734c1-edee-4011-a2e2-20c1725aee38",
+        "b3074bd6-bd83-4cdc-b05e-34a0d7878035",
+        "d5ea2805-8233-455d-a61e-e5c69e7c95c2",
+        "98efaceb-fa78-44d2-8de9-1990f877f384"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "Participating Locations",
+        "inner_caption": "We add locations often",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "interactivemap": {
+      "type": "custom-interactive-map",
+      "blocks": {
+        "e6a06a89-299c-4f91-b0eb-e329c0e61229": {
+          "type": "marker",
+          "disabled": true,
+          "settings": {
+            "dealer_name": "CALIFORNIA",
+            "full_address": "Santa Rosa, CA - DICK’S Sporting Goods\\n1975 Cleveland Ave, Santa Rosa, CA 95401",
+            "coordinates": "38.4559906,-122.7297227"
+          }
+        },
+        "83e5de24-37ee-452a-80b8-1eda6054b53c": {
+          "type": "marker",
+          "disabled": true,
+          "settings": {
+            "dealer_name": "CALIFORNIA",
+            "full_address": "Torrance, CA - DICK’S Sporting Goods\\n21800 Hawthorne Blvd #301, Torrance, CA 90503",
+            "coordinates": "33.8298407,-118.3525954"
+          }
+        },
+        "5c9c1d1f-831f-4a24-bfd9-0640bab4ad7a": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "COLORADO",
+            "full_address": "Denver, CO - Out&Back Outdoor - 3060 Brighton Blvd. Denver, CO 80216",
+            "coordinates": "39.76590065312692, -104.98348607791027"
+          }
+        },
+        "d668170f-7134-425e-8f7a-5ed9ead0ef9a": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "GEORGIA",
+            "full_address": "Kennesaw GA - Public Lands - Coming Oct 22’\\n667 Ernest W Barrett Pky NW, Ste 400, Kennesaw GA 30144",
+            "coordinates": "34.007055, -84.572420"
+          }
+        },
+        "c60c7b40-1577-4edd-9330-273b0381970f": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "MASSACHUSETTS",
+            "full_address": "Farmington, MA - Public Lands - Coming Oct 22’\\n1 Worcester Road, Units 515 & 516, Farmington, MA 01701",
+            "coordinates": "42.3017175,-71.3972502"
+          }
+        },
+        "67631bb2-62f2-497d-b5cc-a0d57bd8168c": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "NEW YORK",
+            "full_address": "Huntington, NY - Public Lands - Coming Oct 22’\\n870 Walt Whitman Road, Melville, NY 11747",
+            "coordinates": "40.7985578,-73.4121984"
+          }
+        },
+        "44ea77cc-40c3-48c6-8986-27c96109d3d4": {
+          "type": "marker",
+          "disabled": true,
+          "settings": {
+            "dealer_name": "OREGON",
+            "full_address": "Tigard, OR - DICK’S Sporting Goods\\n9402 SW Washington Square Rd, Tigard, OR 97223",
+            "coordinates": "45.4515742,-122.7819828"
+          }
+        },
+        "8b412e2f-f8e7-4d60-85ec-776bc08e6c57": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "OREGON",
+            "full_address": "Medford, OR - Public Lands - Coming Nov 22’\\n293 Rossanley Drive, Medford, OR 97501",
+            "coordinates": "42.3420301,-122.88755"
+          }
+        },
+        "5db088a7-628a-45a4-abb5-5566a2bc7f87": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "OHIO",
+            "full_address": "Columbus, OH - Public Lands\\nFashion Place, 1510 Polaris Pkwy, Polaris, OH 43240",
+            "coordinates": "40.1469903,-82.9819247"
+          }
+        },
+        "7472aa77-81a2-4add-956c-7c53e07d8ac0": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "PENNSYLVANIA",
+            "full_address": "Cranberry Township, PA - Public Lands\\n1000 Cranberry Square Dr Ste D, Cranberry Twp, PA 16066",
+            "coordinates": "40.6904515,-80.1076632"
+          }
+        },
+        "2bfbfb4b-4bb3-49f8-8d2e-50c34624979b": {
+          "type": "marker",
+          "settings": {
+            "dealer_name": "VIRGINIA",
+            "full_address": "Charlottesville, VA - Public Lands\\n120 Wegmans Way, 5th St Station Pkwy Suite 300, Charlottesville, VA 22902",
+            "coordinates": "38.0090315,-78.4999476"
+          }
+        }
+      },
+      "block_order": [
+        "e6a06a89-299c-4f91-b0eb-e329c0e61229",
+        "83e5de24-37ee-452a-80b8-1eda6054b53c",
+        "5c9c1d1f-831f-4a24-bfd9-0640bab4ad7a",
+        "d668170f-7134-425e-8f7a-5ed9ead0ef9a",
+        "c60c7b40-1577-4edd-9330-273b0381970f",
+        "67631bb2-62f2-497d-b5cc-a0d57bd8168c",
+        "44ea77cc-40c3-48c6-8986-27c96109d3d4",
+        "8b412e2f-f8e7-4d60-85ec-776bc08e6c57",
+        "5db088a7-628a-45a4-abb5-5566a2bc7f87",
+        "7472aa77-81a2-4add-956c-7c53e07d8ac0",
+        "2bfbfb4b-4bb3-49f8-8d2e-50c34624979b"
+      ],
+      "settings": {
+        "title": "Interactive Map"
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49",
+    "1663891058b12727b0",
+    "16638999551e99f094",
+    "16646315293a6a7804",
+    "16639021286fd6be71",
+    "interactivemap"
+  ]
+}

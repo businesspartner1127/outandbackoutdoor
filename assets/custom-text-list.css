@@ -1,0 +1,86 @@
+/* custom text list */
+.cs-text-list {
+  background: #f8f8f8;
+}
+.cs-text-list .cs-container .cs-grid .cs-content {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-inner-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-inner-title strong {
+  font-weight: 700;
+  filter: brightness(20%);
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-items {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul {
+  -moz-columns: 2;
+       columns: 2;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+  text-align: left;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul .cs-list {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul .cs-list .cs-small-image {
+  width: auto;
+  height: 20px;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul li a {
+  font-weight: 600;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item .cs-inner-caption {
+  margin-bottom: 1em;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.cs-text-list .cs-container .cs-grid .cs-content .cs-links a {
+  width: 20em;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .cs-text-list .cs-container .cs-grid .cs-content .cs-items {
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul {
+    -moz-columns: 1;
+         columns: 1;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+  .cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul li {
+    margin-bottom: 0.5em;
+  }
+  .cs-text-list .cs-container .cs-grid .cs-content .cs-items .cs-item ul .cs-list {
+    gap: 1.6em;
+  }
+  .cs-text-list .cs-container .cs-grid .cs-content .cs-links a {
+    width: 12em;
+  }
+}
+/* end custom text list */

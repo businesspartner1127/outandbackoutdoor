@@ -1,0 +1,256 @@
+{% style %}
+  .container{
+    padding: 0px 15px;
+  }	
+  .header-image {
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ 'careers_bg.jpg' | asset_url }}) no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    height: 35vh;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header-text-wrap {
+    margin-top: 55px !important;
+  }
+  
+  .header-text {
+    text-align: center;
+    color: #fff;
+  }
+  .job-description-container{
+    padding-left: 15px
+  }
+
+  .faq .section .job-description-container h5{
+    margin: 15px 0 10px 0; 
+    color: #f00000;
+    cursor: none;
+  }
+
+  .section .job-description-container ul li p{
+    list-style-type: circle;
+    text-align: left !important;
+    color: #262262;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: lighter !important;
+  }
+  
+  @media (max-width: 768px) {
+    .header-image {
+      height: 25vh;
+    }
+    .header-text {
+      top: 220px;
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-image {
+      height: 30vh;
+    }
+    .header-text-wrap {
+      margin-top: 35px !important;
+    }
+    .header-text {
+      top: 190px;
+      font-size: 2.0rem;
+    }
+  }
+{% endstyle %}
+<div class="header-image">
+  <div class="section-header text-center header-text-wrap">
+    <h1 class="article__title" id="title-0" style="color: #fff;">
+      {{ page.title }}
+    </h1>
+  </div>
+</div>
+<div id="wave"></div>
+<div class="page-width">
+  <div class="grid">
+      <div class="rte">
+        {{ page.content }}
+      </div>
+      <div class="container">
+        <div class="container-fluid faq">
+
+            <div class="section purchase-location">
+              <h5>Senior Engineer - Remote / Denver, CO</h5>
+              <div class="row">
+                <div class="co-md-12 job-description-container">
+                  <h5 class="text-left">Who we are:</h5>
+                  <p class="text-left">We’re <a style="color: #f00000" href="http://outandbackoutdoor.com/">Out&amp;Back</a> – the world’s first truly managed marketplace for outdoor gear.  We make buying and 
+                    selling new and used gear incredibly simple. We’re reinventing the way online marketplaces work – 
+                    bringing the best of ecommerce, marketplaces, search, price comparison, data and traditional retail 
+                    together into one user-friendly package so our customers can find, buy and sell their outdoor gear like 
+                    never before.
+                  </p>
+                  <p class="text-left">We’re venture funded and growing quickly.</p>
+                  <h5 class="text-left">Who we’re looking for:</h5>
+                  <p class="text-left">Out&amp;Back is looking to welcome a Senior Engineer to help take our core product to the next level! This 
+                    individual will be a key player on a growing team of engineers and will be entrusted with solving our most 
+                    pressing and complex problems. This person will report directly to our CTO and will have the opportunity to
+                    manage other engineers in the future should their work aspirations align with that task. The position is 
+                    remote-first but if the person lives in the Denver metro area there is office space that they may choose to 
+                    use.</p>
+                  <h5 class="text-left">The ideal candidate:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Is not easily intimidated and can work through issues without buckling under pressure</p></li>
+                    <li><p>&#9679 Can work well when the sky’s falling around them</p></li>
+                    <li><p>&#9679 Is an academic engineer who loves difficult problems</p></li>
+                    <li><p>&#9679 Takes pride in carrying through solutions to written code</p></li>
+                    <li><p>&#9679 Is a programmer, a coach, a manager, and happy to do all three</p></li>
+                  </ul>
+                  <h5 class="text-left">Job responsibilities:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Code, review code, code some more</p></li>
+                    <li><p>&#9679 Work with others to produce requirements and design solutions to our biggest problems</p></li>
+                    <li><p>&#9679 Mentor junior engineers</p></li>
+                  </ul>
+                  <h5 class="text-left">Job qualifications:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 10+ years’ engineering experience </p></li>
+                    <li><p>&#9679 Proven history of being able to architect solutions</p></li>
+                    <li><p>&#9679 Fluent in Python (for real...)</p></li>
+                    <li><p>&#9679 Strong project-management discipline</p></li>
+                    <li><p>&#9679 Understands requirements engineering/process</p></li>
+                    <li><p>&#9679 Excellent communicator who can connect effectively with cross-functional teams</p></li>
+                    <li><p>&#9679 Legal right to work in the United States without a company-sponsored visa</p></li>
+                  </ul>
+                  <h5 class="text-left">What you can expect working at Out&amp;Back:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 You’d be joining a startup. A true startup environment with all the energy and chaos that comes with it. </p></li>
+                    <li><p>&#9679 You’d be joining the outdoor industry. We love the outdoors, outdoor gear, and getting outside.</p></li>
+                    <li><p>&#9679 We’re sort of in Denver. We’re all over the US but we’ve got a small group of us in the Denver, CO. Daily office visits aren’t mandatory but we do enjoy working together a few times a week at our rad office.</p></li>
+                    <li><p>&#9679 We’re flexible on hours, not results.    The world is becoming remote, we all have our responsibilities, and we get that. You can work the hours that make sense for you so long as you deliver at the highest level.</p></li>
+                    <li><p>&#9679 A place where your voice is valued and matters.    We’re a small, yet mighty team that works hard plays hard and moves fast. That means everyone has a seat at the table and delivers value to Out&amp;Back.</p></li>
+                    <li><p>&#9679 Competitive benefits.    Health, dental and vision insurance</p></li>
+                    <li><p>&#9679 Equity: this is a senior engineering role and there will be equity provided under a typical vesting schedule in conjunction with strong performance </p></li>
+                    <li><p>&#9679 Pay Range: $120,000 to $170,000 based on experience </p></li>
+                  </ul>
+                  <h5 class="text-left">How to apply:</h5>
+                  <p class="text-left">Apply online or send an email with the title of the job you’re applying for in the subject line to 
+                    <a style="color:#f00000" href="mailto:careers@outandbackoutdoor.com">careers@outandbackoutdoor.com</a> along with your resume and explain why you’d crush this job. If you’re 
+                    the right fit, we’ll be in touch. </p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="section purchase-location">
+              <h5>Retail Associate - Seller Advocates - Denver, CO</h5>
+              <div class="row">
+                <div class="co-md-12 job-description-container">
+                  <h5 class="text-left">Who we are:</h5>
+                  <p class="text-left">We’re <a style="color: #f00000" href="http://outandbackoutdoor.com/">Out&amp;Back</a> – the world’s first truly managed marketplace for outdoor gear.  We make buying and 
+                    selling new and used gear incredibly simple. We’re reinventing the way online marketplaces work – 
+                    bringing the best of ecommerce, marketplaces, search, price comparison, data and traditional retail 
+                    together into one user-friendly package so our customers can find, buy and sell their outdoor gear like 
+                    never before.
+                  </p>
+                  <p class="text-left">We’re venture funded and growing quickly.</p>
+                  <h5 class="text-left">Who we’re looking for:</h5>
+                  <p class="text-left">Out&amp;Back is looking to welcome multiple Retail Associate - Seller Advocates to our team. These individuals will create amazing on-premises customer experiences for sellers helping them smoothly move through the selling process at our shop-in-shops and/or owned-retail locations. These roles are based in the Denver, CO Metro Area and the Pittsburgh, PA Metro Area. Due to the in-person interactions associated with this role, the individual awarded the job will have to show proof of vaccination against COVID-19.</p>
+                  <h5 class="text-left">The ideal candidate:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Is an outdoor enthusiast and loves the brands and products that power the industry</p></li>
+                    <li><p>&#9679 Is outgoing, kind, has a positive attitude, and loves interacting with people</p></li>
+                    <li><p>&#9679 Has high EQ, great communications skills and can manage stressful situations without assistance</p></li>
+                    <li><p>&#9679 Is incredibly punctual and well organized</p></li>
+                    <li><p>&#9679 Has worked on the front lines of retail before and loves it</p></li>
+                  </ul>
+                  <h5 class="text-left">Job responsibilities:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Assist sellers with their transactions from start to finish</p></li>
+                    <li><p>&#9679 Create a warm and welcoming environment for sellers to engage with</p></li>
+                    <li><p>&#9679 Perform front-of-house transaction operations like payments, cash-wrap, etc</p></li>
+                    <li><p>&#9679 Check seller gear for adherence to quality standards</p></li>
+                    <li><p>&#9679 Collect and prioritize seller feedback to improve the customer experience</p></li>
+                    <li><p>&#9679 Live the values of our company and be an excellent ambassador for our brand</p></li>
+                  </ul>
+                  <h5 class="text-left">Job qualifications:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Flexible availability – able to work weekends and holidays</p></li>
+                    <li><p>&#9679 Passion for the outdoors and sports generally</p></li>
+                    <li><p>&#9679 Retail operations or retail associate experience</p></li>
+                    <li><p>&#9679 Outdoor gear product knowledge for skis, snowboards, tents, backcountry equipment, etc. a MAJOR plus</p></li>
+                    <li><p>&#9679 Excellent communicator who can connect effectively and warmly with customers</p></li>
+                    <li><p>&#9679 Legal right to work in the United States without a company-sponsored visa</p></li>
+                  </ul>
+                  <h5 class="text-left">What you can expect working at Out&amp;Back:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 You’d be joining a startup. A true startup environment with all the energy and chaos that comes with it. </p></li>
+                    <li><p>&#9679 You’d be joining the outdoor industry. We love the outdoors, outdoor gear and getting outside.</p></li>
+                    <li><p>&#9679 A place where your voice is valued and matters.    We’re a small, yet mighty team that works hard plays hard and moves fast. That means everyone has a seat at the table and delivers value to Out&amp;Back.</p></li>
+                    <li><p>&#9679 Pay Range: $18-$25 / hour based on qualifications</p></li>
+                  </ul>
+                  <h5 class="text-left">How to apply:</h5>
+                  <p class="text-left">Apply online or send an email with the title of the job you’re applying for in the subject line to 
+                    <a style="color:#f00000" href="mailto:careers@outandbackoutdoor.com">careers@outandbackoutdoor.com</a> along with your resume and explain why you’d crush this job. If you’re 
+                    the right fit, we’ll be in touch. </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="section purchase-location">
+              <h5>Retail Associate - Seller Advocates - Pittsburgh, PA</h5>
+              <div class="row">
+                <div class="co-md-12 job-description-container">
+                  <h5 class="text-left">Who we are:</h5>
+                  <p class="text-left">We’re <a style="color: #f00000" href="http://outandbackoutdoor.com/">Out&amp;Back</a> – the world’s first truly managed marketplace for outdoor gear.  We make buying and 
+                    selling new and used gear incredibly simple. We’re reinventing the way online marketplaces work – 
+                    bringing the best of ecommerce, marketplaces, search, price comparison, data and traditional retail 
+                    together into one user-friendly package so our customers can find, buy and sell their outdoor gear like 
+                    never before.
+                  </p>
+                  <p class="text-left">We’re venture funded and growing quickly.</p>
+                  <h5 class="text-left">Who we’re looking for:</h5>
+                  <p class="text-left">Out&amp;Back is looking to welcome multiple Retail Associate - Seller Advocates to our team. These individuals will create amazing on-premises customer experiences for sellers helping them smoothly move through the selling process at our shop-in-shops and/or owned-retail locations. These roles are based in the Denver, CO Metro Area and the Pittsburgh, PA Metro Area. Due to the in-person interactions associated with this role, the individual awarded the job will have to show proof of vaccination against COVID-19.</p>
+                  <h5 class="text-left">The ideal candidate:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Is an outdoor enthusiast and loves the brands and products that power the industry</p></li>
+                    <li><p>&#9679 Is outgoing, kind, has a positive attitude, and loves interacting with people</p></li>
+                    <li><p>&#9679 Has high EQ, great communications skills and can manage stressful situations without assistance</p></li>
+                    <li><p>&#9679 Is incredibly punctual and well organized</p></li>
+                    <li><p>&#9679 Has worked on the front lines of retail before and loves it</p></li>
+                  </ul>
+                  <h5 class="text-left">Job responsibilities:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Assist sellers with their transactions from start to finish</p></li>
+                    <li><p>&#9679 Create a warm and welcoming environment for sellers to engage with</p></li>
+                    <li><p>&#9679 Perform front-of-house transaction operations like payments, cash-wrap, etc</p></li>
+                    <li><p>&#9679 Check seller gear for adherence to quality standards</p></li>
+                    <li><p>&#9679 Collect and prioritize seller feedback to improve the customer experience</p></li>
+                    <li><p>&#9679 Live the values of our company and be an excellent ambassador for our brand</p></li>
+                  </ul>
+                  <h5 class="text-left">Job qualifications:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 Flexible availability – able to work weekends and holidays</p></li>
+                    <li><p>&#9679 Passion for the outdoors and sports generally</p></li>
+                    <li><p>&#9679 Retail operations or retail associate experience</p></li>
+                    <li><p>&#9679 Outdoor gear product knowledge for skis, snowboards, tents, backcountry equipment, etc. a MAJOR plus</p></li>
+                    <li><p>&#9679 Excellent communicator who can connect effectively and warmly with customers</p></li>
+                    <li><p>&#9679 Legal right to work in the United States without a company-sponsored visa</p></li>
+                  </ul>
+                  <h5 class="text-left">What you can expect working at Out&amp;Back:</h5>
+                  <ul class="p" style="text-align: left;">
+                    <li><p>&#9679 You’d be joining a startup. A true startup environment with all the energy and chaos that comes with it. </p></li>
+                    <li><p>&#9679 You’d be joining the outdoor industry. We love the outdoors, outdoor gear, and getting outside.</p></li>
+                    <li><p>&#9679 A place where your voice is valued and matters.    We’re a small, yet mighty team that works hard plays hard and moves fast. That means everyone has a seat at the table and delivers value to Out&amp;Back.</p></li>
+                    <li><p>&#9679 Pay Range: $18-$25 / hour based on qualifications</p></li>
+                  </ul>
+                  <h5 class="text-left">How to apply:</h5>
+                  <p class="text-left">Apply online or send an email with the title of the job you’re applying for in the subject line to 
+                    <a style="color:#f00000" href="mailto:careers@outandbackoutdoor.com">careers@outandbackoutdoor.com</a> along with your resume and explain why you’d crush this job. If you’re 
+                    the right fit, we’ll be in touch. </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+   </div>
+</div>

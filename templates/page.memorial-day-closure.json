@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/iStock-1037056282.jpg",
+            "title": "",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "On Memorial Day, we join the nation in honoring those who have served and protected us and this beautiful place we call home. We will be closed from May 24th through May 29th to honor our fallen heroes. We will resume our mission in creating a more sustainable, attainable outdoor experience for everyone on Tuesday, May 30th.",
+        "image_size": 20,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 6,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#ffffff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#ffffff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49"
+  ]
+}

@@ -1,0 +1,79 @@
+{% unless product.has_only_default_variant %}
+    <div class="product-form__controls-group">
+        {% for option in product.options_with_values %}
+            {% assign option_name = option.name | downcase %}
+            <label {% if option_name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">               
+                <span class="cs-variant-label">{{- option_name | capitalize -}}:</span>
+            </label>
+            {% assign option_position = forloop.index %}
+            <fieldset data-index="{{ forloop.index }}">                
+                {%- for value in option.values -%}
+                    <div class="cs-selector">                    
+                        <input type="radio" class="single-option-selector-{{ section.id }} "
+                        {% if option.selected_value == value %} checked="checked"{% endif %}
+                        value="{{- value -}}"
+                        data-index="option{{option_position}}"
+                        name="{{ option_name | handleize }}"
+                        id="SingleOptionSelector-{{- value -}}" 
+                        data-value="{{- value -}}"
+                        data-clean="{{- value -}}">
+                        <label for="SingleOptionSelector-{{- value -}}">{{- value -}}</label>
+                    </div>
+                {%- endfor -%}
+            </fieldset>
+        {% endfor %}
+    </div>
+{% endunless %}
+
+<script>
+let previousUrl = ''
+
+$('.product-form__controls-group fieldset').on('load', function() {
+    const data_index = 'label-span-' + $(this).attr('data-index')    
+    const data_selected = $(this).children('.cs-selector').find('input:checked').attr('data-clean')    
+    $(this).prev('label').children('#' + data_index).remove()
+    $(this).prev('label').append(`<span style="text-transform: capitalize;" id="${data_index}">${data_selected}</span>`)
+})
+
+$('.product-form__controls-group fieldset').on('change', function() {
+    const data_index = 'label-span-' + $(this).attr('data-index')
+    const data_selected = $(this).children('.cs-selector').find('input:checked').attr('data-clean')
+    $(this).prev('label').children('#' + data_index).remove()
+    $(this).prev('label').append(`<span style="text-transform: capitalize;" id="${data_index}">${data_selected}</span>`)
+})
+
+function discountPercentage(partialValue, totalValue) {
+    return Math.round((totalValue - partialValue) * 100 / totalValue);
+}
+
+let product_handle = '{{ product.title | handle }}'  
+
+fetch('/products/' + product_handle + '.js')
+    .then(function(response) { 
+        return response.json() 
+    })
+    .then(function(product){
+    function linkedOptions() {
+        if (window.location.href !== previousUrl) {
+            previousUrl = window.location.href
+            var url = new URL(window.location.href)
+            let variantID = url.searchParams.get("variant")
+            if (variantID == null) {
+                variantID = '{{ current_variant.id }}'
+            }
+            let current_variant = product.variants.find(function(variant) { 
+                return variant.id == variantID 
+            })
+            var compare_price = current_variant.compare_at_price
+            var current_price = current_variant.price
+            if (discountPercentage(current_price, compare_price) > 0) {
+                $('[data-price-percentage]').text(discountPercentage(current_price, compare_price) + '% OFF')
+            } else {
+                $('[data-price-percentage]').text('')
+            }
+        }
+    }
+    document.addEventListener('load', linkedOptions)
+    document.addEventListener('change', linkedOptions)
+})
+</script> 

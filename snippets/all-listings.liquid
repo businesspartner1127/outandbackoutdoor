@@ -1,0 +1,171 @@
+<div id="listings" class="product-links__brand">
+
+  {% for variant in product.variants %}
+  
+  	{% for key_value in variant.metafields.custom_fields['product_links'] %}
+  
+      {% if key_value['inventory_count1'] != 0 and key_value['inventory_count1'] != 'blank' or key_value['inventory_count2'] != 0 and key_value['inventory_count2'] != 'blank'  %}
+
+        <ul class="variantList">
+
+          <li class="variantInfo">
+            
+			{% assign variant_newness = '' %}
+            {% assign variant_sizes = '' %}
+            {% assign variant_colors = '' %}
+            
+            {% capture variant_options %}
+            
+              <ul>
+                {% for i in (1..50) %}
+				  {% assign inventory_newness_key = 'newness' | append: i %}
+                  {% assign inventory_count_key = 'inventory_count' | append: i %}
+                  {% assign inventory_size_key = 'size' | append: i %}
+                  {% assign inventory_color_key = 'color' | append: i %}
+                  {% assign inventory_price_key = 'price' | append: i %}
+                  {% assign inventory_url_key = 'url' | append: i %}
+                
+                
+				  {% assign inventory_newness = key_value[inventory_newness_key] %}
+                  {% assign inventory_count = key_value[inventory_count_key] %}
+                  {% assign inventory_size = key_value[inventory_size_key] %}
+                  {% assign inventory_color = key_value[inventory_color_key] %}
+                  {% assign inventory_price = key_value[inventory_price_key] %}
+                  {% assign inventory_url = key_value[inventory_url_key] %}
+
+
+                
+                  {% if inventory_count > 0 and inventory_size != 'blank' %}
+                	
+                	{% assign newness = '|' | append: inventory_newness | append: '|' %}
+                
+                	{% assign size = '|' | append: inventory_size | append: '|' %}
+                
+                	{% assign color = '|' | append: inventory_color | append: '|' %}
+                
+                	{% unless variant_newness contains newness %}
+                    	{% assign variant_newness = variant_newness | append: newness %}
+                	{% endunless %}
+                
+                	{% unless variant_sizes contains size %}
+                    	{% assign variant_sizes = variant_sizes | append: size %}
+                	{% endunless %}
+                
+                	{% unless variant_colors contains color %}
+                    	{% assign variant_colors = variant_colors | append: color %}
+                	{% endunless %}
+                
+                    <li class="listing row {{ i }}">
+                      
+                      <div class="col-md sizeContainer"><div class="listSize available-size-item">{{ inventory_size }}</div></div>
+                      <div class="col-md conditionContainer"><div class="listCondition">{{ inventory_newness }}</div></div>
+                      <div class="col-md colorContainer"><div class="listColor">{{ inventory_color }}</div></div>
+                      <div class="col-md priceContainer"><div class="listPrice">{{ inventory_price | times: 100 | money }}</div></div>
+                      <div class="col-md urlContainer"><a href="{{ inventory_url }}" target="_blank">VIEW</a></div>
+                    </li>
+                  {% endif %}
+                  
+                {% endfor %}
+              </ul>
+            
+            {% endcapture %}
+            {% assign variant_newness = variant_newness | split: "|" %}
+            {% capture variant_condition %}
+          	{% for newness in variant_newness %}
+                {% if newness != '' %}
+              		{% if forloop.last == true %}
+              {{ newness }}
+              		{% else %}
+              {{ newness }} /
+              		{% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endcapture %}
+            <div class="clickTrigger">
+            <div class="brand">
+              
+              
+              {% assign brand = key_value['site_name'] %}
+              {% case brand %}
+                {% when "arcteryx" %}
+                   <h4 class="brandName">ARC'TERYX</h4>
+                {% when "columbia" %}
+                   <h4 class="brandName">COLUMBIA</h4>
+                {% when "mountain_hardwear" %}
+                   <h4 class="brandName">MOUNTAIN HARDWEAR</h4>
+                {% when "patagonia" %}
+                   <h4 class="brandName">PATAGONIA</h4>
+                {% when "the_north_face" %}
+                   <h4 class="brandName">THE NORTH FACE</h4>
+                {% when "ebay" %}
+                   <h4 class="brandName">EBAY</h4>
+                {% when "poshmark" %}
+                   <h4 class="brandName">POSHMARK</h4>
+                {% when "marmot" %}
+                   <h4 class="brandName">MARMOT</h4>
+              	{% when "patagonia_wornwear" %}
+                   <h4 class="brandName">PATAGONIA WORNWEAR</h4>
+              	{% when "the_north_face_renewed" %}
+                   <h4 class="brandName">THE NORTH FACE RENEWED</h4>
+                {% else %}
+                   <h4 class="brandName">UNBRANDED</h4>
+              {% endcase %}
+              
+              <h4 class="brandCondition">{{ variant_condition }}</h4>
+              
+              <h4 class="brandPrice">${{ variant.price | money_without_currency }}</h4>
+            </div>
+           	<div class="row listInfo">
+            <div class="col-md-6">
+            <div class="available_sizes">Available Sizes: 
+              {% comment %}
+              {% assign variant_sizes = variant_sizes | split: "|" %}
+              {% for size in variant_sizes %}
+                {% if size != '' %}
+		            <span class="available-size-item">
+                	{{size }},
+		            </span>
+                {% endif %}
+              {% endfor %}
+              {% endcomment %}
+              
+              
+              {% assign variant_sizes = variant_sizes | split: "|" %}
+              {% for size in variant_sizes %}
+                {% if size != '' %}
+              		<span class="available-size-item">
+              		{% if forloop.last == true %}
+                		{{ size }}
+              		{% else %}
+              			{{ size }},
+              		{% endif %}
+              	    </span>
+                {% endif %}
+              {% endfor %}
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="available_colors">Available Colors:
+              {% assign variant_colors = variant_colors | split: "|" %}
+              {{ variant_colors.size | divided_by: 2 }}
+            </div>
+            </div>
+            <div class="col-md-12">
+              	SEE DETAILS
+            </div>
+            </div>
+            </div>
+            
+            {{ variant_options }}
+
+          </li>
+
+        </ul>
+
+      {% endif %}
+  
+  	{% endfor %}
+
+  {% endfor %}
+  
+</div>

@@ -1,0 +1,82 @@
+<style>
+.as-seen-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    padding: 2.5rem 4rem 2rem 4rem;
+    border-bottom: 1px solid #dee2e6
+}
+.as-seen-images-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.as-seen-image-wrapper {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.as-seen-image {
+  width: 30%;
+  height: auto;
+  filter: grayscale(50%)
+}
+.as-seen-image-well {
+  width: 35%;
+  height: auto;
+  filter: grayscale(50%)
+}
+@media (min-width: 601px) {
+    .as-seen-image {
+        width: 50%;
+        height: auto;
+    }
+    .as-seen-image-well {
+        width: 55%;
+        height: auto;
+    }
+    .as-seen-section-slider {
+        display: none;
+    }  
+}
+@media (max-width: 600px) {
+    .as-seen-section-slider {
+        margin-top: 0;
+    }
+    .as-seen-image-wrapper {
+        display: none;
+    }
+
+}
+</style>
+<div class="as-seen-container">
+
+    <h3 class="purple textCenter">As seen on</h3>
+
+    <div class="as-seen-images-container">
+        
+        <div class="as-seen-image-wrapper">
+            <img class="as-seen-image" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Pos_1.png?v=1655824964" width="350" height="350" alt="as seen on outside" />
+        </div>
+
+        <div class="as-seen-image-wrapper">
+            <img class="as-seen-image" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Pos_3.png?v=1655824964" width="350" height="350" alt="as seen on forbes" />
+        </div>
+
+        <div class="as-seen-image-wrapper">
+            <img class="as-seen-image-well" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Pos_2.png?v=1655824964" width="350" height="350" alt="as seen on gearjunkie" />
+        </div>
+        <div class="as-seen-image-wrapper">
+            <img class="as-seen-image" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Pos_4.png?v=1655824964" width="350" height="350" alt="as seen on denver post" />
+        </div>
+    </div>
+    
+  <div class="as-seen-section-slider">
+        {% include 'as-seen-section-slider' %}
+    </div>
+  
+</div>

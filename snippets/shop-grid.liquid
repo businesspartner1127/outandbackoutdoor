@@ -1,0 +1,127 @@
+<style>
+    .small-grid-container-wrap {
+        display: flex;
+    }
+    .off-small-grid-container {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        background: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/iStock-1049213716.jpg?v=1649088634) no-repeat;
+        background-size: cover;
+        position: 50%;
+        height: 60vh;
+        margin: 0 5px 10px 5px;
+    }
+    .off-small-grid-container-right {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        background: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/backpacking_ophelie-authier-X0SMdQSQwzc-unsplash_1.jpg?v=1660445400) no-repeat;
+        background-size: cover;
+        height: 60vh;
+        margin: 0 5px 10px 5px;
+    }
+    .shop-grid-text-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-grow: 2;
+    }
+    .shop-grid-text-container-left {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-grow: 2;
+    }
+    .shop-grid-text {
+        align-self: flex-end;
+        text-align: center;
+        font-family: 'Uniform', sans-serif;
+        color: #F00000;
+        line-height: normal;
+        font-size: 2rem;
+        background-color: rgba(255, 255, 255, 0.774);
+        width: 35%;
+        padding: 10px;
+    }
+    .seasonal-grid-button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+    .seasonal-grid-button {
+      display: flex;
+      justify-content: center;
+      width: 200px;
+      margin: 0px 10px 0px 10px;
+      color: #f00000;
+      background-color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: 900;
+    }
+    @media (max-width: 1000px) {
+        .shop-grid-text {
+            font-size: 1.5rem;
+            width: 47%;
+        } 
+    }
+    @media (max-width: 768px) {
+        .off-small-grid-container {
+            height: 50vh;
+        }
+        .off-small-grid-container-right {
+            height: 50vh;
+        }
+    }
+    @media (max-width: 600px) {
+        .small-grid-container-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+        .shop-grid-text {
+            font-size: 1.3rem;
+        } 
+        .off-small-grid-container {
+            width: 100%;
+        }
+        .off-small-grid-container-right {
+            width: 100%;
+        }
+    }
+</style>
+<div id="shop-grid" class="seasonal-grid-container">
+     <div class="small-grid-container-wrap">
+        <div class="off-small-grid-container">
+            <div class="shop-grid-text-container-left">
+                <div class="shop-grid-text">
+                    Hiking Pants Under $100
+                </div>
+            </div>
+            <div class="seasonal-grid-button-container">
+                <a href="/collections/hiking-pants-under-100">
+                    <div class="seasonal-grid-button">
+                        SHOP THE COLLECTION
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="off-small-grid-container-right">
+            <div class="shop-grid-text-container">
+                <div class="shop-grid-text">
+                    BACKPACKS BUILT FOR THE LONG HAUL
+                </div>
+            </div>
+            <div class="seasonal-grid-button-container">
+                <a href="/collections/backpacks-built-for-the-long-haul">
+                    <div class="seasonal-grid-button">
+                        SHOP THE COLLECTION
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+/* custom mini image slider */
+.cs-mini-image-slider {
+  background: #f8f8f8;
+}
+.cs-mini-image-slider .cs-container {
+  position: relative;
+}
+.cs-mini-image-slider .cs-container .cs-grid {
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+.cs-mini-image-slider .cs-container .cs-grid h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.cs-mini-image-slider .cs-container .cs-grid .cs-card .cs-content {
+  padding: 0 4em;
+  text-align: center;
+}
+.cs-mini-image-slider .cs-container .cs-grid .cs-card .cs-content img {
+  width: 12em;
+  height: auto;
+  margin-bottom: 1em;
+}
+.cs-mini-image-slider .cs-container .cs-grid .cs-card .cs-content .cs-upper-paragraph p {
+  font-size: 1.2rem;
+  margin-bottom: 2em;
+}
+.cs-mini-image-slider .cs-container .cs-grid .cs-card .cs-content .cs-paragraph p {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .cs-mini-image-slider .cs-container .cs-grid {
+    padding: 2em 2em 3em;
+  }
+  .cs-mini-image-slider .cs-container .cs-grid .cs-card .cs-content {
+    padding: 0 2em;
+  }
+}
+
+@media screen and (max-width: 540px) {  
+  .cs-mini-image-slider .cs-container .cs-grid .cs-card .cs-content {
+    padding: 0;
+  }
+}
+/* end custom mini image slider */

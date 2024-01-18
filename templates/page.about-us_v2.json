@@ -1,0 +1,262 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sustainability_Icon_1d31b2a8-cb60-44a9-82b7-af1f9274fba9.png",
+            "title": "",
+            "caption": "Out&Back Outdoor is creating a world that delivers a first-class selling and shopping experience for secondhand gear, where people don't have to make sacrifices between new and used. And by doing so, we’ll move secondhand gear from an afterthought to the forefront of outdoor shopping."
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "WE WANT TO CREATE A MORE SUSTAINABLE, ATTAINABLE OUTDOOR EXPERIENCE FOR EVERYONE",
+        "image_size": 20,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 6,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "16638999551e99f094": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "1663899955687c07c6-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MagGlassTent.jpg",
+            "title": "SHOP",
+            "caption": "We curate new and used gear in a single shopping platform."
+          }
+        },
+        "1663899955687c07c6-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SALE_small_9a3fe0fb-b57b-4609-8f84-44ed28704df2.jpg",
+            "title": "SAVE",
+            "caption": "We offer gear at a discount, so you can always score a great deal."
+          }
+        },
+        "1663899955687c07c6-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/JACKTTOCASH_small_b2c41127-98ea-4799-b9b0-ec765a4fef86.jpg",
+            "title": "SELL",
+            "caption": "We buy your unwanted gear with an instant offer and free shipping"
+          }
+        }
+      },
+      "block_order": [
+        "1663899955687c07c6-0",
+        "1663899955687c07c6-1",
+        "1663899955687c07c6-2"
+      ],
+      "settings": {
+        "heading": "Shop, Save, and Sell",
+        "caption": "We make it easy to buy and sell secondhand gear",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "f71f253a-e371-43c8-a414-a2855f5f3953": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--15960452268189__f71f253a-e371-43c8-a414-a2855f5f3953-16673191650e62a0b0-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MAGLASS_adb8878c-cf33-4ead-a5c1-fca013209e57.png",
+            "title": "",
+            "caption": "Out&Back Outdoor is creating a world that delivers a first-class shopping experience for secondhand gear, where people don't have to make sacrifices between new and used. And by doing so, we’ll move secondhand gear from an afterthought to the forefront of outdoor shopping.<br><br>\nWe believe there’s a world where the definition of “new” has a different meaning. Where one individual’s unwanted gear can become another's new gear. Enabling a place where everyone has access to quality gear at a more affordable price.<br><br>\nOur goal is to keep gear in circulation instead of landfills. While it’s our right to explore the outdoors, it’s our duty to minimize our environmental impact to ensure our adventures continue for years to come.\nThis is why we are creating the easiest way to shop, save, and sell outdoor gear."
+          }
+        }
+      },
+      "block_order": [
+        "template--15960452268189__f71f253a-e371-43c8-a414-a2855f5f3953-16673191650e62a0b0-0"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "WE WANT TO CREATE A MORE SUSTAINABLE, ATTAINABLE OUTDOOR EXPERIENCE FOR EVERYONE",
+        "image_size": 14,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "a525f6b9-072e-456c-bdc1-709a3320e31a": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-0": {
+          "type": "card",
+          "settings": {
+            "title": "Barruch Ben-Zekry",
+            "sub_title": "Founder",
+            "paragraph": "<p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p>",
+            "full_paragraph": "<p>Barruch started Out&Back in December of 2019 after working at VF Corporation. He has built multiple recommerce businesses in the past with Out&Back being the latest iteration. He is an outdoor enthusiast, lives in Denver CO with his wife Angela and small daughter Sierra.<\/p>",
+            "card_background_image": "shopify:\/\/shop_images\/Barruch.png",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-1": {
+          "type": "card",
+          "settings": {
+            "title": "Dustin Oprea",
+            "sub_title": "Co-Founder, Engineering",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Dustin leads engineering for Out&Back. He has held multiple lead engineering roles at companies big and small most recently having been a senior engineer at Magic Leap. Dustin loves to bike, hike, and explore the outdoors with his camera! He is based in South Florida<\/p>",
+            "card_background_image": "shopify:\/\/shop_images\/Dustin.png",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-2": {
+          "type": "card",
+          "settings": {
+            "title": "Kara Watada",
+            "sub_title": "Co-Founder, Marketing",
+            "paragraph": "<p><\/p><p><\/p>",
+            "full_paragraph": "<p>Kara leads growth and marketing at Out&Back. She blends her previous digital marketing and re-commerce experiences to create memorable brand experiences and build meaningful connections with outdoor adventurers. An original Colorado native, Kara loves spending time outdoors with her friends and family.<\/p>",
+            "card_background_image": "shopify:\/\/shop_images\/Kara.png",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-0",
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-1",
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-2"
+      ],
+      "settings": {
+        "heading": "GET TO KNOW OUR TEAM!",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    },
+    "e10fc463-00b6-4653-913a-101456816b4e": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--15960452268189__e10fc463-00b6-4653-913a-101456816b4e-1667320733454b2761-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Denver.jpg",
+            "title": "",
+            "caption": "Out&Back Outdoor was founded in Denver, Colorado in late 2019. Our offices are in the RiNo neighborhood near downtown.<br>\n<br>\n\n\nWe’re a team of outdoor enthusiasts so being in Denver is the center of bullseye! It gives us access to trails, ski-slopes, and any manor of outdoor activity (and the community that comes with them) so we can practice what we preach. It’s easy to be a gearhead in Denver."
+          }
+        }
+      },
+      "block_order": [
+        "template--15960452268189__e10fc463-00b6-4653-913a-101456816b4e-1667320733454b2761-2"
+      ],
+      "settings": {
+        "heading": "Denver is our home!",
+        "caption": "It’s easy to be a gearhead in Denver",
+        "inner_heading": "",
+        "image_size": 20,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "2f3f6315-4852-4beb-b0cb-40085f310224": {
+      "type": "custom-mini-image-slider",
+      "blocks": {
+        "c297975b-124f-4305-8245-415452700903": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "<strong>BASELAYER VENTURES<\/strong>",
+            "image": "shopify:\/\/shop_images\/Baselayer.jpg",
+            "lower_paragraph": "An independent early-stage venture firm that invests in health, sustainability, marketplace and virtual goods companies.",
+            "link": ""
+          }
+        },
+        "e1d63bda-875e-4e13-920c-529e77e91f9a": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "<strong>VF CORPORATION<\/strong>",
+            "image": "shopify:\/\/shop_images\/VF.jpg",
+            "lower_paragraph": "One of the world’s largest outdoor, apparel and footwear companies and owner of The North Face, Vans, SUPREME and others.",
+            "link": ""
+          }
+        },
+        "7b7d2d41-b9d3-49a7-b838-6de2243b8273": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "<strong>ACCELERATOR VENTURES<\/strong>",
+            "image": "shopify:\/\/shop_images\/Accelerator.jpg",
+            "lower_paragraph": "A San Francisco based venture firm that invests in early-stage technology companies with notable exits in Zappos, Braze and others.",
+            "link": ""
+          }
+        },
+        "e00fdbbd-768d-4ead-84c0-8cb950aa7c2f": {
+          "type": "image",
+          "settings": {
+            "upper_paragraph": "<strong>DSG VENTURES<\/strong>",
+            "image": "shopify:\/\/shop_images\/DSGV.png",
+            "lower_paragraph": "An in-house fund investing in innovative companies that hold the core belief that sports make people better.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "c297975b-124f-4305-8245-415452700903",
+        "e1d63bda-875e-4e13-920c-529e77e91f9a",
+        "7b7d2d41-b9d3-49a7-b838-6de2243b8273",
+        "e00fdbbd-768d-4ead-84c0-8cb950aa7c2f"
+      ],
+      "settings": {
+        "heading": "MEET OUR INVESTORS",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49",
+    "16638999551e99f094",
+    "f71f253a-e371-43c8-a414-a2855f5f3953",
+    "a525f6b9-072e-456c-bdc1-709a3320e31a",
+    "e10fc463-00b6-4653-913a-101456816b4e",
+    "2f3f6315-4852-4beb-b0cb-40085f310224"
+  ]
+}

@@ -1,0 +1,125 @@
+{% unless product.has_only_default_variant %}
+    <div class="product-form__controls-group">
+        {%- assign variant_titles = "" -%}
+        {%- for variant in product.variants -%}
+            {%- assign temp = variant.title | append: ', '-%}
+            {%- assign variant_titles = variant_titles | append: temp -%}
+        {%- endfor -%}
+               
+        {%- for option in product.options_with_values -%}
+
+            {% assign option_name = option.name | downcase %}
+            
+                <label {% if option_name == 'default' %}class="label--hidden" {% else %} class="{% if option_name contains 'site_and_condition' %}last{% endif %}" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {% if option_name contains 'site_and_condition' %}
+                        <span class="cs-variant-label">{{- option_name | remove: 'site_and_' | capitalize -}}: {% if option.values.size == 1 %}{{ option.values[0] | remove: '_managed:' | upcase }}{% endif %}</span>
+                    {% elsif option_name contains 'size_and_size2' %}
+                        <span class="cs-variant-label">{{- option_name | remove: '_and_size2' | capitalize -}}: {% if option.values.size == 1 %}{{ option.values[0] | split: ':' | join: "-" | upcase }}{% endif %}</span>
+                    {% elsif option_name contains 'color' %}
+                        <span class="cs-variant-label">{{- option_name | capitalize -}}: {% if option.values.size == 1 %}{{ option.values[0] | split: ':' | first | upcase }}{% endif %}</span>
+                    {% endif %}
+                </label>
+                {% assign option_position = forloop.index %}
+                <fieldset data-index="{{ forloop.index }}" class="{% if option_name contains 'site_and_condition' %}last{% endif %}">
+                    {% if option_name contains 'site_and_condition' %}
+                        {%- for value in option.values -%}
+                            {% if value contains '_managed:' %}
+                                <div class="cs-selector">     
+                                    <input type="radio" class="single-option-selector-{{ section.id }} "
+                                    {% if option.selected_value == value %} checked="checked"{% endif %}
+                                    value="{{- value -}}"
+                                    data-index="option{{option_position}}"
+                                    name="{{ option_name | handleize }}"
+                                    id="SingleOptionSelector-{{- value -}}" 
+                                    data-value="{{- value -}}"
+                                    data-clean="{{- value | remove: '_managed:' | upcase -}}">
+                                    <label for="SingleOptionSelector-{{- value -}}">
+                                        {{- value | remove: '_managed:' | upcase -}}
+                                    </label>
+                                </div>
+                            {% else %}
+                                <div class="cs-selector">
+                                    <div class="cs-selector">
+                                        <input type="radio" class="single-option-selector-{{ section.id }} " {% if option.selected_value==value %}
+                                            checked="checked" {% endif %} value="{{- value -}}" data-index="option{{option_position}}"
+                                            name="{{ option_name | handleize }}" id="SingleOptionSelector-{{- value -}}" data-value="{{- value -}}"
+                                            data-clean="{{- value | upcase -}}">
+                                        <label for="SingleOptionSelector-{{- value -}}">
+                                            {{- value | upcase -}}
+                                        </label>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {%- endfor -%}
+                    {% elsif option_name contains 'size_and_size2' %}
+                        {%- for value in option.values -%}
+                            <div class="cs-selector">     
+                                <input type="radio" class="single-option-selector-{{ section.id }} "
+                                {% if option.selected_value == value %} checked="checked"{% endif %}
+                                value="{{- value -}}"
+                                data-index="option{{option_position}}"
+                                name="{{- option_name | handleize -}}"
+                                id="SingleOptionSelector-{{ value }}" 
+                                data-value="{{- value -}}"
+                                data-clean="{{- value | split: ':' | join: "-" | upcase -}}">
+                                <label for="SingleOptionSelector-{{- value -}}">
+                                    {{- value | split: ':' | join: "-" | upcase -}}
+                                </label>
+                            </div>
+                        {%- endfor -%}
+                    {% elsif option_name contains 'color' %}
+                        {%- for value in option.values -%}
+                            <div class="cs-selector cs-color-container">     
+                                <input type="radio" class="single-option-selector-{{ section.id }} "
+                                {% if option.selected_value == value %} checked="checked"{% endif %}
+                                value="{{- value -}}"
+                                data-index="option{{option_position}}"
+                                name="{{ option_name | handleize }}"
+                                id="SingleOptionSelector-{{- value -}}" 
+                                data-value="{{- value -}}"
+                                data-clean="{{- value | split: ':' | first | upcase -}}">
+                                <label class="cs-color" for="SingleOptionSelector-{{- value -}}">
+                                    <div style="background: {{- value | split: ':' | last -}};" class="cs-label-div"></div>
+                                </label>
+                            </div>
+                        {%- endfor -%}
+                    {% endif %}
+                </fieldset>
+        {%- endfor -%}
+        <p id="cs-condition-label"></p>
+    </div>
+{% endunless %}
+
+
+<script>
+  var $ = jQuery;
+  var v_titles = "{{variant_titles}}".split(", ");
+
+  function hide(element) {
+    element.addClass('disabled')
+  }
+  function show(element) {
+    element.removeClass('disabled')
+  }
+  const changeOptions = (e) => {
+   var fieldset = parseInt($(e.target).parents("fieldset").data("index"));
+      current = fieldset === 1 ? e.target.value + " / " : " / " + e.target.value;
+    const fieldValue = $(e.target).data("clean")
+    const field =  $(`label[for='SingleOptionSelector-${fieldset - 1}']>span`);
+    const option = field.text();
+    field.text(`${option.slice(0, option.indexOf(":"))}: ${fieldValue}`)
+    const available_variants = v_titles.filter(v=>v.includes(current))
+    $("input[type=radio]").each(function (i) {
+      const index = parseInt($(this).parents("fieldset").data("index"));
+     
+      const option = index === 1? $(this).val() + " / " : " / " + $(this).val();
+      const found = available_variants.findIndex((t) => t.includes(option)) !== -1;
+
+      if (found) show($(this).next());
+      else  hide($(this).next());
+      
+    });
+  };
+  $("input[type=radio]").change(changeOptions);
+
+</script>

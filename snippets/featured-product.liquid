@@ -1,0 +1,32 @@
+{% comment %}
+  This snippet will feature products from a collection.
+
+  Parameters:
+
+  handle  - (required) the collection handle
+  cols    - the number of items per row, valid values are 3, 4 or 5; defaults to 3
+  rows    - the number of rows; defaults to 1
+{% endcomment %}
+
+{% if rows == blank %}{% assign rows = 1 %}{% endif %}
+{% if cols == blank %}{% assign cols = 3 %}{% endif %}
+{% assign total_products = cols | times: rows %}
+
+<div>
+  {% case cols %}
+    {% when 5 %}
+      {% assign grid_item_width = 'medium-down--one-half post-large--one-fifth' %}
+    {% when 4 %}
+      {% assign grid_item_width = 'medium-down--one-half post-large--one-quarter' %}
+    {% else %}
+      {% assign grid_item_width = 'medium--one-third post-large--one-third' %}
+  {% endcase %}
+
+  <div class="grid-uniform">
+    {% for product in collections[Featured].products limit: total_products %}
+      <div class="grid__item {{grid_item_width}}">
+        {% include 'product-card-grid' with featured: product %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

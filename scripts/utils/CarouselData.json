@@ -1,0 +1,162 @@
+{
+    "works": [
+        {
+           "title": "Tell us about your gear",
+            "text": "Answer a few questions in a short questionnaire.",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/questions.png?v=1628717532"
+        },
+        {
+            "title": "Accept an instant offer",
+            "text": "Choose the best offer that works for you and your wallet.",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/offer.png?v=1628717423"
+        },
+        {
+            "title": "Ship your gear and get paid",
+            "text": "Send us your gear and get paid fast!",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/paid.png?v=1628717479"
+        }
+    ],
+    "quote":[
+        {
+            "name": "Mark B",
+            "location": " Helena, MT",
+            "text": "Way easier than eBay."
+        },
+        {
+            "name": "Jay D",
+            "location": "Washington D.C.",
+            "text": "The process was easy and fast, and it feels good to know that the tent is going to go to someone who will use it and be glad to have it."
+        },
+        {
+            "name": "Deb D",
+            "location": "Mesa, Arizona",
+            "text": "Responded promptly, offers were reasonable and payment was received thru PayPal the same day merchandise was received. "
+        }
+        
+    ],
+    "modals": [
+        {
+            "title": "Getting Paid",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/FAQ_Get_Paid.png?v=162887558",
+            "text": [
+                {
+                    "title": "How long does it take to get paid?",
+                    "text": "As long as there are no discrepancies between the item and the description of its condition provided in your original sell-back submission, you should receive payment within two-three business days of arriving at our facility!"
+                },
+                {
+                    "title": "How does Out&Back determine my offer?",
+                    "text": "Our proprietary set of tools helps us evaluate several details like product condition, color, brand and maturity. We compare such details with multiple retailers to present you with the most accurate and competitive offer in the market. In other words, we believe in fair offers for great gear."
+                },
+                {
+                    "title": "Does my offer expire?",
+                    "text": "Yes. Upon receiving your offer, you will have seven (7) days to accept. After seven days, the offer will automatically expire and you will need to re-submit the item through our sell back process for a new offer."
+                }
+            ]
+        },
+        {
+            "title": "Items We Accept",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/FAQ_Accept.png?v=1628875652",
+            "text": [
+                {
+                    "title": null,
+                    "text": "Over time we hope to purchase just about any outdoor gear but at the moment, specific items from the following brands are accepted. Note: regardless of brand, we are not accepting safety gear, climbing gear, or winter hard-goods at this time." 
+                    
+                },
+                {
+                    "title": null,
+                    "text": "Alps Mountaineering, Arc'teryx, ASSOS, ATTAQUER, Big Agnes, Black Diamond, Black Sheep Cycling, Burton, Camelbak, Capo, Castelli, Chrome, Columbia, Cotopaxi, Dakine, Deuter, Eagle Creek, Eureka, Exped, Fjallraven, Giro, Granite Gear, Gregory, Helly Hansen, Hyperlite Mountain Gear, Icebreaker, Jansport, Kelty, Klymit, MAAP, Mammut, Marmot, Mountain Equipment, Mountain Hardwear, Mountainsmith, MSR, Mystery, Ranch, Nemo, Norrona, Obermeyer, Osprey, Outdoor Research, Pacsafe, Patagonia, Pearl Izumi, POC, Prana, Rab, Rapha, REI Co-Op, Salomon, Sea to Summit, Sierra Designs, Sigr, Smartwool, The North Face, Therm-A-Rest, Thule, Timbuk2, Ultimate Direction"
+                },
+                {
+                    "title": null,
+                    "text": "If there's a brand missing from the list that you think would be a good addition, let us know at info@outandbackoutdoor.com"
+                }
+            ]
+        },
+        {
+            "title": "Shipping Terms",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/FAQ_Shipping.png?v=1628875718",
+            "text": [
+                {
+                    "title": "Do I have to pay to ship my gear?",
+                    "text": "Nope! Upon accepting one of our offers, you will receive an email with a prepaid shipping label.  Note: ownership of shipping may be your responsibility if you choose to receive an item back after it’s already been shipped to Out&Back. For oversized items, shipping ownership may vary between Out&Back and the consumer."
+                },
+                {
+                    "title": "Does Out&Back provide packaging to ship my gear?",
+                    "text": "No, however we attempt to use USPS priority shipping whenever possible which gives you access to complimentary envelopes and boxes. You can also reuse cardboard boxes from previous packages you've received."
+                },
+                {
+                    "title": "What happens if my gear gets lost in transit?",
+                    "text": "As long as you use the shipping label provided by Out&Back and it's scanned into the USPS tracking system, your item will be covered by us should your package get lost in transit. If your trackable item never makes it to us, we will submit an insurance claim on your behalf and will reimburse you for the amount of the insurance claim minus our shipping costs. FYI - We insure items for the amount we offer you plus shipping costs."
+                }
+            ]
+        },
+        {
+            "title": "Issue Resolution",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/FAQ_Issue.png?v=1628875767",
+            "text": [
+                {
+                    "title": "How long does it take to sell my gear?",
+                    "text": "On average, the entire sell-back process - from accepting your offer to receiving your payment - takes less than one week.  Once you have submitted an item for sellback and accepted an offer, Out&Back will provide you with a prepaid shipping label. The ball is then in your court to prep & pack your gear and drop off at a USPS location. Once we receive the item at our warehouse, we’ll complete one final inspection of the item before sending your payment. This part of the process moves pretty quickly! Time may vary based on each item sold to Out&Back."
+                },
+                {
+                    "title": "What happens if I send gear and it differs from how I described it?",
+                    "text": "Upon arrival at our warehouse, we inspect your gear. If the original details you submitted differ from what we receive, we will contact you with possible options to move forward."
+                }
+            ]
+        },
+        {
+            "title": "General",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/FAQ_General.png?v=1628875845",
+            "text": [
+                {
+                    "title": "How does Out&Back’s sell-back program work?",
+                    "text": "Out&Back's sell-back program is the easiest way to sell your unwanted outdoor gear. Our proprietary sell-back tool will ask you a few simple questions about your gear and within minutes, you'll receive two instant offers! One offer will pay you immediately for your gear while another offer will pay you once your gear has sold."
+                },
+                {
+                    "title": "What info do I need to know to sell my gear?",
+                    "text": "You'll need to submit the following details: 1) brand name; 2) type of gear (pants, jacket, tent etc.); 3) size and color; 4) condition (tears, discoloration, missing parts, etc.); 5) (optional) SKU or item style name."
+                },
+                {
+                    "title": "What condition does my gear need to be in?",
+                    "text": "We accept gear in various conditions, but it is important to note that the level of wear and tear may impact the resale value. Gear will not be accepted if it is busted -- that is, if it has any damage that inhibits the function of the item as originally intended."
+                },
+                {
+                    "title": "What happens to gear that I sell to Out&Back?",
+                    "text": "We work with specialized experts to clean, repair and refurbish outdoor gear. Once it's ready for a new adventure, gear is listed on our website for outdoor enthusiasts to purchase for their next adventure."
+                }
+            ]
+        },
+        {
+            "title": "Contact Us",
+            "image": "https://cdn.shopify.com/s/files/1/0412/7840/6813/files/FAQ_Contact.png?v=1628875870",
+            "text": [
+                {
+                    "title": null,
+                    "text": "For additional information regarding our sell-back program shoot us an email: "
+                }
+            ]
+        }
+    ],
+    "conditionModals": [
+        {
+            "title": "New:",
+            "text": "Brand spankin new! Never been used outdoors."
+        },
+        {
+            "title": "Used and Excellent:",
+            "text": "Basically new. No real signs of wear."
+        },
+        {
+            "title": "Used and Good:",
+            "text": "Gently explored. Minor signs of visible wear, yet fully functional." 
+        },
+        {
+            "title": "Used and Worn:",
+            "text": "Well loved with visible signs of wear; gear still works." 
+        },
+        {
+            "title": "Used:",
+            "text": "Earned its time outdoors but the degree of wear is unknown." 
+        }
+    ]
+}

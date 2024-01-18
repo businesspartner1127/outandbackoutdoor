@@ -1,0 +1,301 @@
+<div id="hero" style="background-image: url(//cdn.shopify.com/s/files/1/0412/7840/6813/files/7.jpg?v=1610399764.jpg)">
+  <h1>{{ page.title }}</h1>
+</div>
+<div id="wave"></div>
+<div class="page-width intro-pages">
+  <div class="grid">
+
+    <div class="rte">
+      <div class="container">
+        {{ page.content }}
+
+        {% form 'contact', id: 'sell', data-form_type: "sell" %}
+        {% if form.errors contains 'email' %}
+
+        <span id="{{ formId }}-email-error" class="input-error-message">
+          <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+          {% include 'icon-error' %}
+          <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+        </span>
+
+
+        {% endif %}
+        <p class="required">Required Fields*</p>
+        <div class="row">
+
+          <input type="hidden" name="contact[form]" value="standard" />
+          <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[first]" id="{{ formId }}-first" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}" placeholder="First Name*" required aria-label="First Name*" aria-required="true" required autocorrect="off" autocapitalize="off" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-first-error" data-form-status endif>
+          </div>
+          <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[last]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}" placeholder="Last Name*" required aria-label="Last Name*" aria-required="true" required autocorrect="off" autocapitalize="off" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-last-error" data-form-status endif>
+          </div>
+
+          <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+            <select class="condition input-group__field required" name="contact[Brand]" aria-required="true" placeholder="Condition*" required>
+                <option value="" disabled selected>Brand Name*</option>
+                <option value="Arc'teryx">Arc'teryx</option>
+                <option value="Big Agnes">Big Agnes</option>
+                <option value="Black Diamond">Black Diamond</option>
+                <option value="Burton">Burton</option>
+                <option value="Camelbak">Camelbak</option>
+                <option value="Columbia">Columbia</option>
+                <option value="Cotopaxi">Cotopaxi</option>
+                <option value="Fjallraven">Fjallraven</option>
+                <option value="Helly Hansen">Helly Hansen</option>
+                <option value="Houdini">Houdini</option>
+                <option value="Icebreaker">Icebreaker</option>
+                <option value="Kelty">Kelty</option>
+                <option value="La Sportiva">La Sportiva</option>
+                <option value="Mammut">Mammut</option>
+                <option value="Marmot">Marmot</option>
+                <option value="Mountain Hardwear">Mountain Hardwear</option>
+                <option value="MSR">MSR</option>
+                <option value="Osprey">Osprey</option>
+                <option value="Outdoor Research">Outdoor Research</option>
+                <option value="Patagonia">Patagonia</option>
+                <option value="Petzl">Petzl</option>
+                <option value="Prana">Prana</option>
+                <option value="Rab">Rab</option>
+                <option value="REI">REI</option>
+                <option value="Salomon">Salomon</option>
+                <option value="Smartwool">Smartwool</option>
+                <option value="The North Fac">The North Face</option>
+                <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+              <label class="agreeText">Don't see the brand of your item? Please enter below.</label>
+              <input type="text" name="contact[Other]" id="{{ formId }}-other" class="input-group__field {% if form.errors %} input--error{% endif %}" value="{% if form.other %}{{ form.other }}{% elsif customer %}{{ customer.other }}{% endif %}" placeholder="Other" aria-label="Other*" aria-required="true" autocorrect="off" autocapitalize="off" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-other-error" data-form-status endif>
+          </div>
+
+          <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[productTitle]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{{ product.title }}" placeholder="Product Name*" required aria-label="Product Name*" aria-required="true" required autocorrect="off" autocapitalize="off" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-product-error" data-form-status endif>
+          </div>
+
+          <div class="sell-back-tooltip input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="text" name="contact[productNumber]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{{ product.title }}" placeholder="Style Number / SKU*" required aria-label="Product Name*" aria-required="true" required autocorrect="off" autocapitalize="off" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-product-error" data-form-status endif>
+            <i id="tooltip" class="fa fa-info-circle trigger" data-tooltip-id="1" title="Style and SKU #’s vary by Brand, yet typically can be found on an item’s inside tag. Common tag locations include back collar, side seam or even in a sleeve/pant leg. Style and SKU #’s are a series of numbers and often begin with a letter. TIP: sequences beginning with CA or RN do not represent the style or SKU #."></i>
+          </div>
+
+          <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <input type="email" name="contact[email]" id="{{ formId }}-email" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" placeholder="Email*" required aria-label="Email*" aria-required="true" required autocorrect="off" autocapitalize="off" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-email-error" data-form-status endif>
+          </div>
+
+          <div class="sell-back-tooltip input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+            <select class="condition input-group__field required" name="contact[Condition]" aria-required="true" placeholder="Condition*" required>
+              <option value="" disabled selected>Condition*</option>
+              <option value="New – with or without original tags">New – with or without original tags</option>
+              <option value="Used and Excellent – no real signs of wear">Used and Excellent – no real signs of wear</option>
+              <option value="Used and Good – some wear, functions perfec">Used and Good – some wear, functions perfect</option>
+              <option value="Used and Worn – signs of wear are obvious">Used and Worn – signs of wear are obvious</option>
+              <option value="Used and Busted – broken, torn, etc.">Used and Busted – broken, torn, etc.</option>
+            </select>
+            <i id="tooltip" class="fa fa-info-circle trigger" data-tooltip-id="1" title="Choose which best describes the condition of your item."></i>
+          </div>
+          <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}" style="margin: 20px 0;">
+            <input type="checkbox" name="contact[agree]" id="agree" class="input-group__field required {% if form.errors %} input--error{% endif %}" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-email-error" data-form-status endif required>
+            <div class="agreeText">By submitting your information, you agree to Out&amp;Back's <a href="/pages/terms-of-use" target="_blank">terms of use</a> and <a href="/pages/privacy-policy" target="_blank">privacy policy</a>.</div>
+          </div>
+          <div class="col-md-6">
+            <input type="submit" class="learn-more">
+          </div>
+
+
+        </div>
+        {% if form.posted_successfully? %}
+
+        <script>
+          $("document").ready(function() {  
+            $("#sellProduct").trigger('click');
+          });
+        </script>
+
+        <style>
+          form .row{
+            display: none; 
+          }
+        </style>
+
+        <div class="form-success">
+            <h5>THANK YOU FOR YOUR SELL-BACK SUBMISSION!</h5>
+            <h5>Be sure to keep an eye on your inbox where you’ll receive an official offer on your gear! Talk to you soon!</h5>
+        </div>
+
+        <div id="event-share">
+            <div class="event-share-text">Share this event with your friends!</div>
+                <div class="event-share-buttons">
+                    <div class="fb-share-button-div">
+                        <div class="fb-share-button" 
+                            data-href="https:{{current_url}}" 
+                            data-layout="button"
+                            data-size="large">
+                        </div>
+                    </div>
+                    <div class="mail-to">
+                        <button class="mail-to-button">
+                            <a href="mailto:?subject=Don%E2%80%99t%20Miss%20Out%21%20Try%20Out%26Back%20Outdoor%E2%80%99s%20Sell-Back%20Program%20today%21&body=I%20just%20submitted%20my%20request%20to%20sell%20my%20unwanted%20outdoor%20gear%20to%20Out%26Back%20Outdoor%21%20No%20need%20to%20set-up%20a%20profile%20or%20submit%20pictures%21%20Definitely%20a%20simple%20way%20to%20earn%20cash.%20hey%20make%20it%20easy%20to%20submit%20your%20gear%E2%80%99s%20details.%20You%20should%20check%20it%20out%20for%20yourself%21%20">
+                                Email
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+
+        {% endform %}
+
+        <div class="container-fluid faq">
+          <h3 class="smHeadline">FAQ</h3>
+          <div class="section purchase-location">
+            <h5>What types of items can I sell to Out&Back?</h5>
+            <div class="row">
+              <p class="col-md-12">Over time we hope to able to purchase just about any outdoor gear but at the moment, the categories of outdoor gear that we can buy are: 1) outerwear (e.g., jackets, pants, etc.), 2) tents and footprints, 3) sleeping bags, 4) camping gear excluding stoves and water filters, 5) packs and bags excluding wheeled luggage and 6) hiking gear. We cannot purchase protective gear of any kind including helmets and pads. We cannot purchase climbing gear of any kind (e.g., harnesses, rope, etc.). At this moment, we are not purchasing winter hardgoods like skis and snowboards but we will be soon!</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>What information do I need to have in order to sell an item?</h5>
+            <div class="row">
+              <p class="col-md-12">We call it our core five. 1) The Brand name; 2) the item or style name; 3) the item’s condition; 4) your name; and 5) email address. And...if you want to help make the sellback process extra special,  you can provide the item’s SKU or style number. If you’re having difficulties locating your item’s style name, don’t worry, we’re here to help. For assistance, email buyback@outandbackoutdoor.com and include your item’s details, including a picture of your item and we’ll help you figure it out. Note: upon finding the style name, all users will still be required to submit a sell back request through the official submission process.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>How long does the selling process take?</h5>
+            <div class="row">
+              <p class="col-md-12">Well, that's partly up to you! On average, the entire sellback process - from initial submission to cash in your wallet, takes less than one-week*. However, we - you and Out&Back - have to work as a team to make this happen! Once you’ve completed a sellback submission, within 48 hours you’ll receive a formal offer. Upon accepting the offer, the ball’s in your court to prepare your item and drop off at a USPS location. Once we receive the item at our warehouse, we’ll complete one final inspection of the item before sending your payment. This part of the process moves pretty quickly! *Time may vary based on each item sold to Out&amp;Back.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>Do I have to pay to ship my item to Out&Back?</h5>
+            <div class="row">
+              <p class="col-md-12">Nope!* Like we said, our sell-back process is really simple. We email you a prepaid shipping label and ask that you put it on your package before dropping it off at any USPS location. Note: ownership of shipping may be your responsibility if you choose to receive an item back after it’s already been shipped to Out&Back. Friendly reminder that you will need to provide your own packaging. *For oversized items, shipping ownership may vary between Out&Back and the consumer.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>Does Out&Back provide packaging to ship my item?</h5>
+            <div class="row">
+              <p class="col-md-12">No, however we attempt to use USPS priority shipping whenever possible which gives you access to complimentary envelopes and boxes. Depending on the size of your item, we tend to favor prepaid shipping labels that go hand-in-hand with USPS priority shipping. Your sellback confirmation will include full details including the appropriate type of packaging needed based on shipping requirements. Word to the wise, USPS does not provide tape, therefore be prepared to have your own or kindly ask your fellow patron at the USPS.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>What happens if my item gets lost in transit to Out&Back?</h5>
+            <div class="row">
+              <p class="col-md-12">As long as you use the shipping label provided by Out&Back and its scanned into the USPS tracking system, rest assured your item will be covered by us should your package get lost in transit. If your trackable item never makes it to us, we will submit an insurance claim on your behalf and will reimburse you for the amount of the insurance claim minus our shipping costs. FYI - We insure items for the amount we offer you plus shipping costs.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>How long will it take for Out&Back to contact me once I’ve submitted my sellback request?</h5>
+            <div class="row">
+              <p class="col-md-12">Usually we’ll be in touch within 48 hours of completing your submission. If for some reason you haven't received anything after 48 hours, first check your spam folder and if you still haven’t received an email from us, contact buyback@outandbackoutdoor.com. Friendly tip: be sure to include your contact information along with your item’s details so we can quickly identify you!</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>How does Out&Back determine my offer?</h5>
+            <div class="row">
+              <p class="col-md-12">Our proprietary set of tools helps us evaluate important details like product condition, color, brand and maturity. We then compare these details against multiple retailers to present you with the most accurate and competitive offer in the market. In other words, we believe in fair offers for great gear. While each offer is customized, on average, offer prices for an used item in good condition is around 20% of the original retail price while new items being sold may garner closer to 30% of the original selling price. Again, many factors come into play when determining each offer.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>Can I bargain with Out&Back on the selling price?</h5>
+            <div class="row">
+              <p class="col-md-12">At this time, our offer is final. We like to keep things simple and avoid the back-and-forth which can take time away from being outdoors.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>How long will it take for Out&Back to contact me once I’ve submitted my sellback request?</h5>
+            <div class="row">
+              <p class="col-md-12">Usually we’ll be in touch within 48 hours of completing your submission. If for some reason you haven't received anything after 48 hours, first check your spam folder and if you still haven’t received an email from us, contact buyback@outandbackoutdoor.com. Friendly tip: be sure to include your contact information along with your item’s details so we can quickly identify you!</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>Does my offer ever expire?</h5>
+            <div class="row">
+              <p class="col-md-12">Yes. Upon receiving your offer, you will have seven (7) days to accept. After seven days, the offer will automatically expire and you will need to re-submit the item through our sell back process for a new offer.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>What happens if I decide to accept Out&Back’s offer and sell my item?</h5>
+            <div class="row">
+              <p class="col-md-12">Once you’ve accepted our offer to sell an item, we’ll email you a prepaid shipping label that will need to be put on your final package and can be dropped off at any USPS location. From there, upon receiving the item, we’ll complete a final inspection of the item. Once we’ve confirmed the item’s details with those that you originally submitted, we will submit payment to you through one of our preferred payment providers - Venmo or Paypal. </p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>What if I want to decline the sell back offer from Out&Back?</h5>
+            <div class="row">
+              <p class="col-md-12">Not a problem. Sometimes things just aren’t meant to be. If you choose to decline your sell back offer, all that we ask is that you keep gear out of the landfill by donating or giving it to someone who could use it.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>How do I get paid?</h5>
+            <div class="row">
+              <p class="col-md-12">Simple - Venmo or Paypal. Upon accepting our offer, you’ll be asked to provide your Venmo or Paypal ID which will allow us to seamlessly transfer payment to you upon final inspection of your item at our warehouse. Friendly tip: a separate account with the specified payment vendors is required in order for you to receive payment.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>What happens if I send in an item and it differs from how I described it?</h5>
+            <div class="row">
+              <p class="col-md-12">This can happen... For example, you might have typed in the wrong item or style name by accident or there is an issue with a component on the item that you didn't notice, etc. When we receive an item that is different from what the you originally submitted, one of three things can happen:</p>
+              <ol>
+                <li>We make you another offer and you can choose to accept or decline: sometimes, we’re still interested in buying the item even though it’s different from your original request. In this case, we’ll present you with a new offer that you can kindly accept or decline. If you accept, great! We pay you, you move on. If you decline and would like your item returned, you will be financially responsible for shipping.</li>
+                <li>We don't make you another offer and you want the item returned: in some cases, the item is not something we can currently buy from you, thus aren’t able to make you another offer. In this case, you will be financially responsible for shipping.</li>
+                <li>If we don’t buy your item and you don't want it back, we donate it: if we can't buy the item from you and you aren’t interested in shipping the item back to you, we will gladly donate it on your behalf to one of our local partners who are in need of outdoor gear.</li>
+              </ol>
+
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>Can I donate my item?</h5>
+            <div class="row">
+              <p class="col-md-12">Yes you can! If you choose to donate your item, just say so in your reply to our offer letter. We’ll continue to provide a prepaid shipping label. And upon receiving your item, we’ll donate it on your behalf and if needed,can send you a confirmation for your records/as a write off.</p>
+            </div>
+          </div>
+
+          <div class="section purchase-location">
+            <h5>What happens to the item I sell to Out&Back?</h5>
+            <div class="row">
+              <p class="col-md-12">Your item is about to begin a sustainable journey back into the outdoors. We work with specialized experts to clean, repair and refurbish used outdoor gear in order to keep it in circulation. And if your gear isn’t able to be renewed, we partner with professionals who responsibly downcycle the apparel—making sure it avoids ending up in a landfill.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function tooltip() {
+    $(document).on('click', '#tooltip', function () {
+        $(this).addClass("on");
+        $(this).tooltip({
+            items: '.trigger.on',
+        });
+        $(this).trigger('mouseenter');
+    });
+    $(document).on('click', '.trigger.on', function () {
+        $(this).tooltip('dispose');
+        $(this).removeClass("on");
+    });
+    $(".trigger").on('mouseout', function (e) {
+        e.stopImmediatePropagation();
+    });
+});
+</script>

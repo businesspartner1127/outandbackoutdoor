@@ -1,0 +1,29 @@
+/* custom sticky header */
+.cs-sticky-header .cs-grid {
+  font-family: "Uniform-New", sans-serif;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 55px;
+}
+.cs-sticky-header .cs-grid .cs-content {
+  font-weight: 500;
+}
+.cs-sticky-header .cs-grid .cs-content a {
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.cs-sticky-header .cs-grid .cs-content a:hover {
+  color: #f00;
+}
+.cs-sticky-header .cs-grid #cs-button-close {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 540px) {
+  .cs-sticky-header .cs-grid {
+    padding: 0.6em 1.4em;
+  }
+}
+/* end custom sticky header */

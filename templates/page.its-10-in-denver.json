@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_CFE686EE7F63-1.jpg",
+            "title": "",
+            "caption": "Its not safe."
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "We're not asking our warehouse staff to come to work in this...",
+        "image_size": 20,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 6,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49"
+  ]
+}

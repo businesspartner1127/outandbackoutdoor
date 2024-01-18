@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Out_And_Back_logo_FINAL_small_6748712d-867c-4703-a3b1-4e68f529cf8f.jpg",
+            "title": "",
+            "caption": "We’re Out&Back – the world’s first truly managed marketplace for outdoor gear.  We make buying and selling new and used gear incredibly simple. We’re reinventing the way online marketplaces work – bringing the best of ecommerce, marketplaces, search, price comparison, data and traditional retail together into one user-friendly package so our customers can find, buy and sell their outdoor gear like never before.\n\nWe’re venture funded and growing quickly and would love for you to join us."
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "BE PART OF THE FUTURE OF SECONDHAND BUYING AND SELLING",
+        "image_size": 18,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 6,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#ffffff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#ffffff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "a525f6b9-072e-456c-bdc1-709a3320e31a": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-0": {
+          "type": "card",
+          "settings": {
+            "title": "Social Media Marketing Intern",
+            "sub_title": "Hybrid - Denver, CO",
+            "paragraph": "<p>Hourly Pay: $20<br\/>To apply email info@outandbackoutdoor.com with \"Social Media Intern Application\" as the subject line<br\/><\/p><p><\/p><p><\/p><p><\/p><p><\/p><p><\/p>",
+            "full_paragraph": "<p><strong>Who we’re looking for:<\/strong><\/p><p>Out&Back Outdoor is looking to welcome a Marketing Intern to our Growth Team. We’re seeking a candidate who is obsessed with social media marketing, socializing with people at events, and is ready to help an early stage startup connect with outdoor enthusiasts. This role is primarily office-based located in Denver, CO.<\/p><p><strong>The ideal candidate…<\/strong><\/p><ul><li>- Is a super-user of social media platforms and keeps abreast of social media trends.<\/li><li>- Loves to tell a story and can deliver compelling content tailored for a variety of platforms.<\/li><li>- Enjoys interacting with others, at in-person events and through social media<\/li><li>- Naturally curious, enjoys thinking outside of the box, and has a natural desire to test and learn.<\/li><li>- Has a passion for the outdoors\/outdoor industry.<\/li><li>- Wants to make the world a better, more sustainable place.<\/li><\/ul><p><strong>Job responsibilities:<\/strong><\/p><ul><li>- Assist Growth team in ideating, planning, and creating content for O&B’s owned social media platforms (Instagram, TikTok, YouTube).<\/li><li>- Monitor social media and news platforms to stay up-to-date with industry and customer trends.<\/li><li>- Coordinate social account posting.<\/li><li>- Identify opportunity spaces to create new organic and paid marketing initiatives related to social media, influencer engagement, and community outreach.<\/li><li>- Research and monitor competitors across various social media platforms.<\/li><li>- Identify and monitor key influencers that align with Out&Back’s target audience across social media platforms.<\/li><li>- Perform weekly research and analysis on O&B’s target audiences and competitors.<\/li><li>- Assist Growth team in scouting for and executing new local event opportunities.<\/li><li>- Work closely with the Growth Marketing team to implement and execute marketing campaigns and other growth initiatives, including in-person events..<\/li><li>- Support the growth marketing team in daily administrative tasks.<\/li><\/ul><p><strong>Job qualifications:<\/strong><\/p><ul><li>- Candidate must be up to date on the industry and relevant platforms.<\/li><li>- Working towards a BA\/BS degree in Marketing, Advertising or related field or equivalent practical experience.<\/li><li>- Proficient in, and active on, social media and\/or other community-based platforms.<\/li><li>- Excellent verbal and written communication skills<\/li><li>- Excellent organizational skills; has a keen attention to detail in planning, management and execution of tasks.<\/li><li>- Confidently able to maneuver between working cooperatively in a team-oriented and cross-functional environment, as well as independently.<\/li><li>- Outstanding multitasking abilities.<\/li><\/ul><p>Extra credit:<\/p><ul><li>- Previous digital marketing or social media management experience.<\/li><\/ul><p><strong>What you can expect working at Out&Back:<\/strong><\/p><ul><li>- You’d be joining a startup: A true startup environment with all the energy and chaos that comes with it!<\/li><li>- You’d be joining the outdoor industry: We love the outdoors, outdoor gear and getting outside and our small team’s culture embodies that ethos.<\/li><li>- Location: We’re scattered about the US but we’ve got a small group of us in the Denver, CO metro. While daily office visits aren’t mandatory, we do enjoy working together a few times a week at our rad office.<\/li><li>- A place where your voice is valued and matters. We’re a small, yet mighty team that works hard, plays hard and moves fast therefore everyone has a seat at the table and delivers monumental value to Out&Back.<\/li><li>- Pay: $20\/hr<\/li><\/ul>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--15960452268189__a525f6b9-072e-456c-bdc1-709a3320e31a-166731943479719078-0"
+      ],
+      "settings": {
+        "heading": "OPEN ROLES",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49",
+    "a525f6b9-072e-456c-bdc1-709a3320e31a"
+  ]
+}

@@ -1,0 +1,113 @@
+{% style %}
+	#mapid-{{ section.id }} {
+		height: 70vh;
+		width: 100%;
+		margin: 1em auto;
+	}
+	.section-{{ section.id }} .leaflet-popup-content {
+		padding: 1rem;
+		margin: 0;
+	}
+	.section-{{ section.id }} .leaflet-popup-content h4 {
+		margin: 0;
+	}
+	.section-{{ section.id }} .leaflet-popup-content p {
+		margin: 0.2rem 0;
+	}
+
+{% endstyle %}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+
+<section class="section-{{ section.id }}">
+  <div class="cs-container">    
+    <div id="mapid-{{ section.id }}"></div>    
+  </div>  
+</section>
+
+<script>
+
+// mapbox with multiple marker
+
+const mapbox_apikey = "pk.eyJ1IjoibWFya2ludGVybmF1dCIsImEiOiJjbDJwOTMycWEwMXd4M2tueWd1djI1eXdnIn0.qSbWrF1uJS1FwRacB3ESoQ";
+
+const mapid = 'mapid-{{ section.id }}';
+
+const mymap = L.map(mapid, { scrollWheelZoom: false }).setView([39.94466005797771, -100.19035113362413], 5);	
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+	//attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	id: 'mapbox/streets-v11',
+	tileSize: 512,
+	zoomOffset: -1,
+	scrollWheelZoom: false,
+	accessToken: mapbox_apikey
+}).addTo(mymap);
+
+// marker
+
+{% for block in section.blocks %}
+	{% if block.type == 'marker' %}
+		marker = new L.marker([{{ block.settings.coordinates }}]).bindPopup('<h4>{{ block.settings.dealer_name }}</h4>{{ block.settings.full_address | escape }}').addTo(mymap);
+	{% endif %}
+{% endfor %}
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Custom Interactive Map",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Header Text",
+			"default": "Interactive Map"
+		}
+	],
+	"blocks": [
+		{
+			"type": "marker",
+			"name": "Marker",
+			"settings": [
+				{
+					"type": "text",
+					"id": "dealer_name",
+					"label": "Dealer Name",
+					"default": "Dealer 1"					
+				},
+				{
+					"type": "textarea",
+					"id": "full_address",
+					"label": "Full Address",
+					"default": "Full address here"
+				},
+				{
+					"type": "text",
+					"id": "coordinates",
+					"label": "Coordinates",
+					"default": "34.1655921,-113.050505",
+					"info": "You can get coordinates in Google Maps. Ex: 11.8166, 122.0942"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Custom Interactive Map",
+			"blocks": [
+				{
+					"type": "marker"
+				},
+				{
+					"type": "marker"
+				},
+				{
+					"type": "marker"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}

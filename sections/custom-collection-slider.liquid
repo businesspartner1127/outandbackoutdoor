@@ -1,0 +1,450 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}em;
+    padding-bottom: {{ section.settings.padding_bottom }}em;
+    background: #f8f8f8;
+  }
+  .section-{{ section.id }} .cs-container h2 {
+    color: {{ section.settings.title_color }};
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    margin-bottom: .20rem;
+  }
+  .section-{{ section.id }} .cs-container p {
+    color: {{ section.settings.paragraph_color }};
+  }
+  .section-{{ section.id }} .slider-card-container {
+      cursor: pointer;      
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;      
+  }
+  .section-{{ section.id }} .image-container-parent {      
+      height: 450px;
+      border-bottom: 2px solid rgb(243, 243, 243);
+      background-color: #fff;
+      overflow: hidden;
+  }
+  .section-{{ section.id }} .image-container-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+  }
+  .section-{{ section.id }} .image-container-child img {
+      height:auto;
+      width:auto;
+  }
+  .section-{{ section.id }} .product-slider-description {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;      
+      padding: 10px;
+      height: 115px;
+  }
+
+  .section-{{ section.id }} .product-slider-vender {
+      color: #262262;
+      font-family: 'Uniform', sans-serif;
+      font-weight: 500;
+      margin-bottom: 0px;
+      font-size: 18px;
+  }
+
+  .section-{{ section.id }} .product-slider-title {
+      color: #262262;
+      font-family: 'Uniform-light', sans-serif;      
+      margin-bottom: 0px;
+      font-size: 1.2rem;
+      font-weight: 600;
+  }
+  .section-{{ section.id }} .colors-container {
+      display: flex;
+      background-color: white;
+  }
+
+  .section-{{ section.id }} .tooltip:hover .tooltiptext {
+      visibility: visible;
+  }
+  .section-{{ section.id }} .grid__item {
+    padding-left: 0;
+  }
+  .section-{{ section.id }} .grid-view-item {    
+    margin: 0 auto 0.5em;
+  }
+  .section-{{ section.id }} .slick-list {
+    overflow: hidden;
+    margin: 0 -1em;
+  }
+  .section-{{ section.id }} .slick-slide {
+    margin: 0 1em;
+  }
+  .section-{{ section.id }} .price__percentage {
+    margin-left: auto;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .section-{{ section.id }} .price--on-sale .price__sale {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+  }
+  .section-{{ section.id }} .price {
+    justify-content: center;
+    height: 100%;
+  }
+  .section-{{ section.id }} .price__badges--listing .price__badge {
+    position: absolute;
+    top: 1em;
+  }
+  .section-{{ section.id }} .price-item, .section-{{ section.id }} .grid__item .grid-view-item .slider-card-container .product-slider-description dl .price__sale .price-item {
+    color: #000;
+    font-weight: 600;
+  }
+  .section-{{ section.id }} .cs-compare-at-price {
+    color: #c3c3c3 !important;
+  }
+  .section-{{ section.id }} .price__percentage {
+    color: #f00;
+  }
+  {% if section.settings.show_price == false %}
+  .section-{{ section.id }} .product-slider-description {    
+    height: auto;
+  }
+  .section-{{ section.id }} .product-slider-description dl {
+    display: none;
+  }
+  {% endif %}
+  {% if section.settings.show_vendor == false %}
+  .section-{{ section.id }} .product-slider-vender {
+    display: none;
+  }
+  {% endif %}
+  @media screen and (max-width: 1080px) {
+    .section-{{ section.id }} .image-container-parent {      
+      height: 350px;
+    }
+  }
+{% endstyle %}
+
+{%- liquid  
+  assign collection = collections[section.settings.collection]
+-%}
+
+<div class="section-{{ section.id }}">
+  <div class="cs-container">
+  <h2>{{ section.settings.heading }}</h2>
+  <p>{{ section.settings.caption }}</p>
+  {%- assign product_limit = 10 -%}
+  <ul class="collection-slider-{{ section.id }}">
+    {% for product in collection.products limit: product_limit %}
+      {% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
+      {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
+      {%- assign preview_image = product.featured_media.preview_image -%}
+      {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      {% assign pictureImage = preview_image | img_url: 'x450', scale: 2 %}      
+  
+      <li class="grid__item">
+        <div class="grid-view-item{% unless product.available %} grid-view-item--sold-out{% endunless %} product-card">
+          <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="{{ product.url | within: collection }}">
+            <span class="visually-hidden">{{ product.title }}</span>
+          </a>
+          <div class="slider-card-container">
+            <div class="image-container-parent image-container-child">
+                <img id="{{ img_id }}"
+                      class="grid-view-item__image lazyload"
+                      alt="{{ preview_image.alt }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[450]"
+                      data-aspectratio="{{ preview_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      data-image
+                      >
+            </div>
+            <div class="product-slider-description">
+              <div class="product-slider-vender">{{ product.vendor }}</div>
+              <div class="product-slider-title">{{ product.title }}</div>
+              {%- liquid
+                if page.title != 'Sell Us Your Gear'
+                  include 'custom-product-price-slider', product: product
+                endif
+              -%}
+            </div>
+          </div>
+      </li>
+    {% else %}
+  
+      {% for i in (1..product_limit) %}
+        <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="grid-view-item product-card">
+            <a class="grid-view-item__link grid-view-item__image-container full-width-link" href="#">
+              <span class="visually-hidden">{{ 'homepage.onboarding.product_title' | t }}</span>
+            </a>
+            <div class="grid-view-item__image-wrapper">
+              {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+              {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="h4 grid-view-item__title" aria-hidden="true">{{ 'homepage.onboarding.product_title' | t }}</div>
+            <button class="learn-more view">SHOP NOW</button>
+          </div>
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+  
+  {% if section.settings.show_view_all %}
+    <hr class="hr--invisible" aria-hidden="true" />
+    <div class="text-center">
+      <a href="{{ collection.url }}" class="btn" aria-label="{{ 'collections.general.view_all_label' | t: collection_name: collection.title }}">
+        {{ 'collections.general.view_all' | t }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+    {% style %}
+      .section-{{ section.id }} .cta_container {
+        padding-top: {{ section.settings.cta_padding_top }}px;
+        padding-bottom: {{ section.settings.cta_padding_bottom }}px;
+      }
+      
+      .section-{{ section.id }} .cta_btn {
+        color: {{ section.settings.cta_text_color }};
+        border: 1px solid {{ section.settings.cta_border_color }};
+        background: {{ section.settings.cta_background }}
+      }
+
+      .section-{{ section.id }} .cta_btn:hover {
+        color: {{ section.settings.cta_hover_text_color }};
+        border: 1px solid {{ section.settings.cta_hover_border_color }};
+        background: {{ section.settings.cta_hover_background }}
+      }
+    {% endstyle %}
+    {% assign pos_class = 'cta_center' %}
+    {% case section.settings.cta_position %}
+      {% when 'left' %}
+        {%- assign pos_class = 'cta_left' -%}
+      {% when 'right' %}
+        {%- assign pos_class = 'cta_right' -%}
+    {% endcase %}
+    <div class="cta_container {{ pos_class }}">
+      <a class="cta_btn" href="{{ section.settings.cta_link }}" title="">{{ section.settings.cta_text }}</a>
+    </div>
+  {% endif %}
+  
+  </div>
+</div>
+
+<script>
+  $('.collection-slider-{{ section.id }}').slick({
+  dots: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  infinite: true,
+  dots: false,
+  responsive: [ 
+    {
+      breakpoint: 1800,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }
+    },
+    {
+      breakpoint: 1180,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
+  });
+</script>
+  
+{% schema %}
+  {
+  "name": "Custom Collection Slider",
+  "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Gear on the move!"
+      },
+      {
+        "type": "textarea",
+        "id": "caption",
+        "label": "Caption",
+        "default": "Some of our best-sellers"
+      },
+      {      
+        "type": "collection",
+        "id": "collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "em",
+        "label": "Padding Top",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "em",
+        "label": "Padding Bottom",
+        "default": 2
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "paragraph_color",
+        "label": "Paragraph Color",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show Vendor",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_price",
+        "label": "Show Price",
+        "default": true
+      }, 
+      {
+        "type": "header",
+        "content": "CTA Option"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Text",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "Link"
+      },
+      {
+        "type": "select",
+        "id": "cta_position",
+        "label": "Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      }, 
+      {
+        "type": "color",
+        "id": "cta_text_color",
+        "label": "Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "cta_background",
+        "label": "Background Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "color",
+        "id": "cta_border_color",
+        "label": "Border Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "color",
+        "id": "cta_hover_text_color",
+        "label": "Hover Text Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "color",
+        "id": "cta_hover_background",
+        "label": "Hover Background Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "cta_hover_border_color",
+        "label": "Hover Border Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "range",
+        "id": "cta_padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "cta_padding_bottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 25
+      }
+    ],
+    "presets": [
+      {
+      "name": "Custom Collection Slider"
+      }
+    ]
+  }
+{% endschema %}

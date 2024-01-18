@@ -1,0 +1,5086 @@
+{% if section.settings.message %}
+  <style>
+    {% if section.settings.logo != blank %}
+      .site-header__logo-image {
+        max-width: {{ section.settings.logo_max_width | escape }}px;
+      }
+    {% endif %}
+
+    {% if section.settings.align_logo == 'left' %}
+      .site-header__logo-image {
+        margin: 0;
+      }
+    {% endif %}
+  </style>
+{% endif %}
+
+<div id="navbar" data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
+  {% if section.settings.message %}
+    {% if section.settings.home_page_only == false or request.page_type == 'index' %}
+      <style>
+        .announcement-bar {
+          background-color: {{ section.settings.color_bg }};
+        }
+
+        .announcement-bar__link:hover {
+          {% assign brightness = section.settings.color_bg | color_brightness %}
+
+          {% if brightness <= 192 %}
+            {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
+            background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
+          {% else %}
+            {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
+            background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+          {% endif %}
+        }
+
+        .announcement-bar__message {
+          color: {{ section.settings.color_text }};
+        }
+      </style>
+
+      <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
+        {%- unless section.settings.message_link == blank -%}
+          <a href="{{ section.settings.message_link }}" class="announcement-bar__link">
+        {%- endunless -%}
+            <p class="announcement-bar__message">{{ section.settings.message_text | escape }}</p>
+        {%- unless section.settings.message_link == blank -%}
+          </a>
+        {%- endunless -%}
+      </div>
+
+    {% endif %}
+  {% endif %}
+
+  <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+    <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
+      {% if section.settings.align_logo == 'center' %}
+        {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
+      {% else %}
+        {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
+      {% endif %}
+
+      <div class="grid__item {{ logo_classes }}">
+        {% comment %}
+          Use the uploaded logo from theme settings if enabled.
+          Site name gets precedence with H1 tag on homepage, div on other pages.
+        {% endcomment %}
+          {% if section.settings.logo %}
+            {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
+              {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+              <img class="lazyload js"
+                   src="{{ section.settings.logo | img_url: '300x300' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ logo_alt | escape }}"
+                   style="max-width: {{ section.settings.logo_max_width }}px">
+              <noscript>
+                {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                <img src="{{ section.settings.logo | img_url: image_size }}"
+                     srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                     alt="{{ section.settings.logo.alt | default: shop.name }}"
+                     style="max-width: {{ section.settings.logo_max_width }}px;">
+              </noscript>
+            </a>
+          {% else %}
+            <a class="site-header__logo-link" href="{{ routes.root_url }}"><img id="logo" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/logo.svg?v=1595342035" alt="outandbackoutdoor logo" width="180" height="56" /></a>
+          {% endif %}
+      </div>
+
+      <div class="grid__item" style="width: 50%;">
+        {% include "search-input" %}
+      </div>
+
+      <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %} nav_icons">
+        <div class="site-header__icons-wrapper">
+          <button type="button" class="btn--link site-header__icon">
+            <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
+          </button>
+          <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
+            <i class="fa fa-shopping-bag"></i>
+            <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+            <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %}" data-cart-count-bubble>
+              <span data-cart-count>{{ cart.item_count }}</span>
+              <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  {% include 'Navbar' %}
+  {% assign count = 0 %}
+  {% for block in section.blocks %}
+    {% assign count = count | plus: 1 %}
+  {% endfor %}
+  {%- if count > 1 -%}
+  {%- assign nav_class = 'col-3' -%}
+  {% case count %}
+    {% when 2 %}
+      {%- assign nav_class = 'col-6' -%}
+    {% when 3 %}
+      {%- assign nav_class = 'col-4' -%}
+    {% when 5 %}
+      {%- assign nav_class = 'cus_col' -%}
+    {% when 6 %}
+      {%- assign nav_class = 'col-2' -%}
+  {% endcase %}
+  <div id="new_nav">
+    <div class="nav_wrapper">
+      <div class="nav_header">
+      {% assign i = 0 %}
+      {% for block in section.blocks %}
+        {% assign i = i | plus: 1 %}
+        <div class="nav_item {{ nav_class }}" nav_num="{{ i }}">{{ block.settings.title }}</div>
+      {% endfor %}
+      </div>
+      <div class="nav_content">
+      {% assign j = 0 %}
+      {% for block in section.blocks %}
+        {% assign j = j | plus: 1 %}
+        <!-- start #nav_panel{{ j }} -->
+        <div class="nav_panel" id="nav_panel{{ j }}">
+        {% if block.type != 'type3' %}
+          {% if block.settings.featured_image != blank %}
+            <div class="img_col">
+            {% if block.settings.featured_link != blank %}
+              <a href="{{ block.settings.featured_link }}" title="">
+            {% endif %}
+                <div class="img_col_inner">
+                  <div class="img_col_img">
+                    <img src="{{ block.settings.featured_image | img_url: '375x' }}" alt="">
+                  </div>
+                  {% if block.settings.featured_text != blank %}
+                  <div class="img_col_text">{{ block.settings.featured_text }}</div>
+                  {% endif %}
+                </div>
+            {% if block.settings.featured_link != blank %}
+              </a>
+            {% endif %}
+            </div>
+          {% endif %}
+        {% else %}
+          {% if block.settings.image1 != blank or block.settings.image2 != blank or block.settings.image3 != blank %}
+            <div class="img_col img_col2">
+            {% if block.settings.image1 != blank %}
+              <div class="img_col_sub">
+                {% if block.settings.img1_link != blank %}
+                  <a href="{{ block.settings.img1_link }}" title="">
+                {% endif %}
+                    <div class="img_col_sub_inner">
+                      {% if block.settings.image1_head != blank %}
+                      <div class="img_col_sub_head">{{ block.settings.image1_head }}</div>
+                      {% endif %}
+                      <div class="img_col_sub_img">
+                        <img src="{{ block.settings.image1 | img_url: 'master' }}" alt="">
+                      </div>
+                      {% if block.settings.image1_content != blank %}
+                      <div class="img_col_sub_content">{{ block.settings.image1_content }}</div>
+                      {% endif %}
+                    </div>
+                {% if block.settings.img1_link != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if block.settings.image2 != blank %}
+              <div class="img_col_sub">
+                {% if block.settings.img2_link != blank %}
+                  <a href="{{ block.settings.img2_link }}" title="">
+                {% endif %}
+                    <div class="img_col_sub_inner">
+                      {% if block.settings.image2_head != blank %}
+                      <div class="img_col_sub_head">{{ block.settings.image2_head }}</div>
+                      {% endif %}
+                      <div class="img_col_sub_img">
+                        <img src="{{ block.settings.image2 | img_url: 'master' }}" alt="">
+                      </div>
+                      {% if block.settings.image2_content != blank %}
+                      <div class="img_col_sub_content">{{ block.settings.image2_content }}</div>
+                      {% endif %}
+                    </div>
+                {% if block.settings.img2_link != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if block.settings.image3 != blank %}
+              <div class="img_col_sub">
+                {% if block.settings.img3_link != blank %}
+                  <a href="{{ block.settings.img3_link }}" title="">
+                {% endif %}
+                    <div class="img_col_sub_inner">
+                      {% if block.settings.image3_head != blank %}
+                      <div class="img_col_sub_head">{{ block.settings.image3_head }}</div>
+                      {% endif %}
+                      <div class="img_col_sub_img">
+                        <img src="{{ block.settings.image3 | img_url: 'master' }}" alt="">
+                      </div>
+                      {% if block.settings.image3_content != blank %}
+                      <div class="img_col_sub_content">{{ block.settings.image3_content }}</div>
+                      {% endif %}
+                    </div>
+                {% if block.settings.img3_link != blank %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+            </div>
+          {% endif %}
+        {% endif %}
+                
+        {% if block.settings.col1_menuitem1_text != blank %}
+          <div class="menu_col">
+            <div class="menu_col_inner">
+              {% if block.settings.col1_menuitem1_type == 'heading' %}
+                <div class="menu_heading">{{ block.settings.col1_menuitem1_text }}</div>
+              {% else %}
+                {% if block.settings.col1_menuitem1_link != blank %}
+                  <div class="menu_item">
+                    <a href="{{ block.settings.col1_menuitem1_link }}" title="">{{ block.settings.col1_menuitem1_text }}</a>
+                  </div>
+                {% endif %}
+              {% endif %}
+              <div class="menu_item_wrap">
+                {% if block.settings.col1_menuitem2_text != blank %}
+                  {% if block.settings.col1_menuitem2_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem2_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem2_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem2_link }}" title="">{{ block.settings.col1_menuitem2_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem3_text != blank %}
+                  {% if block.settings.col1_menuitem3_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem3_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem3_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem3_link }}" title="">{{ block.settings.col1_menuitem3_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem4_text != blank %}
+                  {% if block.settings.col1_menuitem4_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem4_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem4_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem4_link }}" title="">{{ block.settings.col1_menuitem4_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem5_text != blank %}
+                  {% if block.settings.col1_menuitem5_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem5_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem5_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem5_link }}" title="">{{ block.settings.col1_menuitem5_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem6_text != blank %}
+                  {% if block.settings.col1_menuitem6_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem6_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem6_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem6_link }}" title="">{{ block.settings.col1_menuitem6_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem7_text != blank %}
+                  {% if block.settings.col1_menuitem7_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem7_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem7_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem7_link }}" title="">{{ block.settings.col1_menuitem7_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem8_text != blank %}
+                  {% if block.settings.col1_menuitem8_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem8_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem8_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem8_link }}" title="">{{ block.settings.col1_menuitem8_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem9_text != blank %}
+                  {% if block.settings.col1_menuitem9_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem9_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem9_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem9_link }}" title="">{{ block.settings.col1_menuitem9_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col1_menuitem10_text != blank %}
+                  {% if block.settings.col1_menuitem10_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col1_menuitem10_text }}</div>
+                  {% else %}
+                    {% if block.settings.col1_menuitem10_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col1_menuitem10_link }}" title="">{{ block.settings.col1_menuitem10_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.col2_menuitem1_text != blank %}
+          <div class="menu_col">
+            <div class="menu_col_inner">
+              {% if block.settings.col2_menuitem1_type == 'heading' %}
+                <div class="menu_heading">{{ block.settings.col2_menuitem1_text }}</div>
+              {% else %}
+                {% if block.settings.col2_menuitem1_link != blank %}
+                  <div class="menu_item">
+                    <a href="{{ block.settings.col2_menuitem1_link }}" title="">{{ block.settings.col2_menuitem1_text }}</a>
+                  </div>
+                {% endif %}
+              {% endif %}
+              <div class="menu_item_wrap">
+                {% if block.settings.col2_menuitem2_text != blank %}
+                  {% if block.settings.col2_menuitem2_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem2_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem2_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem2_link }}" title="">{{ block.settings.col2_menuitem2_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem3_text != blank %}
+                  {% if block.settings.col2_menuitem3_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem3_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem3_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem3_link }}" title="">{{ block.settings.col2_menuitem3_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem4_text != blank %}
+                  {% if block.settings.col2_menuitem4_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem4_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem4_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem4_link }}" title="">{{ block.settings.col2_menuitem4_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem5_text != blank %}
+                  {% if block.settings.col2_menuitem5_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem5_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem5_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem5_link }}" title="">{{ block.settings.col2_menuitem5_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem6_text != blank %}
+                  {% if block.settings.col2_menuitem6_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem6_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem6_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem6_link }}" title="">{{ block.settings.col2_menuitem6_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem7_text != blank %}
+                  {% if block.settings.col2_menuitem7_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem7_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem7_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem7_link }}" title="">{{ block.settings.col2_menuitem7_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem8_text != blank %}
+                  {% if block.settings.col2_menuitem8_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem8_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem8_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem8_link }}" title="">{{ block.settings.col2_menuitem8_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem9_text != blank %}
+                  {% if block.settings.col2_menuitem9_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem9_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem9_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem9_link }}" title="">{{ block.settings.col2_menuitem9_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col2_menuitem10_text != blank %}
+                  {% if block.settings.col2_menuitem10_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col2_menuitem10_text }}</div>
+                  {% else %}
+                    {% if block.settings.col2_menuitem10_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col2_menuitem10_link }}" title="">{{ block.settings.col2_menuitem10_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.col3_menuitem1_text != blank %}
+          <div class="menu_col">
+            <div class="menu_col_inner">
+              {% if block.settings.col3_menuitem1_type == 'heading' %}
+                <div class="menu_heading">{{ block.settings.col3_menuitem1_text }}</div>
+              {% else %}
+                {% if block.settings.col3_menuitem1_link != blank %}
+                  <div class="menu_item">
+                    <a href="{{ block.settings.col3_menuitem1_link }}" title="">{{ block.settings.col3_menuitem1_text }}</a>
+                  </div>
+                {% endif %}
+              {% endif %}
+              <div class="menu_item_wrap">
+                {% if block.settings.col3_menuitem2_text != blank %}
+                  {% if block.settings.col3_menuitem2_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem2_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem2_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem2_link }}" title="">{{ block.settings.col3_menuitem2_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem3_text != blank %}
+                  {% if block.settings.col3_menuitem3_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem3_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem3_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem3_link }}" title="">{{ block.settings.col3_menuitem3_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem4_text != blank %}
+                  {% if block.settings.col3_menuitem4_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem4_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem4_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem4_link }}" title="">{{ block.settings.col3_menuitem4_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem5_text != blank %}
+                  {% if block.settings.col3_menuitem5_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem5_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem5_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem5_link }}" title="">{{ block.settings.col3_menuitem5_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem6_text != blank %}
+                  {% if block.settings.col3_menuitem6_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem6_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem6_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem6_link }}" title="">{{ block.settings.col3_menuitem6_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem7_text != blank %}
+                  {% if block.settings.col3_menuitem7_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem7_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem7_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem7_link }}" title="">{{ block.settings.col3_menuitem7_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem8_text != blank %}
+                  {% if block.settings.col3_menuitem8_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem8_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem8_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem8_link }}" title="">{{ block.settings.col3_menuitem8_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem9_text != blank %}
+                  {% if block.settings.col3_menuitem9_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem9_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem9_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem9_link }}" title="">{{ block.settings.col3_menuitem9_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.col3_menuitem10_text != blank %}
+                  {% if block.settings.col3_menuitem10_type == 'heading' %}
+                    <div class="menu_heading">{{ block.settings.col3_menuitem10_text }}</div>
+                  {% else %}
+                    {% if block.settings.col3_menuitem10_link != blank %}
+                      <div class="menu_item">
+                        <a href="{{ block.settings.col3_menuitem10_link }}" title="">{{ block.settings.col3_menuitem10_text }}</a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% unless block.type == 'type3' %}
+
+          {% if block.settings.col4_menuitem1_text != blank %}
+            <div class="menu_col">
+              <div class="menu_col_inner">
+                {% if block.settings.col4_menuitem1_type == 'heading' %}
+                  <div class="menu_heading">{{ block.settings.col4_menuitem1_text }}</div>
+                {% else %}
+                  {% if block.settings.col4_menuitem1_link != blank %}
+                    <div class="menu_item">
+                      <a href="{{ block.settings.col4_menuitem1_link }}" title="">{{ block.settings.col4_menuitem1_text }}</a>
+                    </div>
+                  {% endif %}
+                {% endif %}
+                <div class="menu_item_wrap">
+                  {% if block.settings.col4_menuitem2_text != blank %}
+                    {% if block.settings.col4_menuitem2_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem2_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem2_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem2_link }}" title="">{{ block.settings.col4_menuitem2_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem3_text != blank %}
+                    {% if block.settings.col4_menuitem3_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem3_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem3_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem3_link }}" title="">{{ block.settings.col4_menuitem3_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem4_text != blank %}
+                    {% if block.settings.col4_menuitem4_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem4_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem4_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem4_link }}" title="">{{ block.settings.col4_menuitem4_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem5_text != blank %}
+                    {% if block.settings.col4_menuitem5_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem5_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem5_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem5_link }}" title="">{{ block.settings.col4_menuitem5_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem6_text != blank %}
+                    {% if block.settings.col4_menuitem6_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem6_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem6_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem6_link }}" title="">{{ block.settings.col4_menuitem6_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem7_text != blank %}
+                    {% if block.settings.col4_menuitem7_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem7_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem7_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem7_link }}" title="">{{ block.settings.col4_menuitem7_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem8_text != blank %}
+                    {% if block.settings.col4_menuitem8_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem8_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem8_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem8_link }}" title="">{{ block.settings.col4_menuitem8_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem9_text != blank %}
+                    {% if block.settings.col4_menuitem9_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem9_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem9_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem9_link }}" title="">{{ block.settings.col4_menuitem9_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col4_menuitem10_text != blank %}
+                    {% if block.settings.col4_menuitem10_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col4_menuitem10_text }}</div>
+                    {% else %}
+                      {% if block.settings.col4_menuitem10_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col4_menuitem10_link }}" title="">{{ block.settings.col4_menuitem10_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.col5_menuitem1_text != blank %}
+            <div class="menu_col">
+              <div class="menu_col_inner">
+                {% if block.settings.col5_menuitem1_type == 'heading' %}
+                  <div class="menu_heading">{{ block.settings.col5_menuitem1_text }}</div>
+                {% else %}
+                  {% if block.settings.col5_menuitem1_link != blank %}
+                    <div class="menu_item">
+                      <a href="{{ block.settings.col5_menuitem1_link }}" title="">{{ block.settings.col5_menuitem1_text }}</a>
+                    </div>
+                  {% endif %}
+                {% endif %}
+                <div class="menu_item_wrap">
+                  {% if block.settings.col5_menuitem2_text != blank %}
+                    {% if block.settings.col5_menuitem2_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem2_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem2_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem2_link }}" title="">{{ block.settings.col5_menuitem2_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem3_text != blank %}
+                    {% if block.settings.col5_menuitem3_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem3_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem3_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem3_link }}" title="">{{ block.settings.col5_menuitem3_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem4_text != blank %}
+                    {% if block.settings.col5_menuitem4_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem4_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem4_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem4_link }}" title="">{{ block.settings.col5_menuitem4_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem5_text != blank %}
+                    {% if block.settings.col5_menuitem5_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem5_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem5_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem5_link }}" title="">{{ block.settings.col5_menuitem5_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem6_text != blank %}
+                    {% if block.settings.col5_menuitem6_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem6_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem6_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem6_link }}" title="">{{ block.settings.col5_menuitem6_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem7_text != blank %}
+                    {% if block.settings.col5_menuitem7_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem7_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem7_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem7_link }}" title="">{{ block.settings.col5_menuitem7_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem8_text != blank %}
+                    {% if block.settings.col5_menuitem8_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem8_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem8_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem8_link }}" title="">{{ block.settings.col5_menuitem8_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem9_text != blank %}
+                    {% if block.settings.col5_menuitem9_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem9_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem9_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem9_link }}" title="">{{ block.settings.col5_menuitem9_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  {% if block.settings.col5_menuitem10_text != blank %}
+                    {% if block.settings.col5_menuitem10_type == 'heading' %}
+                      <div class="menu_heading">{{ block.settings.col5_menuitem10_text }}</div>
+                    {% else %}
+                      {% if block.settings.col5_menuitem10_link != blank %}
+                        <div class="menu_item">
+                          <a href="{{ block.settings.col5_menuitem10_link }}" title="">{{ block.settings.col5_menuitem10_text }}</a>
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          
+        {% endunless %}
+
+        {% case block.type %}
+          {% when 'type1' %}
+            {% if block.settings.featured_title != blank %}
+              <div class="featured_col">
+                <div class="featured_col_inner">
+                  <div class="featured_title">{{ block.settings.featured_title }}</div>
+                  <div class="featured_item_wrap">
+                    {% if block.settings.featured1_text != blank and block.settings.featured1_link != blank %}
+                      <div class="featured_item">
+                        <a href="{{ block.settings.featured1_link }}" title="">{{ block.settings.featured1_text }}</a>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.featured2_text != blank and block.settings.featured2_link != blank %}
+                      <div class="featured_item">
+                        <a href="{{ block.settings.featured2_link }}" title="">{{ block.settings.featured2_text }}</a>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.featured3_text != blank and block.settings.featured3_link != blank %}
+                      <div class="featured_item">
+                        <a href="{{ block.settings.featured3_link }}" title="">{{ block.settings.featured3_text }}</a>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.featured4_text != blank and block.settings.featured4_link != blank %}
+                      <div class="featured_item">
+                        <a href="{{ block.settings.featured4_link }}" title="">{{ block.settings.featured4_text }}</a>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.featured5_text != blank and block.settings.featured5_link != blank %}
+                      <div class="featured_item">
+                        <a href="{{ block.settings.featured5_link }}" title="">{{ block.settings.featured5_text }}</a>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% when 'type2' %}
+            {% if block.settings.featured1_image != blank or block.settings.brand1_text != blank and block.settings.brand1_link != blank %}
+              <div class="brand_col">
+                <div class="brand_col_title">Brands</div>
+                <div class="brand_col_inner">
+                  {% if block.settings.brand1_text != blank and block.settings.brand1_link != blank %}
+                    <div class="brand_wrapper">
+                      <div class="search_wrap">
+                        <input id="search_brand" type="text" value="">
+                        <label class="flip_label">Search by Brand</label>
+                        <span class="search_arrow">
+                          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"></path></svg>
+                        </span>
+                      </div>
+                      <div class="brand_list">
+                        <div class="brand_list_inner">
+                          <a class="brand_item" href="{{ block.settings.brand1_link }}" title="">{{ block.settings.brand1_text }}</a>
+                          {% if block.settings.brand2_text != blank and block.settings.brand2_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand2_link }}" title="">{{ block.settings.brand2_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand3_text != blank and block.settings.brand3_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand3_link }}" title="">{{ block.settings.brand3_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand4_text != blank and block.settings.brand4_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand4_link }}" title="">{{ block.settings.brand4_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand5_text != blank and block.settings.brand5_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand5_link }}" title="">{{ block.settings.brand5_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand6_text != blank and block.settings.brand6_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand6_link }}" title="">{{ block.settings.brand6_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand7_text != blank and block.settings.brand7_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand7_link }}" title="">{{ block.settings.brand7_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand8_text != blank and block.settings.brand8_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand8_link }}" title="">{{ block.settings.brand8_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand9_text != blank and block.settings.brand9_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand9_link }}" title="">{{ block.settings.brand9_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand10_text != blank and block.settings.brand10_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand10_link }}" title="">{{ block.settings.brand10_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand11_text != blank and block.settings.brand11_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand11_link }}" title="">{{ block.settings.brand11_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand12_text != blank and block.settings.brand12_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand12_link }}" title="">{{ block.settings.brand12_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand13_text != blank and block.settings.brand13_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand13_link }}" title="">{{ block.settings.brand13_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand14_text != blank and block.settings.brand14_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand14_link }}" title="">{{ block.settings.brand14_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand15_text != blank and block.settings.brand15_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand15_link }}" title="">{{ block.settings.brand15_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand16_text != blank and block.settings.brand16_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand16_link }}" title="">{{ block.settings.brand16_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand17_text != blank and block.settings.brand17_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand17_link }}" title="">{{ block.settings.brand17_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand18_text != blank and block.settings.brand18_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand18_link }}" title="">{{ block.settings.brand18_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand19_text != blank and block.settings.brand19_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand19_link }}" title="">{{ block.settings.brand19_text }}</a>
+                          {% endif %}
+                          {% if block.settings.brand20_text != blank and block.settings.brand20_link != blank %}
+                            <a class="brand_item" href="{{ block.settings.brand20_link }}" title="">{{ block.settings.brand20_text }}</a>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.featured1_image != blank %}
+                    <div class="brand_img_wrap">
+                      <div class="img_wrap">
+                      {% if block.settings.featured1_link != blank %}
+                        <a href="{{ block.settings.featured1_link }}" title="">
+                      {% endif %}
+                          <div class="img_col_img">
+                            <img src="{{ block.settings.featured1_image | img_url: '375x' }}" alt="">
+                          </div>
+                          {% if block.settings.featured1_text != blank %}
+                          <div class="img_col_text">{{ block.settings.featured1_text }}</div>
+                          {% endif %}
+                      {% if block.settings.featured1_link != blank %}
+                        </a>
+                      {% endif %}
+                      </div>
+                      {% if block.settings.featured2_image != blank %}
+                        <div class="img_wrap">
+                        {% if block.settings.featured2_link != blank %}
+                          <a href="{{ block.settings.featured2_link }}" title="">
+                        {% endif %}
+                            <div class="img_col_img">
+                              <img src="{{ block.settings.featured2_image | img_url: '375x' }}" alt="">
+                            </div>
+                            {% if block.settings.featured2_text != blank %}
+                            <div class="img_col_text">{{ block.settings.featured2_text }}</div>
+                            {% endif %}
+                        {% if block.settings.featured2_link != blank %}
+                          </a>
+                        {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.featured3_image != blank %}
+                        <div class="img_wrap">
+                        {% if block.settings.featured3_link != blank %}
+                          <a href="{{ block.settings.featured3_link }}" title="">
+                        {% endif %}
+                            <div class="img_col_img">
+                              <img src="{{ block.settings.featured3_image | img_url: '375x' }}" alt="">
+                            </div>
+                            {% if block.settings.featured3_text != blank %}
+                            <div class="img_col_text">{{ block.settings.featured3_text }}</div>
+                            {% endif %}
+                        {% if block.settings.featured3_link != blank %}
+                          </a>
+                        {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% when 'type3' %}
+            {% if block.settings.description != blank or block.settings.button1_text != blank and block.settings.button1_link != blank %}
+              <div class="btns_col">
+                <div class="btns_col_inner">
+                  {% if block.settings.description != blank %}
+                    <div class="btns_desc">{{ block.settings.description }}</div>
+                  {% endif %}
+                  {% if block.settings.button1_text != blank and block.settings.button1_link != blank %}
+                    <div class="btns_list">
+                      {% if block.settings.button1_type == 'red' %}
+                        <a class="btn_type1" target="_blank" href="{{ block.settings.button1_link }}" title="">{{ block.settings.button1_text }}</a>
+                      {% else %}
+                        <a class="btn_type2" href="{{ block.settings.button1_link }}" title="">{{ block.settings.button1_text }}</a>
+                      {% endif %}
+                      {% if block.settings.button2_text != blank and block.settings.button2_link != blank %}
+                        {% if block.settings.button2_type == 'red' %}
+                          <a class="btn_type1" target="_blank" href="{{ block.settings.button2_link }}" title="">{{ block.settings.button2_text }}</a>
+                        {% else %}
+                          <a class="btn_type2" href="{{ block.settings.button2_link }}" title="">{{ block.settings.button2_text }}</a>
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+        {% endcase %}
+        
+        </div>
+        <!-- end #nav_panel{{ j }} -->
+      {% endfor %}  
+      </div>
+    </div>
+    <div class="nav_overlay"></div>
+  </div>
+  {%- endif -%}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": {{ shop.name | json }},
+  {% if section.settings.logo %}
+    {% assign image_size = section.settings.logo.width | append:'x' %}
+    "logo": {{ section.settings.logo | img_url: image_size | prepend: "https:" | json }},
+  {% endif %}
+  "sameAs": [
+    {{ settings.social_twitter_link | json }},
+    {{ settings.social_facebook_link | json }},
+    {{ settings.social_pinterest_link | json }},
+    {{ settings.social_instagram_link | json }},
+    {{ settings.social_tumblr_link | json }},
+    {{ settings.social_snapchat_link | json }},
+    {{ settings.social_youtube_link | json }},
+    {{ settings.social_vimeo_link | json }}
+  ],
+  "url": {{ shop.url | append: page.url | json }}
+}
+</script>
+
+{% if request.page_type == 'index' %}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ shop.url | append: page.url | json }}
+    }
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "radio",
+      "id": "align_logo",
+      "label": "Logo alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centered"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "label": "Custom logo width",
+      "min": 50,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "message",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "message_text",
+      "label": "Text",
+      "default": "Announce something here"
+    },
+    {
+      "type": "url",
+      "id": "message_link",
+      "label": "Link",
+      "info": "Optional"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Bar",
+      "default": "#3a3a3a"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text",
+      "default": "#ffffff"
+    }
+  ], 
+  "max_blocks": 6,
+  "blocks":[
+    {
+      "type": "type1",
+      "name": "Menu - type1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "Image Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured_image",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "featured_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "featured_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column1"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column2"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column3"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column4"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column5"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Featured Column"
+        },
+        {
+          "type": "text",
+          "id": "featured_title",
+          "label": "Featured Title"
+        },
+        {
+          "type": "text",
+          "id": "featured1_text",
+          "label": "Featured1 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured1_link",
+          "label": "Featured1 Link"
+        },
+        {
+          "type": "text",
+          "id": "featured2_text",
+          "label": "Featured2 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured2_link",
+          "label": "Featured2 Link"
+        },
+        {
+          "type": "text",
+          "id": "featured3_text",
+          "label": "Featured3 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured3_link",
+          "label": "Featured3 Link"
+        },
+        {
+          "type": "text",
+          "id": "featured4_text",
+          "label": "Featured4 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured4_link",
+          "label": "Featured4 Link"
+        },
+        {
+          "type": "text",
+          "id": "featured5_text",
+          "label": "Featured5 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured5_link",
+          "label": "Featured5 Link"
+        }
+      ]
+    },
+    {
+      "type": "type2",
+      "name": "Menu - type2",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "Image Column"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured_image",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "featured_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "featured_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column1"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column2"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column3"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column4"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col4_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col4_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col4_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column5"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col5_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col5_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col5_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Brand Column"
+        },
+        {
+          "type": "text",
+          "id": "brand1_text",
+          "label": "Brand1 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand1_link",
+          "label": "Brand1 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand2_text",
+          "label": "Brand2 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand2_link",
+          "label": "Brand2 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand3_text",
+          "label": "Brand3 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand3_link",
+          "label": "Brand3 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand4_text",
+          "label": "Brand4 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand4_link",
+          "label": "Brand4 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand5_text",
+          "label": "Brand5 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand5_link",
+          "label": "Brand5 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand6_text",
+          "label": "Brand6 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand6_link",
+          "label": "Brand6 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand7_text",
+          "label": "Brand7 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand7_link",
+          "label": "Brand7 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand8_text",
+          "label": "Brand8 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand8_link",
+          "label": "Brand8 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand9_text",
+          "label": "Brand9 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand9_link",
+          "label": "Brand9 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand10_text",
+          "label": "Brand10 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand10_link",
+          "label": "Brand10 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand11_text",
+          "label": "Brand11 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand11_link",
+          "label": "Brand11 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand12_text",
+          "label": "Brand12 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand12_link",
+          "label": "Brand12 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand13_text",
+          "label": "Brand13 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand13_link",
+          "label": "Brand13 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand14_text",
+          "label": "Brand14 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand14_link",
+          "label": "Brand14 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand15_text",
+          "label": "Brand15 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand15_link",
+          "label": "Brand15 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand16_text",
+          "label": "Brand16 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand16_link",
+          "label": "Brand16 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand17_text",
+          "label": "Brand17 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand17_link",
+          "label": "Brand17 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand18_text",
+          "label": "Brand18 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand18_link",
+          "label": "Brand18 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand19_text",
+          "label": "Brand19 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand19_link",
+          "label": "Brand19 Link"
+        },
+        {
+          "type": "text",
+          "id": "brand20_text",
+          "label": "Brand20 Text"
+        },
+        {
+          "type": "url",
+          "id": "brand20_link",
+          "label": "Brand20 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured1_image",
+          "label": "Featured1 Image"
+        },
+        {
+          "type": "text",
+          "id": "featured1_text",
+          "label": "Featured1 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured1_link",
+          "label": "Featured1 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured2_image",
+          "label": "Featured2 Image"
+        },
+        {
+          "type": "text",
+          "id": "featured2_text",
+          "label": "Featured2 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured2_link",
+          "label": "Featured2 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured3_image",
+          "label": "Featured3 Image"
+        },
+        {
+          "type": "text",
+          "id": "featured3_text",
+          "label": "Featured3 Text"
+        },
+        {
+          "type": "url",
+          "id": "featured3_link",
+          "label": "Featured3 Link"
+        }
+      ]
+    }, 
+    {
+      "type": "type3",
+      "name": "Menu - type3",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "Image Column"
+        },
+        {
+          "type": "text",
+          "id": "image1_head",
+          "label": "Image1 Head"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image1"
+        },
+        {
+          "type": "text",
+          "id": "image1_content",
+          "label": "Image1 Content"
+        },
+        {
+          "type": "url",
+          "id": "img1_link",
+          "label": "Image1 Link"
+        },
+        {
+          "type": "text",
+          "id": "image2_head",
+          "label": "Image2 Head"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image2"
+        },
+        {
+          "type": "text",
+          "id": "image2_content",
+          "label": "Image2 Content"
+        },
+        {
+          "type": "url",
+          "id": "img2_link",
+          "label": "Image2 Link"
+        },
+        {
+          "type": "text",
+          "id": "image3_head",
+          "label": "Image3 Head"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Image3"
+        },
+        {
+          "type": "text",
+          "id": "image3_content",
+          "label": "Image3 Content"
+        },
+        {
+          "type": "url",
+          "id": "img3_link",
+          "label": "Image3 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column1"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col1_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col1_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col1_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column2"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col2_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col2_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col2_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Menu Column3"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem1_type",
+          "label": "MenuItem1 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem1_text",
+          "label": "MenuItem1 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem1_link",
+          "label": "MenuItem1 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem2_type",
+          "label": "MenuItem2 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem2_text",
+          "label": "MenuItem2 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem2_link",
+          "label": "MenuItem2 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem3_type",
+          "label": "MenuItem3 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem3_text",
+          "label": "MenuItem3 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem3_link",
+          "label": "MenuItem3 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem4_type",
+          "label": "MenuItem4 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem4_text",
+          "label": "MenuItem4 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem4_link",
+          "label": "MenuItem4 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem5_type",
+          "label": "MenuItem5 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem5_text",
+          "label": "MenuItem5 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem5_link",
+          "label": "MenuItem5 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem6_type",
+          "label": "MenuItem6 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem6_text",
+          "label": "MenuItem6 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem6_link",
+          "label": "MenuItem6 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem7_type",
+          "label": "MenuItem7 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem7_text",
+          "label": "MenuItem7 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem7_link",
+          "label": "MenuItem7 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem8_type",
+          "label": "MenuItem8 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem8_text",
+          "label": "MenuItem8 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem8_link",
+          "label": "MenuItem8 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem9_type",
+          "label": "MenuItem9 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem9_text",
+          "label": "MenuItem9 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem9_link",
+          "label": "MenuItem9 Link"
+        },
+        {
+          "type": "select",
+          "id": "col3_menuitem10_type",
+          "label": "MenuItem10 Type", 
+          "default": "link",
+          "options": [
+            {
+              "label": "Subheading", 
+              "value": "heading"
+            },
+            {
+              "label": "Link", 
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "col3_menuitem10_text",
+          "label": "MenuItem10 Text"
+        },
+        {
+          "type": "url",
+          "id": "col3_menuitem10_link",
+          "label": "MenuItem10 Link"
+        },
+        {
+          "type": "header",
+          "content": "Buttons Column"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "button1_type",
+          "label": "Button1 Type", 
+          "default": "red",
+          "options": [
+            {
+              "label": "Type1", 
+              "value": "red"
+            },
+            {
+              "label": "Type2", 
+              "value": "white"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "button1_text",
+          "label": "Button1 Text"
+        },
+        {
+          "type": "url",
+          "id": "button1_link",
+          "label": "Button1 Link"
+        },
+        {
+          "type": "select",
+          "id": "button2_type",
+          "label": "Button2 Type", 
+          "default": "red",
+          "options": [
+            {
+              "label": "Type1", 
+              "value": "red"
+            },
+            {
+              "label": "Type2", 
+              "value": "white"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "button2_text",
+          "label": "Button2 Text"
+        },
+        {
+          "type": "url",
+          "id": "button2_link",
+          "label": "Button2 Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

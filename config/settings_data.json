@@ -1,0 +1,1625 @@
+{
+  "current": {
+    "color_text": "#f00000",
+    "color_body_text": "#262262",
+    "color_sale_text": "#ea0606",
+    "color_button": "#f00000",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#cccccc",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ff0000",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "helvetica_n7",
+    "type_header_base_size": 26,
+    "type_base_font": "helvetica_n4",
+    "type_base_size": 15,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "share_image": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "shopify:\/\/shop_images\/favicon_1.png",
+    "enable_ajax": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "5788a8bf-db34-4c9e-b3fe-06a5a96d4eab": {
+            "type": "type1",
+            "settings": {
+              "title": "Men's",
+              "featured_image": "shopify:\/\/shop_images\/CheckingPhoneOnHike_SpringSummer_Male.jpg",
+              "featured_text": "New Arrivals",
+              "featured_link": "shopify:\/\/collections\/new-arrivals-men",
+              "col1_menuitem1_type": "heading",
+              "col1_menuitem1_text": "Tops",
+              "col1_menuitem1_link": "",
+              "col1_menuitem2_type": "link",
+              "col1_menuitem2_text": "Baselayer Tops",
+              "col1_menuitem2_link": "shopify:\/\/collections\/mens-baselayer-tops",
+              "col1_menuitem3_type": "link",
+              "col1_menuitem3_text": "Fleece",
+              "col1_menuitem3_link": "shopify:\/\/collections\/mens-fleece",
+              "col1_menuitem4_type": "link",
+              "col1_menuitem4_text": "Hoodies",
+              "col1_menuitem4_link": "shopify:\/\/collections\/mens-hoodies",
+              "col1_menuitem5_type": "link",
+              "col1_menuitem5_text": "Jackets",
+              "col1_menuitem5_link": "shopify:\/\/collections\/mens-jackets",
+              "col1_menuitem6_type": "link",
+              "col1_menuitem6_text": "Quarter & Half Zip\/Snaps",
+              "col1_menuitem6_link": "shopify:\/\/collections\/mens-quarter-snaps-zips",
+              "col1_menuitem7_type": "link",
+              "col1_menuitem7_text": "Vests",
+              "col1_menuitem7_link": "shopify:\/\/collections\/mens-vests",
+              "col1_menuitem8_type": "link",
+              "col1_menuitem8_text": "View All",
+              "col1_menuitem8_link": "shopify:\/\/collections\/tops-mens",
+              "col1_menuitem9_type": "link",
+              "col1_menuitem9_text": "",
+              "col1_menuitem9_link": "",
+              "col1_menuitem10_type": "link",
+              "col1_menuitem10_text": "",
+              "col1_menuitem10_link": "",
+              "col2_menuitem1_type": "heading",
+              "col2_menuitem1_text": "Bottoms",
+              "col2_menuitem1_link": "",
+              "col2_menuitem2_type": "link",
+              "col2_menuitem2_text": "Hiking\/Climbing Pants",
+              "col2_menuitem2_link": "shopify:\/\/collections\/mens-hiking-climbing-pants",
+              "col2_menuitem3_type": "link",
+              "col2_menuitem3_text": "Insulated Pants",
+              "col2_menuitem3_link": "shopify:\/\/collections\/mens-insulated-pants",
+              "col2_menuitem4_type": "link",
+              "col2_menuitem4_text": "Jeans",
+              "col2_menuitem4_link": "shopify:\/\/collections\/mens-jeans",
+              "col2_menuitem5_type": "link",
+              "col2_menuitem5_text": "Shorts",
+              "col2_menuitem5_link": "shopify:\/\/collections\/mens-shorts",
+              "col2_menuitem6_type": "link",
+              "col2_menuitem6_text": "View All",
+              "col2_menuitem6_link": "shopify:\/\/collections\/bottoms-mens",
+              "col2_menuitem7_type": "link",
+              "col2_menuitem7_text": "",
+              "col2_menuitem7_link": "",
+              "col2_menuitem8_type": "link",
+              "col2_menuitem8_text": "",
+              "col2_menuitem8_link": "",
+              "col2_menuitem9_type": "link",
+              "col2_menuitem9_text": "",
+              "col2_menuitem9_link": "",
+              "col2_menuitem10_type": "link",
+              "col2_menuitem10_text": "",
+              "col2_menuitem10_link": "",
+              "col3_menuitem1_type": "heading",
+              "col3_menuitem1_text": "Activities",
+              "col3_menuitem1_link": "",
+              "col3_menuitem2_type": "link",
+              "col3_menuitem2_text": "Biking",
+              "col3_menuitem2_link": "shopify:\/\/collections\/mens-biking",
+              "col3_menuitem3_type": "link",
+              "col3_menuitem3_text": "Climbing",
+              "col3_menuitem3_link": "shopify:\/\/collections\/mens-climbing",
+              "col3_menuitem4_type": "link",
+              "col3_menuitem4_text": "Hiking\/Backpacking",
+              "col3_menuitem4_link": "shopify:\/\/collections\/backpacking-gear-for-him",
+              "col3_menuitem5_type": "link",
+              "col3_menuitem5_text": "Lifestyle",
+              "col3_menuitem5_link": "shopify:\/\/collections\/mens-lifestyle",
+              "col3_menuitem6_type": "link",
+              "col3_menuitem6_text": "Running",
+              "col3_menuitem6_link": "shopify:\/\/collections\/mens-running",
+              "col3_menuitem7_type": "link",
+              "col3_menuitem7_text": "Skiing\/Snowboarding",
+              "col3_menuitem7_link": "shopify:\/\/collections\/mens-skiing-and-snowboarding",
+              "col3_menuitem8_type": "link",
+              "col3_menuitem8_text": "",
+              "col3_menuitem8_link": "",
+              "col3_menuitem9_type": "link",
+              "col3_menuitem9_text": "",
+              "col3_menuitem9_link": "",
+              "col3_menuitem10_type": "link",
+              "col3_menuitem10_text": "",
+              "col3_menuitem10_link": "",
+              "col4_menuitem1_type": "heading",
+              "col4_menuitem1_text": "",
+              "col4_menuitem1_link": "",
+              "col4_menuitem2_type": "link",
+              "col4_menuitem2_text": "",
+              "col4_menuitem2_link": "shopify:\/\/collections\/new-arrivals-men",
+              "col4_menuitem3_type": "link",
+              "col4_menuitem3_text": "",
+              "col4_menuitem3_link": "",
+              "col4_menuitem4_type": "link",
+              "col4_menuitem4_text": "",
+              "col4_menuitem4_link": "",
+              "col4_menuitem5_type": "link",
+              "col4_menuitem5_text": "",
+              "col4_menuitem5_link": "",
+              "col4_menuitem6_type": "link",
+              "col4_menuitem6_text": "",
+              "col4_menuitem6_link": "",
+              "col4_menuitem7_type": "link",
+              "col4_menuitem7_text": "",
+              "col4_menuitem7_link": "",
+              "col4_menuitem8_type": "link",
+              "col4_menuitem8_text": "",
+              "col4_menuitem8_link": "",
+              "col4_menuitem9_type": "link",
+              "col4_menuitem9_text": "",
+              "col4_menuitem9_link": "",
+              "col4_menuitem10_type": "link",
+              "col4_menuitem10_text": "",
+              "col4_menuitem10_link": "",
+              "col5_menuitem1_type": "link",
+              "col5_menuitem1_text": "",
+              "col5_menuitem1_link": "",
+              "col5_menuitem2_type": "link",
+              "col5_menuitem2_text": "",
+              "col5_menuitem2_link": "",
+              "col5_menuitem3_type": "link",
+              "col5_menuitem3_text": "",
+              "col5_menuitem3_link": "",
+              "col5_menuitem4_type": "link",
+              "col5_menuitem4_text": "",
+              "col5_menuitem4_link": "",
+              "col5_menuitem5_type": "link",
+              "col5_menuitem5_text": "",
+              "col5_menuitem5_link": "",
+              "col5_menuitem6_type": "link",
+              "col5_menuitem6_text": "",
+              "col5_menuitem6_link": "",
+              "col5_menuitem7_type": "link",
+              "col5_menuitem7_text": "",
+              "col5_menuitem7_link": "",
+              "col5_menuitem8_type": "link",
+              "col5_menuitem8_text": "",
+              "col5_menuitem8_link": "",
+              "col5_menuitem9_type": "link",
+              "col5_menuitem9_text": "",
+              "col5_menuitem9_link": "",
+              "col5_menuitem10_type": "link",
+              "col5_menuitem10_text": "",
+              "col5_menuitem10_link": "",
+              "featured_title": "FEATURED COLLECTIONS",
+              "featured1_text": "New Arrivals",
+              "featured1_link": "shopify:\/\/collections\/new-arrivals-men",
+              "featured2_text": "",
+              "featured2_link": "",
+              "featured3_text": "",
+              "featured3_link": "",
+              "featured4_text": "",
+              "featured4_link": "",
+              "featured5_text": "",
+              "featured5_link": ""
+            }
+          },
+          "0d6491ba-71f0-40e4-8d28-834adabe5b0b": {
+            "type": "type1",
+            "settings": {
+              "title": "Women's",
+              "featured_image": "shopify:\/\/shop_images\/Hiking_SpringSummerGrassy_Female.jpg",
+              "featured_text": "New Arrivals",
+              "featured_link": "shopify:\/\/collections\/new-arrivals-women",
+              "col1_menuitem1_type": "heading",
+              "col1_menuitem1_text": "Tops",
+              "col1_menuitem1_link": "",
+              "col1_menuitem2_type": "link",
+              "col1_menuitem2_text": "Baselayer Tops",
+              "col1_menuitem2_link": "shopify:\/\/collections\/womens-baselayer-tops",
+              "col1_menuitem3_type": "link",
+              "col1_menuitem3_text": "Dresses",
+              "col1_menuitem3_link": "shopify:\/\/collections\/womens-dresses",
+              "col1_menuitem4_type": "link",
+              "col1_menuitem4_text": "Fleece",
+              "col1_menuitem4_link": "shopify:\/\/collections\/womens-fleece-tops",
+              "col1_menuitem5_type": "link",
+              "col1_menuitem5_text": "Hoodies",
+              "col1_menuitem5_link": "shopify:\/\/collections\/womens-hoodies",
+              "col1_menuitem6_type": "link",
+              "col1_menuitem6_text": "Jackets",
+              "col1_menuitem6_link": "shopify:\/\/collections\/womens-jackets",
+              "col1_menuitem7_type": "link",
+              "col1_menuitem7_text": "Quarter & Half Zip\/Snaps",
+              "col1_menuitem7_link": "shopify:\/\/collections\/womens-quarter-zips",
+              "col1_menuitem8_type": "link",
+              "col1_menuitem8_text": "Vests",
+              "col1_menuitem8_link": "shopify:\/\/collections\/womens-vests",
+              "col1_menuitem9_type": "link",
+              "col1_menuitem9_text": "View All",
+              "col1_menuitem9_link": "shopify:\/\/collections\/tops-womens",
+              "col1_menuitem10_type": "link",
+              "col1_menuitem10_text": "",
+              "col1_menuitem10_link": "",
+              "col2_menuitem1_type": "heading",
+              "col2_menuitem1_text": "Bottoms",
+              "col2_menuitem1_link": "",
+              "col2_menuitem2_type": "link",
+              "col2_menuitem2_text": "Hiking\/Climbing Pants",
+              "col2_menuitem2_link": "shopify:\/\/collections\/womens-climbing-hiking-pants",
+              "col2_menuitem3_type": "link",
+              "col2_menuitem3_text": "Insulated Pants",
+              "col2_menuitem3_link": "shopify:\/\/collections\/womens-snow-pants",
+              "col2_menuitem4_type": "link",
+              "col2_menuitem4_text": "Jeans",
+              "col2_menuitem4_link": "shopify:\/\/collections\/womens-jeans",
+              "col2_menuitem5_type": "link",
+              "col2_menuitem5_text": "Leggings\/Tights",
+              "col2_menuitem5_link": "shopify:\/\/collections\/womens-leggings-tights",
+              "col2_menuitem6_type": "link",
+              "col2_menuitem6_text": "Skirts\/Shorts",
+              "col2_menuitem6_link": "shopify:\/\/collections\/womens-shorts-skirts",
+              "col2_menuitem7_type": "link",
+              "col2_menuitem7_text": "View All",
+              "col2_menuitem7_link": "shopify:\/\/collections\/bottoms-womens",
+              "col2_menuitem8_type": "link",
+              "col2_menuitem8_text": "",
+              "col2_menuitem8_link": "",
+              "col2_menuitem9_type": "link",
+              "col2_menuitem9_text": "",
+              "col2_menuitem9_link": "",
+              "col2_menuitem10_type": "link",
+              "col2_menuitem10_text": "",
+              "col2_menuitem10_link": "",
+              "col3_menuitem1_type": "heading",
+              "col3_menuitem1_text": "Activities",
+              "col3_menuitem1_link": "",
+              "col3_menuitem2_type": "link",
+              "col3_menuitem2_text": "Biking",
+              "col3_menuitem2_link": "shopify:\/\/collections\/womens-biking",
+              "col3_menuitem3_type": "link",
+              "col3_menuitem3_text": "Climbing",
+              "col3_menuitem3_link": "shopify:\/\/collections\/womens-climbing",
+              "col3_menuitem4_type": "link",
+              "col3_menuitem4_text": "Hiking\/Backpacking",
+              "col3_menuitem4_link": "shopify:\/\/collections\/backpacking-gear-for-her",
+              "col3_menuitem5_type": "link",
+              "col3_menuitem5_text": "Lifestyle",
+              "col3_menuitem5_link": "shopify:\/\/collections\/womens-casual",
+              "col3_menuitem6_type": "link",
+              "col3_menuitem6_text": "Running",
+              "col3_menuitem6_link": "shopify:\/\/collections\/womens-running",
+              "col3_menuitem7_type": "link",
+              "col3_menuitem7_text": "Skiing\/Snowboarding",
+              "col3_menuitem7_link": "shopify:\/\/collections\/womens-skiing-and-snowboarding",
+              "col3_menuitem8_type": "link",
+              "col3_menuitem8_text": "",
+              "col3_menuitem8_link": "",
+              "col3_menuitem9_type": "link",
+              "col3_menuitem9_text": "",
+              "col3_menuitem9_link": "",
+              "col3_menuitem10_type": "link",
+              "col3_menuitem10_text": "",
+              "col3_menuitem10_link": "",
+              "col4_menuitem1_type": "link",
+              "col4_menuitem1_text": "",
+              "col4_menuitem1_link": "",
+              "col4_menuitem2_type": "link",
+              "col4_menuitem2_text": "",
+              "col4_menuitem2_link": "",
+              "col4_menuitem3_type": "link",
+              "col4_menuitem3_text": "",
+              "col4_menuitem3_link": "",
+              "col4_menuitem4_type": "link",
+              "col4_menuitem4_text": "",
+              "col4_menuitem4_link": "",
+              "col4_menuitem5_type": "link",
+              "col4_menuitem5_text": "",
+              "col4_menuitem5_link": "",
+              "col4_menuitem6_type": "link",
+              "col4_menuitem6_text": "",
+              "col4_menuitem6_link": "",
+              "col4_menuitem7_type": "link",
+              "col4_menuitem7_text": "",
+              "col4_menuitem7_link": "",
+              "col4_menuitem8_type": "link",
+              "col4_menuitem8_text": "",
+              "col4_menuitem8_link": "",
+              "col4_menuitem9_type": "link",
+              "col4_menuitem9_text": "",
+              "col4_menuitem9_link": "",
+              "col4_menuitem10_type": "link",
+              "col4_menuitem10_text": "",
+              "col4_menuitem10_link": "",
+              "col5_menuitem1_type": "link",
+              "col5_menuitem1_text": "",
+              "col5_menuitem1_link": "",
+              "col5_menuitem2_type": "link",
+              "col5_menuitem2_text": "",
+              "col5_menuitem2_link": "",
+              "col5_menuitem3_type": "link",
+              "col5_menuitem3_text": "",
+              "col5_menuitem3_link": "",
+              "col5_menuitem4_type": "link",
+              "col5_menuitem4_text": "",
+              "col5_menuitem4_link": "",
+              "col5_menuitem5_type": "link",
+              "col5_menuitem5_text": "",
+              "col5_menuitem5_link": "",
+              "col5_menuitem6_type": "link",
+              "col5_menuitem6_text": "",
+              "col5_menuitem6_link": "",
+              "col5_menuitem7_type": "link",
+              "col5_menuitem7_text": "",
+              "col5_menuitem7_link": "",
+              "col5_menuitem8_type": "link",
+              "col5_menuitem8_text": "",
+              "col5_menuitem8_link": "",
+              "col5_menuitem9_type": "link",
+              "col5_menuitem9_text": "",
+              "col5_menuitem9_link": "",
+              "col5_menuitem10_type": "link",
+              "col5_menuitem10_text": "",
+              "col5_menuitem10_link": "",
+              "featured_title": "FEATURED COLLECTIONS",
+              "featured1_text": "New Arrivals",
+              "featured1_link": "shopify:\/\/collections\/new-arrivals-women",
+              "featured2_text": "",
+              "featured2_link": "",
+              "featured3_text": "",
+              "featured3_link": "",
+              "featured4_text": "",
+              "featured4_link": "",
+              "featured5_text": "",
+              "featured5_link": ""
+            }
+          },
+          "931934d9-f1e9-4e89-b519-2027a0c5d712": {
+            "type": "type2",
+            "settings": {
+              "title": "Collections",
+              "featured_image": "shopify:\/\/shop_images\/CampingTentsAndFire_Night_TwoPeople.jpg",
+              "featured_text": "Camping Under the Stars",
+              "featured_link": "shopify:\/\/collections\/camping",
+              "col1_menuitem1_type": "heading",
+              "col1_menuitem1_text": "Featured Collections",
+              "col1_menuitem1_link": "",
+              "col1_menuitem2_type": "link",
+              "col1_menuitem2_text": "Hiking\/Backpacking Packs",
+              "col1_menuitem2_link": "shopify:\/\/collections\/backpacks",
+              "col1_menuitem3_type": "link",
+              "col1_menuitem3_text": "Kids' Gear",
+              "col1_menuitem3_link": "shopify:\/\/collections\/kids",
+              "col1_menuitem4_type": "link",
+              "col1_menuitem4_text": "Mountain Leisure",
+              "col1_menuitem4_link": "shopify:\/\/collections\/mountain-leisure",
+              "col1_menuitem5_type": "link",
+              "col1_menuitem5_text": "New Arrivals",
+              "col1_menuitem5_link": "shopify:\/\/collections\/new-arrivals",
+              "col1_menuitem6_type": "link",
+              "col1_menuitem6_text": "Rain Gear",
+              "col1_menuitem6_link": "shopify:\/\/collections\/rain-jackets",
+              "col1_menuitem7_type": "link",
+              "col1_menuitem7_text": "Travel Gear",
+              "col1_menuitem7_link": "shopify:\/\/collections\/duffels-luggage-and-travel-gear",
+              "col1_menuitem8_type": "link",
+              "col1_menuitem8_text": "",
+              "col1_menuitem8_link": "",
+              "col1_menuitem9_type": "link",
+              "col1_menuitem9_text": "",
+              "col1_menuitem9_link": "",
+              "col1_menuitem10_type": "link",
+              "col1_menuitem10_text": "",
+              "col1_menuitem10_link": "",
+              "col2_menuitem1_type": "heading",
+              "col2_menuitem1_text": "Activities",
+              "col2_menuitem1_link": "",
+              "col2_menuitem2_type": "link",
+              "col2_menuitem2_text": "Backpacking",
+              "col2_menuitem2_link": "shopify:\/\/collections\/backpacking",
+              "col2_menuitem3_type": "link",
+              "col2_menuitem3_text": "Biking",
+              "col2_menuitem3_link": "shopify:\/\/collections\/cycling",
+              "col2_menuitem4_type": "link",
+              "col2_menuitem4_text": "Camping",
+              "col2_menuitem4_link": "shopify:\/\/collections\/camping",
+              "col2_menuitem5_type": "link",
+              "col2_menuitem5_text": "Climbing",
+              "col2_menuitem5_link": "shopify:\/\/collections\/climbing",
+              "col2_menuitem6_type": "link",
+              "col2_menuitem6_text": "Hiking",
+              "col2_menuitem6_link": "shopify:\/\/collections\/hiking",
+              "col2_menuitem7_type": "link",
+              "col2_menuitem7_text": "Running",
+              "col2_menuitem7_link": "shopify:\/\/collections\/running",
+              "col2_menuitem8_type": "link",
+              "col2_menuitem8_text": "Skiing\/Snowboarding",
+              "col2_menuitem8_link": "shopify:\/\/collections\/skiing-and-snowboarding",
+              "col2_menuitem9_type": "link",
+              "col2_menuitem9_text": "",
+              "col2_menuitem9_link": "",
+              "col2_menuitem10_type": "link",
+              "col2_menuitem10_text": "",
+              "col2_menuitem10_link": "",
+              "col3_menuitem1_type": "link",
+              "col3_menuitem1_text": "",
+              "col3_menuitem1_link": "",
+              "col3_menuitem2_type": "link",
+              "col3_menuitem2_text": "",
+              "col3_menuitem2_link": "",
+              "col3_menuitem3_type": "link",
+              "col3_menuitem3_text": "",
+              "col3_menuitem3_link": "",
+              "col3_menuitem4_type": "link",
+              "col3_menuitem4_text": "",
+              "col3_menuitem4_link": "",
+              "col3_menuitem5_type": "link",
+              "col3_menuitem5_text": "",
+              "col3_menuitem5_link": "",
+              "col3_menuitem6_type": "link",
+              "col3_menuitem6_text": "",
+              "col3_menuitem6_link": "",
+              "col3_menuitem7_type": "link",
+              "col3_menuitem7_text": "",
+              "col3_menuitem7_link": "",
+              "col3_menuitem8_type": "link",
+              "col3_menuitem8_text": "",
+              "col3_menuitem8_link": "",
+              "col3_menuitem9_type": "link",
+              "col3_menuitem9_text": "",
+              "col3_menuitem9_link": "",
+              "col3_menuitem10_type": "link",
+              "col3_menuitem10_text": "",
+              "col3_menuitem10_link": "",
+              "col4_menuitem1_type": "link",
+              "col4_menuitem1_text": "",
+              "col4_menuitem1_link": "",
+              "col4_menuitem2_type": "link",
+              "col4_menuitem2_text": "",
+              "col4_menuitem2_link": "",
+              "col4_menuitem3_type": "link",
+              "col4_menuitem3_text": "",
+              "col4_menuitem3_link": "",
+              "col4_menuitem4_type": "link",
+              "col4_menuitem4_text": "",
+              "col4_menuitem4_link": "",
+              "col4_menuitem5_type": "link",
+              "col4_menuitem5_text": "",
+              "col4_menuitem5_link": "",
+              "col4_menuitem6_type": "link",
+              "col4_menuitem6_text": "",
+              "col4_menuitem6_link": "",
+              "col4_menuitem7_type": "link",
+              "col4_menuitem7_text": "",
+              "col4_menuitem7_link": "",
+              "col4_menuitem8_type": "link",
+              "col4_menuitem8_text": "",
+              "col4_menuitem8_link": "",
+              "col4_menuitem9_type": "link",
+              "col4_menuitem9_text": "",
+              "col4_menuitem9_link": "",
+              "col4_menuitem10_type": "link",
+              "col4_menuitem10_text": "",
+              "col4_menuitem10_link": "",
+              "col5_menuitem1_type": "link",
+              "col5_menuitem1_text": "",
+              "col5_menuitem1_link": "",
+              "col5_menuitem2_type": "link",
+              "col5_menuitem2_text": "",
+              "col5_menuitem2_link": "",
+              "col5_menuitem3_type": "link",
+              "col5_menuitem3_text": "",
+              "col5_menuitem3_link": "",
+              "col5_menuitem4_type": "link",
+              "col5_menuitem4_text": "",
+              "col5_menuitem4_link": "",
+              "col5_menuitem5_type": "link",
+              "col5_menuitem5_text": "",
+              "col5_menuitem5_link": "",
+              "col5_menuitem6_type": "link",
+              "col5_menuitem6_text": "",
+              "col5_menuitem6_link": "",
+              "col5_menuitem7_type": "link",
+              "col5_menuitem7_text": "",
+              "col5_menuitem7_link": "",
+              "col5_menuitem8_type": "link",
+              "col5_menuitem8_text": "",
+              "col5_menuitem8_link": "",
+              "col5_menuitem9_type": "link",
+              "col5_menuitem9_text": "",
+              "col5_menuitem9_link": "",
+              "col5_menuitem10_type": "link",
+              "col5_menuitem10_text": "",
+              "col5_menuitem10_link": "",
+              "brand1_text": "Arc'teryx",
+              "brand1_link": "shopify:\/\/collections\/arcteryx",
+              "brand2_text": "Big Agnes",
+              "brand2_link": "shopify:\/\/collections\/big-agnes",
+              "brand3_text": "Black Diamond",
+              "brand3_link": "shopify:\/\/collections\/black-diamond",
+              "brand4_text": "Columbia",
+              "brand4_link": "shopify:\/\/collections\/columbia",
+              "brand5_text": "Gregory",
+              "brand5_link": "shopify:\/\/collections\/gregory",
+              "brand6_text": "Helly Hansen",
+              "brand6_link": "shopify:\/\/collections\/helly-hansen",
+              "brand7_text": "Jack Wolfskin",
+              "brand7_link": "shopify:\/\/collections\/jack-wolfskin",
+              "brand8_text": "Kelty",
+              "brand8_link": "shopify:\/\/collections\/kelty-1",
+              "brand9_text": "Mammut",
+              "brand9_link": "shopify:\/\/collections\/mammut",
+              "brand10_text": "Marmot",
+              "brand10_link": "shopify:\/\/collections\/marmot",
+              "brand11_text": "Mountain Hardwear",
+              "brand11_link": "shopify:\/\/collections\/mountain-hardwear",
+              "brand12_text": "MSR",
+              "brand12_link": "shopify:\/\/collections\/msr",
+              "brand13_text": "Osprey",
+              "brand13_link": "shopify:\/\/collections\/osprey",
+              "brand14_text": "Patagonia",
+              "brand14_link": "shopify:\/\/collections\/patagonia",
+              "brand15_text": "The North Face",
+              "brand15_link": "shopify:\/\/collections\/the-north-face",
+              "brand16_text": "Yeti",
+              "brand16_link": "https:\/\/outandbackoutdoor.com\/collections\/yeti",
+              "brand17_text": "",
+              "brand17_link": "",
+              "brand18_text": "",
+              "brand18_link": "",
+              "brand19_text": "",
+              "brand19_link": "",
+              "brand20_text": "",
+              "brand20_link": "",
+              "featured1_image": "shopify:\/\/shop_images\/Untitled_design_5.png",
+              "featured1_text": "THE NORTH FACE",
+              "featured1_link": "shopify:\/\/collections\/the-north-face",
+              "featured2_image": "shopify:\/\/shop_images\/2_6952cf89-f350-4ff0-89e9-b8474e7b6976.png",
+              "featured2_text": "PATAGONIA",
+              "featured2_link": "shopify:\/\/collections\/patagonia",
+              "featured3_text": "",
+              "featured3_link": ""
+            }
+          },
+          "ac623e9b-5e4a-438d-8830-18c1223464a5": {
+            "type": "type3",
+            "settings": {
+              "title": "Sell Gear",
+              "image1_head": "1.",
+              "image1": "shopify:\/\/shop_images\/Asset_1.png",
+              "image1_content": "Tell Us About Your Gear",
+              "img1_link": "",
+              "image2_head": "2.",
+              "image2": "shopify:\/\/shop_images\/Asset_2_d378bb5c-67b1-4e06-ab66-1f6ab9955086.png",
+              "image2_content": "Accept An Instant Offer",
+              "img2_link": "",
+              "image3_head": "3.",
+              "image3": "shopify:\/\/shop_images\/Asset_3.png",
+              "image3_content": "Mail It In or Drop It Off",
+              "img3_link": "",
+              "col1_menuitem1_type": "link",
+              "col1_menuitem1_text": "",
+              "col1_menuitem1_link": "",
+              "col1_menuitem2_type": "link",
+              "col1_menuitem2_text": "",
+              "col1_menuitem2_link": "",
+              "col1_menuitem3_type": "link",
+              "col1_menuitem3_text": "",
+              "col1_menuitem3_link": "",
+              "col1_menuitem4_type": "link",
+              "col1_menuitem4_text": "",
+              "col1_menuitem4_link": "",
+              "col1_menuitem5_type": "link",
+              "col1_menuitem5_text": "",
+              "col1_menuitem5_link": "",
+              "col1_menuitem6_type": "link",
+              "col1_menuitem6_text": "",
+              "col1_menuitem6_link": "",
+              "col1_menuitem7_type": "link",
+              "col1_menuitem7_text": "",
+              "col1_menuitem7_link": "",
+              "col1_menuitem8_type": "link",
+              "col1_menuitem8_text": "",
+              "col1_menuitem8_link": "",
+              "col1_menuitem9_type": "link",
+              "col1_menuitem9_text": "",
+              "col1_menuitem9_link": "",
+              "col1_menuitem10_type": "link",
+              "col1_menuitem10_text": "",
+              "col1_menuitem10_link": "",
+              "col2_menuitem1_type": "link",
+              "col2_menuitem1_text": "",
+              "col2_menuitem1_link": "",
+              "col2_menuitem2_type": "link",
+              "col2_menuitem2_text": "",
+              "col2_menuitem2_link": "",
+              "col2_menuitem3_type": "link",
+              "col2_menuitem3_text": "",
+              "col2_menuitem3_link": "",
+              "col2_menuitem4_type": "link",
+              "col2_menuitem4_text": "",
+              "col2_menuitem4_link": "",
+              "col2_menuitem5_type": "link",
+              "col2_menuitem5_text": "",
+              "col2_menuitem5_link": "",
+              "col2_menuitem6_type": "link",
+              "col2_menuitem6_text": "",
+              "col2_menuitem6_link": "",
+              "col2_menuitem7_type": "link",
+              "col2_menuitem7_text": "",
+              "col2_menuitem7_link": "",
+              "col2_menuitem8_type": "link",
+              "col2_menuitem8_text": "",
+              "col2_menuitem8_link": "",
+              "col2_menuitem9_type": "link",
+              "col2_menuitem9_text": "",
+              "col2_menuitem9_link": "",
+              "col2_menuitem10_type": "link",
+              "col2_menuitem10_text": "",
+              "col2_menuitem10_link": "",
+              "col3_menuitem1_type": "link",
+              "col3_menuitem1_text": "",
+              "col3_menuitem1_link": "",
+              "col3_menuitem2_type": "link",
+              "col3_menuitem2_text": "",
+              "col3_menuitem2_link": "",
+              "col3_menuitem3_type": "link",
+              "col3_menuitem3_text": "",
+              "col3_menuitem3_link": "",
+              "col3_menuitem4_type": "link",
+              "col3_menuitem4_text": "",
+              "col3_menuitem4_link": "",
+              "col3_menuitem5_type": "link",
+              "col3_menuitem5_text": "",
+              "col3_menuitem5_link": "",
+              "col3_menuitem6_type": "link",
+              "col3_menuitem6_text": "",
+              "col3_menuitem6_link": "",
+              "col3_menuitem7_type": "link",
+              "col3_menuitem7_text": "",
+              "col3_menuitem7_link": "",
+              "col3_menuitem8_type": "link",
+              "col3_menuitem8_text": "",
+              "col3_menuitem8_link": "",
+              "col3_menuitem9_type": "link",
+              "col3_menuitem9_text": "",
+              "col3_menuitem9_link": "",
+              "col3_menuitem10_type": "link",
+              "col3_menuitem10_text": "",
+              "col3_menuitem10_link": "",
+              "description": "Trading in your unwanted gear has never been easier. Enjoy the hassle-free way of selling outdoor gear in seconds.",
+              "button1_type": "red",
+              "button1_text": "Sell Now!",
+              "button1_link": "https:\/\/sellback.outandbackoutdoor.com\/",
+              "button2_type": "red",
+              "button2_text": "Learn More",
+              "button2_link": "shopify:\/\/pages\/start-selling"
+            }
+          }
+        },
+        "block_order": [
+          "5788a8bf-db34-4c9e-b3fe-06a5a96d4eab",
+          "0d6491ba-71f0-40e4-8d28-834adabe5b0b",
+          "931934d9-f1e9-4e89-b519-2027a0c5d712",
+          "ac623e9b-5e4a-438d-8830-18c1223464a5"
+        ],
+        "settings": {
+          "align_logo": "left",
+          "logo_max_width": 100,
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#3a3a3a",
+          "color_text": "#ffffff"
+        }
+      },
+      "hero-1": {
+        "type": "hero",
+        "settings": {
+          "image": "",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "large",
+          "text_size": "large",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "feature-row": {
+        "type": "feature-row",
+        "settings": {
+          "image": "",
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "feature-columns": {
+        "type": "feature-columns",
+        "blocks": {
+          "feature-columns-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "",
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "feature-columns-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "",
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "feature-columns-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "",
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "feature-columns-0",
+          "feature-columns-1",
+          "feature-columns-2"
+        ],
+        "settings": {
+          "title": "",
+          "align_text": "left"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": "",
+          "grid": 4,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "hero-2": {
+        "type": "hero",
+        "settings": {
+          "image": "",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "large",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "quotes": {
+        "type": "quotes",
+        "blocks": {
+          "quotes-0": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          },
+          "quotes-1": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          },
+          "quotes-2": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+              "author": "Author's name"
+            }
+          }
+        },
+        "block_order": [
+          "quotes-0",
+          "quotes-1",
+          "quotes-2"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "image-bar": {
+        "type": "image-bar",
+        "blocks": {
+          "image-bar-0": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "image-bar-1": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          },
+          "image-bar-2": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "alignment": "center",
+              "link": "",
+              "cta_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "image-bar-0",
+          "image-bar-1",
+          "image-bar-2"
+        ],
+        "settings": {
+          "section_height": "medium"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "5bfc1014-c500-4d13-9e5a-2d12a6aec578": {
+            "type": "col",
+            "settings": {
+              "header_type": "text",
+              "header_text": "SHOP GEAR",
+              "header_img_width": 120,
+              "header_link": "",
+              "item1_type": "subtext",
+              "item1_text": "WOMEN'S",
+              "item1_img_width": 120,
+              "item1_link": "shopify:\/\/collections\/womens",
+              "item2_type": "subtext",
+              "item2_text": "MEN'S",
+              "item2_img_width": 120,
+              "item2_link": "shopify:\/\/collections\/mens",
+              "item3_type": "subtext",
+              "item3_text": "KIDS'",
+              "item3_img_width": 120,
+              "item3_link": "shopify:\/\/collections\/kids",
+              "item4_type": "subtext",
+              "item4_text": "NEW ARRIVALS",
+              "item4_img_width": 120,
+              "item4_link": "shopify:\/\/collections\/new-arrivals",
+              "item5_type": "subtext",
+              "item5_text": "GIFT CARDS",
+              "item5_img_width": 120,
+              "item5_link": "https:\/\/outandbackoutdoor.com\/products\/out-back-outdoor-gift-card",
+              "item6_type": "none",
+              "item6_text": "",
+              "item6_img_width": 120,
+              "item6_link": "",
+              "item7_type": "none",
+              "item7_text": "",
+              "item7_img_width": 120,
+              "item7_link": "",
+              "item8_type": "none",
+              "item8_text": "",
+              "item8_img_width": 120,
+              "item8_link": "",
+              "item9_type": "none",
+              "item9_text": "",
+              "item9_img_width": 120,
+              "item9_link": "",
+              "item10_type": "none",
+              "item10_text": "",
+              "item10_img_width": 120,
+              "item10_link": ""
+            }
+          },
+          "77b48c3e-47e8-41dd-a7e9-e365b34166b9": {
+            "type": "col",
+            "settings": {
+              "header_type": "text",
+              "header_text": "SELL GEAR",
+              "header_img_width": 120,
+              "header_link": "",
+              "item1_type": "subtext",
+              "item1_text": "SELL NOW",
+              "item1_img_width": 120,
+              "item1_link": "https:\/\/sellback.outandbackoutdoor.com\/",
+              "item2_type": "subtext",
+              "item2_text": "LEARN MORE",
+              "item2_img_width": 120,
+              "item2_link": "shopify:\/\/pages\/start-selling",
+              "item3_type": "subtext",
+              "item3_text": "DROP-OFF LOCATIONS",
+              "item3_img_width": 120,
+              "item3_link": "https:\/\/outandbackoutdoor.com\/pages\/gear-sale-drop-off-locations",
+              "item4_type": "subtext",
+              "item4_text": "SUPER SELLER PROGRAM",
+              "item4_img_width": 120,
+              "item4_link": "shopify:\/\/pages\/super-seller-program",
+              "item5_type": "none",
+              "item5_text": "",
+              "item5_img_width": 120,
+              "item5_link": "",
+              "item6_type": "none",
+              "item6_text": "",
+              "item6_img_width": 120,
+              "item6_link": "",
+              "item7_type": "none",
+              "item7_text": "",
+              "item7_img_width": 120,
+              "item7_link": "",
+              "item8_type": "none",
+              "item8_text": "",
+              "item8_img_width": 120,
+              "item8_link": "",
+              "item9_type": "none",
+              "item9_text": "",
+              "item9_img_width": 120,
+              "item9_link": "",
+              "item10_type": "none",
+              "item10_text": "",
+              "item10_img_width": 120,
+              "item10_link": ""
+            }
+          },
+          "de066a1f-aee2-4a12-820c-7572a00c5dc9": {
+            "type": "col",
+            "settings": {
+              "header_type": "text",
+              "header_text": "EXPLORE",
+              "header_img_width": 120,
+              "header_link": "",
+              "item1_type": "subtext",
+              "item1_text": "ABOUT US",
+              "item1_img_width": 120,
+              "item1_link": "shopify:\/\/pages\/about-us",
+              "item2_type": "subtext",
+              "item2_text": "BLOG",
+              "item2_img_width": 120,
+              "item2_link": "shopify:\/\/blogs\/the-plan",
+              "item3_type": "subtext",
+              "item3_text": "JOIN OUR TEAM",
+              "item3_img_width": 120,
+              "item3_link": "shopify:\/\/pages\/careers",
+              "item4_type": "subtext",
+              "item4_text": "AFFILIATE PROGRAM",
+              "item4_img_width": 120,
+              "item4_link": "shopify:\/\/pages\/affiliate-program",
+              "item5_type": "img",
+              "item5_text": "",
+              "item5_img": "shopify:\/\/shop_images\/1ftp_Primary_Horizontal_White.png",
+              "item5_img_width": 120,
+              "item5_link": "",
+              "item6_type": "none",
+              "item6_text": "",
+              "item6_img_width": 120,
+              "item6_link": "",
+              "item7_type": "none",
+              "item7_text": "",
+              "item7_img_width": 120,
+              "item7_link": "",
+              "item8_type": "none",
+              "item8_text": "",
+              "item8_img_width": 120,
+              "item8_link": "",
+              "item9_type": "none",
+              "item9_text": "",
+              "item9_img_width": 120,
+              "item9_link": "",
+              "item10_type": "none",
+              "item10_text": "",
+              "item10_img_width": 120,
+              "item10_link": ""
+            }
+          },
+          "bd122510-81a8-4b6e-9cad-ef690b351dae": {
+            "type": "col",
+            "settings": {
+              "header_type": "text",
+              "header_text": "SUPPORT",
+              "header_img_width": 120,
+              "header_link": "",
+              "item1_type": "subtext",
+              "item1_text": "CONTACT US",
+              "item1_img_width": 120,
+              "item1_link": "shopify:\/\/pages\/contact-us",
+              "item2_type": "subtext",
+              "item2_text": "FAQ",
+              "item2_img_width": 120,
+              "item2_link": "shopify:\/\/pages\/faq",
+              "item3_type": "subtext",
+              "item3_text": "PRIVACY POLICY",
+              "item3_img_width": 120,
+              "item3_link": "shopify:\/\/pages\/privacy-policy",
+              "item4_type": "subtext",
+              "item4_text": "TERMS OF USE",
+              "item4_img_width": 120,
+              "item4_link": "shopify:\/\/pages\/terms-of-use",
+              "item5_type": "subtext",
+              "item5_text": "RETURNS",
+              "item5_img_width": 120,
+              "item5_link": "shopify:\/\/pages\/shipping-and-returns-policy",
+              "item6_type": "none",
+              "item6_text": "",
+              "item6_img_width": 120,
+              "item6_link": "",
+              "item7_type": "none",
+              "item7_text": "",
+              "item7_img_width": 120,
+              "item7_link": "",
+              "item8_type": "none",
+              "item8_text": "",
+              "item8_img_width": 120,
+              "item8_link": "",
+              "item9_type": "none",
+              "item9_text": "",
+              "item9_img_width": 120,
+              "item9_link": "",
+              "item10_type": "none",
+              "item10_text": "",
+              "item10_img_width": 120,
+              "item10_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "5bfc1014-c500-4d13-9e5a-2d12a6aec578",
+          "77b48c3e-47e8-41dd-a7e9-e365b34166b9",
+          "de066a1f-aee2-4a12-820c-7572a00c5dc9",
+          "bd122510-81a8-4b6e-9cad-ef690b351dae"
+        ],
+        "settings": {
+          "back_color": "#f00000",
+          "text_color": "#ffffff",
+          "show_header": false,
+          "header_text": "LETS GET STARTED",
+          "col_count_desktop": 3,
+          "col_count_tablet": 3,
+          "col_count_mob": 2,
+          "show_social": true,
+          "social_text": "Connect With Us",
+          "facebook_link": "https:\/\/www.facebook.com\/OutandBackOutdoor\/",
+          "twitter_link": "",
+          "instagram_link": "https:\/\/www.instagram.com\/outandbackoutdoor\/?hl=en",
+          "pinterest_link": "",
+          "linkedin_link": "https:\/\/www.linkedin.com\/company\/out-back-outdoor-inc\/?viewAsMember=true",
+          "email_link": "",
+          "show_copyright": true,
+          "copyright_text": "® Out&Back Outdoor, All Rights Reserved, 2023<br> 3060 Brighton Blvd. Denver, CO 80216"
+        }
+      },
+      "collection-slider": {
+        "type": "collection-slider",
+        "settings": {
+          "title": "Featured",
+          "collection": "featured",
+          "grid": 3,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_payment_button": true,
+          "show_share_buttons": false,
+          "media_size": "medium",
+          "enable_image_zoom": false,
+          "enable_video_looping": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 3,
+          "rows": 4,
+          "show_collection_image": true,
+          "show_vendor": true,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "blog_show_author": true,
+          "blog_show_date": true,
+          "show_share_buttons": false
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "grid",
+          "blog_show_author": true,
+          "blog_show_date": true
+        }
+      },
+      "custom-klaviyo-form": {
+        "type": "custom-klaviyo-form",
+        "settings": {
+          "padding_top": 4,
+          "padding_bottom": 4
+        }
+      }
+    },
+    "content_for_index": [
+      "hero-1",
+      "feature-row",
+      "feature-columns",
+      "collection",
+      "hero-2",
+      "quotes",
+      "image-bar"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+            "hero_size": "large",
+            "text_size": "large"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {
+          }
+        },
+        "feature-columns": {
+          "type": "feature-columns",
+          "blocks": {
+            "feature-columns-0": {
+              "type": "text_block",
+              "settings": {
+              }
+            },
+            "feature-columns-1": {
+              "type": "text_block",
+              "settings": {
+              }
+            },
+            "feature-columns-2": {
+              "type": "text_block",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "feature-columns-0",
+            "feature-columns-1",
+            "feature-columns-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": 4
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "quotes": {
+          "type": "quotes",
+          "blocks": {
+            "quotes-0": {
+              "type": "quote",
+              "settings": {
+              }
+            },
+            "quotes-1": {
+              "type": "quote",
+              "settings": {
+              }
+            },
+            "quotes-2": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "quotes-0",
+            "quotes-1",
+            "quotes-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "footer-1": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1"
+          ],
+          "settings": {
+            "show_payment_icons": true
+          }
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "feature-row",
+        "feature-columns",
+        "collection",
+        "hero-2",
+        "quotes",
+        "image-bar"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_variant_labels": true,
+            "show_vendor": false,
+            "show_share_buttons": true,
+            "media_size": "medium",
+            "enable_image_zoom": true,
+            "enable_video_looping": false
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {
+          }
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {
+          }
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+            "color_footer_bg": "#f8f8f8",
+            "color_footer_text": "#6d6d6d"
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

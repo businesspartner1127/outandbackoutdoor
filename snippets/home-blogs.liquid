@@ -1,0 +1,65 @@
+{% assign blog_handle = 'the-plan' %}
+
+{% unless blogs[blog_handle].empty? or blogs[blog_handle].articles.size == 0 %}
+
+{% if blogs[blog_handle].articles.size >= 3 %}
+  {% assign container_width = 'one-whole' %}
+  {% assign article_width = 'large-up--one-third medium--one-third small--one-whole' %}
+{% elsif blogs[blog_handle].articles.size == 2 %}
+  {% assign container_width = 'large-up--two-thirds large-up--push-one-sixth' %}
+  {% assign article_width = 'large-up--one-half medium--one-half small--one-whole' %}
+{% elsif blogs[blog_handle].articles.size == 1 %}
+  {% assign container_width = 'large-up--two-thirds large-up--push-one-sixth' %}
+  {% assign article_width = 'one-whole' %}
+{% endif %}
+
+      {% for article in blogs[blog_handle].articles limit: 6 %}
+		
+        <li class="col-md-4 blogPost">
+          <div class="blogWrapper">
+          <a href="{{ article.url }}" class="article__link">
+            <div class="blogHero" style="background-image: url({{ article.image | img_url: '1600x'  }});">
+            </div>
+            <div id="wave" style="margin-top: -40px;"></div> 
+			
+            
+            <h2 class="article__title h3{% if article.image %} article__title--has-image{% endif %}">
+              {{ article.title | escape  | strip_html | truncate: 45 }}
+            </h2>
+          </a>
+		 
+          <div class="article__grid-meta{% if article.image %} article__grid-meta--has-image{% endif %}">
+            {% if section.settings.blog_show_author %}
+              <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+            {% endif %}
+
+            {% if section.settings.blog_show_date %}
+              <span class="article__date">
+                {{ article.published_at | time_tag: format: 'date' }}
+              </span>
+            {% endif %}
+
+            <div class="rte article__grid-excerpt">
+              {% if article.excerpt.size > 0 %}
+              	<p>
+                {{ article.excerpt | strip_html | truncate: 150 }}
+              </p>
+              {% else %}
+              	<p>
+                {{ article.content | strip_html | truncate: 150 }}
+              </p>
+              {% endif %}
+            </div>
+
+            <ul class="list--inline article__meta-buttons">
+              <li>
+                <a href="{{ article.url }}" class="learn-more" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                  {{ 'blogs.article.read_more' | t }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          </div>
+        </li>
+      {% endfor %}
+{% endunless %}

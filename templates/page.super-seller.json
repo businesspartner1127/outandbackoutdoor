@@ -1,0 +1,299 @@
+{
+  "sections": {
+    "1663739820ce519b49": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "166373982090c4ecf7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Money_Icon_12290374-adeb-4bde-9604-9456b87f58ce.png",
+            "title": "",
+            "caption": "Whether selling gear is a side-hustle or your day job AND if you’ve got a lot of volume to get rid of, Out&Back is your partner when it comes to selling gear! Our Super Seller program rewards you with special perks, making selling life easier and faster!"
+          }
+        }
+      },
+      "block_order": [
+        "166373982090c4ecf7-2"
+      ],
+      "settings": {
+        "heading": "",
+        "caption": "",
+        "inner_heading": "SUPER SELLERS, WELCOME!",
+        "image_size": 20,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "51bba904-0257-46be-82c3-cf99899d8ff7": {
+      "type": "custom-text-list",
+      "blocks": {
+        "dba2514b-e16f-4184-abce-00af79b0b59b": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_ccd64235-2ff7-451b-bd01-483713e180ba.png",
+            "text_list": "GET VERIFIED BY OUT&BACK",
+            "text_link": ""
+          }
+        },
+        "2694eaec-eef4-45eb-bb68-c558a4c95962": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_ccd64235-2ff7-451b-bd01-483713e180ba.png",
+            "text_list": "Sell more than $500 worth of gear in any amount of time",
+            "text_link": ""
+          }
+        },
+        "5d60902b-b07e-4773-8a7d-63db6a6666b4": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_ccd64235-2ff7-451b-bd01-483713e180ba.png",
+            "text_list": "Sell more than 3 times in a month (30 days)",
+            "text_link": ""
+          }
+        },
+        "a911adf5-2a97-45ef-84a2-67e935c764fa": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_ccd64235-2ff7-451b-bd01-483713e180ba.png",
+            "text_list": "Sell more than 10 times in a calendar year",
+            "text_link": ""
+          }
+        },
+        "86791105-2b48-4024-b3d1-c679c4baab5c": {
+          "type": "list",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GREEN_CHECK_ccd64235-2ff7-451b-bd01-483713e180ba.png",
+            "text_list": "Institutional seller (EX: ski shop or outdoor store)",
+            "text_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "dba2514b-e16f-4184-abce-00af79b0b59b",
+        "2694eaec-eef4-45eb-bb68-c558a4c95962",
+        "5d60902b-b07e-4773-8a7d-63db6a6666b4",
+        "a911adf5-2a97-45ef-84a2-67e935c764fa",
+        "86791105-2b48-4024-b3d1-c679c4baab5c"
+      ],
+      "settings": {
+        "heading": "Earning Super Seller Status",
+        "caption": "Get verified, sell $500 in gear + any ONE of the below",
+        "inner_caption": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "16638999551e99f094": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "1663899955687c07c6-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cash.png",
+            "title": "10% MORE CASH!",
+            "caption": "Use a personal code to earn 10% bonus value on cash offers!"
+          }
+        },
+        "1663899955687c07c6-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/JACKTTOCASH_small_b2c41127-98ea-4799-b9b0-ec765a4fef86.jpg",
+            "title": "UNLIMITED DROP-OFFS",
+            "caption": "Get paid instantly with unlimited in-person drop-offs."
+          }
+        },
+        "1663899955687c07c6-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Customer_Support.png",
+            "title": "DEDICATED SUPPORT",
+            "caption": "Access a dedicated customer service rep to help you 24\/7!"
+          }
+        }
+      },
+      "block_order": [
+        "1663899955687c07c6-0",
+        "1663899955687c07c6-1",
+        "1663899955687c07c6-2"
+      ],
+      "settings": {
+        "heading": "The Benefits of Being a Super Seller",
+        "caption": "We want the gear, you want the cash – it’s a win-win",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "976be44a-d38e-4daf-8eb0-2a1bb6e736b8": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--17020130427171__976be44a-d38e-4daf-8eb0-2a1bb6e736b8-16692118237aafaa31-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Number_1.png",
+            "title": "PROVE SELLER STATUS",
+            "caption": "Sell $500+ worth of gear and 3 times in a month or 10 times in a year"
+          }
+        },
+        "template--17020130427171__976be44a-d38e-4daf-8eb0-2a1bb6e736b8-16692118237aafaa31-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Number_2.png",
+            "title": "SUBMIT A PERFECT 7",
+            "caption": "Sell 7+ items in a row via mail-in that are profiled 100% accurately"
+          }
+        },
+        "template--17020130427171__976be44a-d38e-4daf-8eb0-2a1bb6e736b8-16692118237aafaa31-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Number_3.png",
+            "title": "APPLY FOR VERIFICATION",
+            "caption": "Submit your name, email, phone number and intention to get verified"
+          }
+        }
+      },
+      "block_order": [
+        "template--17020130427171__976be44a-d38e-4daf-8eb0-2a1bb6e736b8-16692118237aafaa31-0",
+        "template--17020130427171__976be44a-d38e-4daf-8eb0-2a1bb6e736b8-16692118237aafaa31-1",
+        "template--17020130427171__976be44a-d38e-4daf-8eb0-2a1bb6e736b8-16692118237aafaa31-2"
+      ],
+      "settings": {
+        "heading": "Getting Verified by Out&Back",
+        "caption": "It's quick and easy!",
+        "inner_heading": "To get verified, you'll need to complete the following steps:",
+        "image_size": 6,
+        "button_label": "APPLY NOW",
+        "button_link": "shopify:\/\/pages\/contact-us",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "d07520f3-fd68-4eb1-af12-75d0275b9aad": {
+      "type": "custom-cards",
+      "blocks": {
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-0": {
+          "type": "card",
+          "settings": {
+            "title": "How long does it take to get Verified?",
+            "sub_title": "",
+            "paragraph": "",
+            "full_paragraph": "<p>That depends but it can be very quick! As soon as you’ve hit one of the three Super Seller criteria and have applied to the program, we can get things going! Typically, it takes around 2 weeks from your application submission for your benefits to kick in. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "ffb8e209-a9ca-424d-8a01-53ba4c828cdc": {
+          "type": "card",
+          "settings": {
+            "title": "What does 'Sell a Perfect 7' mean?",
+            "sub_title": "",
+            "paragraph": "",
+            "full_paragraph": "<p>Selling a Perfect 7 is an important step to verification. <\/p><p>In its simplest form, it means that for at least 7 consecutive items that you've sold to us, as you sold them, you profiled them perfectly in our system. <\/p><p>What does profiling perfectly mean? It means that you entered the correct name of the item (if you entered a name at all), you entered the correct condition, you noted the old age of the items if relevant, you submitted the correct brand and categories, etc. Basically it means that when we received the items from you that they were exactly as you described them. <\/p><p>The Perfect 7 must be submitted via our mail in program as these items require our warehouse team's attention. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "29dc3991-4b7b-4946-a0b6-3fc302cc4cb9": {
+          "type": "card",
+          "settings": {
+            "title": "Can I apply for verification before I’ve sold my 'Perfect 7'?",
+            "sub_title": "",
+            "paragraph": "",
+            "full_paragraph": "<p>Yes, you can. You'll just need to complete the Perfect 7 sale some time after you apply before you'll begin to earn all the benefits of being a Super Seller. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-1": {
+          "type": "card",
+          "settings": {
+            "title": "Can I apply for verification before I’ve earned Super Seller status?",
+            "sub_title": "",
+            "paragraph": "",
+            "full_paragraph": "<p>Yes, you can but to be admitted you’ll still need to qualify as a Super Seller before you begin to receive all of the Super Seller benefits. To qualify, remember, that means selling more than $500 worth of gear, more than 3 times in a month or more than 10 times in a year<\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-2": {
+          "type": "card",
+          "settings": {
+            "title": "Is there a lot of back forth during the application process?",
+            "sub_title": "",
+            "paragraph": "",
+            "full_paragraph": "<p>There can be some. We will likely ask questions about the source of your inventory, whether you've used other selling services in the past \/ currently, your tactics and the products that you tend to source as well as how we fit into your sourcing strategy. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        },
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-3": {
+          "type": "card",
+          "settings": {
+            "title": "Can I lose my Super Seller status?",
+            "sub_title": "",
+            "paragraph": "",
+            "full_paragraph": "<p>The short answer is yes, you can. If we find that the gear your sourcing is coming from illegal methods, your submissions are in accurate or that you're gaming offers or our system in any way we will remove your Super Seller status. It is possible that we may also ban you from selling entirely as a result of the above actions. <\/p><p>NOTE: if we find that you're selling gear that was obtained illegally we<br\/>have the right to withhold payment and report you to the appropriate<br\/>authorities. <\/p>",
+            "card_background_color": "#241d57",
+            "title_color": "#ffffff",
+            "sub_title_color": "#ffffff",
+            "paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-0",
+        "ffb8e209-a9ca-424d-8a01-53ba4c828cdc",
+        "29dc3991-4b7b-4946-a0b6-3fc302cc4cb9",
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-1",
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-2",
+        "template--17020130427171__d07520f3-fd68-4eb1-af12-75d0275b9aad-1669214201e2a40e7a-3"
+      ],
+      "settings": {
+        "heading": "Quick answers to your Super Seller questions:",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "1663739820ce519b49",
+    "51bba904-0257-46be-82c3-cf99899d8ff7",
+    "16638999551e99f094",
+    "976be44a-d38e-4daf-8eb0-2a1bb6e736b8",
+    "d07520f3-fd68-4eb1-af12-75d0275b9aad"
+  ]
+}

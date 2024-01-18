@@ -1,0 +1,79 @@
+/* custom collection banner */
+.cs-collection-banner {
+  background: #f8f8f8;
+}
+.cs-collection-banner .cs-container .cs-grid {
+  overflow: hidden;
+}
+.cs-collection-banner .cs-container .cs-grid .cs-banner-image {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5em;
+  padding: 4em;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content h2 {
+  font-family: "Uniform-New", sans-serif;
+  font-weight: 800;
+  font-size: 3.4em;
+}
+.cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content p {
+  font-family: "Uniform-New", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 3em;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+.cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content .cs-links {
+  display: flex;
+  gap: 0.5em;
+}
+.cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content .cs-links a {
+  font-family: "Uniform-New", sans-serif;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 12em;
+}
+
+@media screen and (max-width: 820px) {
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image {
+    align-items: start;
+    height: 60vh;
+    padding: 2em;
+  }
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content {
+    flex: 1;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content h2 {
+    font-size: 2em;
+    flex: 1;
+  }
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content p {
+    margin-bottom: 20px;
+  }
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content .cs-links {
+    width: 100%;
+    justify-content: center;
+  }
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content .cs-links a {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 414px) {
+  .cs-collection-banner .cs-container .cs-grid .cs-banner-image .cs-content .cs-links a {
+    font-size: 0.8rem;
+  }
+}
+/* end custom collection banner */

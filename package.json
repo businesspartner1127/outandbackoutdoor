@@ -1,0 +1,36 @@
+{
+  "name": "obo",
+  "version": "1.0.0",
+  "description": "out and back react front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config webpack.dev.js --progress --color",
+    "build": "webpack --config webpack.prod.js --progress --color"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@sentry/react": "^6.16.1",
+    "@sentry/tracing": "^6.16.1",
+    "axios": "^0.24.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-material-ui-carousel": "^2.2.7",
+    "react-uid": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.10.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "webpack": "^5.34.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-merge": "^5.7.3"
+  }
+}

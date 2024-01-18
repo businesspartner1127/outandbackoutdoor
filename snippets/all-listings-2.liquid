@@ -1,0 +1,1307 @@
+            {% for variant in product.variants %}
+          	{% for key_value in variant.metafields.custom_fields['product_links'] %}
+
+            {% if key_value['site_name'] == 'the_north_face' and key_value['newness1'] == true or key_value['newness1'] == 'new' and key_value['inventory_count1'] != 0 and key_value['inventory_count1'] != 'blank' or key_value['inventory_count2'] != 0 and key_value['inventory_count2'] != 'blank' %}
+             <ul class="variantList">
+ 
+               <li class="variantInfo"><div class="brand"><h4 class="brandName">THE NORTH FACE</h4><h4 class="brandCondition">NEW</h4><h4 class="brandPrice">${{ variant.price | money_without_currency }}</h4></div>
+                        <ul>
+                        {% if key_value['inventory_count1'] > 0 and key_value['size1'] != 'blank' %}
+						<li class="listing row 1">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size1'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color1'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price1'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url1'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count2'] > 0 and key_value['size2'] != 'blank' %}
+                          <li class="listing row 2">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size2'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color2'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price2'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url2'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count3'] > 0 and key_value['size3'] != 'blank' %}
+                        <li class="listing row 3">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size3'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color3'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price3'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url3'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count4'] > 0 and key_value['size4'] != 'blank' %}
+                        <li class="listing row 4">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size4'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color4'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price4'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url4'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count5'] > 0 and key_value['size5'] != 'blank' %}
+                        <li class="listing row 5">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size5'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color5'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price5'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url5'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count6'] > 0 and key_value['size6'] != 'blank' %}
+                        <li class="listing row 6">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size6'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color6'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price6'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url6'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count7'] > 0 and key_value['size7'] != 'blank' %}
+                        <li class="listing row 7">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size7'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color7'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price7'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url7'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count8'] > 0 and key_value['size8'] != 'blank' %}
+                        <li class="listing row 8">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size8'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color8'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price8'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url8'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count9'] > 0 and key_value['size9'] != 'blank' %}
+                        <li class="listing row 9">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size9'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color9'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price9'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url9'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count10'] > 0 and key_value['size10'] != 'blank' %}
+                        <li class="listing row 10">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size10'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color10'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price10'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url10'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count11'] > 0 and key_value['size11'] != 'blank' %}
+						<li class="listing row 11">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size11'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color11'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price11'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url11'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count12'] > 0 and key_value['size12'] != 'blank' %}
+                          <li class="listing row 12">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size12'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color12'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price12'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url12'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count13'] > 0 and key_value['size13'] != 'blank' %}
+                        <li class="listing row 13">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size13'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color13'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price13'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url13'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count14'] > 0 and key_value['size14'] != 'blank' %}
+                        <li class="listing row 14">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size14'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color14'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price14'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url14'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count15'] > 0 and key_value['size15'] != 'blank' %}
+                        <li class="listing row 15">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size15'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color15'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price15'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url15'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count16'] > 0 and key_value['size16'] != 'blank' %}
+                        <li class="listing row 16">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size16'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color16'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price16'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url16'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count17'] > 0 and key_value['size17'] != 'blank' %}
+                        <li class="listing row 17">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size17'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color17'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price17'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url17'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count18'] > 0 and key_value['size18'] != 'blank' %}
+                        <li class="listing row 18">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size18'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color18'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price18'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url18'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count19'] > 0 and key_value['size19'] != 'blank' %}
+                        <li class="listing row 19">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size19'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color19'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price19'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url19'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count20'] > 0 and key_value['size20'] != 'blank' %}
+                        <li class="listing row 20">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size20'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color20'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price20'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url20'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count21'] > 0 and key_value['size21'] != 'blank' %}
+						<li class="listing row 21">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size21'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color21'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price21'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url21'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count22'] > 0 and key_value['size22'] != 'blank' %}
+                          <li class="listing row 22">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size22'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color22'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price22'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url22'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count23'] > 0 and key_value['size23'] != 'blank' %}
+                        <li class="listing row 23">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size23'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color23'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price23'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url23'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count24'] > 0 and key_value['size24'] != 'blank' %}
+                        <li class="listing row 24">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size24'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color24'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price24'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url24'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count25'] > 0 and key_value['size25'] != 'blank' %}
+                        <li class="listing row 25">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size25'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color25'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price25'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url25'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count26'] > 0 and key_value['size26'] != 'blank' %}
+                        <li class="listing row 26">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size26'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color26'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price26'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url26'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count27'] > 0 and key_value['size27'] != 'blank' %}
+                        <li class="listing row 27">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size27'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color27'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price27'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url27'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count28'] > 0 and key_value['size28'] != 'blank' %}
+                        <li class="listing row 28">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size28'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color28'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price28'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url28'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count29'] > 0 and key_value['size29'] != 'blank' %}
+                        <li class="listing row 29">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size29'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color29'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price29'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url29'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count30'] > 0 and key_value['size30'] != 'blank' %}
+                        <li class="listing row 30">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size30'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color30'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price30'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url30'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count31'] > 0 and key_value['size31'] != 'blank' %}
+						<li class="listing row 31">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size31'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color31'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price31'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url31'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count32'] > 0 and key_value['size32'] != 'blank' %}
+                          <li class="listing row 32">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size32'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color32'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price32'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url32'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count33'] > 0 and key_value['size33'] != 'blank' %}
+                        <li class="listing row 33">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size33'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color33'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price33'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url33'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count34'] > 0 and key_value['size34'] != 'blank' %}
+                        <li class="listing row 34">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size34'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color34'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price34'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url34'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count35'] > 0 and key_value['size35'] != 'blank' %}
+                        <li class="listing row 35">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size35'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color35'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price35'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url35'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count36'] > 0 and key_value['size36'] != 'blank' %}
+                        <li class="listing row 36">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size36'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color36'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price36'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url36'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count37'] > 0 and key_value['size37'] != 'blank' %}
+                        <li class="listing row 37">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size37'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color37'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price37'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url37'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count38'] > 0 and key_value['size38'] != 'blank' %}
+                        <li class="listing row 38">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size38'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color38'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price38'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url38'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count39'] > 0 and key_value['size39'] != 'blank' %}
+                        <li class="listing row 39">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size39'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color39'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price39'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url39'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count40'] > 0 and key_value['size40'] != 'blank' %}
+                        <li class="listing row 40">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size40'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color40'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price40'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url40'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count41'] > 0 and key_value['size41'] != 'blank' %}
+						<li class="listing row 41">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size41'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color41'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price41'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url41'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count42'] > 0 and key_value['size42'] != 'blank' %}
+                          <li class="listing row 42">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size42'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color42'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price42'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url42'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count43'] > 0 and key_value['size43'] != 'blank' %}
+                        <li class="listing row 43">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size43'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color43'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price43'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url43'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count44'] > 0 and key_value['size44'] != 'blank' %}
+                        <li class="listing row 44">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size44'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color44'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price44'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url44'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count45'] > 0 and key_value['size45'] != 'blank' %}
+                        <li class="listing row 45">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size45'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color45'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price45'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url45'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count46'] > 0 and key_value['size46'] != 'blank' %}
+                        <li class="listing row 46">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size46'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color46'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price46'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url46'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count47'] > 0 and key_value['size47'] != 'blank' %}
+                        <li class="listing row 47">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size47'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color47'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price47'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url47'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count48'] > 0 and key_value['size48'] != 'blank' %}
+                        <li class="listing row 48">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size48'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color48'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price48'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url48'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count49'] > 0 and key_value['size49'] != 'blank' %}
+                        <li class="listing row 49">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size49'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color49'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price49'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url49'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count50'] > 0 and key_value['size50'] != 'blank' %}
+                        <li class="listing row 50">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size50'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color50'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price50'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url50'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}                        
+                      </ul>
+            		</li>
+            </ul>
+          	{% endif %}
+            
+            {% if key_value['site_name'] == 'ebay' and key_value['newness1'] == true or key_value['newness1'] == 'new' and key_value['inventory_count1'] != 0 and key_value['inventory_count1'] != 'blank' or key_value['inventory_count2'] != 0 and key_value['inventory_count2'] != 'blank' %}
+             <ul class="variantList">
+ 
+               <li class="variantInfo"><div class="brand"><h4 class="brandName">EBAY</h4><h4 class="brandCondition">NEW</h4><h4 class="brandPrice">${{ variant.price | money_without_currency }}</h4></div>
+                 <ul>
+                        {% if key_value['inventory_count1'] > 0 and key_value['size1'] != 'blank' %}
+						<li class="listing row 1">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size1'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color1'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price1'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url1'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count2'] > 0 and key_value['size2'] != 'blank' %}
+                          <li class="listing row 2">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size2'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color2'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price2'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url2'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count3'] > 0 and key_value['size3'] != 'blank' %}
+                        <li class="listing row 3">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size3'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color3'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price3'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url3'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count4'] > 0 and key_value['size4'] != 'blank' %}
+                        <li class="listing row 4">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size4'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color4'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price4'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url4'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count5'] > 0 and key_value['size5'] != 'blank' %}
+                        <li class="listing row 5">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size5'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color5'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price5'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url5'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count6'] > 0 and key_value['size6'] != 'blank' %}
+                        <li class="listing row 6">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size6'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color6'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price6'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url6'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count7'] > 0 and key_value['size7'] != 'blank' %}
+                        <li class="listing row 7">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size7'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color7'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price7'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url7'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count8'] > 0 and key_value['size8'] != 'blank' %}
+                        <li class="listing row 8">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size8'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color8'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price8'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url8'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count9'] > 0 and key_value['size9'] != 'blank' %}
+                        <li class="listing row 9">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size9'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color9'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price9'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url9'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count10'] > 0 and key_value['size10'] != 'blank' %}
+                        <li class="listing row 10">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size10'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color10'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price10'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url10'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count11'] > 0 and key_value['size11'] != 'blank' %}
+						<li class="listing row 11">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size11'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color11'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price11'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url11'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count12'] > 0 and key_value['size12'] != 'blank' %}
+                          <li class="listing row 12">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size12'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color12'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price12'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url12'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count13'] > 0 and key_value['size13'] != 'blank' %}
+                        <li class="listing row 13">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size13'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color13'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price13'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url13'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count14'] > 0 and key_value['size14'] != 'blank' %}
+                        <li class="listing row 14">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size14'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color14'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price14'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url14'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count15'] > 0 and key_value['size15'] != 'blank' %}
+                        <li class="listing row 15">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size15'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color15'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price15'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url15'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count16'] > 0 and key_value['size16'] != 'blank' %}
+                        <li class="listing row 16">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size16'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color16'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price16'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url16'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count17'] > 0 and key_value['size17'] != 'blank' %}
+                        <li class="listing row 17">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size17'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color17'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price17'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url17'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count18'] > 0 and key_value['size18'] != 'blank' %}
+                        <li class="listing row 18">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size18'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color18'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price18'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url18'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count19'] > 0 and key_value['size19'] != 'blank' %}
+                        <li class="listing row 19">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size19'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color19'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price19'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url19'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count20'] > 0 and key_value['size20'] != 'blank' %}
+                        <li class="listing row 20">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size20'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color20'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price20'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url20'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count21'] > 0 and key_value['size21'] != 'blank' %}
+						<li class="listing row 21">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size21'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color21'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price21'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url21'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count22'] > 0 and key_value['size22'] != 'blank' %}
+                          <li class="listing row 22">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size22'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color22'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price22'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url22'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count23'] > 0 and key_value['size23'] != 'blank' %}
+                        <li class="listing row 23">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size23'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color23'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price23'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url23'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count24'] > 0 and key_value['size24'] != 'blank' %}
+                        <li class="listing row 24">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size24'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color24'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price24'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url24'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count25'] > 0 and key_value['size25'] != 'blank' %}
+                        <li class="listing row 25">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size25'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color25'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price25'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url25'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count26'] > 0 and key_value['size26'] != 'blank' %}
+                        <li class="listing row 26">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size26'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color26'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price26'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url26'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count27'] > 0 and key_value['size27'] != 'blank' %}
+                        <li class="listing row 27">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size27'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color27'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price27'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url27'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count28'] > 0 and key_value['size28'] != 'blank' %}
+                        <li class="listing row 28">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size28'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color28'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price28'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url28'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count29'] > 0 and key_value['size29'] != 'blank' %}
+                        <li class="listing row 29">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size29'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color29'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price29'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url29'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count30'] > 0 and key_value['size30'] != 'blank' %}
+                        <li class="listing row 30">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size30'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color30'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price30'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url30'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count31'] > 0 and key_value['size31'] != 'blank' %}
+						<li class="listing row 31">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size31'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color31'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price31'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url31'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count32'] > 0 and key_value['size32'] != 'blank' %}
+                          <li class="listing row 32">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size32'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color32'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price32'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url32'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count33'] > 0 and key_value['size33'] != 'blank' %}
+                        <li class="listing row 33">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size33'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color33'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price33'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url33'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count34'] > 0 and key_value['size34'] != 'blank' %}
+                        <li class="listing row 34">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size34'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color34'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price34'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url34'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count35'] > 0 and key_value['size35'] != 'blank' %}
+                        <li class="listing row 35">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size35'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color35'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price35'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url35'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count36'] > 0 and key_value['size36'] != 'blank' %}
+                        <li class="listing row 36">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size36'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color36'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price36'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url36'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count37'] > 0 and key_value['size37'] != 'blank' %}
+                        <li class="listing row 37">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size37'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color37'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price37'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url37'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count38'] > 0 and key_value['size38'] != 'blank' %}
+                        <li class="listing row 38">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size38'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color38'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price38'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url38'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count39'] > 0 and key_value['size39'] != 'blank' %}
+                        <li class="listing row 39">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size39'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color39'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price39'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url39'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count40'] > 0 and key_value['size40'] != 'blank' %}
+                        <li class="listing row 40">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size40'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color40'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price40'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url40'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count41'] > 0 and key_value['size41'] != 'blank' %}
+						<li class="listing row 41">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size41'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color41'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price41'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url41'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count42'] > 0 and key_value['size42'] != 'blank' %}
+                          <li class="listing row 42">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size42'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color42'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price42'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url42'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count43'] > 0 and key_value['size43'] != 'blank' %}
+                        <li class="listing row 43">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size43'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color43'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price43'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url43'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count44'] > 0 and key_value['size44'] != 'blank' %}
+                        <li class="listing row 44">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size44'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color44'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price44'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url44'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count45'] > 0 and key_value['size45'] != 'blank' %}
+                        <li class="listing row 45">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size45'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color45'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price45'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url45'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count46'] > 0 and key_value['size46'] != 'blank' %}
+                        <li class="listing row 46">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size46'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color46'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price46'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url46'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count47'] > 0 and key_value['size47'] != 'blank' %}
+                        <li class="listing row 47">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size47'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color47'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price47'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url47'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count48'] > 0 and key_value['size48'] != 'blank' %}
+                        <li class="listing row 48">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size48'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color48'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price48'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url48'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count49'] > 0 and key_value['size49'] != 'blank' %}
+                        <li class="listing row 49">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size49'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color49'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price49'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url49'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count50'] > 0 and key_value['size50'] != 'blank' %}
+                        <li class="listing row 50">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size50'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color50'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price50'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url50'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                   <ul>
+            </ul>
+          	{% endif %}
+            
+            {% if key_value['site_name'] == 'ebay' and key_value['newness1'] == false or key_value['newness1'] == 'used' and key_value['inventory_count1'] != 0 and key_value['inventory_count1'] != 'blank' or key_value['inventory_count2'] != 0 and key_value['inventory_count2'] != 'blank' %}
+             <ul class="variantList">
+ 
+               <li class="variantInfo"><div class="brand"><h4 class="brandName">EBAY</h4><h4 class="brandCondition">USED</h4><h4 class="brandPrice">${{ variant.price | money_without_currency }}</h4></div>
+                      <ul>
+                        {% if key_value['inventory_count1'] > 0 and key_value['size1'] != 'blank' %}
+						<li class="listing row 1">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size1'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color1'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price1'] }}{% if key_value['price1'] contains ".0" %}0{% endif %}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url1'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count2'] > 0 and key_value['size2'] != 'blank' %}
+                          <li class="listing row 2">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size2'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color2'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price2'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url2'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count3'] > 0 and key_value['size3'] != 'blank' %}
+                        <li class="listing row 3">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size3'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color3'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price3'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url3'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count4'] > 0 and key_value['size4'] != 'blank' %}
+                        <li class="listing row 4">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size4'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color4'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price4'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url4'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count5'] > 0 and key_value['size5'] != 'blank' %}
+                        <li class="listing row 5">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size5'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color5'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price5'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url5'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count6'] > 0 and key_value['size6'] != 'blank' %}
+                        <li class="listing row 6">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size6'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color6'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price6'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url6'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count7'] > 0 and key_value['size7'] != 'blank' %}
+                        <li class="listing row 7">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size7'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color7'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price7'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url7'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count8'] > 0 and key_value['size8'] != 'blank' %}
+                        <li class="listing row 8">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size8'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color8'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price8'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url8'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count9'] > 0 and key_value['size9'] != 'blank' %}
+                        <li class="listing row 9">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size9'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color9'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price9'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url9'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count10'] > 0 and key_value['size10'] != 'blank' %}
+                        <li class="listing row 10">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size10'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color10'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price10'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url10'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count11'] > 0 and key_value['size11'] != 'blank' %}
+						<li class="listing row 11">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size11'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color11'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price11'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url11'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count12'] > 0 and key_value['size12'] != 'blank' %}
+                          <li class="listing row 12">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size12'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color12'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price12'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url12'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count13'] > 0 and key_value['size13'] != 'blank' %}
+                        <li class="listing row 13">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size13'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color13'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price13'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url13'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count14'] > 0 and key_value['size14'] != 'blank' %}
+                        <li class="listing row 14">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size14'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color14'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price14'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url14'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count15'] > 0 and key_value['size15'] != 'blank' %}
+                        <li class="listing row 15">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size15'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color15'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price15'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url15'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count16'] > 0 and key_value['size16'] != 'blank' %}
+                        <li class="listing row 16">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size16'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color16'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price16'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url16'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count17'] > 0 and key_value['size17'] != 'blank' %}
+                        <li class="listing row 17">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size17'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color17'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price17'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url17'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count18'] > 0 and key_value['size18'] != 'blank' %}
+                        <li class="listing row 18">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size18'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color18'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price18'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url18'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count19'] > 0 and key_value['size19'] != 'blank' %}
+                        <li class="listing row 19">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size19'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color19'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price19'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url19'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count20'] > 0 and key_value['size20'] != 'blank' %}
+                        <li class="listing row 20">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size20'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color20'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price20'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url20'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count21'] > 0 and key_value['size21'] != 'blank' %}
+						<li class="listing row 21">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size21'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color21'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price21'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url21'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count22'] > 0 and key_value['size22'] != 'blank' %}
+                          <li class="listing row 22">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size22'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color22'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price22'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url22'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count23'] > 0 and key_value['size23'] != 'blank' %}
+                        <li class="listing row 23">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size23'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color23'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price23'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url23'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count24'] > 0 and key_value['size24'] != 'blank' %}
+                        <li class="listing row 24">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size24'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color24'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price24'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url24'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count25'] > 0 and key_value['size25'] != 'blank' %}
+                        <li class="listing row 25">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size25'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color25'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price25'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url25'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count26'] > 0 and key_value['size26'] != 'blank' %}
+                        <li class="listing row 26">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size26'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color26'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price26'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url26'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count27'] > 0 and key_value['size27'] != 'blank' %}
+                        <li class="listing row 27">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size27'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color27'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price27'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url27'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count28'] > 0 and key_value['size28'] != 'blank' %}
+                        <li class="listing row 28">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size28'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color28'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price28'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url28'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count29'] > 0 and key_value['size29'] != 'blank' %}
+                        <li class="listing row 29">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size29'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color29'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price29'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url29'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count30'] > 0 and key_value['size30'] != 'blank' %}
+                        <li class="listing row 30">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size30'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color30'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price30'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url30'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count31'] > 0 and key_value['size31'] != 'blank' %}
+						<li class="listing row 31">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size31'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color31'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price31'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url31'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count32'] > 0 and key_value['size32'] != 'blank' %}
+                          <li class="listing row 32">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size32'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color32'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price32'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url32'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count33'] > 0 and key_value['size33'] != 'blank' %}
+                        <li class="listing row 33">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size33'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color33'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price33'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url33'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count34'] > 0 and key_value['size34'] != 'blank' %}
+                        <li class="listing row 34">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size34'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color34'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price34'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url34'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count35'] > 0 and key_value['size35'] != 'blank' %}
+                        <li class="listing row 35">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size35'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color35'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price35'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url35'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count36'] > 0 and key_value['size36'] != 'blank' %}
+                        <li class="listing row 36">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size36'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color36'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price36'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url36'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count37'] > 0 and key_value['size37'] != 'blank' %}
+                        <li class="listing row 37">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size37'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color37'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price37'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url37'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count38'] > 0 and key_value['size38'] != 'blank' %}
+                        <li class="listing row 38">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size38'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color38'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price38'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url38'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count39'] > 0 and key_value['size39'] != 'blank' %}
+                        <li class="listing row 39">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size39'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color39'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price39'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url39'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count40'] > 0 and key_value['size40'] != 'blank' %}
+                        <li class="listing row 40">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size40'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color40'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price40'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url40'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count41'] > 0 and key_value['size41'] != 'blank' %}
+						<li class="listing row 41">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size41'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color41'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price41'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url41'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count42'] > 0 and key_value['size42'] != 'blank' %}
+                          <li class="listing row 42">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size42'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color42'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price42'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url42'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count43'] > 0 and key_value['size43'] != 'blank' %}
+                        <li class="listing row 43">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size43'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color43'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price43'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url43'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count44'] > 0 and key_value['size44'] != 'blank' %}
+                        <li class="listing row 44">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size44'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color44'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price44'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url44'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count45'] > 0 and key_value['size45'] != 'blank' %}
+                        <li class="listing row 45">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size45'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color45'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price45'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url45'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count46'] > 0 and key_value['size46'] != 'blank' %}
+                        <li class="listing row 46">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size46'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color46'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price46'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url46'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count47'] > 0 and key_value['size47'] != 'blank' %}
+                        <li class="listing row 47">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size47'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color47'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price47'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url47'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count48'] > 0 and key_value['size48'] != 'blank' %}
+                        <li class="listing row 48">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size48'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color48'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price48'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url48'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count49'] > 0 and key_value['size49'] != 'blank' %}
+                        <li class="listing row 49">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size49'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color49'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price49'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url49'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count50'] > 0 and key_value['size50'] != 'blank' %}
+                        <li class="listing row 50">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size50'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color50'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price50'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url50'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}                        
+                      </ul>
+            		</li>
+            </ul>
+          	{% endif %}
+            
+            {% if key_value['site_name'] == 'poshmark' and key_value['newness1'] == true or key_value['newness1'] == 'new' and key_value['inventory_count1'] != 0 and key_value['inventory_count1'] != 'blank' or key_value['inventory_count2'] != 0 and key_value['inventory_count2'] != 'blank' %}
+             <ul class="variantList">
+ 
+               <li class="variantInfo"><div class="brand"><h4 class="brandName">POSHMARK</h4><h4 class="brandCondition">NEW</h4><h4 class="brandPrice">${{ variant.price | money_without_currency }}</h4></div>
+                     <ul>
+                        {% if key_value['inventory_count1'] > 0 and key_value['size1'] != 'blank' %}
+						<li class="listing row 1">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size1'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color1'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price1'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url1'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count2'] > 0 and key_value['size2'] != 'blank' %}
+                          <li class="listing row 2">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size2'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color2'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price2'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url2'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count3'] > 0 and key_value['size3'] != 'blank' %}
+                        <li class="listing row 3">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size3'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color3'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price3'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url3'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count4'] > 0 and key_value['size4'] != 'blank' %}
+                        <li class="listing row 4">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size4'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color4'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price4'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url4'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count5'] > 0 and key_value['size5'] != 'blank' %}
+                        <li class="listing row 5">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size5'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color5'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price5'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url5'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count6'] > 0 and key_value['size6'] != 'blank' %}
+                        <li class="listing row 6">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size6'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color6'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price6'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url6'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count7'] > 0 and key_value['size7'] != 'blank' %}
+                        <li class="listing row 7">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size7'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color7'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price7'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url7'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count8'] > 0 and key_value['size8'] != 'blank' %}
+                        <li class="listing row 8">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size8'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color8'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price8'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url8'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count9'] > 0 and key_value['size9'] != 'blank' %}
+                        <li class="listing row 9">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size9'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color9'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price9'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url9'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count10'] > 0 and key_value['size10'] != 'blank' %}
+                        <li class="listing row 10">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size10'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color10'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price10'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url10'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count11'] > 0 and key_value['size11'] != 'blank' %}
+						<li class="listing row 11">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size11'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color11'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price11'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url11'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count12'] > 0 and key_value['size12'] != 'blank' %}
+                          <li class="listing row 12">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size12'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color12'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price12'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url12'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count13'] > 0 and key_value['size13'] != 'blank' %}
+                        <li class="listing row 13">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size13'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color13'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price13'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url13'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count14'] > 0 and key_value['size14'] != 'blank' %}
+                        <li class="listing row 14">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size14'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color14'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price14'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url14'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count15'] > 0 and key_value['size15'] != 'blank' %}
+                        <li class="listing row 15">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size15'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color15'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price15'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url15'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count16'] > 0 and key_value['size16'] != 'blank' %}
+                        <li class="listing row 16">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size16'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color16'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price16'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url16'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count17'] > 0 and key_value['size17'] != 'blank' %}
+                        <li class="listing row 17">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size17'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color17'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price17'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url17'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count18'] > 0 and key_value['size18'] != 'blank' %}
+                        <li class="listing row 18">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size18'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color18'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price18'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url18'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count19'] > 0 and key_value['size19'] != 'blank' %}
+                        <li class="listing row 19">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size19'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color19'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price19'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url19'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count20'] > 0 and key_value['size20'] != 'blank' %}
+                        <li class="listing row 20">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size20'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color20'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price20'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url20'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count21'] > 0 and key_value['size21'] != 'blank' %}
+						<li class="listing row 21">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size21'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color21'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price21'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url21'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count22'] > 0 and key_value['size22'] != 'blank' %}
+                          <li class="listing row 22">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size22'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color22'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price22'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url22'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count23'] > 0 and key_value['size23'] != 'blank' %}
+                        <li class="listing row 23">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size23'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color23'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price23'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url23'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count24'] > 0 and key_value['size24'] != 'blank' %}
+                        <li class="listing row 24">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size24'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color24'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price24'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url24'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count25'] > 0 and key_value['size25'] != 'blank' %}
+                        <li class="listing row 25">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size25'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color25'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price25'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url25'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count26'] > 0 and key_value['size26'] != 'blank' %}
+                        <li class="listing row 26">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size26'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color26'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price26'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url26'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count27'] > 0 and key_value['size27'] != 'blank' %}
+                        <li class="listing row 27">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size27'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color27'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price27'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url27'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count28'] > 0 and key_value['size28'] != 'blank' %}
+                        <li class="listing row 28">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size28'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color28'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price28'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url28'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count29'] > 0 and key_value['size29'] != 'blank' %}
+                        <li class="listing row 29">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size29'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color29'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price29'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url29'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count30'] > 0 and key_value['size30'] != 'blank' %}
+                        <li class="listing row 30">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size30'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color30'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price30'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url30'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count31'] > 0 and key_value['size31'] != 'blank' %}
+						<li class="listing row 31">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size31'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color31'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price31'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url31'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count32'] > 0 and key_value['size32'] != 'blank' %}
+                          <li class="listing row 32">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size32'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color32'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price32'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url32'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count33'] > 0 and key_value['size33'] != 'blank' %}
+                        <li class="listing row 33">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size33'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color33'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price33'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url33'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count34'] > 0 and key_value['size34'] != 'blank' %}
+                        <li class="listing row 34">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size34'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color34'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price34'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url34'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count35'] > 0 and key_value['size35'] != 'blank' %}
+                        <li class="listing row 35">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size35'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color35'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price35'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url35'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count36'] > 0 and key_value['size36'] != 'blank' %}
+                        <li class="listing row 36">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size36'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color36'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price36'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url36'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count37'] > 0 and key_value['size37'] != 'blank' %}
+                        <li class="listing row 37">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size37'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color37'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price37'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url37'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count38'] > 0 and key_value['size38'] != 'blank' %}
+                        <li class="listing row 38">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size38'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color38'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price38'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url38'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count39'] > 0 and key_value['size39'] != 'blank' %}
+                        <li class="listing row 39">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size39'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color39'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price39'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url39'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count40'] > 0 and key_value['size40'] != 'blank' %}
+                        <li class="listing row 40">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size40'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color40'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price40'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url40'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count41'] > 0 and key_value['size41'] != 'blank' %}
+						<li class="listing row 41">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size41'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color41'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price41'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url41'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count42'] > 0 and key_value['size42'] != 'blank' %}
+                          <li class="listing row 42">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size42'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color42'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price42'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url42'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count43'] > 0 and key_value['size43'] != 'blank' %}
+                        <li class="listing row 43">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size43'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color43'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price43'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url43'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count44'] > 0 and key_value['size44'] != 'blank' %}
+                        <li class="listing row 44">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size44'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color44'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price44'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url44'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count45'] > 0 and key_value['size45'] != 'blank' %}
+                        <li class="listing row 45">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size45'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color45'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price45'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url45'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count46'] > 0 and key_value['size46'] != 'blank' %}
+                        <li class="listing row 46">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size46'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color46'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price46'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url46'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count47'] > 0 and key_value['size47'] != 'blank' %}
+                        <li class="listing row 47">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size47'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color47'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price47'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url47'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count48'] > 0 and key_value['size48'] != 'blank' %}
+                        <li class="listing row 48">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size48'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color48'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price48'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url48'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count49'] > 0 and key_value['size49'] != 'blank' %}
+                        <li class="listing row 49">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size49'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color49'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price49'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url49'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count50'] > 0 and key_value['size50'] != 'blank' %}
+                        <li class="listing row 50">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size50'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color50'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price50'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url50'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}                        
+                      </ul>
+            		</li>
+            </ul>
+          	{% endif %}
+            
+		
+            {% if key_value['site_name'] == 'poshmark' and key_value['newness1'] == false or key_value['newness1'] == 'used' and key_value['inventory_count1'] != 0 and key_value['inventory_count1'] != 'blank' or key_value['inventory_count2'] != 0 and key_value['inventory_count2'] != 'blank' %}
+             <ul class="variantList">
+ 
+               <li class="variantInfo"><div class="brand"><h4 class="brandName">POSHMARK</h4><h4 class="brandCondition">USED</h4><h4 class="brandPrice">${{ variant.price | money_without_currency }}</h4></div>
+                      <ul>
+                        {% if key_value['inventory_count1'] > 0 and key_value['size1'] != 'blank' %}
+						<li class="listing row 1">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size1'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color1'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price1'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url1'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count2'] > 0 and key_value['size2'] != 'blank' %}
+                          <li class="listing row 2">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size2'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color2'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price2'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url2'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count3'] > 0 and key_value['size3'] != 'blank' %}
+                        <li class="listing row 3">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size3'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color3'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price3'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url3'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count4'] > 0 and key_value['size4'] != 'blank' %}
+                        <li class="listing row 4">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size4'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color4'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price4'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url4'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count5'] > 0 and key_value['size5'] != 'blank' %}
+                        <li class="listing row 5">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size5'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color5'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price5'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url5'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count6'] > 0 and key_value['size6'] != 'blank' %}
+                        <li class="listing row 6">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size6'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color6'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price6'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url6'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count7'] > 0 and key_value['size7'] != 'blank' %}
+                        <li class="listing row 7">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size7'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color7'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price7'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url7'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count8'] > 0 and key_value['size8'] != 'blank' %}
+                        <li class="listing row 8">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size8'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color8'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price8'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url8'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count9'] > 0 and key_value['size9'] != 'blank' %}
+                        <li class="listing row 9">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size9'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color9'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price9'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url9'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count10'] > 0 and key_value['size10'] != 'blank' %}
+                        <li class="listing row 10">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size10'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color10'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price10'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url10'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count11'] > 0 and key_value['size11'] != 'blank' %}
+						<li class="listing row 11">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size11'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color11'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price11'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url11'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count12'] > 0 and key_value['size12'] != 'blank' %}
+                          <li class="listing row 12">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size12'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color12'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price12'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url12'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count13'] > 0 and key_value['size13'] != 'blank' %}
+                        <li class="listing row 13">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size13'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color13'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price13'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url13'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count14'] > 0 and key_value['size14'] != 'blank' %}
+                        <li class="listing row 14">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size14'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color14'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price14'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url14'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count15'] > 0 and key_value['size15'] != 'blank' %}
+                        <li class="listing row 15">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size15'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color15'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price15'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url15'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count16'] > 0 and key_value['size16'] != 'blank' %}
+                        <li class="listing row 16">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size16'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color16'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price16'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url16'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count17'] > 0 and key_value['size17'] != 'blank' %}
+                        <li class="listing row 17">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size17'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color17'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price17'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url17'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count18'] > 0 and key_value['size18'] != 'blank' %}
+                        <li class="listing row 18">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size18'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color18'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price18'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url18'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count19'] > 0 and key_value['size19'] != 'blank' %}
+                        <li class="listing row 19">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size19'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color19'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price19'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url19'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count20'] > 0 and key_value['size20'] != 'blank' %}
+                        <li class="listing row 20">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size20'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color20'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price20'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url20'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count21'] > 0 and key_value['size21'] != 'blank' %}
+						<li class="listing row 21">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size21'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color21'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price21'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url21'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count22'] > 0 and key_value['size22'] != 'blank' %}
+                          <li class="listing row 22">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size22'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color22'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price22'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url22'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count23'] > 0 and key_value['size23'] != 'blank' %}
+                        <li class="listing row 23">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size23'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color23'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price23'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url23'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count24'] > 0 and key_value['size24'] != 'blank' %}
+                        <li class="listing row 24">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size24'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color24'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price24'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url24'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count25'] > 0 and key_value['size25'] != 'blank' %}
+                        <li class="listing row 25">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size25'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color25'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price25'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url25'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count26'] > 0 and key_value['size26'] != 'blank' %}
+                        <li class="listing row 26">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size26'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color26'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price26'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url26'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count27'] > 0 and key_value['size27'] != 'blank' %}
+                        <li class="listing row 27">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size27'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color27'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price27'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url27'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count28'] > 0 and key_value['size28'] != 'blank' %}
+                        <li class="listing row 28">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size28'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color28'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price28'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url28'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count29'] > 0 and key_value['size29'] != 'blank' %}
+                        <li class="listing row 29">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size29'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color29'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price29'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url29'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count30'] > 0 and key_value['size30'] != 'blank' %}
+                        <li class="listing row 30">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size30'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color30'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price30'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url30'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count31'] > 0 and key_value['size31'] != 'blank' %}
+						<li class="listing row 31">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size31'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color31'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price31'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url31'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count32'] > 0 and key_value['size32'] != 'blank' %}
+                          <li class="listing row 32">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size32'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color32'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price32'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url32'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count33'] > 0 and key_value['size33'] != 'blank' %}
+                        <li class="listing row 33">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size33'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color33'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price33'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url33'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count34'] > 0 and key_value['size34'] != 'blank' %}
+                        <li class="listing row 34">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size34'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color34'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price34'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url34'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count35'] > 0 and key_value['size35'] != 'blank' %}
+                        <li class="listing row 35">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size35'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color35'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price35'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url35'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count36'] > 0 and key_value['size36'] != 'blank' %}
+                        <li class="listing row 36">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size36'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color36'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price36'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url36'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count37'] > 0 and key_value['size37'] != 'blank' %}
+                        <li class="listing row 37">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size37'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color37'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price37'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url37'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count38'] > 0 and key_value['size38'] != 'blank' %}
+                        <li class="listing row 38">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size38'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color38'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price38'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url38'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count39'] > 0 and key_value['size39'] != 'blank' %}
+                        <li class="listing row 39">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size39'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color39'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price39'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url39'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count40'] > 0 and key_value['size40'] != 'blank' %}
+                        <li class="listing row 40">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size40'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color40'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price40'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url40'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count41'] > 0 and key_value['size41'] != 'blank' %}
+						<li class="listing row 41">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size41'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color41'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">${{ key_value['price41'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url41'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count42'] > 0 and key_value['size42'] != 'blank' %}
+                          <li class="listing row 42">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size42'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color42'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price42'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url42'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count43'] > 0 and key_value['size43'] != 'blank' %}
+                        <li class="listing row 43">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size43'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color43'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price43'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url43'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count44'] > 0 and key_value['size44'] != 'blank' %}
+                        <li class="listing row 44">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size44'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color44'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price44'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url44'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count45'] > 0 and key_value['size45'] != 'blank' %}
+                        <li class="listing row 45">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size45'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color45'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price45'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url45'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count46'] > 0 and key_value['size46'] != 'blank' %}
+                        <li class="listing row 46">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size46'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color46'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price46'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url46'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count47'] > 0 and key_value['size47'] != 'blank' %}
+                        <li class="listing row 47">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size47'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color47'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price47'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url47'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count48'] > 0 and key_value['size48'] != 'blank' %}
+                        <li class="listing row 48">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size48'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color48'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price48'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url48'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count49'] > 0 and key_value['size49'] != 'blank' %}
+                        <li class="listing row 49">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size49'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color49'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price49'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url49'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}
+                        {% if key_value['inventory_count50'] > 0 and key_value['size50'] != 'blank' %}
+                        <li class="listing row 50">
+                          <div class="col-md-3 sizeContainer"><div class="listSize">{{ key_value['size50'] }}</div></div><div class="col-md-3 colorContainer"><div class="listColor">{{ key_value['color50'] }}</div></div><div class="col-md-3 priceContainer"><div class="listPrice">{{ key_value['price50'] }}</div></div><div class="col-md-3 urlContainer"><a href="{{ key_value['url50'] }}" target="_blank">VIEW</a></div>
+                        </li>
+                        {% endif %}                        
+                      </ul>
+            		</li>
+            </ul>
+          	{% endif %}
+
+			{% endfor %}
+            {% endfor %} 
+
+</div>

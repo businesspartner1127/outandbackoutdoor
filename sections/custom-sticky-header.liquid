@@ -1,0 +1,197 @@
+{{ 'custom-sticky-header.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}{
+    display: none;
+    transition: all 0.2s ease-in;
+    background: {{ section.settings.background_color }};
+  }
+  .section-{{ section.id }}.load {
+    display: block;
+  }
+  .section-{{ section.id }} .cs-grid .cs-content {
+    color: {{ section.settings.text_color }};
+  }
+  .section-{{ section.id }} .cs-grid .cs-content a {
+    color: {{ section.settings.text_color }};
+  }
+{% endstyle %}
+
+<section id="{{ section.id }}" class="section-{{ section.id }} cs-sticky-header">
+  <div class="cs-container cs-grid">
+    <div class="cs-content">
+      {{ section.settings.announcement }}
+    </div>
+    <img id="cs-button-close" src="{{ 'google-close.svg' | asset_url }}"/>
+    
+    {% if section.settings.cta_text != blank and section.settings.cta_link != blank %}
+    {% style %}
+      .section-{{ section.id }} .cta_container {
+        padding-top: {{ section.settings.cta_padding_top }}px;
+        padding-bottom: {{ section.settings.cta_padding_bottom }}px;
+      }
+      
+      .section-{{ section.id }} .cta_btn {
+        color: {{ section.settings.cta_text_color }};
+        border: 1px solid {{ section.settings.cta_border_color }};
+        background: {{ section.settings.cta_background }}
+      }
+
+      .section-{{ section.id }} .cta_btn:hover {
+        color: {{ section.settings.cta_hover_text_color }};
+        border: 1px solid {{ section.settings.cta_hover_border_color }};
+        background: {{ section.settings.cta_hover_background }}
+      }
+    {% endstyle %}
+    {% assign pos_class = 'cta_center' %}
+    {% case section.settings.cta_position %}
+      {% when 'left' %}
+        {%- assign pos_class = 'cta_left' -%}
+      {% when 'right' %}
+        {%- assign pos_class = 'cta_right' -%}
+    {% endcase %}
+    <div class="cta_container {{ pos_class }}">
+      <a class="cta_btn" href="{{ section.settings.cta_link }}" title="">{{ section.settings.cta_text }}</a>
+    </div>
+  {% endif %}
+  
+  </div>
+</section>
+
+<script>
+  const section_id = '{{ section.id }}'
+  const parent_section = document.getElementById(section_id)
+  const parent_section_id = document.querySelector('#' + section_id + ' .cs-container')
+  const cs_button_close = document.getElementById('cs-button-close')
+
+  setTimeout(() => {
+    parent_section.classList.add('load')
+  }, 300);
+
+  cs_button_close.addEventListener('click', function() {
+    parent_section_id.remove()
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "Custom Sticky Header",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "announcement",
+        "label": "Announcement",
+        "default": "Got old gear?"
+      }, {
+        "type": "header",
+        "content": "Styles"
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#a2f6eb"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+      }, 
+      {
+        "type": "header",
+        "content": "CTA Option"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Text",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "Link"
+      },
+      {
+        "type": "select",
+        "id": "cta_position",
+        "label": "Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      }, 
+      {
+        "type": "color",
+        "id": "cta_text_color",
+        "label": "Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "cta_background",
+        "label": "Background Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "color",
+        "id": "cta_border_color",
+        "label": "Border Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "color",
+        "id": "cta_hover_text_color",
+        "label": "Hover Text Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "color",
+        "id": "cta_hover_background",
+        "label": "Hover Background Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "cta_hover_border_color",
+        "label": "Hover Border Color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "range",
+        "id": "cta_padding_top",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "cta_padding_bottom",
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 25
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Sticky Header"
+      }
+    ]
+  }
+{% endschema %}

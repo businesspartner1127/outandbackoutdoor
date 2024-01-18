@@ -1,0 +1,185 @@
+.Wizard__Container .Title {
+  color: #26225E;
+  margin-bottom: 0.35em;
+  font-weight: bold;
+  margin-top: 0;
+}
+.Wizard__Container .Answers__Container .Answer__Item {
+  padding: 0.7rem;
+  margin: 0.4rem;
+  background-color: #EDE6EB;
+  border-radius: 5px;
+  border: 1px solid #9C7992;
+  font-size: 18px;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 280px;
+}
+.Wizard__Container .Answers__Container .Answer__Item:active {
+  background-color: #dfd4d9;
+}
+.Wizard__Container .Answers__Container .Answer__Item--selected {
+  background-color: #c7bcc0;
+}
+.Wizard__Container .Answers__Container .Answer__Check {
+  border: 1px solid #9c7a92;
+  border-radius: 3px;
+  background: white;
+  color: #754567;
+  font-weight: bold;
+  font-size: 17px;
+  margin-right: 15px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Wizard__Container .Answer__Container--wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Wizard__Container .Answer__Container--wrap .Answer__Item {
+  flex: 1 0 33%;
+}
+.Wizard__Container .Results__Loading {
+  padding: 5% 0;
+  text-align: center;
+}
+.Wizard__Container .TextBridge {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  flex-direction: column;
+}
+.Wizard__Container .Step__Container {
+  text-align: left;
+}
+.Wizard__Container .ButtonFooter__Container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.Wizard__Container .ButtonFooter__Container button {
+  height: 45px;
+  width: 100px;
+  font-size: 18px;
+}
+.Wizard__Container .ButtonFooter__Container button .MuiSvgIcon-root {
+  font-size: 25px;
+}
+.Wizard__Container .Column__Container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.Wizard__Container .Results__Container .Products {
+  display: flex;
+  padding: 25px 0;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.Wizard__Container .Results__Container .Button__Container {
+  margin-top: 50px;
+  text-align: center;
+}
+.Wizard__Container .Results__Container .Button__Container button {
+  height: 45px;
+  width: 200px;
+  font-size: 18px;
+}
+.Wizard__Container .Results__Container .Button__Container button .MuiSvgIcon-root {
+  font-size: 25px;
+}
+.Wizard__Container .ProductItem__Container {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 10px;
+  width: 400px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-color: #d5d5d5;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.Wizard__Container .ProductItem__Container .Img__Container {
+  border-bottom: 1px solid #d5d5d5;
+}
+.Wizard__Container .ProductItem__Container .Img__Container img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+.Wizard__Container .ProductItem__Container span {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.Wizard__Container .ProductItem__Container .Name {
+  color: red;
+  padding-top: 10px;
+  padding-left: 10px;
+  white-space: normal;
+}
+.Wizard__Container .ProductItem__Container .Brand {
+  padding-left: 10px;
+}
+.Wizard__Container .ProductItem__Container .Price {
+  padding-left: 10px;
+}
+.Wizard__Container .ProductItem__Container .To {
+  margin-right: 5px;
+  color: red;
+}
+.Wizard__Container .ProductItem__Container .From {
+  text-decoration: line-through;
+}
+.Wizard__Container .ProductItem__Container .Sale {
+  color: white;
+  background-color: red;
+  font-size: 11px;
+  padding: 5px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .Answers__Container {
+    margin-top: 4rem;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.FadeIn {
+  animation: fadeIn 0.5s linear;
+}
+
+.SlideRightToLeft {
+  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/*# sourceMappingURL=App.css.map */

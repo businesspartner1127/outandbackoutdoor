@@ -1,0 +1,47 @@
+<style>
+    .paragraph-text-container {
+        padding: 0 20% 0 20%;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #262262;
+        line-height: 1.6;
+    }
+    .shopping-container-button-container {
+      display: flex;
+      justify-content: center;
+    }
+    .shopping-container-button {
+      display: flex;
+      justify-content: center;
+      width: 200px;
+      color: #fff;
+      background-color: #f00000;
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: 900;
+    }
+</style>
+
+{% section 'hero-section' %}
+<div class="container-fluid" style="padding: 75px 15px; ">
+    <h3 class="textCenter">FEATURED DEALS OF THE WEEK</h3>
+    {% section 'collection-slider' %}
+    <div class="shopping-container-button-container">
+        <a href="/collections/deals-of-the-week">
+            <div class="shopping-container-button">VIEW ALL DEALS</div>
+        </a>
+    </div>
+</div>
+{% section 'logo-section-new' %}
+{% include 'start-shopping-seasonal-grid' %}
+
+<div class="container-fluid" style="padding: 75px 15px;">
+    <h3 class="textCenter">WHAT OTHER ADVENTURERS ARE BUYING</h3>
+    {% section 'collection-slider-shop' %}
+    <div class="shopping-container-button-container">
+        <a href="/collections/camping">
+            <div class="shopping-container-button">SHOP THE COLLECTION</div>
+        </a>
+    </div>
+</div>
+{% include 'shop-grid' %}

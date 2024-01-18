@@ -1,0 +1,37 @@
+<div class="cs-contact">
+  <div id="hero" style="background-image: url(//cdn.shopify.com/s/files/1/0412/7840/6813/files/7.jpg?v=1610399764.jpg)">
+    <h1>{{ page.title }}</h1>
+  </div>
+  <div id="wave"></div>
+  <div class="page-width intro-pages">            
+        {% form 'contact', id: 'ContactForm' %}
+          {% if form.posted_successfully? %}
+            <div class="form-copy">
+              <h5>THANKS FOR REACHING OUT!</h5>
+              <h5>We received your message and will be in touch soon.</h5>
+            </div>
+          {% else %}
+            {{ page.content }}
+            <div>
+              <input type="hidden" name="contact[form-type]" value="Contact Us" />
+                <div class="cs-flex">
+                  <input type="text" id="{{ formId }}-first-name" name="contact[name]" placeholder="Name*" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" required>
+
+                  <input type="email" id="{{ formId }}-email" name="contact[email]" placeholder="Email*" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" aria-required="true"{%- if form.errors contains 'email' -%} class="input--error" aria-invalid="true" aria-describedby="{{ formId }}-email-error" {%- endif -%} required>
+                </div>
+              {%- if form.errors contains 'email' -%}
+                <span id="{{ formId}}-email-error" class="input-error-message">
+                  <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                  {% include 'icon-error' %}
+                  <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                </span>
+              {%- endif -%}                    
+              <textarea rows="10" placeholder="Message*" id="{{ formId }}-message" name="contact[message]" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+              <div class="agree-text"><input type="checkbox" name="contact[agree]" id="agree" class="input-group__field {% if form.errors %} input--error{% endif %}" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-email-error" data-form-status endif required> By submitting your information, you agree to Out&amp;Back's <a href="/pages/terms-of-use" target="_blank">terms of use</a> and <a href="/pages/privacy-policy" target="_blank">privacy policy</a>.
+              </div>                    
+              <input type="submit" class="learn-more" value="SUBMIT">
+            </div>
+        {% endif %}
+      {% endform %}
+  </div>
+</div>

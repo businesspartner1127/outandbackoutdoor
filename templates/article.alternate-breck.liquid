@@ -1,0 +1,523 @@
+<style>
+    .header-image {
+      background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ article.image | img_url: '1600x'  }}) no-repeat;
+      background-position: 100%;
+      background-size: cover;
+      height: 30vh;
+      padding: 0 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  
+    .header-text-wrap {
+      margin-top: 55px !important;
+    }
+    
+    .header-text {
+      text-align: center;
+      color: #fff;
+    }
+    
+    @media (max-width: 768px) {
+      .header-image {
+        height: 30vh;
+      }
+      .header-text {
+        top: 220px;
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-image {
+        height: 40vh;
+      }
+      .header-text-wrap {
+        margin-top: 35px !important;
+      }
+      .header-text {
+        top: 190px;
+        font-size: 2.0rem;
+      }
+    }
+  </style>
+{%- comment -%}
+  Comments may not appear right after they are submitted, either to be checked by Shopify's spam filter
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that includes the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+{%- endcomment -%}
+
+{%- if comment.status == 'pending' -%}
+  {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+{%- else -%}
+  {%- assign number_of_comments = article.comments_count -%}
+{%- endif -%}
+
+<style>
+.flexslider{
+    height: 42vh;
+}
+
+.learn-more{
+    font-size: .8rem;
+    padding: 8px 10px;
+}
+
+.container{
+    padding: 75px 15px;
+}
+</style>
+
+<div class="header-image">
+    <div class="section-header text-center header-text-wrap">
+        <h1 class="article__title" id="title-0" style="color: #fff;">
+        Turn your old gear into money ...and beer!
+        </h1>
+    </div>
+</div>
+<div id="wave"></div>
+<article aria-labelledby="title-0">
+  <div class="grid">
+    <div class="medium-up--push-one-twelfth">
+        <div class="page__wrap">
+            <div class="event-intro-container">
+                <div class="event-intro">
+                    If you live in/near Denver, join us and Breckenridge Brewery for our <b>BEER FOR GEAR</b> happy hour - an event where for every piece of outdoor gear you sell to us, you'll get paid and receive a beer*.
+                </div>
+                
+                <div class="event-intro">
+                    That's right, get paid AND receive a beer* just for selling you outdoor gear to us!
+                </div>
+            </div>
+            <div class="when_container">
+                <div class="event-intro">
+                    <div class="when__title">WHEN AND WHERE:</div>
+                    <ul class="when__details">
+                        <li>Thursday, August 26th, 4:30-7 pm</li>
+                        <li>Breckenridge Brewery</li>
+                        <li id="event__address"><u><a>2990 Brewery Lane</a></u></li>
+                        <li id="event__address"><u><a>Littleton, CO</a></u></li>
+                    </ul>
+                </div>
+                <div class="event-intro">
+                    <div class="when__title">HOW IT WORKS:</div>
+                    <ul class="event__steps">
+                        <li>1) GATHER YOUR UNWANTED OUTDOOR GEAR</li>
+                        <li>2) SUBMIT THE GEAR YOU WANT TO SELL BELOW</li>
+                        <li>3) DROP OFF GEAR TO BRECKENRIDGE BREWERY ON AUGUST 26TH</li>
+                        <li>4) RECEIVE an offer from Out&amp;Back</li>
+                        <li>5) GET PAID and enjoy beer- on us!</li>
+                    </ul>
+                </div>
+            </div>
+            
+        {% form 'contact', id: 'sell', data-form_type: "sell" %}
+            {% if form.errors contains 'email' %}
+
+            <span id="{{ formId }}-email-error" class="input-error-message">
+            <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+            {% include 'icon-error' %}
+            <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+            </span>
+
+
+            {% endif %}
+            <p class="required">Required Fields*</p>
+            <div class="row">
+
+            <input type="hidden" name="contact[form]" value="Beer For Gear" />
+            <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                <input type="text" name="contact[first]" id="{{ formId }}-first" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}" placeholder="First Name*" required aria-label="First Name*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-first-error" data-form-status {% endif %}>
+            </div>
+            <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                <input type="text" name="contact[last]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}" placeholder="Last Name*" required aria-label="Last Name*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-last-error" data-form-status {% endif %}>
+            </div>
+
+            <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                <select class="condition input-group__field required" name="contact[Brand]" aria-required="true" placeholder="Condition*" required>
+                    <option value="" disabled selected>Brand Name*</option>
+                    <option value="Arc'teryx">Arc'teryx</option>
+                    <option value="Big Agnes">Big Agnes</option>
+                    <option value="Black Diamond">Black Diamond</option>
+                    <option value="Burton">Burton</option>
+                    <option value="Camelbak">Camelbak</option>
+                    <option value="Columbia">Columbia</option>
+                    <option value="Cotopaxi">Cotopaxi</option>
+                    <option value="Fjallraven">Fjallraven</option>
+                    <option value="Helly Hansen">Helly Hansen</option>
+                    <option value="Houdini">Houdini</option>
+                    <option value="Icebreaker">Icebreaker</option>
+                    <option value="Kelty">Kelty</option>
+                    <option value="La Sportiva">La Sportiva</option>
+                    <option value="Mammut">Mammut</option>
+                    <option value="Marmot">Marmot</option>
+                    <option value="Mountain Hardwear">Mountain Hardwear</option>
+                    <option value="MSR">MSR</option>
+                    <option value="Osprey">Osprey</option>
+                    <option value="Outdoor Research">Outdoor Research</option>
+                    <option value="Patagonia">Patagonia</option>
+                    <option value="Petzl">Petzl</option>
+                    <option value="Prana">Prana</option>
+                    <option value="Rab">Rab</option>
+                    <option value="REI">REI</option>
+                    <option value="Salomon">Salomon</option>
+                    <option value="Smartwool">Smartwool</option>
+                    <option value="The North Fac">The North Face</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <label style="margin-left: 15px">Don't see the brand of your item? Please enter below.</label>
+            <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                <input type="text" name="contact[Other]" id="{{ formId }}-other" class="input-group__field {% if form.errors %} input--error{% endif %}" value="{% if form.other %}{{ form.other }}{% elsif customer %}{{ customer.other }}{% endif %}" placeholder="Other" aria-label="Other*" aria-required="true" autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-other-error" data-form-status {% endif %}>
+            </div>
+
+            <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                <input type="text" name="contact[productTitle]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{{ product.title }}" placeholder="Product Name*" required aria-label="Product Name*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-product-error" data-form-status {% endif %}>
+            </div>
+
+            <div class="sell-back-tooltip input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                <input type="text" name="contact[productNumber]" id="{{ formId }}-last" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{{ product.title }}" placeholder="Style Number / SKU*" required aria-label="Product Name*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-product-error" data-form-status {% endif %}>
+                <i id="tooltip" class="fa fa-info-circle trigger" data-tooltip-id="1" title="Style and SKU #’s vary by Brand, yet typically can be found on an item’s inside tag. Common tag locations include back collar, side seam or even in a sleeve/pant leg. Style and SKU #’s are a series of numbers and often begin with a letter. TIP: sequences beginning with CA or RN do not represent the style or SKU #."></i>
+            </div>
+
+            <div class="input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                <input type="email" name="contact[email]" id="{{ formId }}-email" class="input-group__field required {% if form.errors %} input--error{% endif %}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" placeholder="Email*" required aria-label="Email*" aria-required="true" required autocorrect="off" autocapitalize="off" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-email-error" data-form-status {% endif %}>
+            </div>
+
+            <div class="sell-back-tooltip input-group col-md-6 {% if form.errors %} input-group--error{% endif %}">
+                <select class="condition input-group__field required" name="contact[Condition]" aria-required="true" placeholder="Condition*" required>
+                <option value="" disabled selected>Condition*</option>
+                <option value="New – with or without original tags">New – with or without original tags</option>
+                <option value="Used and Excellent – no real signs of wear">Used and Excellent – no real signs of wear</option>
+                <option value="Used and Good – some wear, functions perfec">Used and Good – some wear, functions perfect</option>
+                <option value="Used and Worn – signs of wear are obvious">Used and Worn – signs of wear are obvious</option>
+                <option value="Used and Busted – broken, torn, etc.">Used and Busted – broken, torn, etc.</option>
+                </select>
+                <i id="tooltip" class="fa fa-info-circle trigger" data-tooltip-id="1" title="Choose which best describes the condition of your item."></i>
+            </div>
+            <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}" style="margin: 20px 0;">
+                <input type="checkbox" name="contact[agree]" id="agree" class="input-group__field required {% if form.errors %} input--error{% endif %}" {% if form.errors aria-invalid="true" %} aria-describedby="{{ formId }}-email-error" data-form-status {% endif %} required>
+                <div class="agreeText">By submitting your information, you agree to Out&amp;Back's <a href="/pages/terms-of-use" target="_blank">terms of use</a> and <a href="/pages/privacy-policy" target="_blank">privacy policy</a>.</div>
+            </div>
+            <div class="col-md-12" style="display: flex; justify-content: center; margin-bottom: 20px;">
+                <input type="submit" class="learn-more">
+            </div>
+
+
+            </div>
+            {% if form.posted_successfully? %}
+
+            <script>
+            $("document").ready(function() {  
+                $("#sellProduct").trigger('click');
+            });
+            </script>
+
+            <style>
+            form .row{
+                display: none; 
+            }
+            </style>
+
+            <div class="form-success">
+                <h5>THANK YOU FOR YOUR SELL-BACK SUBMISSION!</h5>
+                <h5>Be sure to keep an eye on your inbox where you’ll receive an official offer on your gear! Talk to you soon!</h5>
+            </div>
+
+            <div id="event-share">
+                <div class="event-share-text">Share this event with your friends!</div>
+                    <div class="event-share-buttons">
+                        <div class="fb-share-button-div">
+                            <div class="fb-share-button" 
+                                data-href="https:{{current_url}}" 
+                                data-layout="button"
+                                data-size="large">
+                            </div>
+                        </div>
+                        <div class="mail-to">
+                            <button class="mail-to-button">
+                                <a href="mailto:?subject=Don%E2%80%99t%20Miss%20Out%21%20Try%20Out%26Back%20Outdoor%E2%80%99s%20Sell-Back%20Program%20today%21&body=I%20just%20submitted%20my%20request%20to%20sell%20my%20unwanted%20outdoor%20gear%20to%20Out%26Back%20Outdoor%21%20No%20need%20to%20set-up%20a%20profile%20or%20submit%20pictures%21%20Definitely%20a%20simple%20way%20to%20earn%20cash.%20hey%20make%20it%20easy%20to%20submit%20your%20gear%E2%80%99s%20details.%20You%20should%20check%20it%20out%20for%20yourself%21%20">
+                                    Email
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+
+        {% endform %}
+
+        <div class="when_container">
+            <div class="event-intro">
+                <div class="when__title">WHAT TO SELL TO OUT&amp;BACK:</div>
+                <ul class="when__details">
+                    <li>Kids Outdoor Apparel</li>
+                    <li>Men &amp; Women’s Outdoor Apparel (Everything from base layers to baggies!)</li>
+                    <li>Outerwear (Coats, Jackets, Rain gear, etc.)</li>
+                    <li>Camping Gear (Tents,Sleeping Pads, etc.)</li>
+                    <li>Hiking Gear (Trekking Poles, Backpacks,etc.)</li>
+                    <li>Cycling Gear (Men’s/Women’s/Kids’, everything but the bike &amp; helmet)</li>
+                </ul>
+                <div class="event__faq" style="margin-top: 20px; margin-bottom: 30px;">For more sell-back details, checkout our  <a href="#faq_container"><u>FAQ</u></a></div>
+            </div>
+        </div>
+
+            
+        <div class="container-fluid" style="padding: 0 15px 0px;">
+            <h3 class="purple textCenter">DONE SELLING? CHECK OUT POPULAR NEW AND USED GEAR!</h3>
+            <div class="slick-slider categories">
+                <a href="/collections/tents"><div class="category" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/shutterstock_744481069_1.jpg?v=1616772403);">
+                    <div class="categoryInfo">
+                        <h3>Tents</h3>
+                        <button class="learn-more">FIND NEW &amp; USED</button>
+                    </div>
+                    </div>
+                </a>
+            <!-- COLLECTION START -->
+            <a href="/collections/mens-hiking"><div class="category" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/iStock-532189860_2.jpg?v=1616772806);">
+                <div class="categoryInfo">
+                    <h3>Men's Hiking</h3>
+                    <button class="learn-more">FIND NEW &amp; USED</button>
+                </div>
+                </div>
+            </a>
+            <!-- COLLECTION END -->
+            <!-- COLLECTION START -->
+            <a href="/collections/womens-hiking"><div class="category" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/shutterstock_224392663_1.jpg?v=1614019069);">
+                <div class="categoryInfo">
+                    <h3>Women's Hiking</h3>
+                    <button class="learn-more">FIND NEW &amp; USED</button>
+                </div>
+                </div>
+            </a>
+            <!-- COLLECTION END -->
+            <!-- COLLECTION START -->
+            <a href="/collections/rain-jackets"><div class="category" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Rain_Jackets_9e3e7468-fb48-4573-929c-436e47614772.jpg?v=1616773410);">
+                <div class="categoryInfo">
+                    <h3>Women's &amp; Men's Rain Jackets</h3>
+                    <button class="learn-more">FIND NEW &amp; USED</button>
+                </div>
+                </div>
+            </a>
+            <!-- COLLECTION END -->
+            <!-- COLLECTION START -->
+            <a href="/collections/gore-tex"><div class="category" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/goretex-safety.jpg?v=1614721260);">
+                <div class="categoryInfo">
+                    <h3>Women's &amp; Men's GORE-TEX</h3>
+                    <button class="learn-more">FIND NEW &amp; USED</button>
+                </div>
+                </div>
+            </a>
+            <!-- COLLECTION END -->
+            <!-- COLLECTION START -->
+            <a href="/collections/sleeping-bags"><div class="category" style="background-image: url(https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Sleeping_Bags.jpg?v=1616773645);">
+                <div class="categoryInfo">
+                    <h3>Sleeping Bags</h3>
+                    <button class="learn-more">FIND NEW &amp; USED</button>
+                </div>
+                </div>
+            </a>
+            <!-- COLLECTION END -->
+            </div>
+        </div>
+            
+
+        <div id="faq_container">
+            <div class="container-fluid faq" style="margin-top: 40px">
+                <h3>FAQ</h3>
+                <div class="section purchase-location">
+                    <h5>What types of items can I sell to Out&amp;Back?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Right now, we’re looking for men’s, women’s and even kid’s gear! Over time we hope to able to purchase just about any outdoor gear but at the moment, the categories of outdoor gear that we can buy are: 1) outerwear (e.g., jackets, pants, apparel etc.), 2) tents and footprints (except rooftop tents), 3) sleeping bags, 4) camping gear excluding stoves and water filters, 5) packs and bags excluding wheeled luggage and 6) hiking gear. 7) Kids and Adult Cycling Gear (everything but the bike, helmet, &amp; pads). We cannot purchase protective gear of any kind including helmets and pads. We cannot purchase climbing gear of any kind (e.g., harnesses, rope, etc.). At this moment, we are not purchasing winter hardgoods like skis and snowboards but we will be soon!</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>What information do I need to have in order to sell an item?</h5>
+                    <div class="row">
+                    <p class="col-md-12">We call it our core five. 1) The Brand name; 2) the item or style name; 3) the item’s condition; 4) your name; and 5) email address. And...if you want to help make the sellback process extra special,  you can provide the item’s SKU or style number. If you’re having difficulties locating your item’s style name, don’t worry, we’re here to help. For assistance, email <u>buyback@outandbackoutdoor.com</u> and include your item’s details, including a picture of your item and we’ll help you figure it out. Note: upon finding the style name, all customers will still be required to submit a sell back request through the official submission process.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>How long does the selling process take?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Once you’ve submitted your sell-back request, you can expect to receive an official offer from us within 48 hours. Upon accepting the offer, the ball’s in your court. Drop-off your unwanted gear to us on August 26 at our Beer For Gear event and upon final inspection of your item(s), we’ll send your digital payment. Not to mention, you’ll also receive your free beer! All-in-all our sell-back process is pretty darn simple.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>How long will it take for Out&amp;Back to contact me once I’ve submitted my sellback request? </h5>
+                    <div class="row">
+                    <p class="col-md-12">Nope!* Like we said, our sell-back process is really simple. We email you a prepaid shipping label and ask that you put it on your package before dropping it off at any USPS location. Note: ownership of shipping may be your responsibility if you choose to receive an item back after it’s already been shipped to Out&amp;Back. Friendly reminder that you will need to provide your own packaging. *For oversized items, shipping ownership may vary between Out&amp;Back and the consumer.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>Can I pay to ship my item to Out&amp;Back?</h5>
+                    <div class="row">
+                    <p class="col-md-12">At this time, our Beer For Gear happy hour is an in-person event so you can earn and redeem your tasty beer. However, if you’re not able to attend in person, you can always sell-back your unwanted gear to us through our non-event sell-back program which offers shipping options. Checkout more details on our <a href="/pages/start-selling"><u>Sell-Back page</u></a>.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>What if I don’t live in/near Denver, can I still participate in Beer For Gear?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Our Beer For Gear happy hour is designed as an in-person event. Therefore if you don’t live in/near Denver and are not able to attend in-person on August 26, you may want to consider our non-event sell back program which allows you to participate from anywhere in the US and includes free shipping! Checkout more details on our <a href="/pages/start-selling"><u>Sell-Back page</u></a>.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>How does Out&amp;Back determine my offer?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Our proprietary set of tools helps us evaluate important details like product condition, color, brand and maturity. We then compare these details against multiple retailers to present you with the most accurate and competitive offer in the market. In other words, we believe in fair offers for great gear. While each offer is customized, on average, offer prices for an used item in good condition is around 20% of the original retail price while new items being sold may garner closer to 30% of the original selling price. Again, many factors come into play when determining each offer.  </p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>Can I bargain with Out&amp;Back on the selling price?</h5>
+                    <div class="row">
+                    <p class="col-md-12">At this time, our offer is final. We like to keep things simple and avoid the back-and-forth which can take time away from being outdoors.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>Does my offer ever expire?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Yes. Upon receiving your offer, you will have seven (7) days to accept. After seven days, the offer will automatically expire and you will need to re-submit the item through our sell back process for a new offer.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>What if I want to decline the sell back offer from Out&amp;Back? </h5>
+                    <div class="row">
+                    <p class="col-md-12">Not a problem. Sometimes things just aren’t meant to be. If you choose to decline your sell back offer, all that we ask is that you keep gear out of the landfill by donating or giving it to someone who could use it.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>How do I get paid? </h5>
+                    <div class="row">
+                    <p class="col-md-12">Simple - Venmo or Paypal. Upon accepting our offer, you’ll be asked to provide your Venmo or Paypal ID which will allow us to seamlessly transfer payment to you upon final inspection of your item at our warehouse. Friendly tip: a separate account with the specified payment vendors is required in order for you to receive payment.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>What happens if I submit in an item and it differs from how I described it? </h5>
+                    <div class="row">
+                    <p class="col-md-12">This can happen… For example, you might have typed in the wrong item or style name by accident or there is an issue with a component on the item that you didn't notice, etc. When we inspect an item that is different from what the you originally submitted, one of three things can happen:</p>
+                    <ol>
+                        <li>1) <u>We make you another offer and you can choose to accept or decline:</u> sometimes, we’re still interested in buying the item even though it’s different from your original request. In this case, we’ll present you with a new offer that you can kindly accept or decline. If you accept, great! We pay you, you move on. If you decline and no longer want to sell it to us, then no hard feelings.</li>
+                        <li>2) <u>We don't make you another offer and you want the item returned:</u> in some cases, the item is not something we can currently buy from you, thus aren’t able to make you another offer.</li>
+                        <li>3) <u>If we don’t buy your item and you don't want it back, we donate it:</u> if we can't buy the item from you and you aren’t interested in keeping the item, we will gladly donate it on your behalf to one of our local partners who are in need of outdoor gear.</li>
+                    </ol>
+
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>Can I donate my item?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Yes you can! If you choose to donate your item, just say so in your reply to our offer letter. All you’ll need to do is drop-off your gear at the Beer For Gear even on August 26 and we’ll donate it on your behalf and if needed, can send you a confirmation for your records/as a write off.</p>
+                    </div>
+                </div>
+
+                <div class="section purchase-location">
+                    <h5>What happens to the item I sell to Out&amp;Back?</h5>
+                    <div class="row">
+                    <p class="col-md-12">Your item is about to begin a sustainable journey back into the outdoors. We work with specialized experts to clean, repair and refurbish used outdoor gear in order to keep it in circulation. And if your gear isn’t able to be renewed, we partner with professionals who responsibly downcycle the apparel—making sure it avoids ending up in a landfill.</p>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+
+        <div class="logo-container">
+            <div class="event-intro">
+                <div class="logo-text" style="margin-top: 20px; margin-bottom: 5px; color: #6e6e6e;">Event brought to you by:</div>
+            </div>
+            <div class="logo-wrapper">
+                <div class="logo-out-and-back">
+                    {{ 'OutAndBack_logo.png' | asset_url | img_tag: 'Call to Arms Brewery', 'out-and-back-img' }}
+                </div>
+                <div class="logo-partner">
+                    <img class="partner-img" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Breck.png?v=1629149207" />
+                    <!-- {{ 'CallToArms_logo.png' | asset_url | img_tag: 'Call to Arms Brewery', 'partner-img' }} -->
+                </div>
+            </div>
+            <div class="terms-container">
+                <div class="terms-container-text">Terms and Conditions: *Each item accepted by and sold to Out&amp;Back Outdoor qualifies for one beverage ticket that can be redeemed at Breckenridge Brewery and is applicable towards any beverage priced between $4 and $8. Each ticket can be redeemed for one 10oz beer or other beverage of equal or lesser value.. Tickets can not be combined for greater value. Tickets can not be redeemed for cash and are non-refundable if lost or stolen. Tickets must be redeemed at the Beer4Gear event on August 26, 2021 or otherwise will automatically expire. Must at least 21 years of age to consume or purchase.</div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</article>
+
+<script>
+    $( "#event__address" ).click(function() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/windows phone/i.test(userAgent)) {
+            window.location.href = "https://www.google.com/maps/place/Breckenridge+Brewery/@39.5936849,-105.0949788,12z/data=!4m9!1m2!2m1!1sBreckenridge+Brewery!3m5!1s0x0:0x46703a96eef1279d!8m2!3d39.5936881!4d-105.0249386!15sChRCcmVja2VucmlkZ2UgQnJld2VyeVoWIhRicmVja2VucmlkZ2UgYnJld2VyeZIBB2JyZXdlcnk";
+        }
+        if (/android/i.test(userAgent)) {
+            window.location.href = "https://www.google.com/maps/place/Breckenridge+Brewery/@39.5936849,-105.0949788,12z/data=!4m9!1m2!2m1!1sBreckenridge+Brewery!3m5!1s0x0:0x46703a96eef1279d!8m2!3d39.5936881!4d-105.0249386!15sChRCcmVja2VucmlkZ2UgQnJld2VyeVoWIhRicmVja2VucmlkZ2UgYnJld2VyeZIBB2JyZXdlcnk";
+        }
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.href = "http://maps.apple.com/?address=2920+Brewery+Ln,+Littleton,+CO+80120&t=m";
+        }
+        if (/Macintosh/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://www.google.com/maps/place/Breckenridge+Brewery/@39.5936849,-105.0949788,12z/data=!4m9!1m2!2m1!1sBreckenridge+Brewery!3m5!1s0x0:0x46703a96eef1279d!8m2!3d39.5936881!4d-105.0249386!15sChRCcmVja2VucmlkZ2UgQnJld2VyeVoWIhRicmVja2VucmlkZ2UgYnJld2VyeZIBB2JyZXdlcnk";
+        }
+        if (/Windows/.test(userAgent) && !window.MSStream) {
+            window.location.href = "https://www.google.com/maps/place/Breckenridge+Brewery/@39.5936849,-105.0949788,12z/data=!4m9!1m2!2m1!1sBreckenridge+Brewery!3m5!1s0x0:0x46703a96eef1279d!8m2!3d39.5936881!4d-105.0249386!15sChRCcmVja2VucmlkZ2UgQnJld2VyeVoWIhRicmVja2VucmlkZ2UgYnJld2VyeZIBB2JyZXdlcnk";
+        }
+    });
+
+</script>
+
+  
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ settings.share_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>

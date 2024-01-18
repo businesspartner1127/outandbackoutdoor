@@ -1,0 +1,1092 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>{% include 'za_country_blocker' %}
+
+  <!-- Cookiebot Script  -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f91e9397-2dfa-4fc8-9d32-c30362c4ad65" data-blockingmode="auto" type="text/javascript"></script>
+  <!-- End Cookiebot Script -->
+  {% include 'gtm' %}
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+
+  <!-- Facebook Open Graph -->
+  {% if template == 'article.alternate' %}
+  <meta property="og:url"           content="https://{{shop.domain}}{{article.url}}" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="{{article.title}}" />
+  <meta property="og:description"   content="A local Denver event at Call to Arms Brewery that turns your unwanted outdoor gear into beer (or other tasty beverage). Get paid and score a beer for every piece of outdoor gear that you sell to Out&amp;Back Outdoor. Sign-up today. " />
+  <meta property="og:image"         content="https:{{ article.image | img_url: '1600x'  }}">
+  {% endif %}
+
+  {% if template == 'page.sell' %}
+  <meta property="og:url"           content="https://{{shop.domain}}{{page.url}}" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="{{ page_title }}" />
+  <meta property="og:description"   content="I just submitted my request to sell my unwanted outdoor gear to Out&amp;Back Outdoor! No need to set-up a profile or submit pictures! Definitely a simple way to earn cash." />
+  <meta property="og:image"         content="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/7.jpg?v=1610399764.jpg">
+  {% endif %}
+
+  {%- if canonical_url != blank  -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+  {%- endif -%}
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+
+  {%- capture seo_title -%}
+    {%- if request.page_type == 'search' and search.performed == true -%}
+      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    {%- else -%}
+      {{ page_title }}
+    {%- endif -%}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+	<!-- EGGFLOW SCRIPT START -->{% include 'eggflow-script' %}<!-- EGGFLOW SCRIPT END -->
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {% include 'social-meta-tags' %}
+
+  {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'base.scss' | asset_url | stylesheet_tag }}
+  {{ 'grid.scss' | asset_url | stylesheet_tag }}
+  {{ 'flexslider.css' | asset_url | stylesheet_tag }}
+  {{ 'outandback.scss' | asset_url | stylesheet_tag }}
+  {{ 'obo-pdp.css' | asset_url | stylesheet_tag }}
+  {{ 'wizard.scss' | asset_url | stylesheet_tag }}
+  {{ 'owl.theme.default.css' | asset_url | stylesheet_tag }}
+  {{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+  {{ 'custom.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    var theme = {
+      breakpoints: {
+        medium: 750,
+        large: 990,
+        widescreen: 1400
+      },
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        regularPrice: {{ 'products.product.regular_price' | t | json }},
+        salePrice: {{ 'products.product.sale_price' | t | json }},
+        sale: {{ 'products.product.on_sale' | t | json }},
+        fromLowestPrice: {{ 'products.product.from_lowest_price_html' | t: lowest_price: '[price]' | json }},
+        vendor: {{'products.product.vendor' | t | json }},
+        showMore: {{ 'general.filters.show_more' | t | json }},
+        showLess: {{ 'general.filters.show_less' | t | json }},
+        searchFor: {{ 'general.search.search_for' | t | json }},
+        addressError: {{ 'sections.map.address_error' | t | json }},
+        addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+        addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+        authError: {{ 'sections.map.auth_error_html' | t | json }},
+        newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
+        external: {{ 'general.accessibility.link_messages.external' | t | json }},
+        newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }},
+        removeLabel: {{ 'cart.label.remove' | t: product: '[product]' | json }},
+        update: {{ 'cart.label.update' | t | json }},
+        quantity: {{ 'cart.label.quantity' | t | json }},
+        discountedTotal: {{ 'cart.label.discounted_total' | t | json }},
+        regularTotal: {{ 'cart.label.regular_total' | t | json }},
+        priceColumn: {{ 'cart.label.price_column' | t | json }},
+        quantityMinimumMessage: {{ 'products.product.quantity_minimum_message' | t | json }},
+        cartError: {{ 'cart.general.cart_error' | t | json }},
+        removedItemMessage: {{ 'cart.general.removed_item_html' | t: quantity: '[quantity]', link: '[link]' | json }},
+        unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+        oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
+        otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }},
+        quantityLabel: {{ 'cart.popup.quantity_label' | t: quantity_count: '[count]' | json }},
+        products: {{ 'general.search.products' | t | json }},
+        loading: {{ 'general.search.loading' | t | json }},
+        number_of_results: {{ 'general.search.number_of_results' | t: result_number: '[result_number]', results_count: '[results_count]' | json }},
+        number_of_results_found: {{ 'general.search.number_of_results_found' | t: results_count: '[results_count]' | json }},
+        one_result_found: {{ 'general.search.one_result_found' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }},
+      moneyFormatWithCurrency: {{ shop.money_with_currency_format | json }},
+      settings: {
+        predictiveSearchEnabled: {{ settings.predictive_search_enabled | json }},
+        predictiveSearchShowPrice: {{ settings.predictive_search_show_price | json }},
+        predictiveSearchShowVendor: {{ settings.predictive_search_show_vendor | json }}
+      }
+    };
+    var menuCollectionArray = [];
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  </script>
+
+  {% for collection in collections %}
+    <script>
+      menuCollectionArray.push(
+        {
+          "title": {{ collection.title | json }},
+          "tags": {{ collection.all_tags | json }},
+          "image": {{ collection.image | json }},
+          "url": {{ collection.url | json }},
+          "product_count": {{ collection.all_products_count | json }}
+        }
+      )
+    </script>
+  {% endfor %}
+
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+  
+  <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+  <script src="{{ 'jquery-ui.min.js' | asset_url }}"></script>
+  <script src="{{ 'slick.min.js' | asset_url }}"></script>
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'jquery-plugins.js' | asset_url }}"></script>
+  {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'swiper-bundle.min.js'| asset_url }}"></script>
+  <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+  <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>  
+  <script src="{{ 'outandback.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
+  {{ 'custom.js' | asset_url | script_tag }}
+
+  {{ content_for_header }}
+  
+  <script defer type="module" src="{{ "navbar.bundle.js" | asset_url }}"></script>
+  {% render 'usf' %}
+  <div id="parentNav" class="main-nav" style="border-left:1px solid #262262;">
+   <div class="nav-wrap">
+   <ul class="navParent">
+     {% if customer %}
+     <li class="login"><span>{{ 'layout.customer.log_out' | t | customer_logout_link }}</span></li>
+     <script>
+     	$('a[href^="/account/logout"]').on("click", function() {
+          $.ajax( $(this).attr('href') )
+            .done(function() {
+             window.location.href = "";
+            });
+          return false;
+        });
+     </script>
+     {% else %}
+     <li class="login"><span><a href="javascript:void(0);" class="loginTrigger">Sign In</a> / <a href="javascript:void(0);" class="registerTrigger">Register</a></span></li>
+     {% endif %}
+     <hr>
+     <li id="mensParent" class="parent"><span class="numerical">01</span><a href="javascript:void(0);"><h3>Men's</h3></a></li>
+     <li id="womensParent" class="parent"><span class="numerical">02</span><a href="javascript:void(0);"><h3>Women's</h3></a></li>
+     <li id="kidsParent" class="parent"><span class="numerical">03</span><a href="javascript:void(0);"><h3>Kids'</h3></a></li>
+     <li id="packsParent" class="parent"><span class="numerical">04</span><a href="javascript:void(0);"><h3>Packs &amp; Gear</h3></a></li>
+     <li id="collectionsParent" class="parent"><span class="numerical">05</span><a href="javascript:void(0);"><h3>Collections</h3></a></li>
+     <li id="sellParent" class="parent"><span class="numerical">06</span><a href="/pages/start-selling"><h3>Sell Us Your Gear</h3></a></li>
+     <li id="aboutParent" class="parent"><span class="numerical">07</span><a href="/pages/about-us"><h3>About Us</h3></a></li>
+     <li id="contactParent" class="parent"><span class="numerical">08</span><a href="/pages/contact-us"><h3>Contact Us</h3></a></li>
+     <li id="blogParent" class="parent"><span class="numerical">09</span><a href="/blogs/the-plan"><h3>Blog</h3></a></li>
+     <li id="careers" class="parent"><span class="numerical">10</span><a href="/pages/careers"><h3>Careers</h3></a></li>
+   </ul>
+   </div>
+   <div id="nav-close-btn"><i class="fa fa-times"></i></div>
+ </div>
+
+  <div id="mensNav" class="main-nav">
+    <div class="backContainer"><div class="navCategory">Men's</div><div class="backButton"><i class="fa fa-angle-right"></i></div></div>
+    <div class="nav-wrap">
+    <ul class="navParent submenuParent">
+     <li><a href="javascript:void(0);" title="TOPS" class="dropDownParent">TOPS</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+            {% assign collection_title_parts = collection.title | split: ' ' %}
+            {% if collection_title_parts[0] == "Men's" %}
+              {% if collection.title == "Men's Baselayer Tops" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-baselayer-tops" title="Baselayer" >Baselayer</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Fleece Tops" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-fleece-tops" title="Fleece" >Fleece</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Full Zips" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-full-zips" title="Full Zips" >Full Zips</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Half Zips" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-half-zips" title="Half Zips" >Half Zips</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Hoodies" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-hoodies" title="Hoodies" >Hoodies</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Jackets" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-jackets" title="Jackets" >Jackets</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Jerseys" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-jerseys" title="Jerseys" >Jerseys</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Long Sleeve Shirts" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-long-sleeve-shirts" title="Long Sleeve Shirts" >Long Sleeve Shirts</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Pullovers" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-pullovers" title="Pullovers" >Pullovers</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Quarter Snaps" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-quarter-snaps" title="Quarter Snaps" >Quarter Snaps</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Quarter Zips" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-quarter-zips" title="Quarter Zips" >Quarter Zips</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Short Sleeve Shirts" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-short-sleeve-shirts" title="Short Sleeve Shirts" >Short Sleeve Shirts</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Sweaters" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-sweaters" title="Sweaters" >Sweaters</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Vests" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-vests" title="Vests" >Vests</a></li>
+              {% endif %}
+            {% endif%}
+        {% endfor%}
+      </ul>
+     </li>
+
+
+     <li><a href="javascript:void(0);" title="BOTTOMS" class="dropDownParent">BOTTOMS</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+            {% assign collection_title_parts = collection.title | split: ' ' %}
+            {% if collection_title_parts[0] == "Men's" %}
+              {% if collection.title == "Men's Baselayer Bottoms" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-baselayer-bottoms" title="Baselayer Bottoms" >Baselayer Bottoms</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Jeans" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-jeans" title="Jeans" >Jeans</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Pants" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-pants" title="Pants">Pants</a></li>
+              {% endif %}
+            {% endif%}
+        {% endfor%}
+      </ul>
+     </li>
+
+
+     <li><a href="javascript:void(0);" title="JACKETS" class="dropDownParent">GLOVES OR MITTENS</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+            {% assign collection_title_parts = collection.title | split: ' ' %}
+            {% if collection_title_parts[0] == "Men's" %}
+              {% if collection.title == "Men's Gloves" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-gloves" title="Gloves" >Gloves</a></li>
+              {% endif %}
+              {% if collection.title == "Men's Mittens" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-mittens" title="Mittens" >Mittens</a></li>
+              {% endif %}
+            {% endif%}
+        {% endfor%}
+      </ul>
+     </li>
+
+     <li><a href="javascript:void(0);" title="ACTIVITIES" class="dropDownParent">ACTIVITIES</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+          {% assign collection_title_parts = collection.title | split: ' ' %}
+          {% if collection_title_parts[0] == "Men's" %}
+            {% if collection.title == "Men's Biking" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-biking" title="Biking" >Biking</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Casual" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-casual" title="Casual" >Casual</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Climbing" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-climbing" title="Climbing" >Climbing</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Fishing" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-fishing" title="Fishing" >Fishing</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Hiking" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-hiking" title="Hiking" >Hiking</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Lounging" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-lounging" title="Lounging" >Lounging</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Mountaineering" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-mountaineering" title="Mountaineering" >Mountaineering</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Running" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-running" title="Running" >Running</a></li>
+            {% endif %}
+            {% if collection.title == "Men's Skiing and Snowboarding" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/mens-skiing-and-snowboarding" title="Skiing and Snowboarding" >Skiing and Snowboarding</a></li>
+            {% endif %}
+          {% endif%}
+        {% endfor%}
+      </ul>
+     </li>
+   </ul>
+   </div>
+ </div>
+  <div id="womensNav" class="main-nav">
+    <div class="backContainer"><div class="navCategory">Women's</div><div class="backButton"><i class="fa fa-angle-right"></i></div></div>
+   <div class="nav-wrap">
+   <ul class="navParent submenuParent">
+     <li><a href="javascript:void(0);" title="TOPS" class="dropDownParent">TOPS</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+          {% assign collection_title_parts = collection.title | split: ' ' %}
+          {% if collection_title_parts[0] == "Women's" %}
+            {% if collection.title == "Women's Baselayer Tops" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-baselayer-tops" title="Baselayer" >Baselayer</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Fleece Tops" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-fleece-tops" title="Fleece" >Fleece</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Full Zips" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-full-zips" title="Full Zips" >Full Zips</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Half Zips" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-half-zips" title="Half Zips" >Half Zips</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Hoodies" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-hoodies" title="Hoodies" >Hoodies</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Jackets" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-jackets" title="Jackets" >Jackets</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Jerseys" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-jerseys" title="Jerseys" >Jerseys</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Long Sleeve Shirts" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-long-sleeve-shirts" title="Long Sleeve Shirts" >Long Sleeve Shirts</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Pullovers" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-pullovers" title="Pullovers" >Pullovers</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Quarter Snaps" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-quarter-snaps" title="Quarter Snaps" >Quarter Snaps</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Quarter Zips" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-quarter-zips" title="Quarter Zips" >Quarter Zips</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Short Sleeve Shirts" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-short-sleeve-shirts" title="Short Sleeve Shirts" >Short Sleeve Shirts</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Sweaters" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-sweaters" title="Sweaters" >Sweaters</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Vests" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-vests" title="Vests" >Vests</a></li>
+            {% endif %}
+          {% endif%}
+        {% endfor%}
+       </ul>
+      </li>
+
+      <li><a href="javascript:void(0);" title="BOTTOMS" class="dropDownParent">BOTTOMS</a>
+        <ul class="sub-menu">
+        {% for collection in collections %}
+          {% assign collection_title_parts = collection.title | split: ' ' %}
+          {% if collection_title_parts[0] == "Women's" %}
+            {% if collection.title == "Women's Baselayer Bottoms" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-baselayer-bottoms" title="Baselayer Bottoms" >Baselayer Bottoms</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Jeans" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-jeans" title="Jeans" >Jeans</a></li>
+            {% endif %}
+            {% if collection.title == "Women's Pants" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-pants" title="Pants">Pants</a></li>
+            {% endif %}
+          {% endif%}
+        {% endfor%}
+        </ul>
+      </li>
+
+      <li><a href="javascript:void(0);" title="JACKETS" class="dropDownParent">GLOVES OR MITTENS</a>
+        <ul class="sub-menu">
+          {% for collection in collections %}
+            {% assign collection_title_parts = collection.title | split: ' ' %}
+            {% if collection_title_parts contains "Women's" %}
+              {% if collection.title == "Women's Gloves" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-gloves" title="Gloves" >Gloves</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Mittens" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-mittens" title="Mittens" >Mittens</a></li>
+              {% endif %}
+            {% endif%}
+          {% endfor%}
+        </ul>
+      </li>
+
+      <li><a href="javascript:void(0);" title="ACTIVITIES" class="dropDownParent">ACTIVITIES</a>
+        <ul class="sub-menu">
+          {% for collection in collections %}
+            {% assign collection_title_parts = collection.title | split: ' ' %}
+            {% if collection_title_parts[0] == "Women's" %}
+              {% if collection.title == "Women's Biking" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-biking" title="Biking" >Biking</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Casual" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-casual" title="Casual" >Casual</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Climbing" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-climbing" title="Climbing" >Climbing</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Fishing" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-fishing" title="Fishing" >Fishing</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Hiking" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-hiking" title="Hiking" >Hiking</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Lounging" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-lounging" title="Lounging" >Lounging</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Mountaineering" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-mountaineering" title="Mountaineering" >Mountaineering</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Running" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-running" title="Running" >Running</a></li>
+              {% endif %}
+              {% if collection.title == "Women's Skiing and Snowboarding" %}
+                <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/womens-skiing-and-snowboarding" title="Skiing and Snowboarding" >Skiing and Snowboarding</a></li>
+              {% endif %}
+            {% endif%}
+          {% endfor%}
+        </ul>
+      </li>
+   </ul>
+   </div>
+ </div>
+
+  <div id="kidsNav" class="main-nav">
+   <div class="backContainer"><div class="navCategory">Kids'</div><div class="backButton"><i class="fa fa-angle-right"></i></div></div>
+   <div class="nav-wrap">
+   <ul class="navParent submenuParent">
+     <li><a href="javascript:void(0);" title="TOPS" class="dropDownParent">TOPS</a>
+     <ul class="sub-menu">
+      {% for collection in collections %}
+        {% assign collection_title_parts = collection.title | split: ' ' %}
+        {% if collection_title_parts[0] == "Kids'" %}
+          {% if collection.title == "Kids' Baselayer Tops" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-baselayer-tops" title="Baselayer" >Baselayer</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Fleece Tops" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-fleece-tops" title="Fleece" >Fleece</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Full Zips" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-full-zips" title="Full Zips" >Full Zips</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Half Zips" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-half-zips" title="Half Zips" >Half Zips</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Hoodies" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-hoodies" title="Hoodies" >Hoodies</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Jackets" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-jackets" title="Jackets" >Jackets</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Jerseys" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-jerseys" title="Jerseys" >Jerseys</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Long Sleeve Shirts" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-long-sleeve-shirts" title="Long Sleeve Shirts" >Long Sleeve Shirts</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Pullovers" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-pullovers" title="Pullovers" >Pullovers</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Quarter Snaps" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-quarter-snaps" title="Quarter Snaps" >Quarter Snaps</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Quarter Zips" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-quarter-zips" title="Quarter Zips" >Quarter Zips</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Short Sleeve Shirts" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-short-sleeve-shirts" title="Short Sleeve Shirts" >Short Sleeve Shirts</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Sweaters" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-sweaters" title="Sweaters" >Sweaters</a></li>
+          {% endif %}
+          {% if collection.title == "Kids' Vests" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-vests" title="Vests" >Vests</a></li>
+          {% endif %}
+        {% endif%}
+      {% endfor%}
+     </ul>
+     </li>
+
+     <li><a href="javascript:void(0);" title="BOTTOMS" class="dropDownParent">BOTTOMS</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+          {% assign collection_title_parts = collection.title | split: ' ' %}
+          {% if collection_title_parts[0] == "Kids'" %}
+            {% if collection.title == "Kids' Baselayer Bottoms" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-baselayer-bottoms" title="Baselayer Bottoms" >Baselayer Bottoms</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Jeans" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-jeans" title="Jeans" >Jeans</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Pants" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-pants" title="Pants">Pants</a></li>
+            {% endif %}
+          {% endif%}
+        {% endfor%}
+      </ul>
+     </li>
+
+     <li><a href="javascript:void(0);" title="JACKETS" class="dropDownParent">GLOVES OR MITTENS</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+          {% assign collection_title_parts = collection.title | split: ' ' %}
+          {% if collection_title_parts[0] == "Kids'" %}
+            {% if collection.title == "Kids' Gloves" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-gloves" title="Gloves" >Gloves</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Mittens" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-mittens" title="Mittens" >Mittens</a></li>
+            {% endif %}
+          {% endif%}
+        {% endfor%}
+      </ul>
+     </li>
+
+     <li><a href="javascript:void(0);" title="ACTIVITIES" class="dropDownParent">ACTIVITIES</a>
+      <ul class="sub-menu">
+        {% for collection in collections %}
+          {% assign collection_title_parts = collection.title | split: ' ' %}
+          {% if collection_title_parts[0] == "Kids'" %}
+            {% if collection.title == "Kids' Biking" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-biking" title="Biking" >Biking</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Casual" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-casual" title="Casual" >Casual</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Climbing" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-climbing" title="Climbing" >Climbing</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Fishing" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-fishing" title="Fishing" >Fishing</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Hiking" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-hiking" title="Hiking" >Hiking</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Lounging" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-lounging" title="Lounging" >Lounging</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Mountaineering" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-mountaineering" title="Mountaineering" >Mountaineering</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Running" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-running" title="Running" >Running</a></li>
+            {% endif %}
+            {% if collection.title == "Kids' Skiing and Snowboarding" %}
+              <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/kids-skiing-and-snowboarding" title="Skiing and Snowboarding" >Skiing and Snowboarding</a></li>
+            {% endif %}
+          {% endif%}
+        {% endfor%}
+        </ul>
+     </li>
+   </ul>
+   </div>
+ </div>
+
+
+ <div id="packsNav" class="main-nav">
+    <div class="backContainer"><div class="navCategory">Packs &amp; Gear</div><div class="backButton"><i class="fa fa-angle-right"></i></div></div>
+   <div class="nav-wrap">
+   <ul class="navParent submenuParent">
+    {% for collection in collections %}
+      {% if collection.title == "Backpacks" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/backpacks" title="Backpack" >Backpacks</a></li>
+      {% endif %}
+      {% if collection.title == "Balaclavas" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/balaclavas" title="Balaclava" >Balaclavas</a></li>
+      {% endif %}
+      {% if collection.title == "Bandanas" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/bandanas" title="Bandana" >Bandanas</a></li>
+      {% endif %}
+      {% if collection.title == "Belts" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/belts" title="Belt" >Belts</a></li>
+      {% endif %}
+      {% if collection.title == "Bunting or Snowsuits" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/bunting-or-snowsuits" title="Bunting or Snowsuit" >Bunting or Snowsuit</a></li>
+      {% endif %}
+      {% if collection.title == "Gaiters" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/gaiters" title="Gaiters" >Gaiters</a></li>
+      {% endif %}
+      {% if collection.title == "Hats" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/hats" title="BOTTOHatMS" >Hats</a></li>
+      {% endif %}
+      {% if collection.title == "Luggage" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/luggage" title="Luggage" >Luggage</a></li>
+      {% endif %}
+      {% if collection.title == "One Pieces" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/one-pieces" title="One-Piece" >One-Piece</a></li>
+      {% endif %}
+      {% if collection.title == "Packs" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/packs" title="Packs" >Packs</a></li>
+      {% endif %}
+      {% if collection.title == "Scarfs" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/scarfs" title="Scarf" >Scarfs</a></li>
+      {% endif %}
+      {% if collection.title == "Sets" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/sets" title="Set" >Sets</a></li>
+      {% endif %}
+      {% if collection.title == "Shelters" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/shelters" title="Shelter" >Shelters</a></li>
+      {% endif %}
+      {% if collection.title == "Sleeping Bags" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/sleeping-bags" title="Sleeping Bag" >Sleeping Bags</a></li>
+      {% endif %}
+      {% if collection.title == "Snowsuits" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/snowsuits" title="Snowsuit" >Snowsuits</a></li>
+      {% endif %}
+      {% if collection.title == "Swimsuits" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/swimsuits" title="Swimsuit" >Swimsuits</a></li>
+      {% endif %}
+      {% if collection.title == "Tents" %}
+        <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/tents" title="Tent" >Tents</a></li>
+      {% endif %}
+    {% endfor%}
+   </ul>
+   </div>
+ </div>
+
+
+ <div id="collectionsNav" class="main-nav">
+  <div class="backContainer"><div class="navCategory">Collections</div><div class="backButton"><i class="fa fa-angle-right"></i></div></div>
+    <div class="nav-wrap">
+      <ul class="navParent submenuParent">
+        {% for collection in collections %}
+          {% if collection.title == "GORE-TEX®" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/gore-tex" title="Backpack" >GORE-TEX®</a></li>
+          {% endif %}
+          {% if collection.title == "INSULATED JACKETS" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/insulated-jackets" title="Insulated Jackets" >Insulated Jackets</a></li>
+          {% endif %}
+          {% if collection.title == "RAIN JACKETS" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/rain-jackets" title="Rain Jackets" >Rain Jackets</a></li>
+          {% endif %}
+          {% if collection.title == "SNOWSPORTS" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/snowsports" title="Snowsports" >Snowsports</a></li>
+          {% endif %}
+          {% if collection.title == "CAMPING GEAR" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/gear-and-packs" title="Camping Gear">Camping Gear</a></li>
+          {% endif %}
+          {% if collection.title == "HIKING AND BACKPACKING" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/hiking-and-backpacking" title="Hiking and Backpacking">Hiking and Backpacking</a></li>
+          {% endif %}
+          {% if collection.title == "Gear Under $50" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/gear-under-50" title="Gear Under $50">Gear Under $50</a></li>
+          {% endif %}
+          {% if collection.title == "Packs and Bags" %}
+            <li><a class="{% if collection.all_products_count > 0 %} active {% else %} disabled {% endif %}" href="/collections/packs-and-bags" title="Packs and Bags">Packs and Bags</a></li>
+          {% endif %}
+        {% endfor%}
+      </ul>
+    </div>
+  </div>
+
+
+
+ <div id="overlay">
+
+  <div id="loginLightbox" class="lightbox">
+   		<div class="lightboxClose"><i class="fa fa-times"></i></div>
+ 	    <div class="loginForm active form">
+         <div class="form-vertical">
+         <h2>Sign In</h2>
+        {% form 'customer_login', novalidate: 'novalidate' %}
+		<input type="hidden" name="checkout_url" id="redirect_url" value="" />
+        <script>
+        $(document).ready(function() {
+             var url =  window.location.href;
+             $("#redirect_url").val(url);
+          });
+        </script>
+          {%- if form.errors -%}
+            <div class="form-message form-message--error">
+              <h2 class="h3 form-message__title " tabindex="-1" data-form-status>{{ 'contact.form.error_heading' | t }}</h2>
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+          <input
+            type="email"
+            name="customer[email]"
+            id="CustomerEmail"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            placeholder="Email"
+            {%- if form.errors contains 'form' -%}
+              class="input--error"
+              aria-invalid="true"
+            {%- endif -%}
+             required
+            >
+          {% if form.password_needed %}
+            <input
+              type="password"
+              value=""
+              name="customer[password]"
+              id="CustomerPassword"
+              placeholder="Password"
+              {%- if form.errors contains 'form' -%}
+                class="input--error"
+                aria-invalid="true"
+              {%- endif -%}
+              required
+            >
+          {% endif %}
+          <div class="row">
+            <div class="col-6">
+            <input type="submit" class="learn-more" value="Login">
+            </div>
+            <div class="col-6" style="text-align: right;">
+            {% if form.password_needed %}
+              <p><a href="javascript:void(0);" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
+            {% endif %}
+            </div>
+
+          </div>
+
+        {% endform %}
+        </div>
+        </div>
+ </div>
+
+  <div id="recoverLightbox" class="lightbox">
+   		<div class="lightboxClose"><i class="fa fa-times"></i></div>
+    	<div class="lightboxBack"><i class="fa fa-angle-left"></i></div>
+ 	    <div class="loginForm active form">
+         <div class="form-vertical">
+         <h2>Recover Password</h2>
+          {% form 'recover_customer_password' %}
+
+            {% comment %}
+              Add a hidden span to indicate the form was submitted succesfully.
+            {% endcomment %}
+            {% if form.posted_successfully? %}
+              <span class="hide reset-password-success"></span>
+            {% endif %}
+
+            <input
+              type="email"
+              value=""
+              name="email"
+              id="RecoverEmail"
+              class="input-full{% if form.errors %} input--error{% endif %}"
+              autocorrect="off"
+              autocapitalize="off"
+              placeholder="Email"
+              {% if form.errors %}
+                aria-invalid="true"
+                aria-describedby="RecoverEmail-email-error"
+              {%- endif -%}
+              >
+            {%- if form.errors -%}
+              <span id="RecoverEmail-email-error" class="input-error-message">
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                {% include 'icon-error' %}
+                <span>{{ form.errors.messages['form'] }}</span>
+              </span>
+            {%- endif -%}
+
+            <div class="row">
+              <div class="col-6">
+                <input type="submit" class="learn-more" value="{{ 'customer.recover_password.submit' | t }}">
+              </div>
+            </div>
+          {% endform %}
+        </div>
+        </div>
+ </div>
+
+  <div id="registerLightbox" class="lightbox">
+   		<div class="lightboxClose"><i class="fa fa-times"></i></div>
+ 	    <div class="loginForm active form">
+         <div class="form-vertical">
+         <h2>Register</h2>
+       	{%- assign formId = 'RegisterForm' -%}
+
+        {% form 'create_customer', id: formId, novalidate: 'novalidate', data-form_type: 'account_signup' %}
+          {% include 'form-status', form: form, form_id: formId %}
+		  <div class="row">
+          <div class="col-6">
+          <input type="text" name="customer[first_name]" id="{{ formId }}-FirstName" placeholder="First Name" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocomplete="given-name">
+            </div>
+            <div class="col-6">
+          <input type="text" name="customer[last_name]" id="{{ formId }}-LastName" placeholder="Last Name" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocomplete="family-name">
+			</div>
+              <div class="col-6">
+          <input
+            type="email"
+            name="customer[email]"
+            id="{{ formId }}-email"
+            class="{% if form.errors contains 'email' %} input--error{% endif %}"
+            {% if form.email %} value="{{ form.email }}"{% endif %}
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            aria-required="true"
+            placeholder="Email"
+            {%- if form.errors contains 'email' -%}
+              class="input--error"
+              aria-invalid="true"
+              aria-describedby="{{ formId }}-email-error"
+            {%- endif -%}
+
+            required
+          >
+           </div>
+          {%- if form.errors contains 'email' -%}
+            <span id="{{ formId }}-email-error" class="input-error-message">
+              <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              {% include 'icon-error' %}
+              <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+            </span>
+          {%- endif -%}
+		<div class="col-6">
+          <input
+            type="password"
+            name="customer[password]"
+            id="{{ formId }}-password"
+            placeholder="Password"
+            class="{% if form.errors contains 'password' %} input--error{% endif %}"
+            aria-required="true"
+            {%- if form.errors contains 'password' -%}
+              class="input--error"
+              aria-invalid="true"
+              aria-describedby="{{ formId }}-password-error"
+            {%- endif -%}
+            required
+          >
+          </div>
+          <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}" style="margin: 20px 0;">
+                      <input type="checkbox" name="contact[agree]" id="agree" class="input-group__field {% if form.errors %} input--error{% endif %}" if form.errors aria-invalid="true" aria-describedby="{{ formId }}-email-error" data-form-status endif required>
+                    <div class="agreeText" style="color:#fff;">By submitting your information, you agree to Out&amp;Back's <a href="/pages/terms-of-use" target="_blank">terms of use</a> and <a href="/pages/privacy-policy" target="_blank">privacy policy</a>.</div>
+                   </div>
+          {%- if form.errors contains 'password' -%}
+            <span id="{{ formId}}-password-error" class="input-error-message">
+              {% include 'icon-error' %}
+              <span>{{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.</span>
+            </span>
+          {%- endif -%}
+                        <div class="col-6">
+            <input type="submit" class="learn-more" value="Register">
+            </div>
+           </div>
+
+        {% endform %}
+        </div>
+        </div>
+ </div>
+
+  <div id="reportLightbox" class="lightbox">
+   		<div class="lightboxClose"><i class="fa fa-times" id="report_close"></i></div>
+ 	    <div class="reportForm active form">
+
+         <h2>Report an Issue</h2>
+
+	{% form 'contact', id: 'report' %}
+                  	{% if form.errors contains 'email' %}
+
+
+                      <span id="{{ formId }}-email-error" class="input-error-message">
+                        <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                        {% include 'icon-error' %}
+                        <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                      </span>
+
+
+                    {% endif %}
+  					<div class="row">
+                    <input type="hidden" name="checkout_url" value="{{product.url}}" />
+
+
+                      <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="text"
+                        name="contact[subject]"
+                        readonly
+                        id="{{ formId }}-subject"
+                        class="input-group__field {% if form.errors %} input--error{% endif %}"
+                        value="Issue with {{ product.title }}."
+                        placeholder="Subject*"
+                        aria-label="Subject*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-email-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+
+                    <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="text"
+                        name="contact[message]"
+                        id="{{ formId }}-message"
+                        class="input-group__field message {% if form.errors %} input--error{% endif %}"
+                        value="{{ form.message }}"
+                        placeholder="Message*"
+                        aria-label="Message*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-message-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+
+                    <div class="input-group col-md-12 {% if form.errors %} input-group--error{% endif %}">
+                      <input type="email"
+                        name="contact[email]"
+                        id="{{ formId }}-email"
+                        class="input-group__field {% if form.errors %} input--error{% endif %}"
+                        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                        placeholder="Email*"
+                        aria-label="Email*"
+                        aria-required="true"
+                        required
+                        autocorrect="off"
+                        autocapitalize="off"
+                        {% if form.errors %}
+                          aria-invalid="true"
+                          aria-describedby="{{ formId }}-email-error"
+                          data-form-status
+                        {% endif %}>
+                    </div>
+
+
+                  <div class="col-md-6">
+                  	<input type="submit" class="learn-more" id="submit_report" / >
+                  </div>
+
+
+                    </div>
+
+
+                  	<script>
+                        $("document").ready(function() {
+                        	//$("#reportTrigger").trigger('click');
+                            if(sessionStorage.getItem('report') == 'success') {
+                                $("#reportTrigger").trigger('click');
+                            };
+
+                            $('#submit_report').on('click', function(){
+                                console.log("form submited");
+                                sessionStorage.setItem('report','success');
+                            });
+
+
+                              $('#report_close').on('click', function(){
+                                console.log("form closed");
+                                sessionStorage.removeItem("report");
+                            });
+
+                        });
+                      </script>
+
+                  	<style>
+                    	#registerLightbox form row{
+                         	display: none;
+                        }
+
+                      	#reportLightbox .formSuccess h5{
+                         	color: #fff;
+                          	font-family: 'Uniform-Light';
+                        }
+
+                  	</style>
+                  {% if form.posted_successfully? %}
+                    <div class="formSuccess">
+                      <h5>Thank you for reporting an issue! We'll look into having it resolved shortly.</h5>
+                    </div>
+
+
+                   {% endif %}
+
+
+                  {% endform %}
+
+   </div>
+   </div>
+
+ </div>
+
+<div id="fb-root"></div>
+<script>(function(document, script, id) {
+var _, fjs = document.getElementsByTagName(script)[0];
+if (document.getElementById(id)) return;
+_ = document.createElement(script); _.id = id;
+_.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(_, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <script src="https://cdn.younet.network/main.js"></script>
+  <!-- Hotjar Tracking Code for https://outandbackoutdoor.com/ -->
+
+</head>
+
+<body class="template-{{ request.page_type | handle }}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-577WPX8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  {%- if settings.enable_ajax -%}
+    {% include 'cart-popup' %}
+  {%- endif -%}
+
+  {% section 'header' %}
+
+  <div class="page-container drawer-page-content" id="PageContainer">
+
+    <main id="MainContent" role="main">
+      {% if template.name == 'index' %}<section id="content" role="main">{% endif %}
+        {{ content_for_layout }}
+      {% if template.name == 'index' %}</section>{% endif %}
+    </main>
+
+    {% section 'custom-klaviyo-form' %}
+
+    {% section 'footer' %}
+
+    <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
+      {{- 'sections.slideshow.navigation_instructions' | t -}}
+    </div>
+
+  </div>
+
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+  </ul>
+
+  <script>
+    document.addEventListener('lazybeforeunveil', function(e){
+      var bg = e.target.getAttribute('data-bg');
+      if(bg){
+        e.target.style.backgroundImage = 'url(' + bg + ')';
+      }
+    });
+
+    const nav_height = $('[data-section-id=header]').height()
+    $('#PageContainer').css('margin-top', nav_height + 55)
+  </script>
+
+</body>
+</html>

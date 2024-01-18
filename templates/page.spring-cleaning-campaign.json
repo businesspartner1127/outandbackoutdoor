@@ -1,0 +1,229 @@
+{
+  "sections": {
+    "43eed9f4-28fd-4b85-98a2-9bb4fce579e1": {
+      "type": "custom-collection-banner",
+      "blocks": {
+        "9d255b26-a29c-4048-8054-15575e4ed0b2": {
+          "type": "banner",
+          "settings": {
+            "banner_image": "shopify:\/\/shop_images\/SpringCleaning_LandingPage3.png",
+            "title": "SPRING CLEANING",
+            "paragraph": "We're making room for more new and you should too",
+            "first_button_label": "Shop Clearance",
+            "first_button_link": "shopify:\/\/collections\/spring-cleaning-clearance",
+            "second_button_label": "Sell Gear",
+            "second_button_link": "shopify:\/\/pages\/start-selling",
+            "block_title_color": "#ffffff",
+            "block_paragraph_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "9d255b26-a29c-4048-8054-15575e4ed0b2"
+      ],
+      "settings": {
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "button_color": "#ffffff",
+        "button_text_color": "#26225d"
+      }
+    },
+    "4cfe9377-c19c-4162-8fed-c19e649e4733": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SALE_small_9a3fe0fb-b57b-4609-8f84-44ed28704df2.jpg",
+            "title": "SCORE STEEP DEALS",
+            "caption": "Our selection of clearance gear is up to 70% off retail"
+          }
+        },
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-1": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ACCEPT_OFFER_ICON_small_9aa1e190-0cac-4d9f-b51f-9b70b6d47f1b.jpg",
+            "title": "SHOP CLEARANCE",
+            "caption": "Shop our clearance selection and get a bonus 15% off"
+          }
+        },
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ENVELOPE_FOR_CASH_ICON_small_8a8013e1-f4d4-4918-87ff-04c3155b64df.jpg",
+            "title": "SELL FOR MORE CASH",
+            "caption": "Get an additional bonus on your cash trade-in offers"
+          }
+        }
+      },
+      "block_order": [
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-0",
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-1",
+        "template--16851241959715__4cfe9377-c19c-4162-8fed-c19e649e4733-166991229636e7d9d9-2"
+      ],
+      "settings": {
+        "heading": "What Do You Get?",
+        "caption": "",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#fff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#fff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "e8add881-1b45-4a62-ac5b-ef465eafee1a": {
+      "type": "custom-multi-column",
+      "disabled": true,
+      "blocks": {
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_cec36c4c-7bce-457e-aa8e-9623ad4559ac.png",
+            "title": "BROWSE OUR GEAR",
+            "caption": "Find the gear you've been looking for and add it to your cart"
+          }
+        },
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_fa547edb-32f4-4054-b305-47fe2e7c5c4c.png",
+            "title": "CHOOSE YOUR GIFT",
+            "caption": "Take a look at our gift options below and choose your favorite"
+          }
+        },
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Asset_6-100.jpg",
+            "title": "CHECK OUT",
+            "caption": "Check out as you normally would and your gear + gift will be on its way"
+          }
+        }
+      },
+      "block_order": [
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-0",
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-1",
+        "template--16851241959715__e8add881-1b45-4a62-ac5b-ef465eafee1a-16685402143b9697f7-2"
+      ],
+      "settings": {
+        "heading": "How Does It Work?",
+        "caption": "Get a gift, gear, and some holiday cheer",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "START SHOPPING",
+        "button_link": "shopify:\/\/collections\/start-shopping",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#fff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#fff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "1663744053b2eab893": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "16637440533bfaa62a-0": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WeeklyDeals_icon2.png",
+            "title": "NEW DEALS EACH WEEK",
+            "caption": "Check out our spring cleaning calendar to score big on weekly deals and bonus offers"
+          }
+        },
+        "16637440533bfaa62a-1": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SALE_small_9a3fe0fb-b57b-4609-8f84-44ed28704df2.jpg",
+            "title": "SHOP & SAVE ON CLEARANCE",
+            "caption": "Shop even steeper discounts on our wide selection of clearance gear"
+          }
+        },
+        "16637440533bfaa62a-2": {
+          "type": "content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cash.png",
+            "title": "EARN MORE CASH",
+            "caption": "Sell us gear and get 15% more on your cash offer using promo code: <b>SPRINGCLEAN<\/b>"
+          }
+        }
+      },
+      "block_order": [
+        "16637440533bfaa62a-0",
+        "16637440533bfaa62a-1",
+        "16637440533bfaa62a-2"
+      ],
+      "settings": {
+        "heading": "How Does It Work?",
+        "caption": "",
+        "inner_heading": "",
+        "image_size": 6,
+        "button_label": "",
+        "button_link": "",
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "title_color": "#000000",
+        "paragraph_color": "#000000",
+        "button_color": "#ff0000",
+        "button_text_color": "#ffffff",
+        "cta_text": "Button",
+        "cta_link": "",
+        "cta_position": "center",
+        "cta_text_color": "#fff",
+        "cta_background": "#ff0000",
+        "cta_border_color": "#ff0000",
+        "cta_hover_text_color": "#ff0000",
+        "cta_hover_background": "#fff",
+        "cta_hover_border_color": "#ff0000",
+        "cta_padding_top": 25,
+        "cta_padding_bottom": 25
+      }
+    },
+    "363212b1-1bc8-44df-b475-01ff745cab6a": {
+      "type": "feature-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Spring_Cleaning_Calendar_2.png",
+        "layout": "right",
+        "title": "WEEKLY DEALS",
+        "text": "<p>Shop steeper savings & sell for more cash with our weekly deal categories<\/p>",
+        "button_label": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "43eed9f4-28fd-4b85-98a2-9bb4fce579e1",
+    "4cfe9377-c19c-4162-8fed-c19e649e4733",
+    "e8add881-1b45-4a62-ac5b-ef465eafee1a",
+    "1663744053b2eab893",
+    "363212b1-1bc8-44df-b475-01ff745cab6a"
+  ]
+}

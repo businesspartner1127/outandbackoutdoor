@@ -1,0 +1,40 @@
+/* custom popular categories */
+.cs-popular-categories {
+  background: #f8f8f8;
+}
+.cs-popular-categories .cs-container .cs-grid .cs-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+.cs-popular-categories .cs-container .cs-grid .cs-card .cs-content {
+  background: #fff;
+  padding: 2em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  flex: auto;
+  text-align: center;
+}
+.cs-popular-categories .cs-container .cs-grid .cs-card .cs-content img {
+  width: auto;
+  height: 20em;
+}
+
+@media screen and (max-width: 540px) {
+  .cs-popular-categories .cs-container .cs-grid .cs-card .cs-content {
+    padding: 1em;
+    width: 46%;
+  }
+  .cs-popular-categories .cs-container .cs-grid .cs-card .cs-content img {
+    height: 12em;
+  }
+  .cs-popular-categories .cs-container .cs-grid .cs-card .cs-content p {
+    font-size: 0.8rem;
+  }
+  .cs-popular-categories .cs-container .cs-grid .cs-card .cs-content:first-child {
+    width: 100%;
+  }
+}
+/* end custom popular categories */

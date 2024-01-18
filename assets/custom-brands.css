@@ -1,0 +1,55 @@
+/* custom brands */
+.cs-brands {
+  background: #f8f8f8;
+}
+.cs-brands .cs-container .cs-grid .cs-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+.cs-brands .cs-container .cs-grid .cs-card .cs-content {
+  text-align: center;
+  flex: auto;
+}
+.cs-brands .cs-container .cs-grid .cs-card .cs-content img {
+  width: 12em;
+  height: auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .cs-brands {
+    background: #f8f8f8;
+  }
+  .cs-brands .cs-container .cs-grid .cs-card .cs-content img {
+    width: 9em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cs-brands {
+    background: #f8f8f8;
+  }
+  .cs-brands .cs-container .cs-grid .cs-card {
+    padding: 1em;
+  }
+  .cs-brands .cs-container .cs-grid .cs-card .cs-content img {
+    width: 9em;
+  }
+}
+@media screen and (max-width: 540px) {
+  .cs-brands {
+    background: #f8f8f8;
+  }
+  .cs-brands .cs-container .cs-grid .cs-card {
+    grid-gap: 0.5em;
+  }
+  .cs-brands .cs-container .cs-grid .cs-card .cs-content img {
+    width: 5em;
+  }
+}
+/* end custom brands */

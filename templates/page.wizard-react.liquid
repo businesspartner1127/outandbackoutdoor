@@ -1,0 +1,29 @@
+<style>
+    .container{
+        padding: 50px 15px;
+    }
+
+    @media only screen and (max-width: 700px) {
+        #hero{
+            display: none;
+        }
+
+        .container{
+            margin-top: 7rem !important;
+        }
+    }
+</style>
+<div id="hero" style="background-image: url(//cdn.shopify.com/s/files/1/0412/7840/6813/files/7.jpg?v=1610399764.jpg)"></div>
+<div id="wave"></div>
+<div class="page-width intro-pages">
+    <div class="grid">
+
+        <div class="rte">
+            <div class="container">
+                {% include 'wizard-react' %}
+            </div>
+        </div>
+    </div>
+</div>
+<script defer type="module" src="{{ "wizard.bundle.js" | asset_url }}"></script>
+

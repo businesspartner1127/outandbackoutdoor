@@ -1,0 +1,64 @@
+/* custom dropdown brands */
+.cs-dropdown-brands {
+  background: #f8f8f8;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content .cs-dropdown {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content .cs-dropdown option {
+  color: #000;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content ul#cs-dropdown-items {
+  columns: 2;  
+  column-gap: 2em;
+  text-align: left;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content #sell-back-react div {
+  font-size: 1rem !important;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content #sell-back-react div select {
+  margin-bottom: 4em !important;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content li {  
+  font-family: "Uniform-New", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content li[data-id=false] {
+  font-weight: 400;
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content .cs-footer-text {
+  margin-top: 1em;  
+}
+.cs-dropdown-brands .cs-container .cs-grid .cs-content .cs-footer-text p {
+  font-size: 1rem;
+}
+@media screen and (max-width: 540px) {
+  .cs-dropdown-brands .cs-container .cs-grid .cs-content {
+    padding: 1.6em;
+  }
+  .cs-dropdown-brands .cs-container .cs-grid .cs-content ul#cs-dropdown-items {
+    columns: 1;
+    padding: 0 1.2em;
+  }
+}
+@media screen and (max-width: 390px) {
+  .cs-dropdown-brands .cs-container .cs-grid .cs-content ul#cs-dropdown-items {
+    columns: 1;
+    padding: 0 1em;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cs-dropdown-brands .cs-container .cs-grid .cs-content ul#cs-dropdown-items {
+    padding: 0;
+  }
+}
+/* end custom dropdown brands */

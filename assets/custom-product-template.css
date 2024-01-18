@@ -1,0 +1,313 @@
+.material-symbols-outlined {
+    font-family: "Material Symbols Outlined" !important;
+  }
+  
+  .cs-images-mobile {
+    display: none;
+  }
+  
+  .cs-back {
+    margin-bottom: 1em;
+    display: inline-flex;
+    color: #000;
+    font-family: Uniform-New, sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    gap: 0.2em;
+    transition: all 0.4s;
+  }
+  .cs-back .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+  }
+  
+  .cs-back:hover {
+    margin-left: -10px;
+  }
+  
+  .cs-product-template {
+    padding: 4em 0;
+  }
+  .cs-product-template .cs-container {
+    max-width: 1400px;
+  }
+  .cs-product-template .cs-container .cs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    justify-content: center;
+    grid-gap: 4em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-images-container .cs-images-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    border-radius: 2px;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-images-container .cs-images-desktop .cs-image {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-images-container .cs-images-desktop .cs-image img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-images-container .cs-images-desktop .cs-image:first-child {
+    grid-column: 1/-1;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content {
+    font-family: Uniform-New, sans-serif;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content li, .cs-product-template .cs-container .cs-grid .cs-content a, .cs-product-template .cs-container .cs-grid .cs-content span, .cs-product-template .cs-container .cs-grid .cs-content p, .cs-product-template .cs-container .cs-grid .cs-content label, .cs-product-template .cs-container .cs-grid .cs-content button {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #000;
+    font-family: Uniform-New, sans-serif;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content h1.product-single__title {
+    font-size: 2rem;
+    color: #000;
+    font-family: Uniform-New, sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.4em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-description {
+    padding: 1em;
+    font-size: 1rem;
+    background: #fff;
+    border-radius: 2px;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-tags {
+    display: flex;
+    gap: 0.8em;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-tags .cs-tag {
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    box-shadow: 4px 5px 5px #dfe3ea, 0px 0px 2px #faffff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 2s;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-tags .cs-tag:hover {
+    box-shadow: inset 5px 5px 10px #dfe3ea, inset -5px -5px 10px #faffff;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-single__meta {
+    margin-bottom: 1em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product__price {
+    margin: 0;
+    margin-bottom: 0.6em;
+    display: flex;
+    align-items: center;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product__price span[data-price-percentage] {
+    margin-left: auto;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #f00;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product__price .price--unavailable + span[data-price-percentage] {
+    display: none;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .price--on-sale .price-item--regular {
+    font-weight: 600;
+    color: #c2bbbb;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group {
+    display: grid;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group .product-form__cart-submit {
+    background: #019a34;
+    border: 2px solid #019a34;
+    border-radius: 10px;
+    transform: all 0.4s;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group .product-form__cart-submit span {
+    font-family: Uniform-New, sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #fff;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group .shopify-payment-button {
+    display: none;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group .btn:not([disabled]):hover {
+    transform: unset;
+    background: #005d1f;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group label .cs-variant-label {
+    font-weight: 600;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__controls-group > label {
+    margin-bottom: 0.4em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__item label:before {
+    display: none;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-info {
+    display: flex;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-info p {
+    flex: auto;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .cs-info p img {
+    width: 1em;
+    height: auto;
+    margin-right: 0.4em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset {
+    margin-bottom: 0;
+    border: none;
+    padding: 0 0 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector input[type=radio] {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector.cs-crossout {
+    opacity: 0.2;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector label {
+    box-shadow: 4px 5px 5px #dfe3ea, 0px 0px 2px #faffff;
+    padding: 5px 20px;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector input[type=radio]:checked + label {
+    border: 1px solid #000;
+    font-weight: 700;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector.cs-color-container label.cs-color {
+    padding: 3px;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector.cs-color-container label.cs-color .cs-label-div {
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    display: block;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector.cs-color-container input[type=radio] + label.cs-color {
+    border: 2px dotted #000;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form fieldset .cs-selector.cs-color-container input[type=radio]:checked + label.cs-color {
+    border: 2px solid #000;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content form #cs-item-notes {
+    display: none;
+    padding: 0.4em 0.6em;
+    border: 1px dashed red;
+    border-radius: 5px;
+    margin-top: 0.6em;
+    width: fit-content;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .product-form__variants.no-js:not(html) {
+    z-index: -1;
+    position: absolute;
+    top: -100%;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .social-sharing li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .social-sharing li a {
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+  }
+  .cs-product-template .cs-container .cs-grid .cs-content .social-sharing li a img {
+    width: 16px;
+    height: auto;
+  }   
+  @media screen and (max-width: 1024px) {
+    .cs-images-mobile {
+      display: block;
+    }
+    .cs-images-mobile .cs-product-title {
+      font-size: 2rem;
+      color: #000;
+      font-family: Uniform-New, sans-serif;
+      font-weight: 500;
+      margin-bottom: 0.4em;
+      text-align: center;
+    }
+    .cs-images-mobile .swiper .swiper-wrapper {
+      padding: 0 0 3em;
+    }
+    .cs-images-mobile .swiper .swiper-pagination .swiper-pagination-bullet {
+      background: #525252 !important;
+    }
+    .cs-images-mobile .swiper .swiper-pagination .swiper-pagination-bullet-active {
+      background: #a1a1a1 !important;
+    }
+    .cs-images-mobile .swiper .cs-image-container {
+      display: flex;
+      justify-content: center;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      margin: 0.4em;
+    }
+    .cs-product-template {
+      padding: 2em 0;
+    }
+    .cs-product-template .cs-container .cs-grid {
+      grid-template-columns: 1fr;
+      grid-gap: 1em;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-images-container .cs-images-desktop {
+      display: none;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-content .product-single__title {
+      display: none;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-content .cs-tags {
+      justify-content: flex-start;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-content .cs-tags .cs-tag {
+      padding: 0.5em;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    .cs-product-template .cs-container .cs-grid .cs-content .cs-tags {
+      gap: 0.6em;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-content .cs-info p {
+      font-size: 1rem;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-content .social-sharing li {
+      flex: auto;
+    }
+    .cs-product-template .cs-container .cs-grid .cs-content .social-sharing li a {
+      display: grid;
+      justify-items: center;
+    }
+
+  }
+
+  .last{
+    order: 1;
+  }

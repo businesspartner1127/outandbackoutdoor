@@ -1,0 +1,151 @@
+<style>
+    .shop-page-header {
+      display: flex;
+      width: 100%;
+      height: 85vh;
+      margin-top: 56px;
+      flex-direction: row;
+      justify-content: center;
+      border-bottom: 1px solid #dee2e6;
+      background-color: rgb(246 246 246);
+    }
+    .icon-container-shop {
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      justify-content: center;
+      padding: 35px 50px;
+    }
+    .everyone-container-shop {
+      display: flex;
+      width: 50%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 35px 50px;
+    }
+    .shop-container-text {
+      text-align: flex-start;
+      font-family: 'Uniform', sans-serif;
+      color: #F00000;
+      line-height: normal;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: '30px';
+    }
+    .listItem {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        color: #03ff24;
+    }
+    .faCheck {
+        margin: 6px 30px 0 0;
+        color: #03ff24;
+        font-size: 2em;
+    }
+    .faText {
+        color: #262262;
+        font-size: 2em;
+    }
+    .icon-image-container {
+      height: 75%;
+      display: flex;
+      justify-content: center;
+    }
+    .icon-container-image-shopping {
+      height: 100%;
+    }
+    .header-container-image-selling {
+      height: 100%;
+    }
+    @media (max-width: 1300px) {
+        .icon-container-shop {
+            padding: 0;
+        }
+        .icon-image-container {
+            height: 65%;
+        }
+    }
+    @media (max-width: 1000px) {
+        .icon-image-container {
+            height: 55%;
+        }
+    }
+    @media (max-width: 875px) {
+        .icon-container-shop {
+            justify-content: center;
+        }
+
+        .shop-page-header {
+            height: 50vh;
+        }
+        .icon-image-container {
+            height: 75%;
+        }
+        .shop-container-text {
+            font-size: 1.4rem;
+        }
+        .faCheck {
+            font-size: 1.4;
+        }
+        .faText {
+            font-size: 1.4em;
+        }
+    }
+    @media (max-width: 600px) {
+        .shop-page-header {
+            flex-direction: column;
+            height: 100%;
+        }
+        .icon-container-shop {
+            width: 100%;
+            padding: 35px 50px;
+        }
+        .icon-image-container {
+            margin-left: 45px;
+        }
+        .everyone-container-shop {
+            width: 100%;
+            padding: 35px 50px;
+        }
+        .shop-container-text {
+            margin-top: -40px
+
+        }
+        .shop-container-text {
+            font-size: 1.5rem;
+        }
+        .faCheck {
+            font-size: 1.5rem;
+        }
+        .faText {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+<div id="shop-page-header" class="shop-page-header">
+  <div class="icon-container-shop">
+      <div class="icon-image-container">
+        <img class="icon-container-image-shopping" src="https://cdn.shopify.com/s/files/1/0412/7840/6813/files/Jacket_with_Heart.png?v=1635353564"/>
+      </div>
+  </div>
+
+  <div class="everyone-container-shop">
+    <div class="shop-container-text">
+        WE HAVE SOMETHING FOR EVERY ADVENTURER
+    </div>
+    <div class="list">
+        <div class="listItem"><i class="fa fa-check faCheck"></i><div class="faText">Top Outdoor Brands</div></div>
+        <div class="listItem"><i class="fa fa-check faCheck"></i><div class="faText">Steep discounts all day, everyday</div></div>
+        <div class="listItem"><i class="fa fa-check faCheck"></i><div class="faText">Huge selection of new and used gear</div></div>
+        <div class="listItem"><i class="fa fa-check faCheck"></i><div class="faText">ALWAYS free shipping and returns</div></div>
+    </div>
+  </div>
+</div>
